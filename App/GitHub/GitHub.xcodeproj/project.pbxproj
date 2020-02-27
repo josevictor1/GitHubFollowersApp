@@ -10,7 +10,6 @@
 		1AE20C112407390200867692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C102407390200867692 /* AppDelegate.swift */; };
 		1AE20C132407390200867692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C122407390200867692 /* SceneDelegate.swift */; };
 		1AE20C152407390200867692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C142407390200867692 /* ViewController.swift */; };
-		1AE20C182407390200867692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C162407390200867692 /* Main.storyboard */; };
 		1AE20C1A2407390300867692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C192407390300867692 /* Assets.xcassets */; };
 		1AE20C1D2407390300867692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C1B2407390300867692 /* LaunchScreen.storyboard */; };
 		1AE20C282407390400867692 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C272407390400867692 /* GitHubTests.swift */; };
@@ -39,7 +38,6 @@
 		1AE20C102407390200867692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE20C122407390200867692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1AE20C142407390200867692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1AE20C172407390200867692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AE20C192407390300867692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AE20C1C2407390300867692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AE20C1E2407390300867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +97,9 @@
 		1AE20C0F2407390200867692 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
-				1AE20C102407390200867692 /* AppDelegate.swift */,
-				1AE20C122407390200867692 /* SceneDelegate.swift */,
-				1AE20C142407390200867692 /* ViewController.swift */,
-				1AE20C162407390200867692 /* Main.storyboard */,
-				1AE20C192407390300867692 /* Assets.xcassets */,
-				1AE20C1B2407390300867692 /* LaunchScreen.storyboard */,
-				1AE20C1E2407390300867692 /* Info.plist */,
+				1AE20C4224073D8C00867692 /* Scenes */,
+				1AE20C4124073D6D00867692 /* App Delegate */,
+				1AE20C4024073D5D00867692 /* Supporting Files */,
 			);
 			path = GitHub;
 			sourceTree = "<group>";
@@ -126,6 +120,33 @@
 				1AE20C342407390400867692 /* Info.plist */,
 			);
 			path = GitHubUITests;
+			sourceTree = "<group>";
+		};
+		1AE20C4024073D5D00867692 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20C192407390300867692 /* Assets.xcassets */,
+				1AE20C1B2407390300867692 /* LaunchScreen.storyboard */,
+				1AE20C1E2407390300867692 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AE20C4124073D6D00867692 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20C102407390200867692 /* AppDelegate.swift */,
+				1AE20C122407390200867692 /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		1AE20C4224073D8C00867692 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20C142407390200867692 /* ViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +255,6 @@
 			files = (
 				1AE20C1D2407390300867692 /* LaunchScreen.storyboard in Resources */,
 				1AE20C1A2407390300867692 /* Assets.xcassets in Resources */,
-				1AE20C182407390200867692 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1AE20C162407390200867692 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AE20C172407390200867692 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1AE20C1B2407390300867692 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,7 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
-				INFOPLIST_FILE = GitHub/Info.plist;
+				INFOPLIST_FILE = "GitHub/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
-				INFOPLIST_FILE = GitHub/Info.plist;
+				INFOPLIST_FILE = "GitHub/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
