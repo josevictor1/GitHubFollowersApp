@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA4811C240A060C0086B6BB /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; };
+		1AA4811D240A060C0086B6BB /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AA4811E240A060C0086B6BB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811B240A060C0086B6BB /* Core.framework */; };
+		1AA4811F240A060C0086B6BB /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811B240A060C0086B6BB /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48123240A08E50086B6BB /* MainCoordinator.swift */; };
+		1AA48126240A6BE10086B6BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48125240A6BE10086B6BB /* LoginView.swift */; };
+		1AA48130240C71440086B6BB /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA4812F240C71440086B6BB /* Localized.strings */; };
 		1AE20C112407390200867692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C102407390200867692 /* AppDelegate.swift */; };
 		1AE20C132407390200867692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C122407390200867692 /* SceneDelegate.swift */; };
-		1AE20C152407390200867692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C142407390200867692 /* ViewController.swift */; };
+		1AE20C152407390200867692 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C142407390200867692 /* LoginViewController.swift */; };
 		1AE20C1A2407390300867692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C192407390300867692 /* Assets.xcassets */; };
 		1AE20C1D2407390300867692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C1B2407390300867692 /* LaunchScreen.storyboard */; };
 		1AE20C282407390400867692 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C272407390400867692 /* GitHubTests.swift */; };
@@ -33,11 +40,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1AA48120240A060C0086B6BB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1AA4811D240A060C0086B6BB /* Commons.framework in Embed Frameworks */,
+				1AA4811F240A060C0086B6BB /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1AA4811A240A060C0086B6BB /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA4811B240A060C0086B6BB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA48123240A08E50086B6BB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		1AA48125240A6BE10086B6BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1AA4812F240C71440086B6BB /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
 		1AE20C0D2407390200867692 /* GitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20C102407390200867692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE20C122407390200867692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1AE20C142407390200867692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1AE20C142407390200867692 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AE20C192407390300867692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AE20C1C2407390300867692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AE20C1E2407390300867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA4811C240A060C0086B6BB /* Commons.framework in Frameworks */,
+				1AA4811E240A060C0086B6BB /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +103,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA48119240A060C0086B6BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AA4811A240A060C0086B6BB /* Commons.framework */,
+				1AA4811B240A060C0086B6BB /* Core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AA48121240A08640086B6BB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1AA48123240A08E50086B6BB /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1AA48122240A08780086B6BB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20C142407390200867692 /* LoginViewController.swift */,
+				1AA48125240A6BE10086B6BB /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		1AE20C042407390200867692 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +136,7 @@
 				1AE20C262407390400867692 /* GitHubTests */,
 				1AE20C312407390400867692 /* GitHubUITests */,
 				1AE20C0E2407390200867692 /* Products */,
+				1AA48119240A060C0086B6BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +184,7 @@
 				1AE20C192407390300867692 /* Assets.xcassets */,
 				1AE20C1B2407390300867692 /* LaunchScreen.storyboard */,
 				1AE20C1E2407390300867692 /* Info.plist */,
+				1AA4812F240C71440086B6BB /* Localized.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,7 +201,8 @@
 		1AE20C4224073D8C00867692 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				1AE20C142407390200867692 /* ViewController.swift */,
+				1AA48122240A08780086B6BB /* Login */,
+				1AA48121240A08640086B6BB /* Coordinator */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -159,6 +217,7 @@
 				1AE20C092407390200867692 /* Sources */,
 				1AE20C0A2407390200867692 /* Frameworks */,
 				1AE20C0B2407390200867692 /* Resources */,
+				1AA48120240A060C0086B6BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA48130240C71440086B6BB /* Localized.strings in Resources */,
 				1AE20C1D2407390300867692 /* LaunchScreen.storyboard in Resources */,
 				1AE20C1A2407390300867692 /* Assets.xcassets in Resources */,
 			);
@@ -279,8 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AE20C152407390200867692 /* ViewController.swift in Sources */,
+				1AE20C152407390200867692 /* LoginViewController.swift in Sources */,
+				1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */,
 				1AE20C112407390200867692 /* AppDelegate.swift in Sources */,
+				1AA48126240A6BE10086B6BB /* LoginView.swift in Sources */,
 				1AE20C132407390200867692 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

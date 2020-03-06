@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol Coordinator {
+public protocol Coordinator: AnyObject {
     
     // MARK: - Initializers
     
-    /// Creates a new Coordinator with the given navigationController
+    /// Creates a Coordinator with the given navigationController
     /// - Parameter navigationController: The __UINavigationController__ responsible to embed the coordinator's flow
     init(navigationController: UINavigationController)
     
@@ -22,23 +22,24 @@ protocol Coordinator {
     var parent: Coordinator? { get set }
     
     /// The children coordinators
-    var children: [Coordinator]? { get set }
+    var children: [Coordinator] { get set }
     
     /// The __UINavigationController__ responsible to embed the coordinator's flow
     var navigationController: UINavigationController? { get set }
     
     // MARK: - Life Cycle
     
-    /// Start the coordinator flow
+    /// Start the coordinator flow doing all the necessary configuration
     func start()
     
-    /// <#Description#>
-    func childDidFinish()
 }
 
-extension Coordinator {
+public extension Coordinator {
+    
+    /// Remove child coordinator
+    /// - Parameter child: Coordinator to be removed from children
     func childDidFinish(_ child: Coordinator?) {
-        for (index, coordinator) in childCoordinators.enumerated() {
+        for (index, coordinator) in children.enumerated() {
             if coordinator === child {
                 children.remove(at: index)
                 break

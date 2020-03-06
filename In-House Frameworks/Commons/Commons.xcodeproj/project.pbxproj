@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA48133240C7F2F0086B6BB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48132240C7F2F0086B6BB /* UIView+.swift */; };
 		1AE20BF42407361C00867692 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE20BEA2407361C00867692 /* Commons.framework */; };
 		1AE20BF92407361C00867692 /* CommonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BF82407361C00867692 /* CommonsTests.swift */; };
 		1AE20BFB2407361C00867692 /* Commons.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE20BED2407361C00867692 /* Commons.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AA48132240C7F2F0086B6BB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		1AE20BEA2407361C00867692 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20BED2407361C00867692 /* Commons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Commons.h; sourceTree = "<group>"; };
 		1AE20BEE2407361C00867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA48131240C7F0F0086B6BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1AA48132240C7F2F0086B6BB /* UIView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1AE20BE02407361C00867692 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +81,7 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1AA48131240C7F0F0086B6BB /* Extensions */,
 				1AE20BED2407361C00867692 /* Commons.h */,
 				1AE20BEE2407361C00867692 /* Info.plist */,
 			);
@@ -148,6 +159,7 @@
 				TargetAttributes = {
 					1AE20BE92407361C00867692 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					1AE20BF22407361C00867692 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -195,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA48133240C7F2F0086B6BB /* UIView+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +353,7 @@
 		1AE20BFF2407361C00867692 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
@@ -356,6 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jvpc.Commons;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +379,7 @@
 		1AE20C002407361C00867692 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
@@ -388,6 +404,7 @@
 		1AE20C022407361C00867692 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = CommonsTests/Info.plist;
@@ -406,6 +423,7 @@
 		1AE20C032407361C00867692 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = CommonsTests/Info.plist;
