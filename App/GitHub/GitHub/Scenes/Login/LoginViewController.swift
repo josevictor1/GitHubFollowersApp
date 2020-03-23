@@ -7,11 +7,33 @@
 //
 
 import UIKit
+import Commons
+
+protocol LoginService {
+    func singUp(with user: String)
+}
 
 class LoginViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    // MARK: - Properties
+    
+    var service: LoginService?
+    
+    private lazy var onGetFollowersButtonTapped: ((String) -> Void) = { [unowned self] userName in
+        self.service?.singUp(with: userName)
+    }
+    
+    private lazy var loginView: UIView = {
+        let view = LoginView()
+        view.getFollowersButtonTapped = onGetFollowersButtonTapped
+        return view
+    }()
+    
+    // MARK: - Life Cycle
+    
+    override func loadView() {
+        super.loadView()
+        view = loginView
     }
     
 }

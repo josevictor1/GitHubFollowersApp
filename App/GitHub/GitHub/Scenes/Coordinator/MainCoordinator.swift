@@ -26,7 +26,7 @@ class MainCoordinator: Coordinator {
     ///   - window: The host __UIWindow__ that holds `navigationController` as  `rootViewController`
     init(navigationController: UINavigationController, window: UIWindow) {
         self.navigationController = navigationController
-        window.rootViewController = navigationController
+        window.rootViewController = LoginViewController()
         window.makeKeyAndVisible()
     }
     
@@ -44,8 +44,8 @@ class MainCoordinator: Coordinator {
     
     private func goToLogin() {
         let viewController = LoginViewController()
+        viewController.view.backgroundColor = .white
         navigationController?.pushViewController(viewController, animated: false)
     }
-    
-    
+
 }
