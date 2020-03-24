@@ -1,5 +1,5 @@
 //
-//  LoginViewControllerTests.swift
+//  GetFollowersViewControllerTests.swift
 //  GitHubTests
 //
 //  Created by José Victor Pereira Costa on 23/03/20.
@@ -9,23 +9,23 @@
 import XCTest
 @testable import GitHub
 
-class LoginViewControllerTests: XCTestCase {
+class GetFollowersViewControllerTests: XCTestCase {
 
     func testOnGetFollowersButtonTapped() {
-        let sut = LoginViewController()
-        
+        let sut = GetFollowersViewController()
+    
         var getFollowersTapped = false
-        let userName = "test"
+        let typedUsername = "test"
         var receivedUsername = ""
         sut.onGetFollowersButtonTapped = { userName in
             getFollowersTapped.toggle()
             receivedUsername = userName
         }
         
-        sut.loginView.getFollowersButtonTapped?(userName)
+        sut.getFollowersView.getFollowersButtonTapped?(typedUsername)
         
-        XCTAssert(getFollowersTapped, "The onGetFollowersButtonTapped should be called")
-        XCTAssertEqual(userName, receivedUsername)
+        XCTAssert(getFollowersTapped, "The get followers button should be tapped")
+        XCTAssertEqual(typedUsername, receivedUsername, "The received user name should be equal to typed username")
     }
     
     

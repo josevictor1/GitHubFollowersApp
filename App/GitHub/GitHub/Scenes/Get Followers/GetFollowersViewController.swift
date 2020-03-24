@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GetFollowersViewController.swift
 //  GitHub
 //
 //  Created by José Victor Pereira Costa on 26/02/20.
@@ -9,22 +9,22 @@
 import UIKit
 import Commons
 
-protocol LoginService {
+protocol GetFollowersService {
     func singUp(with user: String)
 }
 
-class LoginViewController: UIViewController {
+class GetFollowersViewController: UIViewController {
     
     // MARK: - Properties
     
-    var service: LoginService?
+    var service: GetFollowersService?
     
     lazy var onGetFollowersButtonTapped: ((String) -> Void) = { [unowned self] userName in
         self.service?.singUp(with: userName)
     }
     
-    lazy var loginView: LoginView = {
-        let view = LoginView()
+    lazy var getFollowersView: GetFollowersView = {
+        let view = GetFollowersView()
         view.getFollowersButtonTapped = onGetFollowersButtonTapped
         return view
     }()
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view = loginView
+        view = getFollowersView
     }
     
 }

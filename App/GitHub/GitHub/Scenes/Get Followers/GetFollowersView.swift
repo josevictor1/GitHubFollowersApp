@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  GetFollowersView.swift
 //  GitHub
 //
 //  Created by José Victor Pereira Costa on 29/02/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class LoginView: UIView {
+public final class GetFollowersView: UIView {
     
     // MARK: - Action closures
     
@@ -16,9 +16,9 @@ public final class LoginView: UIView {
     
     // MARK: - Initializers
     
-    init() {
-        super.init(frame: .zero)
-        setUpSubviews()
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUp()
     }
     
     required init?(coder: NSCoder) {
@@ -61,7 +61,7 @@ public final class LoginView: UIView {
     
     // MARK: - Constraints setup
     
-    func setUpSubviews() {
+    func setUp() {
         setUpLogoImageView()
         setUpUsernameTextField()
         setUpGetFollowersButton()
