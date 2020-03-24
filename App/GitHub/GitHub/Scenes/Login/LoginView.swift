@@ -10,7 +10,7 @@ import UIKit
 
 public final class LoginView: UIView {
     
-    // MARK: - Actions closures
+    // MARK: - Action closures
     
     var getFollowersButtonTapped: ((String) -> Void)?
     
@@ -25,7 +25,7 @@ public final class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Properties
+    // MARK: - Subviews
     
     private lazy var logoImage: UIImageView = {
         let image = UIImage(named: "gh-logo")!
@@ -40,7 +40,8 @@ public final class LoginView: UIView {
         textField.textAlignment = .center
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 12
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderColor = UIColor.tertiarySystemFill.cgColor
+        textField.backgroundColor = .secondarySystemBackground
         textField.layer.masksToBounds = true
         return textField
     }()
@@ -56,6 +57,9 @@ public final class LoginView: UIView {
         button.layer.cornerRadius = 12
         return button
     }()
+    
+    
+    // MARK: - Constraints setup
     
     func setUpSubviews() {
         setUpLogoImageView()
