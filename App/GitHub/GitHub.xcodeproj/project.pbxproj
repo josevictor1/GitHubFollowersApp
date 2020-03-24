@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A51042824296D4700B0130A /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		1A51042924296D4700B0130A /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A51042A24296D4700B0130A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811B240A060C0086B6BB /* Core.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		1A51042B24296D4700B0130A /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811B240A060C0086B6BB /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A9E540E2429368900B9585A /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E540D2429368900B9585A /* LoginViewControllerTests.swift */; };
+		1A9E5410242946C600B9585A /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E540F242946C600B9585A /* GitHubUITests.swift */; };
+		1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48123240A08E50086B6BB /* MainCoordinator.swift */; };
+		1AA48126240A6BE10086B6BB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48125240A6BE10086B6BB /* LoginView.swift */; };
+		1AA48130240C71440086B6BB /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA4812F240C71440086B6BB /* Localized.strings */; };
 		1AE20C112407390200867692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C102407390200867692 /* AppDelegate.swift */; };
 		1AE20C132407390200867692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C122407390200867692 /* SceneDelegate.swift */; };
-		1AE20C152407390200867692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C142407390200867692 /* ViewController.swift */; };
-		1AE20C182407390200867692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C162407390200867692 /* Main.storyboard */; };
+		1AE20C152407390200867692 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C142407390200867692 /* LoginViewController.swift */; };
 		1AE20C1A2407390300867692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C192407390300867692 /* Assets.xcassets */; };
 		1AE20C1D2407390300867692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C1B2407390300867692 /* LaunchScreen.storyboard */; };
-		1AE20C282407390400867692 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C272407390400867692 /* GitHubTests.swift */; };
-		1AE20C332407390400867692 /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C322407390400867692 /* GitHubUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,20 +40,39 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1A51042C24296D4700B0130A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A51042924296D4700B0130A /* Commons.framework in Embed Frameworks */,
+				1A51042B24296D4700B0130A /* Core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1A9E540D2429368900B9585A /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		1A9E540F242946C600B9585A /* GitHubUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
+		1AA4811A240A060C0086B6BB /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA4811B240A060C0086B6BB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA48123240A08E50086B6BB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		1AA48125240A6BE10086B6BB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1AA4812F240C71440086B6BB /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
 		1AE20C0D2407390200867692 /* GitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20C102407390200867692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE20C122407390200867692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1AE20C142407390200867692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1AE20C172407390200867692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1AE20C142407390200867692 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AE20C192407390300867692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AE20C1C2407390300867692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AE20C1E2407390300867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AE20C232407390400867692 /* GitHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AE20C272407390400867692 /* GitHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTests.swift; sourceTree = "<group>"; };
 		1AE20C292407390400867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AE20C2E2407390400867692 /* GitHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AE20C322407390400867692 /* GitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
 		1AE20C342407390400867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A51042824296D4700B0130A /* Commons.framework in Frameworks */,
+				1A51042A24296D4700B0130A /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +103,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA48119240A060C0086B6BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AA4811A240A060C0086B6BB /* Commons.framework */,
+				1AA4811B240A060C0086B6BB /* Core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AA48121240A08640086B6BB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1AA48123240A08E50086B6BB /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1AA48122240A08780086B6BB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20C142407390200867692 /* LoginViewController.swift */,
+				1AA48125240A6BE10086B6BB /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		1AE20C042407390200867692 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +136,7 @@
 				1AE20C262407390400867692 /* GitHubTests */,
 				1AE20C312407390400867692 /* GitHubUITests */,
 				1AE20C0E2407390200867692 /* Products */,
+				1AA48119240A060C0086B6BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +153,9 @@
 		1AE20C0F2407390200867692 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
-				1AE20C102407390200867692 /* AppDelegate.swift */,
-				1AE20C122407390200867692 /* SceneDelegate.swift */,
-				1AE20C142407390200867692 /* ViewController.swift */,
-				1AE20C162407390200867692 /* Main.storyboard */,
-				1AE20C192407390300867692 /* Assets.xcassets */,
-				1AE20C1B2407390300867692 /* LaunchScreen.storyboard */,
-				1AE20C1E2407390300867692 /* Info.plist */,
+				1AE20C4224073D8C00867692 /* Scenes */,
+				1AE20C4124073D6D00867692 /* App Delegate */,
+				1AE20C4024073D5D00867692 /* Supporting Files */,
 			);
 			path = GitHub;
 			sourceTree = "<group>";
@@ -113,8 +163,8 @@
 		1AE20C262407390400867692 /* GitHubTests */ = {
 			isa = PBXGroup;
 			children = (
-				1AE20C272407390400867692 /* GitHubTests.swift */,
 				1AE20C292407390400867692 /* Info.plist */,
+				1A9E540D2429368900B9585A /* LoginViewControllerTests.swift */,
 			);
 			path = GitHubTests;
 			sourceTree = "<group>";
@@ -122,10 +172,39 @@
 		1AE20C312407390400867692 /* GitHubUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1AE20C322407390400867692 /* GitHubUITests.swift */,
+				1A9E540F242946C600B9585A /* GitHubUITests.swift */,
 				1AE20C342407390400867692 /* Info.plist */,
 			);
 			path = GitHubUITests;
+			sourceTree = "<group>";
+		};
+		1AE20C4024073D5D00867692 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20C192407390300867692 /* Assets.xcassets */,
+				1AE20C1B2407390300867692 /* LaunchScreen.storyboard */,
+				1AE20C1E2407390300867692 /* Info.plist */,
+				1AA4812F240C71440086B6BB /* Localized.strings */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AE20C4124073D6D00867692 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20C102407390200867692 /* AppDelegate.swift */,
+				1AE20C122407390200867692 /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		1AE20C4224073D8C00867692 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1AA48122240A08780086B6BB /* Login */,
+				1AA48121240A08640086B6BB /* Coordinator */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +217,7 @@
 				1AE20C092407390200867692 /* Sources */,
 				1AE20C0A2407390200867692 /* Frameworks */,
 				1AE20C0B2407390200867692 /* Resources */,
+				1A51042C24296D4700B0130A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +283,7 @@
 					};
 					1AE20C2D2407390400867692 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 1AE20C0C2407390200867692;
 					};
 				};
@@ -232,9 +313,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA48130240C71440086B6BB /* Localized.strings in Resources */,
 				1AE20C1D2407390300867692 /* LaunchScreen.storyboard in Resources */,
 				1AE20C1A2407390300867692 /* Assets.xcassets in Resources */,
-				1AE20C182407390200867692 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AE20C152407390200867692 /* ViewController.swift in Sources */,
+				1AE20C152407390200867692 /* LoginViewController.swift in Sources */,
+				1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */,
 				1AE20C112407390200867692 /* AppDelegate.swift in Sources */,
+				1AA48126240A6BE10086B6BB /* LoginView.swift in Sources */,
 				1AE20C132407390200867692 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AE20C282407390400867692 /* GitHubTests.swift in Sources */,
+				1A9E540E2429368900B9585A /* LoginViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AE20C332407390400867692 /* GitHubUITests.swift in Sources */,
+				1A9E5410242946C600B9585A /* GitHubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +380,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1AE20C162407390200867692 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AE20C172407390200867692 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1AE20C1B2407390300867692 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -436,7 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
-				INFOPLIST_FILE = GitHub/Info.plist;
+				INFOPLIST_FILE = "GitHub/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,15 +527,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77FV36N6JL;
-				INFOPLIST_FILE = GitHub/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "GitHub/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jvpc.GitHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = GitHubUITests/Info.plist;
@@ -524,6 +602,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jvpc.GitHubUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GitHub;
@@ -534,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = GitHubUITests/Info.plist;
