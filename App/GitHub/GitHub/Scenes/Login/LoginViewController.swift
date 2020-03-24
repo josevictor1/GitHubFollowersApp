@@ -33,11 +33,7 @@ class LoginViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.embed(loginView)
+        view = loginView
     }
     
 }
