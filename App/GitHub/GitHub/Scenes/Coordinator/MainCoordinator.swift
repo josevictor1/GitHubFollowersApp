@@ -37,12 +37,12 @@ class MainCoordinator: Coordinator {
     // MARK: - Flow life cycle
     
     func start() {
-        goToLogin()
+        navigateToGetFollowers()
     }
     
     // MARK: - Navigation
     
-    private func goToLogin() {
+    private func navigateToGetFollowers() {
         let viewController = GetFollowersViewController()
         viewController.view.backgroundColor = .white
         navigationController?.pushViewController(viewController, animated: false)
