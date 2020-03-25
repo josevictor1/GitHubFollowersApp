@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1AE20C0C2407390200867692"
-               BuildableName = "GitHub.app"
+               BuildableName = "GitHubFollowers.app"
                BlueprintName = "GitHub"
                ReferencedContainer = "container:GitHub.xcodeproj">
             </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AE20C0C2407390200867692"
-            BuildableName = "GitHub.app"
+            BuildableName = "GitHubFollowers.app"
             BlueprintName = "GitHub"
             ReferencedContainer = "container:GitHub.xcodeproj">
          </BuildableReference>
