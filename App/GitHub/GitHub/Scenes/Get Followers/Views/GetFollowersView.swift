@@ -51,9 +51,10 @@ public final class GetFollowersView: UIView {
     private lazy var getFollowersButton: UIButton = {
         let button = UIButton()
         button.setTitle("Get Followers", for: .normal)
+        button.titleLabel?.numberOfLines = 0
         button.titleLabel?.font = .preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
-        button.titleLabel?.baselineAdjustment = .alignCenters
+        button.titleLabel?.textAlignment = .center
         button.backgroundColor = UIColor(red: 45/255,
                                          green: 186/255,
                                          blue: 78/255,
