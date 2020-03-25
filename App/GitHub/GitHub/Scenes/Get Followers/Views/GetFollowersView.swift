@@ -27,7 +27,7 @@ public final class GetFollowersView: UIView {
     
     // MARK: - Subviews
     
-    private lazy var logoImage: UIImageView = {
+    private lazy var logoImageView: UIImageView = {
         let image = UIImage(named: "gh-logo")!
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
@@ -73,15 +73,15 @@ public final class GetFollowersView: UIView {
     }
     
     private func setUpLogoImageView() {
-        let constraints = [logoImage.topAnchor.constraint(equalTo: topAnchor, constant: 70),
-                           logoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 77),
-                           logoImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -77),
-                           logoImage.heightAnchor.constraint(lessThanOrEqualToConstant: 200)]
-        place(logoImage, with: constraints)
+        let constraints = [logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 70),
+                           logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 77),
+                           logoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -77),
+                           logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 200)]
+        place(logoImageView, with: constraints)
     }
     
     private func setUpUsernameTextField() {
-        let constraints = [usernameTextField.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 53),
+        let constraints = [usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 53),
                            usernameTextField.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 31),
                            usernameTextField.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -31),
                            usernameTextField.heightAnchor.constraint(greaterThanOrEqualToConstant: 62)]

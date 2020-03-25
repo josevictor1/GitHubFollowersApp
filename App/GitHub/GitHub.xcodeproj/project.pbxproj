@@ -64,7 +64,6 @@
 		1A235587242AB28C00BB54AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1A235589242AB29A00BB54AB /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		1A23558B242AB90700BB54AB /* GetFollowersError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersError.swift; sourceTree = "<group>"; };
-		1A9BD0BD242BDC14000ADDD7 /* GitHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHub.entitlements; sourceTree = "<group>"; };
 		1A9E540D2429368900B9585A /* GetFollowersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerTests.swift; sourceTree = "<group>"; };
 		1A9E540F242946C600B9585A /* GitHubUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
 		1AA4811A240A060C0086B6BB /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +205,6 @@
 		1AE20C0F2407390200867692 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
-				1A9BD0BD242BDC14000ADDD7 /* GitHub.entitlements */,
 				1AE20C4224073D8C00867692 /* Scenes */,
 				1AE20C4124073D6D00867692 /* App Delegate */,
 				1AE20C4024073D5D00867692 /* Supporting Files */,

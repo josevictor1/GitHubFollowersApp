@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import GitHub
+@testable import GitHubFollowers
 
 class GetFollowersViewControllerTests: XCTestCase {
 
@@ -15,7 +15,7 @@ class GetFollowersViewControllerTests: XCTestCase {
         let sut = GetFollowersViewController()
     
         var getFollowersTapped = false
-        let typedUsername = "test"
+        let username = "test"
         var receivedUsername = String()
         
         sut.onGetFollowersButtonTapped = { userName in
@@ -23,10 +23,10 @@ class GetFollowersViewControllerTests: XCTestCase {
             receivedUsername = userName
         }
         
-        sut.getFollowersView.getFollowersButtonTapped?(typedUsername)
+        sut.getFollowersView.getFollowersButtonTapped?(username)
         
         XCTAssert(getFollowersTapped, "The get followers button should be tapped")
-        XCTAssertEqual(typedUsername, receivedUsername, "The received user name should be equal to typed username")
+        XCTAssertEqual(username, receivedUsername, "The received user name should be equal to typed username")
     }
     
 }
