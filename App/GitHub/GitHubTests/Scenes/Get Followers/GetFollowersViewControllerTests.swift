@@ -16,7 +16,8 @@ class GetFollowersViewControllerTests: XCTestCase {
     
         var getFollowersTapped = false
         let typedUsername = "test"
-        var receivedUsername = ""
+        var receivedUsername = String()
+        
         sut.onGetFollowersButtonTapped = { userName in
             getFollowersTapped.toggle()
             receivedUsername = userName
@@ -27,6 +28,5 @@ class GetFollowersViewControllerTests: XCTestCase {
         XCTAssert(getFollowersTapped, "The get followers button should be tapped")
         XCTAssertEqual(typedUsername, receivedUsername, "The received user name should be equal to typed username")
     }
-    
     
 }
