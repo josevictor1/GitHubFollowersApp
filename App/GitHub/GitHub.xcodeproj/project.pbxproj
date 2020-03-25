@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A23557E242A59BB00BB54AB /* GetFollowersModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23557D242A59BB00BB54AB /* GetFollowersModelController.swift */; };
+		1A235588242AB28C00BB54AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A235587242AB28C00BB54AB /* User.swift */; };
+		1A23558A242AB29A00BB54AB /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A235589242AB29A00BB54AB /* Follower.swift */; };
+		1A23558C242AB90700BB54AB /* GetFollowersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23558B242AB90700BB54AB /* GetFollowersError.swift */; };
 		1A51042824296D4700B0130A /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		1A51042924296D4700B0130A /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A51042A24296D4700B0130A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811B240A060C0086B6BB /* Core.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -56,6 +60,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A23557D242A59BB00BB54AB /* GetFollowersModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersModelController.swift; sourceTree = "<group>"; };
+		1A235587242AB28C00BB54AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1A235589242AB29A00BB54AB /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		1A23558B242AB90700BB54AB /* GetFollowersError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersError.swift; sourceTree = "<group>"; };
 		1A9E540D2429368900B9585A /* GetFollowersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerTests.swift; sourceTree = "<group>"; };
 		1A9E540F242946C600B9585A /* GitHubUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
 		1AA4811A240A060C0086B6BB /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +71,7 @@
 		1AA48123240A08E50086B6BB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		1AA48125240A6BE10086B6BB /* GetFollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersView.swift; sourceTree = "<group>"; };
 		1AA4812F240C71440086B6BB /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
-		1AE20C0D2407390200867692 /* GitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE20C0D2407390200867692 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20C102407390200867692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE20C122407390200867692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1AE20C142407390200867692 /* GetFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A23557A242A563800BB54AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A23557D242A59BB00BB54AB /* GetFollowersModelController.swift */,
+				1AE20C142407390200867692 /* GetFollowersViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1A23557B242A565300BB54AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A235587242AB28C00BB54AB /* User.swift */,
+				1A235589242AB29A00BB54AB /* Follower.swift */,
+				1A23558B242AB90700BB54AB /* GetFollowersError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A23557C242A565A00BB54AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AA48125240A6BE10086B6BB /* GetFollowersView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A23558D242AC1DB00BB54AB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1A23558E242AC1EA00BB54AB /* Get Followers */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1A23558E242AC1EA00BB54AB /* Get Followers */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E540D2429368900B9585A /* GetFollowersViewControllerTests.swift */,
+			);
+			path = "Get Followers";
+			sourceTree = "<group>";
+		};
 		1AA48119240A060C0086B6BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +174,9 @@
 		1AA48122240A08780086B6BB /* Get Followers */ = {
 			isa = PBXGroup;
 			children = (
-				1AE20C142407390200867692 /* GetFollowersViewController.swift */,
-				1AA48125240A6BE10086B6BB /* GetFollowersView.swift */,
+				1A23557C242A565A00BB54AB /* Views */,
+				1A23557B242A565300BB54AB /* Models */,
+				1A23557A242A563800BB54AB /* Controllers */,
 			);
 			path = "Get Followers";
 			sourceTree = "<group>";
@@ -143,7 +195,7 @@
 		1AE20C0E2407390200867692 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AE20C0D2407390200867692 /* GitHub.app */,
+				1AE20C0D2407390200867692 /* GitHubFollowers.app */,
 				1AE20C232407390400867692 /* GitHubTests.xctest */,
 				1AE20C2E2407390400867692 /* GitHubUITests.xctest */,
 			);
@@ -163,8 +215,8 @@
 		1AE20C262407390400867692 /* GitHubTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A23558D242AC1DB00BB54AB /* Scenes */,
 				1AE20C292407390400867692 /* Info.plist */,
-				1A9E540D2429368900B9585A /* GetFollowersViewControllerTests.swift */,
 			);
 			path = GitHubTests;
 			sourceTree = "<group>";
@@ -225,7 +277,7 @@
 			);
 			name = GitHub;
 			productName = GitHub;
-			productReference = 1AE20C0D2407390200867692 /* GitHub.app */;
+			productReference = 1AE20C0D2407390200867692 /* GitHubFollowers.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1AE20C222407390400867692 /* GitHubTests */ = {
@@ -340,11 +392,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A23558C242AB90700BB54AB /* GetFollowersError.swift in Sources */,
 				1AE20C152407390200867692 /* GetFollowersViewController.swift in Sources */,
 				1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */,
 				1AE20C112407390200867692 /* AppDelegate.swift in Sources */,
+				1A23558A242AB29A00BB54AB /* Follower.swift in Sources */,
 				1AA48126240A6BE10086B6BB /* GetFollowersView.swift in Sources */,
+				1A23557E242A59BB00BB54AB /* GetFollowersModelController.swift in Sources */,
 				1AE20C132407390200867692 /* SceneDelegate.swift in Sources */,
+				1A235588242AB28C00BB54AB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +573,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jvpc.GitHub;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GitHubFollowers;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -536,8 +593,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jvpc.GitHub;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GitHubFollowers;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

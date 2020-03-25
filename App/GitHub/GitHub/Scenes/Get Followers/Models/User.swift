@@ -1,0 +1,18 @@
+//
+//  User.swift
+//  GitHub
+//
+//  Created by José Victor Pereira Costa on 24/03/20.
+//  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
+//
+
+import Foundation
+
+struct User {
+    let login: String
+    let name: String
+    let avartar: String
+    let company: String
+    let biography: String
+    let location: String
+}

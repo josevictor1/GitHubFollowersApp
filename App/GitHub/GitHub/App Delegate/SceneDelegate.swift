@@ -21,9 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         setUpMainCoordinator()
     }
+    
     private func setUpMainCoordinator() {
-        mainCoordinator = MainCoordinator(navigationController: UINavigationController(),
-                                          window: window!)
+        mainCoordinator = MainCoordinator(navigationController: UINavigationController(), window: window!)
         mainCoordinator?.start()
     }
     
