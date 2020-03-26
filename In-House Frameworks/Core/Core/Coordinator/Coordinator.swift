@@ -13,7 +13,7 @@ public protocol Coordinator: AnyObject {
     // MARK: - Initializers
     
     /// Creates a Coordinator with the given navigationController
-    /// - Parameter navigationController: The __UINavigationController__ responsible to embed the coordinator's flow
+    /// - Parameter navigationController: The `UINavigationController` responsible to embed the coordinator's flow
     init(navigationController: UINavigationController)
     
     // MARK: - Properties
@@ -24,7 +24,7 @@ public protocol Coordinator: AnyObject {
     /// The children coordinators
     var children: [Coordinator] { get set }
     
-    /// The __UINavigationController__ responsible to embed the coordinator's flow
+    /// The `UINavigationController` responsible to embed the coordinator's flow
     var navigationController: UINavigationController? { get set }
     
     // MARK: - Life Cycle

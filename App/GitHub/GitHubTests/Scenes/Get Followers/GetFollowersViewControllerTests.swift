@@ -29,11 +29,4 @@ class GetFollowersViewControllerTests: XCTestCase {
         XCTAssertEqual(username, receivedUsername, "The received user name should be equal to typed username")
     }
     
-    func testFetchUserSucceeded() {
-        let sut = GetFollowersViewController()
-        
-        sut.onGetFollowersButtonTapped?()
-        
-    }
-    
 }

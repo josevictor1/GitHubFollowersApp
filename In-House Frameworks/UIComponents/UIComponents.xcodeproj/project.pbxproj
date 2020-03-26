@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1C2EC4242D637A00096731 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2EC3242D637A00096731 /* Commons.framework */; };
+		1A1C2EC5242D637A00096731 /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2EC3242D637A00096731 /* Commons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07520242C11CB00DACD0A /* CustomAlertController.swift */; };
+		1AA07523242C124C00DACD0A /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07522242C124C00DACD0A /* CustomAlertView.swift */; };
+		1AA07528242C185800DACD0A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07527242C185800DACD0A /* Alert.swift */; };
 		1AF58A36242BC19D00275733 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF58A2C242BC19D00275733 /* UIComponents.framework */; };
 		1AF58A3B242BC19D00275733 /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF58A3A242BC19D00275733 /* UIComponentsTests.swift */; };
 		1AF58A3D242BC19D00275733 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AF58A2F242BC19D00275733 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -22,7 +27,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1A1C2EC6242D637A00096731 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A1C2EC5242D637A00096731 /* Commons.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1A1C2EC3242D637A00096731 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA07520242C11CB00DACD0A /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
+		1AA07522242C124C00DACD0A /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		1AA07527242C185800DACD0A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		1AF58A2C242BC19D00275733 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF58A2F242BC19D00275733 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		1AF58A30242BC19D00275733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1C2EC4242D637A00096731 /* Commons.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1C2EC2242D637A00096731 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A1C2EC3242D637A00096731 /* Commons.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1AF58A22242BC19D00275733 = {
 			isa = PBXGroup;
 			children = (
 				1AF58A2E242BC19D00275733 /* UIComponents */,
 				1AF58A39242BC19D00275733 /* UIComponentsTests */,
 				1AF58A2D242BC19D00275733 /* Products */,
+				1A1C2EC2242D637A00096731 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,16 +123,19 @@
 		1AF58A46242BC23700275733 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1AF58A47242BC25800275733 /* CustomAlertViewController */,
+				1AF58A47242BC25800275733 /* CustomAlertController */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		1AF58A47242BC25800275733 /* CustomAlertViewController */ = {
+		1AF58A47242BC25800275733 /* CustomAlertController */ = {
 			isa = PBXGroup;
 			children = (
+				1AA07520242C11CB00DACD0A /* CustomAlertController.swift */,
+				1AA07522242C124C00DACD0A /* CustomAlertView.swift */,
+				1AA07527242C185800DACD0A /* Alert.swift */,
 			);
-			path = CustomAlertViewController;
+			path = CustomAlertController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +160,7 @@
 				1AF58A28242BC19D00275733 /* Sources */,
 				1AF58A29242BC19D00275733 /* Frameworks */,
 				1AF58A2A242BC19D00275733 /* Resources */,
+				1A1C2EC6242D637A00096731 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA07528242C185800DACD0A /* Alert.swift in Sources */,
+				1AA07523242C124C00DACD0A /* CustomAlertView.swift in Sources */,
+				1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -342,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -408,6 +448,7 @@
 		1AF58A44242BC19D00275733 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = UIComponentsTests/Info.plist;
@@ -426,6 +467,7 @@
 		1AF58A45242BC19D00275733 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = UIComponentsTests/Info.plist;

@@ -11,5 +11,13 @@ import Foundation
 enum GetFollowersError: Error {
     case invalidUsername
     case requestFail
-    case timeout
+    
+    var errorMessage: ErrorMessage {
+        switch self {
+        case .invalidUsername:
+            return .invalidUsername
+        case .requestFail:
+            return .requestFail
+        }
+    }
 }
