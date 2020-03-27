@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F01242E48E700096731 /* ErrorMessage.swift */; };
 		1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F829E241865F600D25A68 /* UIViewController+.swift */; };
 		1A91FC2524199AA5008CF123 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91FC2424199AA5008CF123 /* UIView+.swift */; };
 		1AA0752C242D39CF00DACD0A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0752B242D39CF00DACD0A /* String+.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A1C2F01242E48E700096731 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		1A8F829E241865F600D25A68 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		1A91FC2424199AA5008CF123 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		1AA0752B242D39CF00DACD0A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1C2F00242E488D00096731 /* Error Messages */ = {
+			isa = PBXGroup;
+			children = (
+				1A1C2F01242E48E700096731 /* ErrorMessage.swift */,
+			);
+			path = "Error Messages";
+			sourceTree = "<group>";
+		};
 		1AA48131240C7F0F0086B6BB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1A1C2F00242E488D00096731 /* Error Messages */,
 				1AA48131240C7F0F0086B6BB /* Extensions */,
 				1AE20BED2407361C00867692 /* Commons.h */,
 				1AE20BEE2407361C00867692 /* Info.plist */,
@@ -213,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */,
 				1A91FC2524199AA5008CF123 /* UIView+.swift in Sources */,
 				1AA0752C242D39CF00DACD0A /* String+.swift in Sources */,
 				1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */,

@@ -10,15 +10,16 @@ import UIKit
 
 public protocol NavigationCoordinator: Coordinator {
     
+    
     // MARK: - Initializers
     
-    /// Creates a Coordinator with the given navigationController
-    /// - Parameter navigationController: The `UINavigationController` responsible to embed the coordinator's flow
+    /// Creates a Coordinator with the given navigationController.
+    /// - Parameter navigationController: The `UINavigationController` responsible to embed the coordinator's flow.
     init(navigationController: UINavigationController)
     
     // MARK: - Properties
     
-    /// The `UINavigationController` responsible to embed the coordinator's flow
+    /// The `UINavigationController` responsible to embed the coordinator's flow.
     var navigationController: UINavigationController? { get set }
     
 }

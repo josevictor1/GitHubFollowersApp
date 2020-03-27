@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func setUpMainCoordinator() {
-        mainCoordinator = MainCoordinator(navigationController: UINavigationController(), window: window!)
+        mainCoordinator = MainCoordinator(window: window!)
         mainCoordinator?.start()
     }
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ErrorMessage: String {
+public enum ErrorMessage: String {
     
     case requestFail = "REQUEST_FAIL"
     case invalidUsername = "INVALID_USERNAME"
@@ -17,7 +17,7 @@ enum ErrorMessage: String {
     case favoritesPresistenceFail = "FAVORITES_PERSISTENCE_FAIL"
     case userAlreadyRegistered = "USER_ALREADY_REGISTERED"
     
-    var localizedMessage: String {
+    public var localizedMessage: String {
         self.rawValue.localized()
     }
 }
