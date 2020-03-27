@@ -9,6 +9,7 @@
 import Foundation
 
 enum ErrorMessage: String {
+    
     case requestFail = "REQUEST_FAIL"
     case invalidUsername = "INVALID_USERNAME"
     case invalidResponse = "INVALID_RESPONSE"

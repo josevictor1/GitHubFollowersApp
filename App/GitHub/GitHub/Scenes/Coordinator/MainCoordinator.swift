@@ -19,14 +19,14 @@ class MainCoordinator: Coordinator {
 
     // MARK: - Initializers
     
-    /// Create a __MainCoordinator__ object  with the given `navigationControlle`r.
-    /// The passed navigation controller is setted as `rootViewController` on the passed window
+    /// Create a `MainCoordinator` object  with the given `navigationController`.
+    /// The passed navigation controller is setted as `rootViewController` on the passed window.
     /// - Parameters:
-    ///   - navigationController: The __UINavigationController__ responsible to embed the coordinator's flow
-    ///   - window: The host __UIWindow__ that holds `navigationController` as  `rootViewController`
+    ///   - navigationController: The `UINavigationController` responsible to embed the coordinator's flow
+    ///   - window: The host `UIWindow` that holds `navigationController` as  `rootViewController`
     init(navigationController: UINavigationController, window: UIWindow) {
         self.navigationController = navigationController
-        window.rootViewController = GetFollowersViewController()
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
     
@@ -34,7 +34,7 @@ class MainCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    // MARK: - Flow life cycle
+    // MARK: - Life Cycle
     
     func start() {
         navigateToGetFollowers()
@@ -43,8 +43,7 @@ class MainCoordinator: Coordinator {
     // MARK: - Navigation
     
     private func navigateToGetFollowers() {
-        let viewController = GetFollowersViewController()
-        viewController.view.backgroundColor = .white
+        let viewController: GetFollowersViewController = .makeGetFollowers()
         navigationController?.pushViewController(viewController, animated: false)
     }
 

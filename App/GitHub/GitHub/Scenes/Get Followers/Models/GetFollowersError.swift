@@ -12,7 +12,7 @@ enum GetFollowersError: Error {
     case invalidUsername
     case requestFail
     
-    var errorMessage: ErrorMessage {
+    var message: ErrorMessage {
         switch self {
         case .invalidUsername:
             return .invalidUsername

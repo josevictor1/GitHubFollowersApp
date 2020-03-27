@@ -23,7 +23,7 @@ class GetFollowersViewControllerTests: XCTestCase {
             receivedUsername = userName
         }
         
-        sut.getFollowersView.getFollowersButtonTapped?(username)
+        sut.getFollowersView.onGetFollowersButtonTapped?(username)
         
         XCTAssert(getFollowersTapped, "The get followers button should be tapped")
         XCTAssertEqual(username, receivedUsername, "The received user name should be equal to typed username")
