@@ -11,7 +11,11 @@ import Commons
 
 class CustomAlertView: UIView {
     
+    // MARK: - Closures
+    
     var confirmButtonAction: Action?
+    
+    // MARK: - Initializer
     
     init(alert: Alert, action: Action?) {
         super.init(frame: .zero)
@@ -22,6 +26,8 @@ class CustomAlertView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Subviews
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -49,16 +55,21 @@ class CustomAlertView: UIView {
         return button
     }()
     
+    // MARK: - Actions
     
     @objc private func confirmButtonTapped() {
         confirmButtonAction?()
     }
+    
+    // MARK: - Setup
     
     private func setUp(_ alert: Alert) {
         setUpTitleLabel(alert.title)
         setUpDescriptionLabel(alert.description)
         setUpConfirmButton(alert.buttonTitle)
     }
+    
+    // MARK: - Constraints
     
     private func setUpTitleLabel(_ title: String) {
         titleLabel.text = title

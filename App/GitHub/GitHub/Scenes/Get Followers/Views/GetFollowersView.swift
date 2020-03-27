@@ -10,9 +10,9 @@ import UIKit
 
 public final class GetFollowersView: UIView {
     
-    // MARK: - Action closures
+    // MARK: - Closures
     
-    var getFollowersButtonTapped: ((String) -> Void)?
+    var onGetFollowersButtonTapped: ((String?) -> Void)?
     
     // MARK: - Initializers
     
@@ -60,18 +60,26 @@ public final class GetFollowersView: UIView {
                                          blue: 78/255,
                                          alpha: 1)
         button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(getFollowersButtonTapped), for: .touchUpInside)
         return button
     }()
     
+    // MARK: - Actions
     
-    // MARK: - Constraints setup
+    @objc private func getFollowersButtonTapped() {
+        onGetFollowersButtonTapped?(usernameTextField.text)
+    }
     
-    func setUp() {
+    // MARK: - Setup
+    
+    private func setUp() {
         setUpLogoImageView()
         setUpUsernameTextField()
         setUpGetFollowersButton()
         backgroundColor = .systemBackground
     }
+    
+    // MARK: - Constraints
     
     private func setUpLogoImageView() {
         let constraints = [logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 70),

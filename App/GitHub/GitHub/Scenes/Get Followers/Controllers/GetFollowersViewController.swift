@@ -11,8 +11,8 @@ import Commons
 
 protocol GetFollowersViewControllerDelegate: AnyObject {
     
-    /// <#Description#>
-    /// - Parameter user: <#user description#>
+    /// Method called when `GetFollowersViewController` finishes to fetch users.
+    /// - Parameter user: User fetched
     func viewControllerDidFetchUser(_ user: String)
 }
 
@@ -26,13 +26,13 @@ class GetFollowersViewController: UIViewController {
     
     lazy var getFollowersView: GetFollowersView = {
         let view = GetFollowersView()
-        view.getFollowersButtonTapped = onGetFollowersButtonTapped
+        view.onGetFollowersButtonTapped = onGetFollowersButtonTapped
         return view
     }()
     
     // MARK: - Actions
     
-    lazy var onGetFollowersButtonTapped: ((String) -> Void) = { [unowned self] username in
+    lazy var onGetFollowersButtonTapped: ((String?) -> Void) = { [unowned self] username in
         self.fetchUser(with: username)
     }
     
@@ -47,7 +47,8 @@ class GetFollowersViewController: UIViewController {
     
     /// Tells model to search a user with the entered name
     /// - Parameter username: The username to be fetched
-    private func fetchUser(with username: String) {
+    private func fetchUser(with username: String?) {
+        guard let username = username, !username.isEmpty else { return }
         modelController?.fetchUser(with: username) { [unowned self] result in
             switch result {
             case .success(let username):
