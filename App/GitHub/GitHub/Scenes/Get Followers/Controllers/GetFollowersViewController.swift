@@ -10,6 +10,9 @@ import UIKit
 import Commons
 
 protocol GetFollowersViewControllerDelegate: AnyObject {
+    
+    /// <#Description#>
+    /// - Parameter user: <#user description#>
     func viewControllerDidFetchUser(_ user: String)
 }
 
@@ -18,17 +21,20 @@ class GetFollowersViewController: UIViewController {
     // MARK: - Properties
     
     var modelController: GetFollowersModel?
+    var presenter: GetFollowersAlertPresenterProtocol?
     weak var delegate: GetFollowersViewControllerDelegate?
-    
-    lazy var onGetFollowersButtonTapped: ((String) -> Void) = { [unowned self] username in
-        self.fetchUser(with: username)
-    }
     
     lazy var getFollowersView: GetFollowersView = {
         let view = GetFollowersView()
         view.getFollowersButtonTapped = onGetFollowersButtonTapped
         return view
     }()
+    
+    // MARK: - Actions
+    
+    lazy var onGetFollowersButtonTapped: ((String) -> Void) = { [unowned self] username in
+        self.fetchUser(with: username)
+    }
     
     // MARK: - Life Cycle
     
@@ -37,16 +43,28 @@ class GetFollowersViewController: UIViewController {
         view = getFollowersView
     }
     
+    // MARK: - Business Logic
+    
+    /// Tells model to search a user with the entered name
+    /// - Parameter username: The username to be fetched
     private func fetchUser(with username: String) {
         modelController?.fetchUser(with: username) { [unowned self] result in
             switch result {
             case .success(let username):
                 self.delegate?.viewControllerDidFetchUser(username)
             case .failure(let error):
-                break
+                self.presenter?.present(error)
             }
         }
     }
     
 }
 
+extension GetFollowersViewController {
+    
+    static func makeGetFollowers() -> GetFollowersViewController {
+        let viewController = GetFollowersViewController()
+        viewController.presenter = GetFollowersAlertPresenter(viewController: viewController)
+        return viewController
+    }
+}
