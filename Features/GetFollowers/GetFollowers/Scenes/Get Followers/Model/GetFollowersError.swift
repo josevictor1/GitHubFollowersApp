@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Commons
 
 enum GetFollowersError: Error {
     case invalidUsername

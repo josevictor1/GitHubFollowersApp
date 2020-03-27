@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A23557E242A59BB00BB54AB /* GetFollowersModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23557D242A59BB00BB54AB /* GetFollowersModelController.swift */; };
-		1A235588242AB28C00BB54AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A235587242AB28C00BB54AB /* User.swift */; };
-		1A23558A242AB29A00BB54AB /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A235589242AB29A00BB54AB /* Follower.swift */; };
-		1A23558C242AB90700BB54AB /* GetFollowersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A23558B242AB90700BB54AB /* GetFollowersError.swift */; };
+		1A1C2F52242E865700096731 /* GetFollowers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F51242E865700096731 /* GetFollowers.framework */; };
+		1A1C2F53242E865700096731 /* GetFollowers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F51242E865700096731 /* GetFollowers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A51042824296D4700B0130A /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		1A51042924296D4700B0130A /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A51042A24296D4700B0130A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811B240A060C0086B6BB /* Core.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -19,14 +17,10 @@
 		1A9E5410242946C600B9585A /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E540F242946C600B9585A /* GitHubUITests.swift */; };
 		1AA07525242C13E400DACD0A /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA07524242C13E400DACD0A /* UIComponents.framework */; };
 		1AA07526242C13E400DACD0A /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA07524242C13E400DACD0A /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AA0752A242D24E000DACD0A /* GetFollowersAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07529242D24E000DACD0A /* GetFollowersAlertPresenter.swift */; };
-		1AA0752F242D52EA00DACD0A /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0752E242D52EA00DACD0A /* ErrorMessage.swift */; };
 		1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48123240A08E50086B6BB /* MainCoordinator.swift */; };
-		1AA48126240A6BE10086B6BB /* GetFollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48125240A6BE10086B6BB /* GetFollowersView.swift */; };
 		1AA48130240C71440086B6BB /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA4812F240C71440086B6BB /* Localized.strings */; };
 		1AE20C112407390200867692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C102407390200867692 /* AppDelegate.swift */; };
 		1AE20C132407390200867692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C122407390200867692 /* SceneDelegate.swift */; };
-		1AE20C152407390200867692 /* GetFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C142407390200867692 /* GetFollowersViewController.swift */; };
 		1AE20C1A2407390300867692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C192407390300867692 /* Assets.xcassets */; };
 		1AE20C1D2407390300867692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C1B2407390300867692 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -58,6 +52,7 @@
 				1A51042924296D4700B0130A /* Commons.framework in Embed Frameworks */,
 				1AA07526242C13E400DACD0A /* UIComponents.framework in Embed Frameworks */,
 				1A51042B24296D4700B0130A /* Core.framework in Embed Frameworks */,
+				1A1C2F53242E865700096731 /* GetFollowers.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,24 +60,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1A23557D242A59BB00BB54AB /* GetFollowersModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersModelController.swift; sourceTree = "<group>"; };
-		1A235587242AB28C00BB54AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		1A235589242AB29A00BB54AB /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
-		1A23558B242AB90700BB54AB /* GetFollowersError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersError.swift; sourceTree = "<group>"; };
+		1A1C2F12242E4FE400096731 /* SearchFollowers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SearchFollowers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A1C2F51242E865700096731 /* GetFollowers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GetFollowers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9E540D2429368900B9585A /* GetFollowersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerTests.swift; sourceTree = "<group>"; };
 		1A9E540F242946C600B9585A /* GitHubUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
 		1AA07524242C13E400DACD0A /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AA07529242D24E000DACD0A /* GetFollowersAlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenter.swift; sourceTree = "<group>"; };
-		1AA0752E242D52EA00DACD0A /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		1AA4811A240A060C0086B6BB /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA4811B240A060C0086B6BB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA48123240A08E50086B6BB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		1AA48125240A6BE10086B6BB /* GetFollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersView.swift; sourceTree = "<group>"; };
 		1AA4812F240C71440086B6BB /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
 		1AE20C0D2407390200867692 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20C102407390200867692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE20C122407390200867692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1AE20C142407390200867692 /* GetFollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewController.swift; sourceTree = "<group>"; };
 		1AE20C192407390300867692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AE20C1C2407390300867692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AE20C1E2407390300867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +89,7 @@
 				1A51042824296D4700B0130A /* Commons.framework in Frameworks */,
 				1AA07525242C13E400DACD0A /* UIComponents.framework in Frameworks */,
 				1A51042A24296D4700B0130A /* Core.framework in Frameworks */,
+				1A1C2F52242E865700096731 /* GetFollowers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,34 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A23557A242A563800BB54AB /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				1A23557D242A59BB00BB54AB /* GetFollowersModelController.swift */,
-				1AE20C142407390200867692 /* GetFollowersViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		1A23557B242A565300BB54AB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1A235587242AB28C00BB54AB /* User.swift */,
-				1A235589242AB29A00BB54AB /* Follower.swift */,
-				1A23558B242AB90700BB54AB /* GetFollowersError.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		1A23557C242A565A00BB54AB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1AA48125240A6BE10086B6BB /* GetFollowersView.swift */,
-				1AA07529242D24E000DACD0A /* GetFollowersAlertPresenter.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		1A23558D242AC1DB00BB54AB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,17 +126,11 @@
 			path = "Get Followers";
 			sourceTree = "<group>";
 		};
-		1AA0752D242D52C000DACD0A /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				1AA0752E242D52EA00DACD0A /* ErrorMessage.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		1AA48119240A060C0086B6BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A1C2F51242E865700096731 /* GetFollowers.framework */,
+				1A1C2F12242E4FE400096731 /* SearchFollowers.framework */,
 				1AA07524242C13E400DACD0A /* UIComponents.framework */,
 				1AA4811A240A060C0086B6BB /* Commons.framework */,
 				1AA4811B240A060C0086B6BB /* Core.framework */,
@@ -188,16 +144,6 @@
 				1AA48123240A08E50086B6BB /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		1AA48122240A08780086B6BB /* Get Followers */ = {
-			isa = PBXGroup;
-			children = (
-				1A23557C242A565A00BB54AB /* Views */,
-				1A23557B242A565300BB54AB /* Models */,
-				1A23557A242A563800BB54AB /* Controllers */,
-			);
-			path = "Get Followers";
 			sourceTree = "<group>";
 		};
 		1AE20C042407390200867692 = {
@@ -224,8 +170,7 @@
 		1AE20C0F2407390200867692 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
-				1AA0752D242D52C000DACD0A /* Utils */,
-				1AE20C4224073D8C00867692 /* Scenes */,
+				1AA48121240A08640086B6BB /* Coordinator */,
 				1AE20C4124073D6D00867692 /* App Delegate */,
 				1AE20C4024073D5D00867692 /* Supporting Files */,
 			);
@@ -268,15 +213,6 @@
 				1AE20C122407390200867692 /* SceneDelegate.swift */,
 			);
 			path = "App Delegate";
-			sourceTree = "<group>";
-		};
-		1AE20C4224073D8C00867692 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				1AA48122240A08780086B6BB /* Get Followers */,
-				1AA48121240A08640086B6BB /* Coordinator */,
-			);
-			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,17 +348,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A23558C242AB90700BB54AB /* GetFollowersError.swift in Sources */,
-				1AE20C152407390200867692 /* GetFollowersViewController.swift in Sources */,
-				1AA0752A242D24E000DACD0A /* GetFollowersAlertPresenter.swift in Sources */,
 				1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */,
 				1AE20C112407390200867692 /* AppDelegate.swift in Sources */,
-				1A23558A242AB29A00BB54AB /* Follower.swift in Sources */,
-				1AA0752F242D52EA00DACD0A /* ErrorMessage.swift in Sources */,
-				1AA48126240A6BE10086B6BB /* GetFollowersView.swift in Sources */,
-				1A23557E242A59BB00BB54AB /* GetFollowersModelController.swift in Sources */,
 				1AE20C132407390200867692 /* SceneDelegate.swift in Sources */,
-				1A235588242AB28C00BB54AB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
