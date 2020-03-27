@@ -9,7 +9,11 @@
 import UIKit
 import UIComponents
 
-class GetFollowersAlertPresenter {
+protocol GetFollowersAlertPresenterProtocol {
+    func present(_ error: GetFollowersError)
+}
+
+class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
     
     private let presentingViewController: UIViewController
     private weak var alertController: UIViewController?
