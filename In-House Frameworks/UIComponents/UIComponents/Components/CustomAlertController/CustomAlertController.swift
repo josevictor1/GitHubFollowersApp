@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Commons
 
 public typealias Action = (() -> Void)
 
@@ -16,7 +17,7 @@ public final class CustomAlertController: UIViewController {
     // MARK: - Properties
     
     /// An instance of `CustomAlertView`.
-    private var alertView: CustomAlertView?
+    private var alertView: CustomAlertView!
     
     // MARK: - Initializers
     
@@ -29,6 +30,8 @@ public final class CustomAlertController: UIViewController {
     public init(alert: Alert, action: Action?) {
         super.init(nibName: nil, bundle: nil)
         alertView = CustomAlertView(alert: alert, action: action)
+        modalPresentationStyle = .overFullScreen
+        modalTransitionStyle = .crossDissolve
     }
     
     required init?(coder: NSCoder) {
@@ -39,13 +42,21 @@ public final class CustomAlertController: UIViewController {
     
     public override func loadView() {
         super.loadView()
-        view = alertView
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        modalPresentationStyle = .overCurrentContext
-        modalTransitionStyle = .crossDissolve
+        setUpAlertViewConstraints()
+    }
+    
+    // MARK: - Setup
+    
+    private func setUpAlertViewConstraints() {
+        let constraints = [alertView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30),
+                           alertView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 47),
+                           alertView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -47)]
+        view.place(alertView, with: constraints)
     }
 
 }

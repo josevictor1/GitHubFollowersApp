@@ -9,5 +9,5 @@
 import Foundation
 
 protocol GetFollowersModel {
-    func fetchUser(with username: String, completion: @escaping ((Result<String, GetFollowersError>) -> Void))
+    func getFollowers(with username: String, completion: @escaping ((Result<[Follower], GetFollowersError>) -> Void))
 }

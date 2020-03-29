@@ -38,8 +38,10 @@ class CustomAlertView: UIView {
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .callout)
+        label.font = .preferredFont(forTextStyle: .caption1)
         label.adjustsFontForContentSizeCategory = true
+        label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
@@ -64,6 +66,7 @@ class CustomAlertView: UIView {
     // MARK: - Setup
     
     private func setUp(_ alert: Alert) {
+        setUpView()
         setUpTitleLabel(alert.title)
         setUpDescriptionLabel(alert.description)
         setUpConfirmButton(alert.buttonTitle)
@@ -71,9 +74,16 @@ class CustomAlertView: UIView {
     
     // MARK: - Constraints
     
+    private func setUpView() {
+        backgroundColor = .secondarySystemBackground
+        layer.cornerRadius = 16
+    }
+    
     private func setUpTitleLabel(_ title: String) {
         titleLabel.text = title
         let constraints = [titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
+                           titleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor),
+                           titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor),
                            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)]
         place(titleLabel, with: constraints)
     }
@@ -81,15 +91,17 @@ class CustomAlertView: UIView {
     private func setUpDescriptionLabel(_ description: String) {
         descriptionLabel.text = description
         let constraints = [descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 28),
-                           descriptionLabel.centerXAnchor.constraint(equalTo: centerXAnchor)]
+                           descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26),
+                           descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26)]
         place(descriptionLabel, with: constraints)
     }
     
     private func setUpConfirmButton(_ buttonTitle: String) {
         confirmButton.setTitle(buttonTitle, for: .normal)
-        let constraints = [confirmButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
-                           confirmButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-                           confirmButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20)]
+        let constraints = [confirmButton.topAnchor.constraint(greaterThanOrEqualTo: descriptionLabel.bottomAnchor, constant: 22),
+                           confirmButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+                           confirmButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+                           confirmButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)]
         place(confirmButton, with: constraints)
     }
     

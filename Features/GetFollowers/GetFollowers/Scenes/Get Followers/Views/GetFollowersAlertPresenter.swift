@@ -35,11 +35,13 @@ class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
         let title = "Something went wrong"
         let description = error.message.localizedMessage
         let buttonTitle = "Ok"
-        
+
         return Alert(title: title, description: description, buttonTitle: buttonTitle)
     }
     
     
+    /// Present an alert over current context.
+    /// - Parameter error: The error message to be presented.
     func present(_ error: GetFollowersError) {
         let viewController = CustomAlertController(alert: alert(to: error)) { [unowned self]  in
             self.alertController?.dismiss(animated: true)

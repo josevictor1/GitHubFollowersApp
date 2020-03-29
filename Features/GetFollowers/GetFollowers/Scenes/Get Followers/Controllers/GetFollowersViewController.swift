@@ -13,7 +13,7 @@ protocol GetFollowersViewControllerDelegate: AnyObject {
     
     /// Method called when `GetFollowersViewController` finishes to fetch users.
     /// - Parameter user: User fetched
-    func viewControllerDidFetchUser(_ user: String)
+    func viewControllerDidGotFollowers(_ followers: [Follower])
 }
 
 class GetFollowersViewController: UIViewController {
@@ -49,10 +49,10 @@ class GetFollowersViewController: UIViewController {
     /// - Parameter username: The username to be fetched
     private func fetchUser(with username: String?) {
         guard let username = username, !username.isEmpty else { return }
-        modelController?.fetchUser(with: username) { [unowned self] result in
+        modelController?.getFollowers(with: username) { [unowned self] result in
             switch result {
-            case .success(let username):
-                self.delegate?.viewControllerDidFetchUser(username)
+            case .success(let followers):
+                self.delegate?.viewControllerDidGotFollowers(followers)
             case .failure(let error):
                 self.presenter?.present(error)
             }

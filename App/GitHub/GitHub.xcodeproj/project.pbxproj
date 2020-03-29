@@ -18,7 +18,7 @@
 		1AA07525242C13E400DACD0A /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA07524242C13E400DACD0A /* UIComponents.framework */; };
 		1AA07526242C13E400DACD0A /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA07524242C13E400DACD0A /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48123240A08E50086B6BB /* MainCoordinator.swift */; };
-		1AA48130240C71440086B6BB /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA4812F240C71440086B6BB /* Localized.strings */; };
+		1AA48130240C71440086B6BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA4812F240C71440086B6BB /* Localizable.strings */; };
 		1AE20C112407390200867692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C102407390200867692 /* AppDelegate.swift */; };
 		1AE20C132407390200867692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C122407390200867692 /* SceneDelegate.swift */; };
 		1AE20C1A2407390300867692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C192407390300867692 /* Assets.xcassets */; };
@@ -68,7 +68,7 @@
 		1AA4811A240A060C0086B6BB /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA4811B240A060C0086B6BB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA48123240A08E50086B6BB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		1AA4812F240C71440086B6BB /* Localized.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localized.strings; sourceTree = "<group>"; };
+		1AA4812F240C71440086B6BB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1AE20C0D2407390200867692 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20C102407390200867692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE20C122407390200867692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				1AE20C192407390300867692 /* Assets.xcassets */,
 				1AE20C1B2407390300867692 /* LaunchScreen.storyboard */,
 				1AE20C1E2407390300867692 /* Info.plist */,
-				1AA4812F240C71440086B6BB /* Localized.strings */,
+				1AA4812F240C71440086B6BB /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA48130240C71440086B6BB /* Localized.strings in Resources */,
+				1AA48130240C71440086B6BB /* Localizable.strings in Resources */,
 				1AE20C1D2407390300867692 /* LaunchScreen.storyboard in Resources */,
 				1AE20C1A2407390300867692 /* Assets.xcassets in Resources */,
 			);
