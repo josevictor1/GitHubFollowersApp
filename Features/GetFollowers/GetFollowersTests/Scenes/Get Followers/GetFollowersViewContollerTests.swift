@@ -7,20 +7,20 @@
 //
 
 import XCTest
-@testable import GitHubFollowers
+@testable import GetFollowers
 
 class GetFollowersViewControllerTests: XCTestCase {
-
+    
     func testOnGetFollowersButtonTapped() {
         let sut = GetFollowersViewController()
-    
+        
         var getFollowersTapped = false
         let username = "test"
         var receivedUsername = String()
         
         sut.onGetFollowersButtonTapped = { userName in
             getFollowersTapped.toggle()
-            receivedUsername = userName
+            receivedUsername = userName ?? ""
         }
         
         sut.getFollowersView.onGetFollowersButtonTapped?(username)

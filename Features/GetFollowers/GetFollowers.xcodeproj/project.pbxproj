@@ -18,6 +18,7 @@
 		1A1C2F4D242E85F200096731 /* GetFollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F45242E85F200096731 /* GetFollowersView.swift */; };
 		1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */; };
 		1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */; };
+		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		1A1C2F45242E85F200096731 /* GetFollowersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersView.swift; sourceTree = "<group>"; };
 		1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenter.swift; sourceTree = "<group>"; };
 		1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersCoordinator.swift; sourceTree = "<group>"; };
+		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		1A1C2F2C242E859100096731 /* GetFollowersTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A94FD0A2431692B0095932A /* Scenes */,
 				1A1C2F2D242E859100096731 /* GetFollowersTests.swift */,
 				1A1C2F2F242E859100096731 /* Info.plist */,
 			);
@@ -156,6 +159,22 @@
 				1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1A94FD0A2431692B0095932A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1A94FD0B243169330095932A /* Get Followers */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1A94FD0B243169330095932A /* Get Followers */ = {
+			isa = PBXGroup;
+			children = (
+				1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */,
+			);
+			path = "Get Followers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */,
 				1A1C2F2E242E859100096731 /* GetFollowersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
