@@ -30,11 +30,10 @@ public extension Coordinator {
     /// Remove child coordinator.
     /// - Parameter child: Coordinator to be removed from children.
     func childDidFinish(_ child: Coordinator?) {
-        for (index, coordinator) in children.enumerated() {
-            if coordinator === child {
+        for (index, coordinator) in children.enumerated()
+            where coordinator === child {
                 children.remove(at: index)
                 break
-            }
         }
     }
 }
