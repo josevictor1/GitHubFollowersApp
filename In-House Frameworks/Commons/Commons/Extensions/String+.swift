@@ -25,11 +25,7 @@ public extension String {
                    bundle: Bundle = .main,
                    value: String = String(),
                    comment: String = String()) -> String {
-        NSLocalizedString(self,
-                          tableName: tableName,
-                          bundle: bundle,
-                          value: value,
-                          comment: comment)
+        NSLocalizedString(self, tableName: tableName, bundle: bundle, value: value, comment: comment)
     }
 
 }
