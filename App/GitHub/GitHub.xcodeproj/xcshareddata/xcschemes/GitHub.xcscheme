@@ -49,6 +49,46 @@
                ReferencedContainer = "container:GitHub.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1AE20BF22407361C00867692"
+               BuildableName = "CommonsTests.xctest"
+               BlueprintName = "CommonsTests"
+               ReferencedContainer = "container:../../In-House Frameworks/Commons/Commons.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1AE20C552407404000867692"
+               BuildableName = "CoreTests.xctest"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:../../In-House Frameworks/Core/Core.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1A1C2F27242E859100096731"
+               BuildableName = "GetFollowersTests.xctest"
+               BlueprintName = "GetFollowersTests"
+               ReferencedContainer = "container:../../Features/GetFollowers/GetFollowers.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1AF58A34242BC19D00275733"
+               BuildableName = "UIComponentsTests.xctest"
+               BlueprintName = "UIComponentsTests"
+               ReferencedContainer = "container:../../In-House Frameworks/UIComponents/UIComponents.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

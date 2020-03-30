@@ -22,7 +22,7 @@ class MainCoordinator: Coordinator {
 
     /// Create a `MainCoordinator` object  with and set the `rootViewController`.
     /// - Parameters:
-    ///   - window: The host `UIWindow` that holds `navigationController` as  `rootViewController`
+    ///   - window: The host `UIWindow` that holds a `UITabBarController` as  `rootViewController`
     init(window: UIWindow) {
         tabBarController = UITabBarController()
         window.rootViewController = tabBarController

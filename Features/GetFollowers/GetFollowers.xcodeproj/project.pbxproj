@@ -18,6 +18,9 @@
 		1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */; };
 		1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */; };
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
+		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
+		1A94FD1524327C3D0095932A /* GetFollowersModelControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */; };
+		1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenter.swift; sourceTree = "<group>"; };
 		1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersCoordinator.swift; sourceTree = "<group>"; };
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
+		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
+		1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersModelControllerMock.swift; sourceTree = "<group>"; };
+		1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerDelegateMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,9 +175,36 @@
 		1A94FD0B243169330095932A /* Get Followers */ = {
 			isa = PBXGroup;
 			children = (
-				1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */,
+				1A94FD1B24329EA20095932A /* Model */,
+				1A94FD0F24326FC40095932A /* Mocks */,
+				1A94FD1A24329E630095932A /* Controllers */,
 			);
 			path = "Get Followers";
+			sourceTree = "<group>";
+		};
+		1A94FD0F24326FC40095932A /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */,
+				1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */,
+				1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		1A94FD1A24329E630095932A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1A94FD1B24329EA20095932A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A94FD1524327C3D0095932A /* GetFollowersModelControllerMock.swift in Sources */,
 				1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */,
+				1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */,
+				1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

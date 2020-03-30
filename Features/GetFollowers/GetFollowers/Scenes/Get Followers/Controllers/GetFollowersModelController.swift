@@ -11,3 +11,11 @@ import Foundation
 protocol GetFollowersModel {
     func getFollowers(with username: String, completion: @escaping ((Result<[Follower], GetFollowersError>) -> Void))
 }
+
+class GetFollowersModelController: GetFollowersModel {
+    
+    func getFollowers(with username: String, completion: @escaping ((Result<[Follower], GetFollowersError>) -> Void)) {
+        
+    }
+
+}

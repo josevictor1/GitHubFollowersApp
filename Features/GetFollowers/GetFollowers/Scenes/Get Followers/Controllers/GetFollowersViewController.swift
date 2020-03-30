@@ -58,7 +58,6 @@ class GetFollowersViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension GetFollowersViewController {
