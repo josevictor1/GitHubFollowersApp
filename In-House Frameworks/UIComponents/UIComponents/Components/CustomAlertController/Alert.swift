@@ -13,11 +13,10 @@ public struct Alert {
     let title: String
     let description: String
     let buttonTitle: String
-    
+
     public init(title: String, description: String, buttonTitle: String) {
         self.title = title
         self.description = description
         self.buttonTitle = buttonTitle
     }
 }
-

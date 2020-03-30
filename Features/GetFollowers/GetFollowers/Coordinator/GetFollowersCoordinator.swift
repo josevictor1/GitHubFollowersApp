@@ -12,31 +12,31 @@ import Core
 import UIKit
 
 public class GetFollowersCoordinator: NavigationCoordinator {
-    
+
     // MARK: - Properties
-    
+
     public var parent: Coordinator?
     public var children: [Coordinator] = []
     public var navigationController: UINavigationController?
-    
+
     // MARK: - Intitializer
-    
+
     public required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+
     // MARK: - Life Cycle
-    
+
     public func start() {
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigateToGetFollowers()
     }
-    
+
     // MARK: - Navigation
-    
+
     private func navigateToGetFollowers() {
         let viewController: GetFollowersViewController = .makeGetFollowers()
         navigationController?.pushViewController(viewController, animated: false)
     }
-    
+
 }

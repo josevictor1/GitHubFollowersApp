@@ -9,12 +9,12 @@
 import UIKit
 
 public extension UIViewController {
-    
+
     /// Embed a view controller as a child on the view.
     /// - Parameter child: The `UIViewController` to be added.
     func install(_ child: UIViewController) {
         view.embed(child.view)
         didMove(toParent: self)
     }
-    
+
 }

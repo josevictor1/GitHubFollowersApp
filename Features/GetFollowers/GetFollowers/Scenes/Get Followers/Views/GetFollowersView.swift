@@ -9,31 +9,31 @@
 import UIKit
 
 public final class GetFollowersView: UIView {
-    
+
     // MARK: - Closures
-    
+
     var onGetFollowersButtonTapped: ((String?) -> Void)?
-    
+
     // MARK: - Initializers
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Subviews
-    
+
     private lazy var logoImageView: UIImageView = {
         let image = UIImage(named: "gh-logo", in: .main, with: nil)
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
+
     private lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter Username"
@@ -47,7 +47,7 @@ public final class GetFollowersView: UIView {
         textField.layer.masksToBounds = true
         return textField
     }()
-    
+
     private lazy var getFollowersButton: UIButton = {
         let button = UIButton()
         button.setTitle("Get Followers", for: .normal)
@@ -63,24 +63,24 @@ public final class GetFollowersView: UIView {
         button.addTarget(self, action: #selector(getFollowersButtonTapped), for: .touchUpInside)
         return button
     }()
-    
+
     // MARK: - Actions
-    
+
     @objc private func getFollowersButtonTapped() {
         onGetFollowersButtonTapped?(usernameTextField.text)
     }
-    
+
     // MARK: - Setup
-    
+
     private func setUp() {
         setUpLogoImageView()
         setUpUsernameTextField()
         setUpGetFollowersButton()
         backgroundColor = .systemBackground
     }
-    
+
     // MARK: - Constraints
-    
+
     private func setUpLogoImageView() {
         let constraints = [logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 70),
                            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 77),
@@ -88,22 +88,29 @@ public final class GetFollowersView: UIView {
                            logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 200)]
         place(logoImageView, with: constraints)
     }
-    
+
     private func setUpUsernameTextField() {
-        let constraints = [usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 53),
-                           usernameTextField.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 31),
-                           usernameTextField.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -31),
+        let constraints = [usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor,
+                                                                  constant: 53),
+                           usernameTextField.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
+                                                                      constant: 31),
+                           usernameTextField.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor,
+                                                                       constant: -31),
                            usernameTextField.heightAnchor.constraint(greaterThanOrEqualToConstant: 62)]
         place(usernameTextField, with: constraints)
     }
-    
+
     private func setUpGetFollowersButton() {
-        let constraints = [getFollowersButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 31),
-                           getFollowersButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -31),
-                           getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -31),
+        let constraints = [getFollowersButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
+                                                                       constant: 31),
+                           getFollowersButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor,
+                                                                        constant: -31),
+                           getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor,
+                                                                      constant: -31),
                            getFollowersButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 62),
-                           getFollowersButton.topAnchor.constraint(greaterThanOrEqualTo: usernameTextField.bottomAnchor, constant: 10)]
+                           getFollowersButton.topAnchor.constraint(greaterThanOrEqualTo: usernameTextField.bottomAnchor,
+                                                                   constant: 10)]
         place(getFollowersButton, with: constraints)
     }
-    
+
 }

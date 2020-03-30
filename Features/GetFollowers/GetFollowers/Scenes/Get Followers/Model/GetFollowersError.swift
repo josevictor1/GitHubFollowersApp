@@ -12,7 +12,7 @@ import Commons
 enum GetFollowersError: Error {
     case invalidUsername
     case requestFail
-    
+
     var message: ErrorMessage {
         switch self {
         case .invalidUsername:

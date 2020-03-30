@@ -11,15 +11,15 @@ import Core
 import GetFollowers
 
 class MainCoordinator: Coordinator {
-    
+
     // MARK: - Properties
-    
+
     var parent: Coordinator?
     var children: [Coordinator] = []
     private var tabBarController: UITabBarController?
 
     // MARK: - Initializers
-    
+
     /// Create a `MainCoordinator` object  with and set the `rootViewController`.
     /// - Parameters:
     ///   - window: The host `UIWindow` that holds `navigationController` as  `rootViewController`
@@ -33,11 +33,13 @@ class MainCoordinator: Coordinator {
         tabBarController?.viewControllers = [setUpSearchFollowersTab()]
         tabBarController?.tabBar.tintColor = UIColor(red: 45/255, green: 186/255, blue: 78/255, alpha: 1)
     }
-    
+
     private func setUpSearchFollowersTab() -> UIViewController {
         let coordinator: GetFollowersCoordinator = .instantiate()
         children.append(coordinator)
-        coordinator.navigationController?.tabBarItem = UITabBarItem(title: "Search", image: UIImage(named: "magnifyingglass"), tag: 0)
+        coordinator.navigationController?.tabBarItem = UITabBarItem(title: "Search",
+                                                                    image: UIImage(named: "magnifyingglass"),
+                                                                    tag: 0)
         coordinator.start()
         return coordinator.navigationController!
     }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A1C2F29242E859100096731 /* GetFollowers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F1F242E859100096731 /* GetFollowers.framework */; };
-		1A1C2F2E242E859100096731 /* GetFollowersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F2D242E859100096731 /* GetFollowersTests.swift */; };
 		1A1C2F30242E859100096731 /* GetFollowers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1C2F22242E859100096731 /* GetFollowers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A1C2F48242E85F200096731 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F3E242E85F200096731 /* User.swift */; };
 		1A1C2F49242E85F200096731 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F3F242E85F200096731 /* Follower.swift */; };
@@ -36,7 +35,6 @@
 		1A1C2F22242E859100096731 /* GetFollowers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetFollowers.h; sourceTree = "<group>"; };
 		1A1C2F23242E859100096731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A1C2F28242E859100096731 /* GetFollowersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetFollowersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A1C2F2D242E859100096731 /* GetFollowersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersTests.swift; sourceTree = "<group>"; };
 		1A1C2F2F242E859100096731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A1C2F3E242E85F200096731 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1A1C2F3F242E85F200096731 /* Follower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				1A94FD0A2431692B0095932A /* Scenes */,
-				1A1C2F2D242E859100096731 /* GetFollowersTests.swift */,
 				1A1C2F2F242E859100096731 /* Info.plist */,
 			);
 			path = GetFollowersTests;
@@ -302,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */,
-				1A1C2F2E242E859100096731 /* GetFollowersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
