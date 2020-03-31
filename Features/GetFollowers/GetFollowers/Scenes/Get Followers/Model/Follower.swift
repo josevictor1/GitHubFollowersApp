@@ -11,4 +11,9 @@ import Foundation
 struct Follower {
     let photo: String
     let login: String
+    
+    init(response: FollowerAPIResponse) {
+        self.login = response.login
+        self.photo = response.avatarURL
+    }
 }

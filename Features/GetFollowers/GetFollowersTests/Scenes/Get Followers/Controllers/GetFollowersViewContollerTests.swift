@@ -30,7 +30,6 @@ class GetFollowersViewControllerTests: XCTestCase {
     }
     
     func testGetFollowersFailWithRequestFailMessage() {
-   
         let modelControllerMock = GetFollowersModelControllerMock()
         let alertPresenterMock = GetFollowersAlertPresenterMock()
         
@@ -66,7 +65,6 @@ class GetFollowersViewControllerTests: XCTestCase {
     }
     
     func testGetFollowersSucess() {
-        
         let delegateMock = GetFollowersViewControllerDelegateMock()
         let modelControllerMock = GetFollowersModelControllerMock()
         let sut = makeSUT(modelController: modelControllerMock)

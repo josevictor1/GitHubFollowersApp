@@ -12,6 +12,15 @@ import Commons
 enum GetFollowersError: Error {
     case invalidUsername
     case requestFail
+    
+    init(_ error: NSError) {
+        switch error.code {
+        case 403:
+            self = .invalidUsername
+        default:
+            self = .requestFail
+        }
+    }
 
     var message: ErrorMessage {
         switch self {

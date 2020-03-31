@@ -14,7 +14,7 @@ class GetFollowersModelControllerMock: GetFollowersModel {
     var error: GetFollowersError = .requestFail
     var followers: [Follower]?
     
-    func getFollowers(with username: String, completion: @escaping ((Result<[Follower], GetFollowersError>) -> Void)) {
+    func getFollowers(of username: String, completion: @escaping ((Result<[Follower], GetFollowersError>) -> Void)) {
         guard let followers = followers else { return completion(.failure(error)) }
         completion(.success(followers))
     }
