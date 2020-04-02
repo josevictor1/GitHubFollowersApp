@@ -10,14 +10,31 @@ import XCTest
 @testable import GetFollowers
 
 class GetFollowersViewControllerTests: XCTestCase {
-
+    
+    // MARK: - Mocks
+    
+    let modelControllerMock = GetFollowersModelControllerMock()
+    let alertPresenterMock = GetFollowersAlertPresenterMock()
+    let delegateMock = GetFollowersViewControllerDelegateMock()
+    
+    // MARK: - SUT Factory
+    
+    func makeSUT() -> GetFollowersViewController {
+        let viewController = GetFollowersViewController()
+        viewController.modelController = modelControllerMock
+        viewController.presenter = alertPresenterMock
+        viewController.delegate = delegateMock
+        return viewController
+    }
+    
+    // MARK: - Tests
+    
     func testOnGetFollowersButtonTapped() {
-        let sut: GetFollowersViewController = .makeGetFollowers()
+        let sut = makeSUT()
 
         var getFollowersTapped = false
         let username = "test"
         var receivedUsername = String()
-
         sut.onGetFollowersButtonTapped = { userName in
             getFollowersTapped.toggle()
             receivedUsername = userName ?? ""
@@ -30,44 +47,36 @@ class GetFollowersViewControllerTests: XCTestCase {
     }
     
     func testGetFollowersFailWithRequestFailMessage() {
-        let modelControllerMock = GetFollowersModelControllerMock()
-        let alertPresenterMock = GetFollowersAlertPresenterMock()
+        let sut = makeSUT()
         
         var presentedError: GetFollowersError?
         alertPresenterMock.onAlertPresented = { error in
             presentedError = error
         }
-        
-        let sut = makeSUT(modelController: modelControllerMock, presenter: alertPresenterMock)
-
         let username = "test"
+        
         sut.onGetFollowersButtonTapped(username)
 
         XCTAssertEqual(presentedError, .requestFail, "The alert should be presented with request fail error")
     }
     
     func testGetFollowersFailWithIvalidUsernameMessage() {
-        let modelControllerMock = GetFollowersModelControllerMock()
-        let alertPresenterMock = GetFollowersAlertPresenterMock()
-        modelControllerMock.error = .invalidUsername
+        let sut = makeSUT()
         
+        modelControllerMock.error = .invalidUsername
         var presentedError: GetFollowersError?
         alertPresenterMock.onAlertPresented = { error in
             presentedError = error
         }
+        let username = "test"
         
-        let sut = makeSUT(modelController: modelControllerMock, presenter: alertPresenterMock)
-        
-        let username = "teste"
         sut.onGetFollowersButtonTapped(username)
         
         XCTAssertEqual(presentedError, .invalidUsername, "The alert should be presented with invalid username error")
     }
     
     func testGetFollowersSucess() {
-        let delegateMock = GetFollowersViewControllerDelegateMock()
-        let modelControllerMock = GetFollowersModelControllerMock()
-        let sut = makeSUT(modelController: modelControllerMock)
+        let sut = makeSUT()
         
         modelControllerMock.followers = []
         sut.delegate = delegateMock
@@ -76,15 +85,6 @@ class GetFollowersViewControllerTests: XCTestCase {
         sut.onGetFollowersButtonTapped(username)
         
         XCTAssertTrue(delegateMock.didViewControllerGotFollowers, "The delegate shold be called")
-    }
-    
-    
-    func makeSUT(modelController: GetFollowersModel = GetFollowersModelControllerMock(),
-                 presenter: GetFollowersAlertPresenterProtocol = GetFollowersAlertPresenterMock()) -> GetFollowersViewController {
-        let viewController = GetFollowersViewController()
-        viewController.modelController = modelController
-        viewController.presenter = presenter
-        return viewController
     }
     
 }

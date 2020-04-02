@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+public typealias Header = [String: String]
+
+public protocol Endpoint {
+    
+    var header: Header? { get set }
+    
+    var method: HTTPMethod { get set }
+    
+    var path: String { get set }
+    
+    var scheme: String { get set }
+    
+    var host: String { get set }
+    
+}
