@@ -10,6 +10,9 @@
 		1A94FD3B2433CA690095932A /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A94FD312433CA690095932A /* Networking.framework */; };
 		1A94FD402433CA690095932A /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD3F2433CA690095932A /* NetworkingTests.swift */; };
 		1A94FD422433CA690095932A /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A94FD342433CA690095932A /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A94FD4E243404B30095932A /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD4D243404B30095932A /* NetworkProvider.swift */; };
+		1A94FD5024352A110095932A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD4F24352A110095932A /* Endpoint.swift */; };
+		1A94FD5224352CB80095932A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD5124352CB80095932A /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		1A94FD3A2433CA690095932A /* NetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A94FD3F2433CA690095932A /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		1A94FD412433CA690095932A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A94FD4D243404B30095932A /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		1A94FD4F24352A110095932A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		1A94FD5124352CB80095932A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 			children = (
 				1A94FD342433CA690095932A /* Networking.h */,
 				1A94FD352433CA690095932A /* Info.plist */,
+				1A94FD4D243404B30095932A /* NetworkProvider.swift */,
+				1A94FD4F24352A110095932A /* Endpoint.swift */,
+				1A94FD5124352CB80095932A /* HTTPMethod.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -148,6 +157,7 @@
 				TargetAttributes = {
 					1A94FD302433CA690095932A = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 					1A94FD392433CA690095932A = {
 						CreatedOnToolsVersion = 11.4;
@@ -195,6 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A94FD5024352A110095932A /* Endpoint.swift in Sources */,
+				1A94FD4E243404B30095932A /* NetworkProvider.swift in Sources */,
+				1A94FD5224352CB80095932A /* HTTPMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,6 +353,7 @@
 		1A94FD462433CA690095932A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
@@ -356,6 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jvpc.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +379,7 @@
 		1A94FD472433CA690095932A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
@@ -388,6 +404,7 @@
 		1A94FD492433CA690095932A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = NetworkingTests/Info.plist;
@@ -406,6 +423,7 @@
 		1A94FD4A2433CA690095932A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = NetworkingTests/Info.plist;
