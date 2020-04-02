@@ -10,12 +10,23 @@ import XCTest
 @testable import GetFollowers
 
 class GetFollowersModelControllerTests: XCTestCase {
-
+    
+    // MARK: - Mocks
+    
+    let followersProviderMock = FollowersServiceMock()
+    
+    // MARK: - SUT Factory
+    
+    func makeSUT() -> GetFollowersModelController {
+        GetFollowersModelController(provider: followersProviderMock)
+    }
+    
+    // MARK: - Tests
+    
     func testGetFollowersWithSuccess() {
-        let provider = FollowersServiceMock()
-        provider.followers = []
-        let sut = GetFollowersModelController(provider: provider)
+        let sut = makeSUT()
         
+        followersProviderMock.followers = []
         var receivedFollowers: [Follower]?
         
         sut.getFollowers(of: "test") { result in
@@ -31,12 +42,10 @@ class GetFollowersModelControllerTests: XCTestCase {
     }
     
     func testGetFollowersWithInvalidUser() {
+        let sut = makeSUT()
+        
         let error = NSError(domain: "Not Found", code: 403, userInfo: nil)
-        let provider = FollowersServiceMock()
-        provider.error = error
-        
-        let sut = GetFollowersModelController(provider: provider)
-        
+        followersProviderMock.error = error
         var receivedError: GetFollowersError?
         
         sut.getFollowers(of: "test") { result in
@@ -52,12 +61,10 @@ class GetFollowersModelControllerTests: XCTestCase {
     }
     
     func testGetFollowersWithRequestFail() {
+        let sut = makeSUT()
+        
         let error = NSError(domain: "Internal Server Error", code: 500, userInfo: nil)
-        let provider = FollowersServiceMock()
-        provider.error = error
-        
-        let sut = GetFollowersModelController(provider: provider)
-        
+        followersProviderMock.error = error
         var receivedError: GetFollowersError?
         
         sut.getFollowers(of: "test") { result in
@@ -72,5 +79,4 @@ class GetFollowersModelControllerTests: XCTestCase {
         XCTAssertEqual(receivedError, .requestFail, "The received error should be request fail")
     }
     
-
 }
