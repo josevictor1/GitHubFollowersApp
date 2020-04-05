@@ -8,4 +8,6 @@
 
 import Foundation
 
-enum NetworkingError: Error { }
+enum NetworkingError: Error {
+    case invalidURL
+}

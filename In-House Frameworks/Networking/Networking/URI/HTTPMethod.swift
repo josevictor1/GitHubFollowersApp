@@ -9,13 +9,13 @@
 import Foundation
 
 /// Request method to indicate the desired action to be perform fo a give resource.
-public enum HTTPMethod {
-    case get
-    case post
-    case put
-    case patch
-    case delete
-    case head
-    case options
-    case trace
+public enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case patch = "PATCH"
+    case delete = "DELETE"
+    case head = "HEAD"
+    case options = "OPTIONS"
+    case trace = "TRACE"
 }

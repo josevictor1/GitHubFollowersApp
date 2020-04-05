@@ -11,20 +11,19 @@ import Foundation
 
 class RequestMock: Request {
     
-    var method: HTTPMethod {
-        .get
-    }
+    var method: HTTPMethod { .get }
     
-    var endpoint: Endpoint {
-        Endpoint(path: "/test",
-                 scheme: "http",
-                 host: "test.com")
-    }
+    var scheme: URIScheme { .http }
     
+    var path: String { "/test" }
+    
+    var host: String { "www.teste.com" }
+
     var body: Encodable?
     
-    var header: Header {
-        Header()
-    }
+    var queryString: QueryString?
+    
+    var header: Header?
     
 }
+

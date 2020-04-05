@@ -10,19 +10,31 @@ import Foundation
 
 public typealias Header = [String: String]
 
+public typealias QueryString = [String: Any]
+
 /// A type that conatins all necessary information for an HTTP request.
 public protocol Request {
     
-    /// Attribute that defines the request http method.
+    /// The attribute that defines the request http method.
     var method: HTTPMethod { get }
     
-    /// Attribute that define the request endpoint address.
-    var endpoint: Endpoint { get }
+    var scheme: URIScheme { get }
     
-    /// Attribute containg the request data to be sent.
+    var host: String { get }
+    
+    /// The attribute that defines the base URL, endpoint.
+    var baseURL: String { get }
+    
+    /// The attribute that defines the URL path.
+    var path: String { get }
+    
+    /// The attribute containg the request data to be sent.
     var body: Encodable? { get set }
     
-    /// Attribute that define the necessary headers.
-    var header: Header { get }
+    /// The attribute that defines the request.
+    var queryString: QueryString? { get }
+    
+    /// The attribute that define the necessary headers.
+    var header: Header? { get }
     
 }
