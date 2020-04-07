@@ -15,11 +15,13 @@ public struct Endpoint {
     
     /// Attribute that idetify a resource within the scope
     /// of the URI's scheme and naming authority (if any).
-    var path: String
+    let path: String
     
     /// Attribute that idicates which protocol should be used, i.e `http`.
-    var scheme: String
+    let scheme: URIScheme
     
     /// Attribute that identify the service `host`.
-    var host: String
+    let host: String
+    
+    let queryStrings: [String: String]?
 }

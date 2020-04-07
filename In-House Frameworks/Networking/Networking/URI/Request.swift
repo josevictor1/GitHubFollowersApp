@@ -10,7 +10,7 @@ import Foundation
 
 public typealias Header = [String: String]
 
-public typealias QueryString = [String: Any]
+public typealias QueryString = [String: String]
 
 /// A type that conatins all necessary information for an HTTP request.
 public protocol Request {
@@ -21,9 +21,6 @@ public protocol Request {
     var scheme: URIScheme { get }
     
     var host: String { get }
-    
-    /// The attribute that defines the base URL, endpoint.
-    var baseURL: String { get }
     
     /// The attribute that defines the URL path.
     var path: String { get }

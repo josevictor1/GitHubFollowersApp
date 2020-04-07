@@ -12,10 +12,10 @@ import XCTest
 class RequestBuilderTests: XCTestCase {
     
     func testBuildURLRequestFromRequest() throws {
-        let sut = RequestBuilder()
+        let sut = URLRequestCreator()
         let requestMock = RequestMock()
         
-        let urlRequest = try sut.buildURLRequest(from: requestMock)
+        let urlRequest = try sut.createURLRequest(from: requestMock)
         
         XCTAssertNotNil(urlRequest)
     }
