@@ -9,15 +9,18 @@
 import Foundation
 @testable import Networking
 
-class RequestMock: Request {
+struct RequestMock: Request {
+    
+    var urlPath = "/test"
+    var urlHost = "www.teste.com"
     
     var method: HTTPMethod { .get }
     
     var scheme: URIScheme { .http }
     
-    var path: String { "/test" }
+    var path: String { urlPath }
     
-    var host: String { "www.teste.com" }
+    var host: String { urlHost }
 
     var body: Encodable?
     

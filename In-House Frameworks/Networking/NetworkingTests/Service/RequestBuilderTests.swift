@@ -36,5 +36,19 @@ class RequestBuilderTests: XCTestCase {
         
         XCTAssertNotNil(urlRequest)
     }
+    
+    func testCreateURLRequestFromRequestWithInvialidURL() {
+        let sut = URLRequestCreator()
+        let randomString = "...---"
+        requestMock.urlHost = randomString
+        requestMock.urlPath = randomString
+        
+        XCTAssertThrowsError(try sut.createURLRequest(from: requestMock)) { error in
+            guard let networkingError = error as? NetworkingError else {
+                return XCTFail()
+            }
+            XCTAssertEqual(networkingError, .invalidURL)
+        }
+    }
 
 }
