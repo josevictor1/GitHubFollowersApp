@@ -11,9 +11,26 @@ import XCTest
 
 class RequestBuilderTests: XCTestCase {
     
-    func testBuildURLRequestFromRequest() throws {
+    var requestMock = RequestMock()
+    
+    func testCreateEndPoint() {
         let sut = URLRequestCreator()
-        let requestMock = RequestMock()
+        
+        let endpoint = sut.creatEndpoint(from: requestMock)
+        
+        XCTAssertNotNil(endpoint)
+    }
+    
+    func testCreateURL() throws {
+        let sut = URLRequestCreator()
+        
+        let url = try sut.createURLRequest(from: requestMock)
+        
+        XCTAssertNotNil(url)
+    }
+    
+    func testCreateURLRequestFromRequest() throws {
+        let sut = URLRequestCreator()
         
         let urlRequest = try sut.createURLRequest(from: requestMock)
         

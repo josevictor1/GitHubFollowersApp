@@ -9,7 +9,6 @@
 import Foundation
 
 public typealias Header = [String: String]
-
 public typealias QueryString = [String: String]
 
 /// A type that conatins all necessary information for an HTTP request.

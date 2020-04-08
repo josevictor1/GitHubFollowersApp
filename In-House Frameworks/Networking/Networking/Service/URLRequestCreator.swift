@@ -16,23 +16,28 @@ class URLRequestCreator {
         self.encoder = encoder
     }
     
-    
-    func endpoint(from request: Request) -> Endpoint {
+    func creatEndpoint(from request: Request) -> Endpoint {
         Endpoint(path: request.path,
                  scheme: request.scheme,
                  host: request.host,
                  queryStrings: request.queryString)
     }
     
+    func createURL(from request: Request) -> URL? {
+        let endpoint = creatEndpoint(from: request)
+        let components = URLComponents(endpoint: endpoint)
+        return components.url
+    }
+    
     func createURLRequest(from request: Request) throws -> URLRequest {
-        let components = URLComponents(endpoint: endpoint(from: request))
-        guard let url = components.url else { throw NetworkingError.invalidURL }
+        guard let url = createURL(from: request) else {
+            throw NetworkingError.invalidURL
+        }
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpBody = request.body?.encode()
         urlRequest.allHTTPHeaderFields = request.header
         return urlRequest
     }
-    
-    
 
 }

@@ -10,7 +10,7 @@ import Foundation
 @testable import Networking
 
 class RequestMock: Request {
-
+    
     var method: HTTPMethod { .get }
     
     var scheme: URIScheme { .http }
