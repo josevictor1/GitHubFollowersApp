@@ -13,22 +13,6 @@ class RequestBuilderTests: XCTestCase {
     
     var requestMock = RequestMock()
     
-    func testCreateEndPoint() {
-        let sut = URLRequestCreator()
-        
-        let endpoint = sut.creatEndpoint(from: requestMock)
-        
-        XCTAssertNotNil(endpoint)
-    }
-    
-    func testCreateURL() {
-        let sut = URLRequestCreator()
-        
-        let url = sut.createURL(from: requestMock)
-        
-        XCTAssertNotNil(url)
-    }
-    
     func testCreateURLRequestFromRequest() throws {
         let sut = URLRequestCreator()
         
@@ -37,6 +21,7 @@ class RequestBuilderTests: XCTestCase {
         XCTAssertNotNil(urlRequest)
     }
     
+    
     func testCreateURLRequestFromRequestWithInvialidURL() {
         let sut = URLRequestCreator()
         let randomString = "...---"
@@ -44,11 +29,9 @@ class RequestBuilderTests: XCTestCase {
         requestMock.urlPath = randomString
         
         XCTAssertThrowsError(try sut.createURLRequest(from: requestMock)) { error in
-            guard let networkingError = error as? NetworkingError else {
-                return XCTFail()
-            }
-            XCTAssertEqual(networkingError, .invalidURL)
+            XCTAssertEqual(error as! NetworkingError, .invalidURL)
         }
     }
-
+    
 }
+ 

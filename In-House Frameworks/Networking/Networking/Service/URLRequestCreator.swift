@@ -10,33 +10,37 @@ import Foundation
 
 class URLRequestCreator {
     
-    let encoder: JSONEncoder
+    private let encoder: JSONEncoder
     
     init(encoder: JSONEncoder = JSONEncoder()) {
         self.encoder = encoder
     }
     
-    func creatEndpoint(from request: Request) -> Endpoint {
-        Endpoint(path: request.path,
-                 scheme: request.scheme,
-                 host: request.host,
-                 queryStrings: request.queryString)
-    }
-    
-    func createURL(from request: Request) -> URL? {
-        let endpoint = creatEndpoint(from: request)
-        let components = URLComponents(endpoint: endpoint)
-        return components.url
+    func encode(_ encodable: Encodable?) throws -> Data? {
+        guard let encodable = encodable else { return nil }
+        do {
+            let encodable = AnyEncodable(encodable)
+            return try encoder.encode(encodable)
+        } catch {
+            throw NetworkingError.encodingError(error)
+        }
     }
     
     func createURLRequest(from request: Request) throws -> URLRequest {
-        guard let url = createURL(from: request) else {
-            throw NetworkingError.invalidURL
-        }
+        
+        let endpoint = Endpoint(path: request.path,
+                                scheme: request.scheme,
+                                host: request.host,
+                                queryStrings: request.queryString)
+        
+        let components = URLComponents(endpoint: endpoint)
+        
+        guard let url = components.url else { throw NetworkingError.invalidURL }
         
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpBody = request.body?.encode()
+        urlRequest.httpBody = try encode(request.body)
         urlRequest.allHTTPHeaderFields = request.header
+        
         return urlRequest
     }
 

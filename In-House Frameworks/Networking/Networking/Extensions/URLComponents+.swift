@@ -15,8 +15,7 @@ extension URLComponents {
         scheme = endpoint.scheme.rawValue
         host = endpoint.host
         path = endpoint.path
-        queryItems = endpoint.queryStrings?.map({ URLQueryItem(name: $0.key,
-                                                               value: $0.value) })
+        queryItems = endpoint.queryItem
     }
     
 }

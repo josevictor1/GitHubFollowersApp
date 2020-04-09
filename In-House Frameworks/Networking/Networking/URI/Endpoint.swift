@@ -24,4 +24,8 @@ public struct Endpoint {
     let host: String
     
     let queryStrings: [String: String]?
+    
+    var queryItem: [URLQueryItem] {
+        queryStrings?.map({ URLQueryItem(name: $0.key, value: $0.value) }) ?? []
+    }
 }

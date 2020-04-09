@@ -1,0 +1,70 @@
+{
+  "configurations" : [
+    {
+      "id" : "79E6D69C-A246-42B8-BF95-48DDEA2732C5",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:GitHub.xcodeproj",
+      "identifier" : "1AE20C0C2407390200867692",
+      "name" : "GitHub"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:GitHub.xcodeproj",
+        "identifier" : "1AE20C222407390400867692",
+        "name" : "GitHubTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:GitHub.xcodeproj",
+        "identifier" : "1AE20C2D2407390400867692",
+        "name" : "GitHubUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/In-House Frameworks\/Commons\/Commons.xcodeproj",
+        "identifier" : "1AE20BF22407361C00867692",
+        "name" : "CommonsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/In-House Frameworks\/Core\/Core.xcodeproj",
+        "identifier" : "1AE20C552407404000867692",
+        "name" : "CoreTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/Features\/GetFollowers\/GetFollowers.xcodeproj",
+        "identifier" : "1A1C2F27242E859100096731",
+        "name" : "GetFollowersTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/In-House Frameworks\/UIComponents\/UIComponents.xcodeproj",
+        "identifier" : "1AF58A34242BC19D00275733",
+        "name" : "UIComponentsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/In-House Frameworks\/Networking\/Networking.xcodeproj",
+        "identifier" : "1A94FD392433CA690095932A",
+        "name" : "NetworkingTests"
+      }
+    }
+  ],
+  "version" : 1
+}
