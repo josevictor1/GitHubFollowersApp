@@ -8,7 +8,11 @@
 
 import Foundation
 
-class URLRequestCreator {
+protocol URLRequestProvider {
+    func createURLRequest(from request: Request) throws -> URLRequest
+}
+
+class URLRequestCreator: URLRequestProvider {
     
     private let encoder: JSONEncoder
     
@@ -22,7 +26,7 @@ class URLRequestCreator {
             let encodable = AnyEncodable(encodable)
             return try encoder.encode(encodable)
         } catch {
-            throw NetworkingError.encodingError(error)
+            throw NetworkingError.encoding(error)
         }
     }
     

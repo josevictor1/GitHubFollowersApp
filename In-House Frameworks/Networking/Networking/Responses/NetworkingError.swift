@@ -10,5 +10,10 @@ import Foundation
 
 enum NetworkingError: Error {
     case invalidURL
-    case encodingError(_ error: Error)
+    case unknown
+    case parseHTTPResponseFail
+    case encoding(_ error: Error)
+    case redirection(_ error: Error, response: NetworkingResponse?)
+    case server(_ error: Error, response: NetworkingResponse?)
+    case client(_ error: Error, response: NetworkingResponse?)
 }

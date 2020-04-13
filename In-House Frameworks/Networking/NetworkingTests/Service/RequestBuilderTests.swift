@@ -12,18 +12,30 @@ import XCTest
 class RequestBuilderTests: XCTestCase {
     
     var requestMock = RequestMock()
+    var bodyMock = EncodableMock()
+    
+    func makeSUT() -> URLRequestCreator {
+        URLRequestCreator()
+    }
+    
+    func testEcoding() throws {
+        let sut = makeSUT()
+    
+        let data = try sut.encode(bodyMock)
+        
+        XCTAssertNotNil(data)
+    }
     
     func testCreateURLRequestFromRequest() throws {
-        let sut = URLRequestCreator()
+        let sut = makeSUT()
         
         let urlRequest = try sut.createURLRequest(from: requestMock)
         
         XCTAssertNotNil(urlRequest)
     }
     
-    
     func testCreateURLRequestFromRequestWithInvialidURL() {
-        let sut = URLRequestCreator()
+        let sut = makeSUT()
         let randomString = "...---"
         requestMock.urlHost = randomString
         requestMock.urlPath = randomString

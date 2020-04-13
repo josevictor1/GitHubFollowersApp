@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A1C2EC4242D637A00096731 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2EC3242D637A00096731 /* Commons.framework */; };
-		1A1C2EC5242D637A00096731 /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2EC3242D637A00096731 /* Commons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07520242C11CB00DACD0A /* CustomAlertController.swift */; };
 		1AA07523242C124C00DACD0A /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07522242C124C00DACD0A /* CustomAlertView.swift */; };
 		1AA07528242C185800DACD0A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07527242C185800DACD0A /* Alert.swift */; };
@@ -26,20 +25,6 @@
 			remoteInfo = UIComponents;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1A1C2EC6242D637A00096731 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1A1C2EC5242D637A00096731 /* Commons.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A1C2EC3242D637A00096731 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +145,6 @@
 				1AF58A28242BC19D00275733 /* Sources */,
 				1AF58A29242BC19D00275733 /* Frameworks */,
 				1AF58A2A242BC19D00275733 /* Resources */,
-				1A1C2EC6242D637A00096731 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

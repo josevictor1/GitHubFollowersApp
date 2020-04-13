@@ -14,7 +14,7 @@ extension NetworkingError: Equatable {
         switch (lhs, rhs) {
         case (.invalidURL, .invalidURL):
             return true
-        case (.encodingError(let lhsError), .encodingError(let rhsError)):
+        case (.encoding(let lhsError), .encoding(let rhsError)):
             return lhsError.localizedDescription == rhsError.localizedDescription
         default:
             return false

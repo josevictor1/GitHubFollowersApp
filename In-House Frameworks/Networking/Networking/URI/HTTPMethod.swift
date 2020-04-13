@@ -18,6 +18,4 @@ public enum HTTPMethod: String {
     case head = "HEAD"
     case options = "OPTIONS"
     case trace = "TRACE"
-    
-    
 }

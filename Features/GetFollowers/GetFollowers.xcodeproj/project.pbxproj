@@ -25,6 +25,7 @@
 		1A94FD24243379EF0095932A /* FollowersAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD23243379EF0095932A /* FollowersAPIRequest.swift */; };
 		1A94FD262433936C0095932A /* FollowerAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD252433936C0095932A /* FollowerAPIResponse.swift */; };
 		1A94FD4C2433CCD30095932A /* FollowersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD4B2433CCD30095932A /* FollowersServiceMock.swift */; };
+		1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB702562443CDFF006F4CDD /* UIComponents.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1A94FD23243379EF0095932A /* FollowersAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersAPIRequest.swift; sourceTree = "<group>"; };
 		1A94FD252433936C0095932A /* FollowerAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerAPIResponse.swift; sourceTree = "<group>"; };
 		1A94FD4B2433CCD30095932A /* FollowersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersServiceMock.swift; sourceTree = "<group>"; };
+		1AB702562443CDFF006F4CDD /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +89,7 @@
 				1A1C2F21242E859100096731 /* GetFollowers */,
 				1A1C2F2C242E859100096731 /* GetFollowersTests */,
 				1A1C2F20242E859100096731 /* Products */,
+				1AB702552443CDFF006F4CDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +221,14 @@
 				1A94FD23243379EF0095932A /* FollowersAPIRequest.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		1AB702552443CDFF006F4CDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AB702562443CDFF006F4CDD /* UIComponents.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

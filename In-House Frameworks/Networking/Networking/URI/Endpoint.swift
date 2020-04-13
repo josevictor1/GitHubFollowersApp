@@ -23,6 +23,7 @@ public struct Endpoint {
     /// Attribute that identify the service `host`.
     let host: String
     
+    /// Attribute that defines request query strings
     let queryStrings: [String: String]?
     
     var queryItem: [URLQueryItem] {
