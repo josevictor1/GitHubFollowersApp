@@ -82,7 +82,7 @@ class NetworkingServiceTests: XCTestCase {
         XCTAssertEqual(error, expectedError)
     }
     
-    func testConvertErrorToNetowrkingErrorWithUnknownedError() {
+    func testConvertErrorToNetowrkingErrorWithUnknownError() {
         let sut = makeSUT()
         let responseMock = NetworkingResponse(data: Data(),
                                               response: makeHTTPURLResponse(with: .unknownError))
