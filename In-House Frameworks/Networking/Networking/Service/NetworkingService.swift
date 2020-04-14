@@ -57,11 +57,11 @@ class NetworkingService: NetworkingServiceProtocol {
         
         switch response.statusCode {
         case (300...399):
-            return .redirection(error, response: response)
+            return .redirection(error, response)
         case (400...499):
-            return .client(error, response: response)
+            return .client(error, response)
         case (500...599):
-            return .server(error, response: response)
+            return .server(error, response)
         default:
             return .unknown
         }

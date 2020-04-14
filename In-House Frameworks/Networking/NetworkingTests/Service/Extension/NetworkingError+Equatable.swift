@@ -14,8 +14,18 @@ extension NetworkingError: Equatable {
         switch (lhs, rhs) {
         case (.invalidURL, .invalidURL):
             return true
+        case (.parseHTTPResponseFail, .parseHTTPResponseFail):
+            return true
+        case (.unknown, .unknown):
+            return true
         case (.encoding(let lhsError), .encoding(let rhsError)):
             return lhsError.localizedDescription == rhsError.localizedDescription
+        case (.client(_ , let lhsResponse), .client(_ , let rhsResponse)):
+            return lhsResponse == rhsResponse
+        case (.redirection(_ , let lhsResponse), .redirection( _, let rhsResponse)):
+            return lhsResponse == rhsResponse
+        case (.server(_, let lhsResponse), . server(_, let rhsResponse)):
+            return lhsResponse == rhsResponse
         default:
             return false
         }
