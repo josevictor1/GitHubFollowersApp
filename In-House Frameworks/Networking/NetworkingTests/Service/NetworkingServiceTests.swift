@@ -13,15 +13,15 @@ class NetworkingServiceTests: XCTestCase {
     
     // MARK: - Mocks
     
-    let mockURL = URL(string: "www.test.com")!
-    var mockRequest: URLRequest  {
-        URLRequest(url: mockURL)
+    let urlMock = URL(string: "www.test.com")!
+    var requestMock: URLRequest  {
+        URLRequest(url: urlMock)
     }
     
     // MARK: - Factories
     
-    func makeSUT() -> NetworkingService {
-        NetworkingService(requestProvider: URLRequestCreator())
+    func makeSUT(session: URLSession = .shared) -> NetworkingService {
+        NetworkingService(requestProvider: URLRequestCreator(), session: session)
     }
     
     enum ResponseStatusCode: Int {
@@ -33,22 +33,36 @@ class NetworkingServiceTests: XCTestCase {
     }
     
     func makeHTTPURLResponse(with statusCode: ResponseStatusCode) -> HTTPURLResponse {
-        HTTPURLResponse(url: mockURL, statusCode: statusCode.rawValue, httpVersion: nil, headerFields: nil)!
+        HTTPURLResponse(url: urlMock, statusCode: statusCode.rawValue, httpVersion: nil, headerFields: nil)!
     }
     
     func makeNSError(with statusCode: ResponseStatusCode) -> NSError {
         NSError(domain: "", code: statusCode.rawValue, userInfo: nil)
     }
     
+    func makeSession(with configuration: URLSessionConfiguration = .ephemeral,
+                     _ completion: SessionMockCompletion? = nil) -> URLSession {
+        SessionMock.requestHandler = completion
+        configuration.protocolClasses = [SessionMock.self]
+        return URLSession(configuration: configuration)
+    }
+    
     // MARK: - Tests
+    
+    func testSendRequest() {
+        let session = makeSession { [unowned self] request in
+            return (self.makeHTTPURLResponse(with: .success), Data())
+        }
+        let sut = makeSUT(session: session)
+    }
     
     func testConvertResponseToResultWithSuccess() {
         let sut = makeSUT()
         let httpURLResponseMock = makeHTTPURLResponse(with: .success)
-        let expectedResponse = NetworkingResponse(data: Data(), request: mockRequest, response: httpURLResponseMock)
+        let expectedResponse = NetworkingResponse(data: Data(), request: requestMock, response: httpURLResponseMock)
         var receivedResponse: NetworkingResponse?
         
-        let result = sut.convertResponseToResult(Data(), mockRequest, httpURLResponseMock, nil)
+        let result = sut.convertResponseToResult(Data(), requestMock, httpURLResponseMock, nil)
         
         switch result {
         case .success(let response):
@@ -65,12 +79,12 @@ class NetworkingServiceTests: XCTestCase {
         let sut = makeSUT()
         let mockError = makeNSError(with: .serverError)
         let httpURLResponseMock = makeHTTPURLResponse(with: .serverError)
-        let responseMock = NetworkingResponse(data: Data(), request: mockRequest, response: httpURLResponseMock)
+        let responseMock = NetworkingResponse(data: Data(), request: requestMock, response: httpURLResponseMock)
         let expectedError: NetworkingError = .server(mockError, responseMock)
         
         var receivedError: NetworkingError?
         
-        let result = sut.convertResponseToResult(nil, mockRequest, httpURLResponseMock, mockError)
+        let result = sut.convertResponseToResult(nil, requestMock, httpURLResponseMock, mockError)
         
         switch result {
         case .success:

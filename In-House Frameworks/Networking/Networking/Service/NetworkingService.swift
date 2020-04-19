@@ -26,7 +26,7 @@ class NetworkingService: NetworkingServiceProtocol {
         do {
             let request = try requestProvider.createURLRequest(from: request)
             session.dataTask(with: request) { [weak self] data, response, error in
-                guard let `self` = self else { return }
+                guard let self = self else { return }
                 let httpResponse = response as? HTTPURLResponse
                 let result = self.convertResponseToResult(data, request, httpResponse, error)
                 completion(result)
