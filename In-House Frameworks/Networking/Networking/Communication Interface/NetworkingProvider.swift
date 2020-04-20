@@ -9,17 +9,15 @@
 import Foundation
 
 /// Closure to be executed when a request has completed.
-typealias ResponseCompletion = (_ result: Result<NetworkingResponse, NetworkingError>) -> Void
+public typealias ResponseCompletion = (_ result: Result<NetworkingResponse, NetworkingError>) -> Void
 
 public class NetworkingProvider {
     
-    private let service: NetworkingServiceProtocol
+    private let service: NetworkingServiceProtocol = NetworkingService()
     
-    init(service: NetworkingServiceProtocol) {
-        self.service = service
-    }
+    public init() { }
     
-    func perform(_ request: Request, completion: @escaping ResponseCompletion) {
+    public func perform(_ request: Request, completion: @escaping ResponseCompletion) {
         service.send(request, completion: completion)
     }
     

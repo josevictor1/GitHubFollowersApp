@@ -1,5 +1,5 @@
 //
-//  FollowersAPIRequest.swift
+//  FollowersRequest.swift
 //  GetFollowers
 //
 //  Created by José Victor Pereira Costa on 31/03/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct FollowersAPIRequest: Encodable {
+struct FollowersRequest {
     let login: String
 }

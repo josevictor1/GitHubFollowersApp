@@ -12,7 +12,7 @@ struct Follower {
     let photo: String
     let login: String
     
-    init(response: FollowerAPIResponse) {
+    init(response: FollowerResponse) {
         self.login = response.login
         self.photo = response.avatarURL
     }

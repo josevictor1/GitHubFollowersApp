@@ -11,8 +11,9 @@ import Foundation
 
 struct RequestMock: Request {
     
-    var urlPath = "/test"
-    var urlHost = "www.teste.com"
+    var urlPath = "/users/josevictor1/followers"
+    
+    var urlHost = "https://api.github.com"
     
     var method: HTTPMethod { .get }
     

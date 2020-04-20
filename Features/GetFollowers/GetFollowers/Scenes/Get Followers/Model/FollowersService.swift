@@ -7,7 +7,30 @@
 //
 
 import Foundation
+import Networking
+
+typealias FollowersServiceCompletion = (Result<[FollowerResponse], NSError>) -> Void
 
 protocol FollowersProvider {
-    func requestFollowers(_ request: FollowersAPIRequest, completion: @escaping ((Result<[FollowerAPIResponse], NSError>) -> Void))
+    func requestFollowers(_ request: FollowersRequest, completion: @escaping FollowersServiceCompletion)
+}
+
+class FollowersService: FollowersProvider {
+    
+    private let networkingProvider: NetworkingProvider
+    
+    init(networkingProvider: NetworkingProvider = NetworkingProvider()) {
+        self.networkingProvider = networkingProvider
+    }
+    
+    func requestFollowers(_ request: FollowersRequest, completion: @escaping FollowersServiceCompletion) {
+        
+        let networkingRequest = GetFollowersNetworkingRequest(followerRequest: request)
+
+        networkingProvider.perform(networkingRequest) { (result) in
+
+        }
+    }
+    
+    
 }

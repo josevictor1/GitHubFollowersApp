@@ -17,7 +17,7 @@ class NetworkingService: NetworkingServiceProtocol {
     let session: URLSession
     let requestProvider: URLRequestProvider
     
-    init(requestProvider: URLRequestProvider, session: URLSession = .shared) {
+    init(requestProvider: URLRequestProvider = URLRequestCreator(), session: URLSession = .shared) {
         self.session = session
         self.requestProvider = requestProvider
     }
@@ -26,11 +26,11 @@ class NetworkingService: NetworkingServiceProtocol {
         do {
             let request = try requestProvider.createURLRequest(from: request)
             session.dataTask(with: request) { [weak self] data, response, error in
-                guard let self = self else { return }
+                guard let self = self else { return completion(.failure(.unknown)) }
                 let httpResponse = response as? HTTPURLResponse
                 let result = self.convertResponseToResult(data, request, httpResponse, error)
                 completion(result)
-            }
+            }.resume()
         } catch {
             guard let networkingError = error as? NetworkingError else {
                 return completion(.failure(.unknown))

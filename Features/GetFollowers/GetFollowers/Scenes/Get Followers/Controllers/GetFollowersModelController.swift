@@ -24,7 +24,7 @@ class GetFollowersModelController: GetFollowersModel {
     
     func getFollowers(of user: String, completion: @escaping GetFollowersResponseCompletion) {
         
-        let request = FollowersAPIRequest(login: user)
+        let request = FollowersRequest(login: user)
         
         provider.requestFollowers(request) { [unowned self] result in
             switch result {
@@ -36,7 +36,7 @@ class GetFollowersModelController: GetFollowersModel {
         }
     }
     
-    func handleSuccess(with response: [FollowerAPIResponse], _ completion: GetFollowersResponseCompletion) {
+    func handleSuccess(with response: [FollowerResponse], _ completion: GetFollowersResponseCompletion) {
         completion(.success(response.map(Follower.init)))
     }
     

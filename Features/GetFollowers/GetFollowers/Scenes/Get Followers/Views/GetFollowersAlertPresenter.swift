@@ -20,7 +20,7 @@ class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
 
     // MARK: - Properties
 
-    private let presentingViewController: UIViewController
+    private weak var presentingViewController: UIViewController?
     private weak var alertController: UIViewController?
 
     // MARK: - Initializer
@@ -48,10 +48,11 @@ class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
 
         alertController = viewController
 
-        if let navigationController = presentingViewController.navigationController {
+        if let presentingViewController = presentingViewController,
+            let navigationController = presentingViewController.navigationController {
             navigationController.present(viewController, animated: true)
         } else {
-            presentingViewController.present(viewController, animated: true)
+            presentingViewController?.present(viewController, animated: true)
         }
     }
 

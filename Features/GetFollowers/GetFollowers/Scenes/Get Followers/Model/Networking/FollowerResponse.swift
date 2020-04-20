@@ -1,5 +1,5 @@
 //
-//  FollowerAPIResponse.swift
+//  FollowerResponse.swift
 //  GetFollowers
 //
 //  Created by José Victor Pereira Costa on 31/03/20.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FollowerAPIResponse: Decodable {
+struct FollowerResponse: Decodable {
     let login: String
     let id: Int
     let nodeID: String

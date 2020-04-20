@@ -32,6 +32,31 @@ class NetworkingServiceTests: XCTestCase {
         case unknownError = 1000
     }
     
+    let mockData = """
+    [
+        {
+        "login": "octocat",
+        "id": 1,
+        "node_id": "MDQ6VXNlcjE=",
+        "avatar_url": "https://github.com/images/error/octocat_happy.gif",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/octocat",
+        "html_url": "https://github.com/octocat",
+        "followers_url": "https://api.github.com/users/octocat/followers",
+        "following_url": "https://api.github.com/users/octocat/following{/other_user}",
+        "gists_url": "https://api.github.com/users/octocat/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/octocat/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/octocat/subscriptions",
+        "organizations_url": "https://api.github.com/users/octocat/orgs",
+        "repos_url": "https://api.github.com/users/octocat/repos",
+        "events_url": "https://api.github.com/users/octocat/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/octocat/received_events",
+        "type": "User",
+        "site_admin": false
+        }
+    ]
+    """.data(using: .utf8)!
+    
     func makeHTTPURLResponse(with statusCode: ResponseStatusCode) -> HTTPURLResponse {
         HTTPURLResponse(url: urlMock, statusCode: statusCode.rawValue, httpVersion: nil, headerFields: nil)!
     }
@@ -42,18 +67,52 @@ class NetworkingServiceTests: XCTestCase {
     
     func makeSession(with configuration: URLSessionConfiguration = .ephemeral,
                      _ completion: SessionMockCompletion? = nil) -> URLSession {
-        SessionMock.requestHandler = completion
         configuration.protocolClasses = [SessionMock.self]
+        SessionMock.requestHandler = completion
         return URLSession(configuration: configuration)
     }
     
     // MARK: - Tests
     
-    func testSendRequest() {
+    func testSendRequestWithSuccess() {
         let session = makeSession { [unowned self] request in
-            return (self.makeHTTPURLResponse(with: .success), Data())
+            return (self.makeHTTPURLResponse(with: .success), self.mockData)
         }
+        
         let sut = makeSUT(session: session)
+        let request = RequestMock()
+        let expectation = XCTestExpectation(description: "response")
+        
+        sut.send(request) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.statusCode, 200)
+            case .failure:
+                XCTFail()
+            }
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func testSendRequestWithError() {
+        let session = makeSession { _ in throw NetworkingError.unknown }
+        let sut = makeSUT(session: session)
+        let request = RequestMock()
+        let expectation = XCTestExpectation(description: "response")
+        
+        sut.send(request) { result in
+            switch result {
+            case .success:
+                XCTFail()
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            }
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
     }
     
     func testConvertResponseToResultWithSuccess() {

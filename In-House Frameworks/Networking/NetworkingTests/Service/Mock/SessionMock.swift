@@ -37,4 +37,6 @@ class SessionMock: URLProtocol {
         }
     }
     
+    override func stopLoading() { }
+    
 }

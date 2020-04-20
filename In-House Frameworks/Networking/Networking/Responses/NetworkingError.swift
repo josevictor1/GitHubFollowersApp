@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NetworkingError: Error {
+public enum NetworkingError: Error {
     case invalidURL
     case unknown
     case parseHTTPResponseFail
