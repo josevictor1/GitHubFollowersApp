@@ -25,6 +25,7 @@ class NetworkingService: NetworkingServiceProtocol {
     func send(_ request: Request, completion: @escaping ResponseCompletion) {
         do {
             let request = try requestProvider.createURLRequest(from: request)
+            
             session.dataTask(with: request) { [weak self] data, response, error in
                 guard let self = self else { return completion(.failure(.unknown)) }
                 let httpResponse = response as? HTTPURLResponse
@@ -32,6 +33,7 @@ class NetworkingService: NetworkingServiceProtocol {
                 completion(result)
             }.resume()
         } catch {
+            
             guard let networkingError = error as? NetworkingError else {
                 return completion(.failure(.unknown))
             }
@@ -66,5 +68,4 @@ class NetworkingService: NetworkingServiceProtocol {
             return .unknown
         }
     }
-    
 }

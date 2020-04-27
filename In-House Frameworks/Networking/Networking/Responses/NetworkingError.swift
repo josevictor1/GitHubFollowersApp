@@ -13,6 +13,7 @@ public enum NetworkingError: Error {
     case unknown
     case parseHTTPResponseFail
     case encoding(_ error: Error)
+    case decoding(_ error: Error)
     case redirection(_ error: Error, _ response: NetworkingResponse?)
     case server(_ error: Error, _ response: NetworkingResponse?)
     case client(_ error: Error, _ response: NetworkingResponse?)

@@ -35,3 +35,12 @@ public struct NetworkingResponse: Equatable {
     }
     
 }
+
+extension NetworkingResponse {
+    
+    func map<D: Decodable>(_ type: D.Type, decoder: JSONDecoder = JSONDecoder()) throws -> D {
+        try decoder.decode(D.self, from: data)
+    }
+}
+
+

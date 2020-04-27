@@ -13,7 +13,7 @@ class NetworkingServiceTests: XCTestCase {
     
     // MARK: - Mocks
     
-    let urlMock = URL(string: "www.test.com")!
+    let urlMock = URL(string: "api.github.com")!
     var requestMock: URLRequest  {
         URLRequest(url: urlMock)
     }
@@ -32,7 +32,7 @@ class NetworkingServiceTests: XCTestCase {
         case unknownError = 1000
     }
     
-    let mockData = """
+    let dataMock = """
     [
         {
         "login": "octocat",
@@ -76,7 +76,7 @@ class NetworkingServiceTests: XCTestCase {
     
     func testSendRequestWithSuccess() {
         let session = makeSession { [unowned self] request in
-            return (self.makeHTTPURLResponse(with: .success), self.mockData)
+            return (self.makeHTTPURLResponse(with: .success), self.dataMock)
         }
         
         let sut = makeSUT(session: session)
