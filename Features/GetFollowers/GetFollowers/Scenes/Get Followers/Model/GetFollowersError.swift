@@ -8,26 +8,32 @@
 
 import Foundation
 import Commons
+import Networking
 
 enum GetFollowersError: Error {
     case invalidUsername
+    case invalidResponse
     case requestFail
     
-    init(_ error: NSError) {
-        switch error.code {
-        case 403:
+    init(_ error: NetworkingError) {
+        switch error {
+        case .server:
+            self = .requestFail
+        case .client:
             self = .invalidUsername
         default:
-            self = .requestFail
+            self = .invalidResponse
         }
     }
-
+    
     var message: ErrorMessage {
         switch self {
         case .invalidUsername:
             return .invalidUsername
         case .requestFail:
             return .requestFail
+        case .invalidResponse:
+            return .invalidResponse
         }
     }
 }

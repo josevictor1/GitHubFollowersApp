@@ -20,11 +20,11 @@ class GetFollowersViewController: UIViewController {
 
     // MARK: - Properties
 
-    var modelController: GetFollowersModel?
+    var logicController: GetFollowersLogicProtocol?
     var presenter: GetFollowersAlertPresenterProtocol?
     weak var delegate: GetFollowersViewControllerDelegate?
 
-    lazy var getFollowersView: GetFollowersView = {
+    private lazy var getFollowersView: GetFollowersView = {
         let view = GetFollowersView()
         view.onGetFollowersButtonTapped = onGetFollowersButtonTapped
         return view
@@ -48,8 +48,10 @@ class GetFollowersViewController: UIViewController {
     /// Tells model to search a user with the entered name
     /// - Parameter username: The username to be fetched
     private func fetchUser(with username: String?) {
+        
         guard let username = username, !username.isEmpty else { return }
-        modelController?.getFollowers(of: username) { [unowned self] result in
+        
+        logicController?.getFollowers(of: username) { [unowned self] result in
             switch result {
             case .success(let followers):
                 self.delegate?.viewControllerDidGotFollowers(followers)

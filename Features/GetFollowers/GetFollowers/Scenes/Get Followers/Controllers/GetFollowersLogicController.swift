@@ -10,13 +10,13 @@ import Foundation
 
 typealias GetFollowersResponseCompletion = ((Result<[Follower], GetFollowersError>) -> Void)
 
-protocol GetFollowersModel {
+protocol GetFollowersLogicProtocol {
     func getFollowers(of user: String, completion: @escaping GetFollowersResponseCompletion)
 }
 
-class GetFollowersModelController: GetFollowersModel {
+class GetFollowersLogicController: GetFollowersLogicProtocol {
     
-    let provider: FollowersProvider
+    private let provider: FollowersProvider
     
     init(provider: FollowersProvider){
         self.provider = provider
@@ -29,19 +29,14 @@ class GetFollowersModelController: GetFollowersModel {
         provider.requestFollowers(request) { [unowned self] result in
             switch result {
             case .success(let response):
-                self.handleSuccess(with: response, completion)
+                self.handleSuccess(with: response, completion: completion)
             case .failure(let error):
-                self.handleFailure(with: error, completion)
+                completion(.failure(error))
             }
         }
     }
     
-    func handleSuccess(with response: [FollowerResponse], _ completion: GetFollowersResponseCompletion) {
+    private func handleSuccess(with response: [FollowerResponse], completion: GetFollowersResponseCompletion) {
         completion(.success(response.map(Follower.init)))
     }
-    
-    func handleFailure(with error: NSError, _ completion: GetFollowersResponseCompletion) {
-        completion(.failure(GetFollowersError(error)))
-    }
-
 }

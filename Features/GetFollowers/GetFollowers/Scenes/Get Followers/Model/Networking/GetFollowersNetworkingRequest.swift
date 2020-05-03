@@ -19,9 +19,7 @@ struct GetFollowersNetworkingRequest: Request {
     
     var host: String { "api.github.com" }
     
-    var path: String {
-        "/users/\(followerRequest.login)/followers"
-    }
+    var path: String { "/users/\(followerRequest.login)/followers" }
     
     var body: Encodable?
     
@@ -32,5 +30,4 @@ struct GetFollowersNetworkingRequest: Request {
     init(followerRequest: FollowersRequest) {
         self.followerRequest = followerRequest
     }
-    
 }

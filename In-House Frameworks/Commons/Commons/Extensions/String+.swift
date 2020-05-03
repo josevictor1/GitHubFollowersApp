@@ -20,7 +20,7 @@ public extension String {
     ///   - bundle: The bundle for a  `Localizable.strings` file.
     ///   - value: The value to return if key is nil or if a localized string for key can’t be found in the table.
     ///   - comment: The comment associated with the localized string.
-    /// - Returns: Localized string
+    /// - Returns: Localized string.
     func localized(tableName: String? = nil,
                    bundle: Bundle = .main,
                    value: String = String(),

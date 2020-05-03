@@ -14,7 +14,7 @@ extension NetworkingError: Equatable {
         switch (lhs, rhs) {
         case (.invalidURL, .invalidURL):
             return true
-        case (.parseHTTPResponseFail, .parseHTTPResponseFail):
+        case (.parsing, .parsing):
             return true
         case (.unknown, .unknown):
             return true

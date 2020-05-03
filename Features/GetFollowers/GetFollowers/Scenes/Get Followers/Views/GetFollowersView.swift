@@ -21,8 +21,8 @@ public final class GetFollowersView: UIView {
         setUp()
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
 
     // MARK: - Subviews

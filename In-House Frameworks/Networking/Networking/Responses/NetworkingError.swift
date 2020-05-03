@@ -11,10 +11,10 @@ import Foundation
 public enum NetworkingError: Error {
     case invalidURL
     case unknown
-    case parseHTTPResponseFail
-    case encoding(_ error: Error)
-    case decoding(_ error: Error)
-    case redirection(_ error: Error, _ response: NetworkingResponse?)
-    case server(_ error: Error, _ response: NetworkingResponse?)
-    case client(_ error: Error, _ response: NetworkingResponse?)
+    case parsing
+    case encoding(Error)
+    case decoding(Error)
+    case redirection(Error, NetworkingResponse?)
+    case server(Error, NetworkingResponse?)
+    case client(Error, NetworkingResponse?)
 }

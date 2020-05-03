@@ -17,8 +17,8 @@ class GetFollowersModelControllerTests: XCTestCase {
     
     // MARK: - SUT Factory
     
-    func makeSUT() -> GetFollowersModelController {
-        GetFollowersModelController(provider: followersProviderMock)
+    func makeSUT() -> GetFollowersLogicController {
+        GetFollowersLogicController(provider: followersProviderMock)
     }
     
     // MARK: - Tests
