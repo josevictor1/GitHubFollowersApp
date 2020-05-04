@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Commons
 
 public final class GetFollowersView: UIView {
 
@@ -28,7 +29,7 @@ public final class GetFollowersView: UIView {
     // MARK: - Subviews
 
     private lazy var logoImageView: UIImageView = {
-        let image = UIImage(named: "gh-logo", in: .main, with: nil)
+        let image = Assets.localizable(image: ImagesAssets.getFollowersLogo)
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         return imageView

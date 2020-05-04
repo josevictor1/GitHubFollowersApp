@@ -16,5 +16,4 @@ public extension UIViewController {
         view.embed(child.view)
         didMove(toParent: self)
     }
-
 }

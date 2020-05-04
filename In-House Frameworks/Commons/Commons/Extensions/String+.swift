@@ -27,5 +27,4 @@ public extension String {
                    comment: String = String()) -> String {
         NSLocalizedString(self, tableName: tableName, bundle: bundle, value: value, comment: comment)
     }
-
 }

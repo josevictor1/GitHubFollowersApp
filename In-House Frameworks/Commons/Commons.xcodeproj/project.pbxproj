@@ -15,6 +15,7 @@
 		1AE20BF92407361C00867692 /* CommonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BF82407361C00867692 /* CommonsTests.swift */; };
 		1AE20BFB2407361C00867692 /* Commons.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE20BED2407361C00867692 /* Commons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AEFAEB4245D3E1A00F64C17 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEB3245D3E1A00F64C17 /* Assets.swift */; };
+		1AEFAEBD245FBBE300F64C17 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEBC245FBBE300F64C17 /* Bundle+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		1AE20BF82407361C00867692 /* CommonsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonsTests.swift; sourceTree = "<group>"; };
 		1AE20BFA2407361C00867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AEFAEB3245D3E1A00F64C17 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		1AEFAEBC245FBBE300F64C17 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				1A8F829E241865F600D25A68 /* UIViewController+.swift */,
 				1A91FC2424199AA5008CF123 /* UIView+.swift */,
 				1AA0752B242D39CF00DACD0A /* String+.swift */,
+				1AEFAEBC245FBBE300F64C17 /* Bundle+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -99,7 +102,7 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				1AEFAEB2245D3DF400F64C17 /* LocalizableAssets */,
+				1AEFAEB2245D3DF400F64C17 /* Localizable Assets */,
 				1A1C2F00242E488D00096731 /* Error Messages */,
 				1AA48131240C7F0F0086B6BB /* Extensions */,
 				1AE20BED2407361C00867692 /* Commons.h */,
@@ -117,12 +120,12 @@
 			path = CommonsTests;
 			sourceTree = "<group>";
 		};
-		1AEFAEB2245D3DF400F64C17 /* LocalizableAssets */ = {
+		1AEFAEB2245D3DF400F64C17 /* Localizable Assets */ = {
 			isa = PBXGroup;
 			children = (
 				1AEFAEB3245D3E1A00F64C17 /* Assets.swift */,
 			);
-			path = LocalizableAssets;
+			path = "Localizable Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +241,7 @@
 				1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */,
 				1A91FC2524199AA5008CF123 /* UIView+.swift in Sources */,
 				1AEFAEB4245D3E1A00F64C17 /* Assets.swift in Sources */,
+				1AEFAEBD245FBBE300F64C17 /* Bundle+.swift in Sources */,
 				1AA0752C242D39CF00DACD0A /* String+.swift in Sources */,
 				1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */,
 			);
