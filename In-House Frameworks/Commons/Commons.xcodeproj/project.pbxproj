@@ -81,6 +81,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1AD82C292460F0D7000CCD95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20BEE2407361C00867692 /* Info.plist */,
+				1AE20BED2407361C00867692 /* Commons.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1AE20BE02407361C00867692 = {
 			isa = PBXGroup;
 			children = (
@@ -102,11 +111,10 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1AD82C292460F0D7000CCD95 /* Supporting Files */,
 				1AEFAEB2245D3DF400F64C17 /* Localizable Assets */,
 				1A1C2F00242E488D00096731 /* Error Messages */,
 				1AA48131240C7F0F0086B6BB /* Extensions */,
-				1AE20BED2407361C00867692 /* Commons.h */,
-				1AE20BEE2407361C00867692 /* Info.plist */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -398,7 +406,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Commons/Info.plist;
+				INFOPLIST_FILE = "Commons/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,7 +436,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Commons/Info.plist;
+				INFOPLIST_FILE = "Commons/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -54,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AD82C2A2460F12B000CCD95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AE20C502407404000867692 /* Core.h */,
+				1AE20C512407404000867692 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1AE20C432407404000867692 = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +84,8 @@
 		1AE20C4F2407404000867692 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1AD82C2A2460F12B000CCD95 /* Supporting Files */,
 				1AE20C672407405100867692 /* Coordinator */,
-				1AE20C502407404000867692 /* Core.h */,
-				1AE20C512407404000867692 /* Info.plist */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -366,7 +374,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Info.plist;
+				INFOPLIST_FILE = "Core/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,7 +404,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Info.plist;
+				INFOPLIST_FILE = "Core/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -67,6 +67,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1AD82C2B2460F182000CCD95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AF58A2F242BC19D00275733 /* UIComponents.h */,
+				1AF58A30242BC19D00275733 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1AF58A22242BC19D00275733 = {
 			isa = PBXGroup;
 			children = (
@@ -89,9 +98,8 @@
 		1AF58A2E242BC19D00275733 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				1AD82C2B2460F182000CCD95 /* Supporting Files */,
 				1AF58A46242BC23700275733 /* Components */,
-				1AF58A2F242BC19D00275733 /* UIComponents.h */,
-				1AF58A30242BC19D00275733 /* Info.plist */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -388,7 +396,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = UIComponents/Info.plist;
+				INFOPLIST_FILE = "UIComponents/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,7 +422,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = UIComponents/Info.plist;
+				INFOPLIST_FILE = "UIComponents/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
