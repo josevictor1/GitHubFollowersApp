@@ -11,6 +11,10 @@ import Commons
 
 public final class GetFollowersView: UIView {
     
+    // MARK: - Properties
+    
+    private var bottomButtonConstraint: NSLayoutConstraint?
+    
     // MARK: - Closures
     
     var onGetFollowersButtonTapped: ((String?) -> Void)?
@@ -66,6 +70,17 @@ public final class GetFollowersView: UIView {
         return button
     }()
     
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .fill
+        stackView.distribution = .fillProportionally
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.addArrangedSubview(logoImageView)
+        stackView.addArrangedSubview(usernameTextField)
+        return stackView
+    }()
+    
     // MARK: - Actions
     
     @objc private func getFollowersButtonTapped() {
@@ -75,6 +90,7 @@ public final class GetFollowersView: UIView {
     // MARK: - Setup
     
     private func setUp() {
+        setUpSatckView()
         setUpLogoImageView()
         setUpUsernameTextField()
         setUpGetFollowersButton()
@@ -84,22 +100,19 @@ public final class GetFollowersView: UIView {
     // MARK: - Constraints
     
     private func setUpLogoImageView() {
-        let constraints = [logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 70),
-                           logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 77),
-                           logoImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -77),
-                           logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 200)]
-        place(logoImageView, with: constraints)
+        logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
     }
     
     private func setUpUsernameTextField() {
-        let constraints = [usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor,
-                                                                  constant: 53),
-                           usernameTextField.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
-                                                                      constant: 31),
-                           usernameTextField.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor,
-                                                                       constant: -31),
-                           usernameTextField.heightAnchor.constraint(greaterThanOrEqualToConstant: 62)]
-        place(usernameTextField, with: constraints)
+        usernameTextField.heightAnchor.constraint(equalToConstant: 62).isActive = true
+    }
+    
+    private func setUpSatckView() {
+        let constraints = [stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 70),
+                           stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 31),
+                           stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -31)
+        ]
+        place(stackView, with: constraints)
     }
     
     private func setUpGetFollowersButton() {
@@ -110,7 +123,7 @@ public final class GetFollowersView: UIView {
                            getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor,
                                                                       constant: -31),
                            getFollowersButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 62),
-                           getFollowersButton.topAnchor.constraint(greaterThanOrEqualTo: usernameTextField.bottomAnchor,
+                           getFollowersButton.topAnchor.constraint(greaterThanOrEqualTo: stackView.bottomAnchor,
                                                                    constant: 10)]
         place(getFollowersButton, with: constraints)
     }

@@ -45,8 +45,6 @@ class GetFollowersViewController: UIViewController {
 
     // MARK: - Business Logic
 
-    /// Tells model to search a user with the entered name
-    /// - Parameter username: The username to be fetched
     private func fetchUser(with username: String?) {
         
         guard let username = username, !username.isEmpty else { return }
