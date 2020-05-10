@@ -11,6 +11,8 @@ import Commons
 
 public final class GetFollowersView: UIView {
     
+    
+    
     // MARK: - Properties
     
     private var bottomButtonConstraint: NSLayoutConstraint?
@@ -21,8 +23,8 @@ public final class GetFollowersView: UIView {
     
     // MARK: - Initializers
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
+    public init() {
+        super.init(frame: .zero)
         setUp()
     }
     
@@ -47,6 +49,7 @@ public final class GetFollowersView: UIView {
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 12
         textField.layer.borderColor = UIColor.tertiarySystemFill.cgColor
+        textField.returnKeyType = .continue
         textField.backgroundColor = .secondarySystemBackground
         textField.font = .preferredFont(forTextStyle: .body)
         textField.adjustsFontForContentSizeCategory = true
@@ -87,6 +90,13 @@ public final class GetFollowersView: UIView {
         onGetFollowersButtonTapped?(usernameTextField.text)
     }
     
+    func scrollUpGetFollowersButton(at height: CGFloat) {
+        UIView.animate(withDuration: 0.25) {
+            self.bottomButtonConstraint?.constant = height > .zero ? -height : -31
+            self.layoutIfNeeded()
+        }
+    }
+    
     // MARK: - Setup
     
     private func setUp() {
@@ -95,6 +105,10 @@ public final class GetFollowersView: UIView {
         setUpUsernameTextField()
         setUpGetFollowersButton()
         backgroundColor = .systemBackground
+    }
+    
+    func setTextFieldDelegate(_ delegate: UITextFieldDelegate) {
+        usernameTextField.delegate = delegate
     }
     
     // MARK: - Constraints
@@ -116,15 +130,12 @@ public final class GetFollowersView: UIView {
     }
     
     private func setUpGetFollowersButton() {
-        let constraints = [getFollowersButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
-                                                                       constant: 31),
-                           getFollowersButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor,
-                                                                        constant: -31),
-                           getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor,
-                                                                      constant: -31),
+        bottomButtonConstraint = getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -31)
+        let constraints = [getFollowersButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 31),
+                           getFollowersButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -31),
+                           bottomButtonConstraint!,
                            getFollowersButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 62),
-                           getFollowersButton.topAnchor.constraint(greaterThanOrEqualTo: stackView.bottomAnchor,
-                                                                   constant: 10)]
+                           getFollowersButton.topAnchor.constraint(greaterThanOrEqualTo: stackView.bottomAnchor, constant: 10)]
         place(getFollowersButton, with: constraints)
     }
     
