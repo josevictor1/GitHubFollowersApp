@@ -11,8 +11,6 @@ import Commons
 
 public final class GetFollowersView: UIView {
     
-    
-    
     // MARK: - Properties
     
     private var bottomButtonConstraint: NSLayoutConstraint?
@@ -23,8 +21,8 @@ public final class GetFollowersView: UIView {
     
     // MARK: - Initializers
     
-    public init() {
-        super.init(frame: .zero)
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         setUp()
     }
     

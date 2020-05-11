@@ -8,17 +8,31 @@
 
 import UIKit
 
-class KeyboardObserver {
+/// The abstraction that handles keyboard notifications.
+public class KeyboardObserver {
     
-    var onKeyboardAppeared: ((_ notification: Notification) -> Void)?
-    var onKeyboardDisappearerd: ((_ notification: Notification) -> Void)?
+    // MARK: - Actions
+    
+    /// The action called when keyboard appeared.
+    public var onKeyboardAppeared: ((_ notification: Notification) -> Void)?
+    
+    /// The action called when keyoard disappeard.
+    public var onKeyboardDisappearerd: ((_ notification: Notification) -> Void)?
+    
+    // MARK: - Properties
     
     private let notification: NotificationCenter
     
-    init(notification: NotificationCenter = .default) {
+    // MARK: - Initialiazer
+    
+    /// Creates an observer object with a received notification
+    /// - Parameter notification: The received notification.
+    public init(notification: NotificationCenter = .default) {
         self.notification = notification
         registerNotifications()
     }
+    
+    // MARK: - Notification
     
     func registerNotifications() {
         notification.addObserver(self,
@@ -38,6 +52,8 @@ class KeyboardObserver {
     @objc private func keyboardWillDisappear(notification: Notification) {
         onKeyboardDisappearerd?(notification)
     }
+    
+    // MARK: - Deinitializer
     
     deinit {
         notification.removeObserver(self)

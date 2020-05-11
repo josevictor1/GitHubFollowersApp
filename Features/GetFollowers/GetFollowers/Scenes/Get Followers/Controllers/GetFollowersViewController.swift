@@ -36,7 +36,7 @@ class GetFollowersViewController: UIViewController {
 
     // MARK: - Actions
 
-    lazy var onGetFollowersButtonTapped: ((String?) -> Void) = { [unowned self] username in
+    lazy var onGetFollowersButtonTapped: (String?) -> Void = { [unowned self] username in
         self.fetchUser(with: username)
     }
 
@@ -55,7 +55,6 @@ class GetFollowersViewController: UIViewController {
     // MARK: - Business Logic
 
     private func fetchUser(with username: String?) {
-        
         guard let username = username, !username.isEmpty else { return }
         
         logicController?.getFollowers(of: username) { [unowned self] result in
@@ -72,22 +71,12 @@ class GetFollowersViewController: UIViewController {
     
     private func setUpKeyboardObserver() {
         keyboardObserver.onKeyboardAppeared = { [unowned self] notification in
-            self.setUpButtonHeight(with: notification)
+            let rect = notification.keyboardFrame(for: self.view)
+            self.getFollowersView.scrollUpGetFollowersButton(at: rect.height)
         }
         keyboardObserver.onKeyboardDisappearerd = { [unowned self] notification in
             self.getFollowersView.scrollUpGetFollowersButton(at: .zero)
         }
-    }
-    
-    private func setUpButtonHeight(with keyboardNotification: Notification)  {
-        
-        guard let userInfo = keyboardNotification.userInfo,
-            let keyboardValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        
-        let keyboardScreenEndFrame = keyboardValue.cgRectValue
-        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-        
-        getFollowersView.scrollUpGetFollowersButton(at: keyboardViewEndFrame.height)
     }
 }
 
@@ -99,6 +88,7 @@ extension GetFollowersViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
     }
 }
+
 // MARK: - Factory
 
 extension GetFollowersViewController {

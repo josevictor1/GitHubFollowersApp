@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F01242E48E700096731 /* ErrorMessage.swift */; };
+		1A6A3948246A02810097C195 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3947246A02810097C195 /* Notification+.swift */; };
+		1A6A394B246A06FD0097C195 /* KeyoardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A394A246A06FD0097C195 /* KeyoardObserver.swift */; };
 		1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F829E241865F600D25A68 /* UIViewController+.swift */; };
 		1A91FC2524199AA5008CF123 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91FC2424199AA5008CF123 /* UIView+.swift */; };
 		1AA0752C242D39CF00DACD0A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0752B242D39CF00DACD0A /* String+.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		1A1C2F01242E48E700096731 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		1A6A3947246A02810097C195 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
+		1A6A394A246A06FD0097C195 /* KeyoardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyoardObserver.swift; sourceTree = "<group>"; };
 		1A8F829E241865F600D25A68 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		1A91FC2424199AA5008CF123 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		1AA0752B242D39CF00DACD0A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 			path = "Error Messages";
 			sourceTree = "<group>";
 		};
+		1A6A3949246A06E40097C195 /* Keyboard Observer */ = {
+			isa = PBXGroup;
+			children = (
+				1A6A394A246A06FD0097C195 /* KeyoardObserver.swift */,
+			);
+			path = "Keyboard Observer";
+			sourceTree = "<group>";
+		};
 		1AA48131240C7F0F0086B6BB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +89,7 @@
 				1A91FC2424199AA5008CF123 /* UIView+.swift */,
 				1AA0752B242D39CF00DACD0A /* String+.swift */,
 				1AEFAEBC245FBBE300F64C17 /* Bundle+.swift */,
+				1A6A3947246A02810097C195 /* Notification+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1A6A3949246A06E40097C195 /* Keyboard Observer */,
 				1AD82C292460F0D7000CCD95 /* Supporting Files */,
 				1AEFAEB2245D3DF400F64C17 /* Localizable Assets */,
 				1A1C2F00242E488D00096731 /* Error Messages */,
@@ -249,9 +263,11 @@
 				1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */,
 				1A91FC2524199AA5008CF123 /* UIView+.swift in Sources */,
 				1AEFAEB4245D3E1A00F64C17 /* Assets.swift in Sources */,
+				1A6A3948246A02810097C195 /* Notification+.swift in Sources */,
 				1AEFAEBD245FBBE300F64C17 /* Bundle+.swift in Sources */,
 				1AA0752C242D39CF00DACD0A /* String+.swift in Sources */,
 				1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */,
+				1A6A394B246A06FD0097C195 /* KeyoardObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

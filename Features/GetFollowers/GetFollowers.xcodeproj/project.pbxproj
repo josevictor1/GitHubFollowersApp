@@ -16,8 +16,6 @@
 		1A1C2F4D242E85F200096731 /* GetFollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F45242E85F200096731 /* GetFollowersView.swift */; };
 		1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */; };
 		1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */; };
-		1A6A3944246823480097C195 /* KeyoardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3943246823480097C195 /* KeyoardObserver.swift */; };
-		1A6A394624683F980097C195 /* KeyboardAvoider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A394524683F980097C195 /* KeyboardAvoider.swift */; };
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
 		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
 		1A94FD1524327C3D0095932A /* GetFollowersModelControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */; };
@@ -58,8 +56,6 @@
 		1A1C2F45242E85F200096731 /* GetFollowersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersView.swift; sourceTree = "<group>"; };
 		1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenter.swift; sourceTree = "<group>"; };
 		1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersCoordinator.swift; sourceTree = "<group>"; };
-		1A6A3943246823480097C195 /* KeyoardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyoardObserver.swift; sourceTree = "<group>"; };
-		1A6A394524683F980097C195 /* KeyboardAvoider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAvoider.swift; sourceTree = "<group>"; };
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
 		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
 		1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersModelControllerMock.swift; sourceTree = "<group>"; };
@@ -179,8 +175,6 @@
 			children = (
 				1A1C2F42242E85F200096731 /* GetFollowersLogicController.swift */,
 				1A1C2F43242E85F200096731 /* GetFollowersViewController.swift */,
-				1A6A3943246823480097C195 /* KeyoardObserver.swift */,
-				1A6A394524683F980097C195 /* KeyboardAvoider.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -384,12 +378,10 @@
 				1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */,
 				1A952913244D385600A5ED5D /* GetFollowersNetworkingRequest.swift in Sources */,
 				1AEFAEB9245F7BAB00F64C17 /* ImagesAssets.swift in Sources */,
-				1A6A3944246823480097C195 /* KeyoardObserver.swift in Sources */,
 				1A94FD1F243378710095932A /* FollowersService.swift in Sources */,
 				1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */,
 				1A1C2F4A242E85F200096731 /* GetFollowersError.swift in Sources */,
 				1A94FD24243379EF0095932A /* FollowersRequest.swift in Sources */,
-				1A6A394624683F980097C195 /* KeyboardAvoider.swift in Sources */,
 				1A1C2F49242E85F200096731 /* Follower.swift in Sources */,
 				1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */,
 				1A1C2F4C242E85F200096731 /* GetFollowersViewController.swift in Sources */,

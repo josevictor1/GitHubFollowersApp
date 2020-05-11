@@ -35,7 +35,6 @@ class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
         let title = "Something went wrong"
         let description = error.message.localizedMessage
         let buttonTitle = "Ok"
-
         return Alert(title: title, description: description, buttonTitle: buttonTitle)
     }
 
@@ -55,5 +54,4 @@ class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
             presentingViewController?.present(viewController, animated: true)
         }
     }
-
 }
