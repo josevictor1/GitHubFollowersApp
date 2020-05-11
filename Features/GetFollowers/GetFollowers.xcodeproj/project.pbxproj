@@ -16,6 +16,7 @@
 		1A1C2F4D242E85F200096731 /* GetFollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F45242E85F200096731 /* GetFollowersView.swift */; };
 		1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */; };
 		1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */; };
+		1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A3954246A0EFE0097C195 /* Commons.framework */; };
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
 		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
 		1A94FD1524327C3D0095932A /* GetFollowersModelControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */; };
@@ -56,6 +57,7 @@
 		1A1C2F45242E85F200096731 /* GetFollowersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersView.swift; sourceTree = "<group>"; };
 		1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenter.swift; sourceTree = "<group>"; };
 		1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersCoordinator.swift; sourceTree = "<group>"; };
+		1A6A3954246A0EFE0097C195 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
 		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
 		1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersModelControllerMock.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			files = (
 				1A95290B244D122B00A5ED5D /* Networking.framework in Frameworks */,
 				1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */,
+				1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +241,7 @@
 		1AB702552443CDFF006F4CDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A6A3954246A0EFE0097C195 /* Commons.framework */,
 				1A95290A244D122B00A5ED5D /* Networking.framework */,
 				1AB702562443CDFF006F4CDD /* UIComponents.framework */,
 			);

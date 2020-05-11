@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A1C2EC4242D637A00096731 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2EC3242D637A00096731 /* Commons.framework */; };
+		1A6A3950246A0D540097C195 /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A394F246A0D540097C195 /* UIViewController+ActivityIndicator.swift */; };
+		1A6A3952246A0D640097C195 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3951246A0D640097C195 /* ActivityIndicator.swift */; };
 		1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07520242C11CB00DACD0A /* CustomAlertController.swift */; };
 		1AA07523242C124C00DACD0A /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07522242C124C00DACD0A /* CustomAlertView.swift */; };
 		1AA07528242C185800DACD0A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07527242C185800DACD0A /* Alert.swift */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		1A1C2EC3242D637A00096731 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6A394F246A0D540097C195 /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		1A6A3951246A0D640097C195 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		1AA07520242C11CB00DACD0A /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
 		1AA07522242C124C00DACD0A /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		1AA07527242C185800DACD0A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -67,6 +71,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1A6A394E246A0D120097C195 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A6A394F246A0D540097C195 /* UIViewController+ActivityIndicator.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1A6A3953246A0D6B0097C195 /* Activity Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				1A6A3951246A0D640097C195 /* ActivityIndicator.swift */,
+			);
+			path = "Activity Indicator";
+			sourceTree = "<group>";
+		};
 		1AD82C2B2460F182000CCD95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +118,7 @@
 		1AF58A2E242BC19D00275733 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				1A6A394E246A0D120097C195 /* Extensions */,
 				1AD82C2B2460F182000CCD95 /* Supporting Files */,
 				1AF58A46242BC23700275733 /* Components */,
 			);
@@ -116,19 +137,20 @@
 		1AF58A46242BC23700275733 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1AF58A47242BC25800275733 /* CustomAlertController */,
+				1A6A3953246A0D6B0097C195 /* Activity Indicator */,
+				1AF58A47242BC25800275733 /* Custom Alert Controller */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		1AF58A47242BC25800275733 /* CustomAlertController */ = {
+		1AF58A47242BC25800275733 /* Custom Alert Controller */ = {
 			isa = PBXGroup;
 			children = (
 				1AA07520242C11CB00DACD0A /* CustomAlertController.swift */,
 				1AA07522242C124C00DACD0A /* CustomAlertView.swift */,
 				1AA07527242C185800DACD0A /* Alert.swift */,
 			);
-			path = CustomAlertController;
+			path = "Custom Alert Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA07528242C185800DACD0A /* Alert.swift in Sources */,
+				1A6A3952246A0D640097C195 /* ActivityIndicator.swift in Sources */,
+				1A6A3950246A0D540097C195 /* UIViewController+ActivityIndicator.swift in Sources */,
 				1AA07523242C124C00DACD0A /* CustomAlertView.swift in Sources */,
 				1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */,
 			);
