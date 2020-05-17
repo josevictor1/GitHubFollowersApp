@@ -9,16 +9,16 @@
 import UIKit
 
 public extension UIView {
-
+    
     /// Embed a subview with inside the view method caller.
     /// - Parameter subview: Subview to be embbeded.
     func embed(_ subview: UIView) {
         place(subview, with: [leadingAnchor.constraint(equalTo: subview.leadingAnchor),
-                                trailingAnchor.constraint(equalTo: subview.trailingAnchor),
-                                topAnchor.constraint(equalTo: subview.topAnchor),
-                                bottomAnchor.constraint(equalTo: subview.bottomAnchor)])
+                              trailingAnchor.constraint(equalTo: subview.trailingAnchor),
+                              topAnchor.constraint(equalTo: subview.topAnchor),
+                              bottomAnchor.constraint(equalTo: subview.bottomAnchor)])
     }
-
+    
     /// Add a subview and set constraints.
     /// - Parameters:
     ///   - subview: Subview to be added.

@@ -13,7 +13,7 @@ class GetFollowersViewControllerDelegateMock: GetFollowersViewControllerDelegate
     
     var didViewControllerGotFollowers = false
     
-    func viewControllerDidGotFollowers(_ followers: [Follower]) {
+    func viewControllerDidGetFollowers(_ followers: [Follower]) {
         didViewControllerGotFollowers.toggle()
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A1C2EC8242E308000096731 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2EC7242E308000096731 /* NavigationCoordinator.swift */; };
+		1AA1C34D2470D38C00A6D3C1 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1C34C2470D38C00A6D3C1 /* UIView+.swift */; };
 		1AE20C572407404000867692 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE20C4D2407404000867692 /* Core.framework */; };
 		1AE20C5C2407404000867692 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C5B2407404000867692 /* CoreTests.swift */; };
 		1AE20C5E2407404000867692 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE20C502407404000867692 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1A1C2EC7242E308000096731 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		1AA1C34C2470D38C00A6D3C1 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		1AE20C4D2407404000867692 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20C502407404000867692 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		1AE20C512407404000867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AA1C34B2470D36A00A6D3C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1AA1C34C2470D38C00A6D3C1 /* UIView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1AD82C2A2460F12B000CCD95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		1AE20C4F2407404000867692 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1AA1C34B2470D36A00A6D3C1 /* Extensions */,
 				1AD82C2A2460F12B000CCD95 /* Supporting Files */,
 				1AE20C672407405100867692 /* Coordinator */,
 			);
@@ -218,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA1C34D2470D38C00A6D3C1 /* UIView+.swift in Sources */,
 				1A1C2EC8242E308000096731 /* NavigationCoordinator.swift in Sources */,
 				1AE20C692407409D00867692 /* Coordinator.swift in Sources */,
 			);

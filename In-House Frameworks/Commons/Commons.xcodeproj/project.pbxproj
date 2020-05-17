@@ -11,8 +11,8 @@
 		1A6A3948246A02810097C195 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3947246A02810097C195 /* Notification+.swift */; };
 		1A6A394B246A06FD0097C195 /* KeyoardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A394A246A06FD0097C195 /* KeyoardObserver.swift */; };
 		1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F829E241865F600D25A68 /* UIViewController+.swift */; };
-		1A91FC2524199AA5008CF123 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A91FC2424199AA5008CF123 /* UIView+.swift */; };
 		1AA0752C242D39CF00DACD0A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0752B242D39CF00DACD0A /* String+.swift */; };
+		1AA1C3502470D40100A6D3C1 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA1C34F2470D40100A6D3C1 /* Core.framework */; };
 		1AE20BF42407361C00867692 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE20BEA2407361C00867692 /* Commons.framework */; };
 		1AE20BF92407361C00867692 /* CommonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BF82407361C00867692 /* CommonsTests.swift */; };
 		1AE20BFB2407361C00867692 /* Commons.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE20BED2407361C00867692 /* Commons.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,8 +35,8 @@
 		1A6A3947246A02810097C195 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		1A6A394A246A06FD0097C195 /* KeyoardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyoardObserver.swift; sourceTree = "<group>"; };
 		1A8F829E241865F600D25A68 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		1A91FC2424199AA5008CF123 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		1AA0752B242D39CF00DACD0A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		1AA1C34F2470D40100A6D3C1 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20BEA2407361C00867692 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20BED2407361C00867692 /* Commons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Commons.h; sourceTree = "<group>"; };
 		1AE20BEE2407361C00867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA1C3502470D40100A6D3C1 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,11 +83,18 @@
 			path = "Keyboard Observer";
 			sourceTree = "<group>";
 		};
+		1AA1C34E2470D40100A6D3C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AA1C34F2470D40100A6D3C1 /* Core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1AA48131240C7F0F0086B6BB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				1A8F829E241865F600D25A68 /* UIViewController+.swift */,
-				1A91FC2424199AA5008CF123 /* UIView+.swift */,
 				1AA0752B242D39CF00DACD0A /* String+.swift */,
 				1AEFAEBC245FBBE300F64C17 /* Bundle+.swift */,
 				1A6A3947246A02810097C195 /* Notification+.swift */,
@@ -109,6 +117,7 @@
 				1AE20BEC2407361C00867692 /* Commons */,
 				1AE20BF72407361C00867692 /* CommonsTests */,
 				1AE20BEB2407361C00867692 /* Products */,
+				1AA1C34E2470D40100A6D3C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,7 +270,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */,
-				1A91FC2524199AA5008CF123 /* UIView+.swift in Sources */,
 				1AEFAEB4245D3E1A00F64C17 /* Assets.swift in Sources */,
 				1A6A3948246A02810097C195 /* Notification+.swift in Sources */,
 				1AEFAEBD245FBBE300F64C17 /* Bundle+.swift in Sources */,

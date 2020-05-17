@@ -10,16 +10,13 @@ import UIKit
 import Commons
 
 protocol GetFollowersViewControllerDelegate: AnyObject {
-
-    /// Method called when `GetFollowersViewController` finishes to fetch users.
-    /// - Parameter user: User fetched
-    func viewControllerDidGotFollowers(_ followers: [Follower])
+    func viewControllerDidGetFollowers(_ followers: [Follower])
 }
 
 class GetFollowersViewController: UIViewController {
-
+    
     // MARK: - Properties
-
+    
     private var logicController: GetFollowersLogicProtocol?
     private var presenter: GetFollowersAlertPresenterProtocol?
     private let keyboardObserver = KeyboardObserver()
@@ -33,15 +30,15 @@ class GetFollowersViewController: UIViewController {
         view.setTextFieldDelegate(self)
         return view
     }()
-
+    
     // MARK: - Actions
-
+    
     lazy var onGetFollowersButtonTapped: (String?) -> Void = { [unowned self] username in
         self.fetchUser(with: username)
     }
-
+    
     // MARK: - Life Cycle
-
+    
     override func loadView() {
         super.loadView()
         view = getFollowersView
@@ -51,18 +48,21 @@ class GetFollowersViewController: UIViewController {
         super.viewDidLoad()
         setUpKeyboardObserver()
     }
-
+    
     // MARK: - Business Logic
-
+    
     private func fetchUser(with username: String?) {
         guard let username = username, !username.isEmpty else { return }
-        
+        startLoading()
         logicController?.getFollowers(of: username) { [unowned self] result in
-            switch result {
-            case .success(let followers):
-                self.delegate?.viewControllerDidGotFollowers(followers)
-            case .failure(let error):
-                self.presenter?.present(error)
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let followers):
+                    self.delegate?.viewControllerDidGetFollowers(followers)
+                case .failure(let error):
+                    self.presenter?.present(error)
+                }
+                self.stopLoading()
             }
         }
     }
@@ -92,10 +92,11 @@ extension GetFollowersViewController: UITextFieldDelegate {
 // MARK: - Factory
 
 extension GetFollowersViewController {
-
+    
     static func makeGetFollowers() -> GetFollowersViewController {
         let viewController = GetFollowersViewController()
         viewController.presenter = GetFollowersAlertPresenter(viewController: viewController)
+        viewController.logicController = GetFollowersLogicController()
         return viewController
     }
 }

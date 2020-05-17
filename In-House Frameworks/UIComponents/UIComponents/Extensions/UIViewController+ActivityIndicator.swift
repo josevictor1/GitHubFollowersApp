@@ -6,4 +6,26 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public extension UIViewController {
+    
+    private var activityIndicator: ActivityIndicatorView { .shared }
+    
+    private func addActivityIndicatorAsSubview() {
+        view.addSubview(activityIndicator)
+        activityIndicator.frame = CGRect(x: .zero, y: .zero, width: 80, height: 80)
+        activityIndicator.center = view.center
+    }
+    
+    func startLoading() {
+        addActivityIndicatorAsSubview()
+        activityIndicator.start()
+    }
+    
+    func stopLoading() {
+        activityIndicator.removeFromSuperview()
+        activityIndicator.stop()
+    }
+    
+}

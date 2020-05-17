@@ -6,6 +6,7 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
+import Core
 import UIKit
 
 public extension UIViewController {

@@ -18,7 +18,7 @@ class GetFollowersLogicController: GetFollowersLogicProtocol {
     
     private let provider: FollowersProvider
     
-    init(provider: FollowersProvider){
+    init(provider: FollowersProvider = FollowersService()){
         self.provider = provider
     }
     

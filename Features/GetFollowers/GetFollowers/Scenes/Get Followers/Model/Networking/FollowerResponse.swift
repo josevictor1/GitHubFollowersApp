@@ -20,7 +20,7 @@ struct FollowerResponse: Decodable {
     let followingURL: String
     let gistsURL: String
     let starredURL: String
-    let subscriptionsURL: String
+    let subscriptionsURL: String?
     let organizationsURL: String
     let reposURL: String
     let eventsURL: String
