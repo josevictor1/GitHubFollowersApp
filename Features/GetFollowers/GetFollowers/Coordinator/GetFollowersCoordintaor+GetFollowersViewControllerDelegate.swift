@@ -11,6 +11,6 @@ import Foundation
 extension GetFollowersCoordinator: GetFollowersViewControllerDelegate {
     
     func viewControllerDidGetFollowers(_ followers: [Follower]) {
-        
+        navigateToFollowers(with: followers)
     }
 }

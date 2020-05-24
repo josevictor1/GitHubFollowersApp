@@ -158,7 +158,7 @@ class NetworkingServiceTests: XCTestCase {
     
     func testConvertErrorToNetworkingErrorWithRedirection() {
         let sut = makeSUT()
-        let responseMock = NetworkingResponse(data: Data(), response: makeHTTPURLResponse(with: .redirection))
+        let responseMock = NetworkingResponse(data: dataMock, response: makeHTTPURLResponse(with: .redirection))
         let mockError = makeNSError(with: .redirection)
         let expectedError: NetworkingError = .redirection(mockError, responseMock)
         
@@ -169,7 +169,7 @@ class NetworkingServiceTests: XCTestCase {
     
     func testConvertErrorToNetworkingErrorWithClientError() {
         let sut = makeSUT()
-        let responseMock = NetworkingResponse(data: Data(), response: makeHTTPURLResponse(with: .clientError))
+        let responseMock = NetworkingResponse(data: dataMock, response: makeHTTPURLResponse(with: .clientError))
         let mockError = makeNSError(with: .clientError)
         let expectedError: NetworkingError = .client(mockError, responseMock)
         
@@ -180,7 +180,7 @@ class NetworkingServiceTests: XCTestCase {
     
     func testConvertErrorToNetworkingErrorWithServerError() {
         let sut = makeSUT()
-        let responseMock = NetworkingResponse(data: Data(), response: makeHTTPURLResponse(with: .serverError))
+        let responseMock = NetworkingResponse(data: dataMock, response: makeHTTPURLResponse(with: .serverError))
         let mockError = makeNSError(with: .serverError)
         let expectedError: NetworkingError = .server(mockError, responseMock)
         

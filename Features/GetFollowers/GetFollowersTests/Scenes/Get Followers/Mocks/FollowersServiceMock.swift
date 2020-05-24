@@ -12,9 +12,9 @@ import Foundation
 class FollowersServiceMock: FollowersProvider {
     
     var followers: [FollowerResponse]?
-    var error: NSError?
+    var error: GetFollowersError?
     
-    func requestFollowers(_ request: FollowersRequest, completion: @escaping ((Result<[FollowerResponse], NSError>) -> Void)) {
+    func requestFollowers(_ request: FollowersRequest, completion: @escaping FollowersServiceCompletion) {
         if let followers = followers {
             completion(.success(followers))
         } else if let error = error {

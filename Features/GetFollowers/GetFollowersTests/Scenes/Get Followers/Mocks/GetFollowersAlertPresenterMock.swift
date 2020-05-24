@@ -6,10 +6,16 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import UIKit
 @testable import GetFollowers
 
 class GetFollowersAlertPresenterMock: GetFollowersAlertPresenterProtocol {
+    
+    var viewController: UIViewController?
+    
+    func configureAlert(to presentingViewController: UIViewController) {
+        viewController = presentingViewController
+    }
     
     var onAlertPresented: ((GetFollowersError) -> Void)?
     

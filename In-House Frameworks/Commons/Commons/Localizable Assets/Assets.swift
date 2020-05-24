@@ -25,6 +25,6 @@ public class Assets {
     /// - Parameter image: The image asset to be instantiated.
     /// - Returns: The image.
     public static func localizable<Asset: AssetProtocol>(image: Asset, in bundle: Bundle = .main) -> UIImage {
-        UIImage(named: image.rawValue, in: bundle, with: .none)!
+        UIImage(named: image.rawValue, in: bundle, with: .none) ?? UIImage()
     }
 }

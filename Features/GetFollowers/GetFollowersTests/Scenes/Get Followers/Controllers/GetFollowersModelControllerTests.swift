@@ -43,9 +43,7 @@ class GetFollowersModelControllerTests: XCTestCase {
     
     func testGetFollowersWithInvalidUser() {
         let sut = makeSUT()
-        
-        let error = NSError(domain: "Not Found", code: 403, userInfo: nil)
-        followersProviderMock.error = error
+        followersProviderMock.error = .invalidUsername
         var receivedError: GetFollowersError?
         
         sut.getFollowers(of: "test") { result in
@@ -62,9 +60,7 @@ class GetFollowersModelControllerTests: XCTestCase {
     
     func testGetFollowersWithRequestFail() {
         let sut = makeSUT()
-        
-        let error = NSError(domain: "Internal Server Error", code: 500, userInfo: nil)
-        followersProviderMock.error = error
+        followersProviderMock.error = .requestFail
         var receivedError: GetFollowersError?
         
         sut.getFollowers(of: "test") { result in

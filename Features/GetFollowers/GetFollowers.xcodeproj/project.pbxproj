@@ -19,7 +19,7 @@
 		1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A3954246A0EFE0097C195 /* Commons.framework */; };
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
 		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
-		1A94FD1524327C3D0095932A /* GetFollowersModelControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */; };
+		1A94FD1524327C3D0095932A /* GetFollowersLogicControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1424327C3D0095932A /* GetFollowersLogicControllerMock.swift */; };
 		1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */; };
 		1A94FD1D24336A230095932A /* GetFollowersModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1C24336A230095932A /* GetFollowersModelControllerTests.swift */; };
 		1A94FD1F243378710095932A /* FollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1E243378710095932A /* FollowersService.swift */; };
@@ -28,6 +28,7 @@
 		1A94FD4C2433CCD30095932A /* FollowersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD4B2433CCD30095932A /* FollowersServiceMock.swift */; };
 		1A95290B244D122B00A5ED5D /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A95290A244D122B00A5ED5D /* Networking.framework */; };
 		1A952913244D385600A5ED5D /* GetFollowersNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */; };
+		1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */; };
 		1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB702562443CDFF006F4CDD /* UIComponents.framework */; };
 		1AD82C282460DE00000CCD95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD82C272460DE00000CCD95 /* Localizable.strings */; };
 		1AED2CFA247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED2CF9247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift */; };
@@ -61,7 +62,7 @@
 		1A6A3954246A0EFE0097C195 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
 		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
-		1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersModelControllerMock.swift; sourceTree = "<group>"; };
+		1A94FD1424327C3D0095932A /* GetFollowersLogicControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerMock.swift; sourceTree = "<group>"; };
 		1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerDelegateMock.swift; sourceTree = "<group>"; };
 		1A94FD1C24336A230095932A /* GetFollowersModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersModelControllerTests.swift; sourceTree = "<group>"; };
 		1A94FD1E243378710095932A /* FollowersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersService.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		1A94FD4B2433CCD30095932A /* FollowersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersServiceMock.swift; sourceTree = "<group>"; };
 		1A95290A244D122B00A5ED5D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersNetworkingRequest.swift; sourceTree = "<group>"; };
+		1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		1AB702562443CDFF006F4CDD /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD82C272460DE00000CCD95 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1AED2CF9247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift"; sourceTree = "<group>"; };
@@ -215,7 +217,7 @@
 		1A94FD0F24326FC40095932A /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				1A94FD1424327C3D0095932A /* GetFollowersModelControllerMock.swift */,
+				1A94FD1424327C3D0095932A /* GetFollowersLogicControllerMock.swift */,
 				1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */,
 				1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */,
 				1A94FD4B2433CCD30095932A /* FollowersServiceMock.swift */,
@@ -275,6 +277,7 @@
 		1AED2CF62479FD83000BC13A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				1A94FD24243379EF0095932A /* FollowersRequest.swift in Sources */,
 				1A1C2F49242E85F200096731 /* Follower.swift in Sources */,
 				1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */,
+				1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */,
 				1A1C2F4C242E85F200096731 /* GetFollowersViewController.swift in Sources */,
 				1A1C2F4D242E85F200096731 /* GetFollowersView.swift in Sources */,
 			);
@@ -433,7 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A94FD1524327C3D0095932A /* GetFollowersModelControllerMock.swift in Sources */,
+				1A94FD1524327C3D0095932A /* GetFollowersLogicControllerMock.swift in Sources */,
 				1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */,
 				1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */,
 				1A94FD4C2433CCD30095932A /* FollowersServiceMock.swift in Sources */,

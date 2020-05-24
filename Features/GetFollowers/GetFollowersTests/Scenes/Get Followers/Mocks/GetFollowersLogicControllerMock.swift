@@ -9,7 +9,7 @@
 import Foundation
 @testable import GetFollowers
 
-class GetFollowersModelControllerMock: GetFollowersLogicProtocol {
+class GetFollowersLogicControllerMock: GetFollowersLogicControllerProtocol {
     
     var error: GetFollowersError = .requestFail
     var followers: [Follower]?

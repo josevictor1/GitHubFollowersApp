@@ -10,11 +10,11 @@ import Foundation
 
 typealias GetFollowersResponseCompletion = ((Result<[Follower], GetFollowersError>) -> Void)
 
-protocol GetFollowersLogicProtocol {
+protocol GetFollowersLogicControllerProtocol {
     func getFollowers(of user: String, completion: @escaping GetFollowersResponseCompletion)
 }
 
-class GetFollowersLogicController: GetFollowersLogicProtocol {
+class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
     
     private let provider: FollowersProvider
     
