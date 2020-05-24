@@ -10,7 +10,7 @@ import UIKit
 import UIComponents
 
 protocol GetFollowersAlertPresenterProtocol {
-
+    
     /// Present an alert with the passed error.
     /// - Parameter error: Error to be presented.
     func present(_ error: GetFollowersError)

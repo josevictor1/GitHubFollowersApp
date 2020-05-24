@@ -17,10 +17,10 @@ class GetFollowersViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var logicController: GetFollowersLogicProtocol?
-    private var presenter: GetFollowersAlertPresenterProtocol?
+    private(set) var logicController: GetFollowersLogicProtocol?
+    private(set) var presenter: GetFollowersAlertPresenterProtocol?
     private let keyboardObserver = KeyboardObserver()
-    private weak var delegate: GetFollowersViewControllerDelegate?
+    private(set) weak var delegate: GetFollowersViewControllerDelegate?
     
     // MARK: - Subviews
     
@@ -93,10 +93,11 @@ extension GetFollowersViewController: UITextFieldDelegate {
 
 extension GetFollowersViewController {
     
-    static func makeGetFollowers() -> GetFollowersViewController {
+    static func makeGetFollowers(delegate: GetFollowersViewControllerDelegate) -> GetFollowersViewController {
         let viewController = GetFollowersViewController()
         viewController.presenter = GetFollowersAlertPresenter(viewController: viewController)
         viewController.logicController = GetFollowersLogicController()
+        viewController.delegate = delegate
         return viewController
     }
 }

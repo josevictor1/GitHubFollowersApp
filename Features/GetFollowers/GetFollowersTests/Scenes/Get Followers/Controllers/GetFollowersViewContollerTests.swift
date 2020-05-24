@@ -75,7 +75,7 @@ class GetFollowersViewControllerTests: XCTestCase {
         XCTAssertEqual(presentedError, .invalidUsername, "The alert should be presented with invalid username error")
     }
     
-    func testGetFollowersSucess() {
+    func testGetFollowersWithSuccess() {
         let sut = makeSUT()
         
         modelControllerMock.followers = []

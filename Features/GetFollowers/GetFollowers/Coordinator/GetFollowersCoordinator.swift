@@ -35,7 +35,7 @@ public class GetFollowersCoordinator: NavigationCoordinator {
     // MARK: - Navigation
 
     private func navigateToGetFollowers() {
-        let viewController: GetFollowersViewController = .makeGetFollowers()
+        let viewController: GetFollowersViewController = .makeGetFollowers(delegate: self)
         navigationController?.pushViewController(viewController, animated: false)
     }
 
