@@ -1,15 +1,15 @@
 //
-//  String+.swift
+//  String+Localizble.swift
 //  Commons
 //
-//  Created by José Victor Pereira Costa on 26/03/20.
+//  Created by José Victor Pereira Costa on 28/05/20.
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
 import Foundation
 
 public extension String {
-
+    
     /// Returns a localized string from a specific key, using the main bundle if one is not specified.
     ///
     ///  This method is a wrapper of the original function NSLocalizedString.
