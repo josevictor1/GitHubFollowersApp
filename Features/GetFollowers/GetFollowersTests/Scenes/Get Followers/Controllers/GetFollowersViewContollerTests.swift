@@ -33,12 +33,13 @@ class GetFollowersViewControllerTests: XCTestCase {
         var presentedError: GetFollowersError?
         let username = "test"
         let expectation = XCTestExpectation(description: "The onAlertPresented closure should be executed")
-        alertPresenterMock.onAlertPresented = { error in
+        alertPresenterMock.onAlertPresented = { [weak expectation] error in
             presentedError = error
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         sut.onGetFollowersButtonTapped(username)
+        
         wait(for: [expectation], timeout: 1)
         XCTAssertEqual(presentedError, .requestFail, "The alert should be presented with request fail error")
     }
@@ -49,14 +50,13 @@ class GetFollowersViewControllerTests: XCTestCase {
         var presentedError: GetFollowersError?
         let username = "test"
         let expectation = XCTestExpectation(description: "The onAlertPresented closure should be executed")
-        alertPresenterMock.onAlertPresented = { error in
+        alertPresenterMock.onAlertPresented = { [weak expectation] error in
             presentedError = error
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
-       
-        
         sut.onGetFollowersButtonTapped(username)
+        
         wait(for: [expectation], timeout: 1)
         XCTAssertEqual(presentedError, .invalidUsername, "The alert should be presented with invalid username error")
     }
@@ -71,6 +71,7 @@ class GetFollowersViewControllerTests: XCTestCase {
         let username = "test"
         
         sut.onGetFollowersButtonTapped(username)
+        
         wait(for: [expectation], timeout: 1)
         XCTAssertTrue(delegateMock.didViewControllerGotFollowers, "The delegate shold be called")
     }

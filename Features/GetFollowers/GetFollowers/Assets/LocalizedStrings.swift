@@ -8,16 +8,9 @@
 
 import Commons
 
-enum LocalizedStrings: AssetProtocol {
+enum LocalizedStrings: String {
     
-    case enterUsername
-    
-    var rawValue: String {
-        switch self {
-        case .enterUsername:
-            return "enter_username"
-        }
-    }
+    case enterUsername = "enter_username"
     
     init?(rawValue: String) {
         switch rawValue {

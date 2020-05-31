@@ -14,6 +14,11 @@ public final class GetFollowersView: UIView {
     // MARK: - Properties
     
     private var bottomButtonConstraint: NSLayoutConstraint?
+    private let cornerRadius: CGFloat = 12
+    private let smallPadding: CGFloat = 10
+    private let mediumPadding: CGFloat = 31
+    private let largePadding: CGFloat = 62
+    private let extraLargePadding: CGFloat = 200
     
     // MARK: - Closures
     
@@ -28,12 +33,13 @@ public final class GetFollowersView: UIView {
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setUp()
     }
     
     // MARK: - Subviews
     
     private lazy var logoImageView: UIImageView = {
-        let image = Assets.localizable(image: ImagesAssets.getFollowersLogo)
+        let image = UIImage(named: ImagesAssets.getFollowersLogo.rawValue)
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -41,15 +47,16 @@ public final class GetFollowersView: UIView {
     
     private lazy var usernameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = Assets.localizable(string: LocalizedStrings.enterUsername,
-                                                   in: Bundle(for: Self.self))
+        let placeholder: LocalizedStrings = .enterUsername
+        textField.placeholder = placeholder.rawValue.localized(bundle: bundle)
         textField.textAlignment = .center
         textField.layer.borderWidth = 1
-        textField.layer.cornerRadius = 12
+        textField.layer.cornerRadius = cornerRadius
         textField.layer.borderColor = UIColor.tertiarySystemFill.cgColor
         textField.returnKeyType = .continue
         textField.backgroundColor = .secondarySystemBackground
         textField.font = .preferredFont(forTextStyle: .body)
+        textField.autocapitalizationType = .none
         textField.adjustsFontForContentSizeCategory = true
         textField.layer.masksToBounds = true
         return textField
@@ -62,11 +69,8 @@ public final class GetFollowersView: UIView {
         button.titleLabel?.font = .preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.titleLabel?.textAlignment = .center
-        button.backgroundColor = UIColor(red: 45/255,
-                                         green: 186/255,
-                                         blue: 78/255,
-                                         alpha: 1)
-        button.layer.cornerRadius = 12
+        button.backgroundColor = .chateauGreen
+        button.layer.cornerRadius = cornerRadius
         button.addTarget(self, action: #selector(getFollowersButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -89,8 +93,8 @@ public final class GetFollowersView: UIView {
     }
     
     func scrollUpGetFollowersButton(at height: CGFloat) {
-        UIView.animate(withDuration: 0.25) {
-            self.bottomButtonConstraint?.constant = height > .zero ? -height : -31
+        UIView.animate(withDuration: 0.25) { [unowned self] in
+            self.bottomButtonConstraint?.constant = height > .zero ? -height : -self.mediumPadding
             self.layoutIfNeeded()
         }
     }
@@ -105,36 +109,42 @@ public final class GetFollowersView: UIView {
         backgroundColor = .systemBackground
     }
     
-    func setTextFieldDelegate(_ delegate: UITextFieldDelegate) {
-        usernameTextField.delegate = delegate
+    func set(textFieldDelegate: UITextFieldDelegate) {
+        usernameTextField.delegate = textFieldDelegate
     }
     
     // MARK: - Constraints
     
     private func setUpLogoImageView() {
-        logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: 200).isActive = true
+        logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: extraLargePadding).isActive = true
     }
     
     private func setUpUsernameTextField() {
-        usernameTextField.heightAnchor.constraint(equalToConstant: 62).isActive = true
+        usernameTextField.heightAnchor.constraint(equalToConstant: largePadding).isActive = true
     }
     
     private func setUpSatckView() {
-        let constraints = [stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 70),
-                           stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 31),
-                           stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -31)
+        
+        let constraints = [stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: largePadding),
+                           stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
+                                                              constant: mediumPadding),
+                           stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor,
+                                                               constant: -mediumPadding)
         ]
         place(stackView, with: constraints)
     }
     
     private func setUpGetFollowersButton() {
-        bottomButtonConstraint = getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -31)
-        let constraints = [getFollowersButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 31),
-                           getFollowersButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -31),
+        bottomButtonConstraint = getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor,
+                                                                            constant: -mediumPadding)
+        let constraints = [getFollowersButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
+                                                                       constant: mediumPadding),
+                           getFollowersButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor,
+                                                                        constant: -mediumPadding),
                            bottomButtonConstraint!,
-                           getFollowersButton.heightAnchor.constraint(greaterThanOrEqualToConstant: 62),
-                           getFollowersButton.topAnchor.constraint(greaterThanOrEqualTo: stackView.bottomAnchor, constant: 10)]
+                           getFollowersButton.heightAnchor.constraint(greaterThanOrEqualToConstant: largePadding),
+                           getFollowersButton.topAnchor.constraint(greaterThanOrEqualTo: stackView.bottomAnchor,
+                                                                   constant: smallPadding)]
         place(getFollowersButton, with: constraints)
     }
-    
 }

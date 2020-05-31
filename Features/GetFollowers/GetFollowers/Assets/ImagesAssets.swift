@@ -8,16 +8,10 @@
 
 import Commons
 
-enum ImagesAssets: AssetProtocol {
+enum ImagesAssets: String {
     
-    case getFollowersLogo
+    case getFollowersLogo = "gh-logo"
     
-    var rawValue: String {
-        switch self {
-        case .getFollowersLogo:
-            return "gh-logo"
-        }
-    }
     
     init?(rawValue: String) {
         switch rawValue {

@@ -33,7 +33,6 @@ public struct NetworkingResponse: Equatable {
     public var description: String {
         return "Status Code: \(statusCode), Data Length: \(data.count)"
     }
-    
 }
 
 extension NetworkingResponse {

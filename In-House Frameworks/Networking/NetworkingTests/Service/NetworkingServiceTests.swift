@@ -14,9 +14,9 @@ class NetworkingServiceTests: XCTestCase {
     // MARK: - Mocks
     
     let urlMock = URL(string: "api.github.com")!
-    var requestMock: URLRequest  {
+    lazy var requestMock: URLRequest = {
         URLRequest(url: urlMock)
-    }
+    }()
     
     // MARK: - Factories
     

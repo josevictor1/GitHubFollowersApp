@@ -6,4 +6,9 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public extension UIColor {
+    
+    static let chateauGreen = UIColor(red: 45/255, green: 186/255, blue: 78/255, alpha: 1) 
+}

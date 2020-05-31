@@ -8,7 +8,16 @@
 
 import UIKit
 
-class FollowersViewController: UIViewController {
+class FollowersViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate {
+    
+    private lazy var followersView: FollowersView = {
+        FollowersView(collectionViewDelegate: self,
+                      searchBarDelegate: self)
+    }()
+    
+    override func loadView() {
+        view = followersView
+    }
     
 }
 

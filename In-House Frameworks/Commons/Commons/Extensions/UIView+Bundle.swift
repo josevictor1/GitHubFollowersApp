@@ -6,4 +6,11 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public extension UIView {
+    
+    var bundle: Bundle {
+        Bundle(for: Self.self)
+    }
+}

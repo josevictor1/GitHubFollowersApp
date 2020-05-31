@@ -10,6 +10,7 @@ import UIKit
 import Commons
 
 protocol GetFollowersViewControllerDelegate: AnyObject {
+    
     func viewControllerDidGetFollowers(_ followers: [Follower])
 }
 
@@ -27,7 +28,7 @@ class GetFollowersViewController: UIViewController {
     private lazy var getFollowersView: GetFollowersView = {
         let view = GetFollowersView()
         view.onGetFollowersButtonTapped = onGetFollowersButtonTapped
-        view.setTextFieldDelegate(self)
+        view.set(textFieldDelegate: self)
         return view
     }()
     
