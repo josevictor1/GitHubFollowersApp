@@ -68,25 +68,21 @@ class FollowersView: UIView {
     }
     
     func setUpSearchBarConstraints() {
-        addSubview(searchBar)
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
         let constraint = [
             searchBar.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             searchBar.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor)
         ]
-        NSLayoutConstraint.activate(constraint)
+        place(searchBar, with: constraint)
     }
     
     func setUpCollectionViewConstraints() {
-        addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         let constraint = [
             collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
         ]
-        NSLayoutConstraint.activate(constraint)
+        place(collectionView, with: constraint)
     }
 }

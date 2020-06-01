@@ -31,15 +31,15 @@ class MainCoordinator: Coordinator {
 
     func start() {
         tabBarController?.viewControllers = [setUpSearchFollowersTab()]
-        tabBarController?.tabBar.tintColor = UIColor(red: 45/255, green: 186/255, blue: 78/255, alpha: 1)
+        tabBarController?.tabBar.tintColor = .chateauGreen
     }
 
     private func setUpSearchFollowersTab() -> UIViewController {
         let coordinator: GetFollowersCoordinator = .instantiate()
-        children.append(coordinator)
         coordinator.navigationController?.tabBarItem = UITabBarItem(title: "Search",
                                                                     image: UIImage(named: "magnifyingglass"),
-                                                                    tag: 0)
+                                                                    tag: .zero)
+        children.append(coordinator)
         coordinator.start()
         return coordinator.navigationController!
     }

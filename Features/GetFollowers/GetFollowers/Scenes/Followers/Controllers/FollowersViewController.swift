@@ -8,23 +8,47 @@
 
 import UIKit
 
-class FollowersViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate {
+class FollowersViewController: UICollectionViewController {
     
-    private lazy var followersView: FollowersView = {
-        FollowersView(collectionViewDelegate: self,
-                      searchBarDelegate: self)
-    }()
+    var userFollowers: UserFollowers?
+    private var searchController: UISearchController?
     
-    override func loadView() {
-        view = followersView
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpLayout()
     }
     
+    private func setUpLayout() {
+        title = userFollowers?.username ?? String()
+        view.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .systemBackground
+        setupNavigationController()
+    }
+    
+    private func setupNavigationController() {
+        let searchController = UISearchController(searchResultsController: self)
+        searchController.searchBar.autocapitalizationType = .none
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+    }
 }
+
+extension FollowersViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+}
+
 
 extension FollowersViewController {
     
-    static func makeFollowers() -> FollowersViewController {
-        let viewController = FollowersViewController()
+    static func makeFollowers(userFollowers: UserFollowers) -> FollowersViewController {
+        let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        viewController.userFollowers = userFollowers
         return viewController
     }
 }

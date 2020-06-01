@@ -34,9 +34,9 @@ class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
     // MARK: - Presentation
 
     private func alert(to error: GetFollowersError) -> Alert {
-        let title = "Something went wrong"
+        let title = LocalizedStrings.somethingWentWrong.localized
         let description = error.message.localizedMessage
-        let buttonTitle = "Ok"
+        let buttonTitle = LocalizedStrings.ok.localized
         return Alert(title: title, description: description, buttonTitle: buttonTitle)
     }
 

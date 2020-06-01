@@ -11,7 +11,7 @@ import Commons
 
 protocol GetFollowersViewControllerDelegate: AnyObject {
     
-    func viewControllerDidGetFollowers(_ followers: [Follower])
+    func viewControllerDidGetFollowers(_ userFollowers: UserFollowers)
 }
 
 class GetFollowersViewController: UIViewController {
@@ -59,7 +59,8 @@ class GetFollowersViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let followers):
-                    self.delegate?.viewControllerDidGetFollowers(followers)
+                    let userFollowers = UserFollowers(username: username, followers: followers)
+                    self.delegate?.viewControllerDidGetFollowers(userFollowers)
                 case .failure(let error):
                     self.presenter?.present(error)
                 }

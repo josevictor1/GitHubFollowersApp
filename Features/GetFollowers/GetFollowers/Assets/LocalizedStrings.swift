@@ -9,15 +9,11 @@
 import Commons
 
 enum LocalizedStrings: String {
-    
     case enterUsername = "enter_username"
+    case somethingWentWrong = "something_went_wrong"
+    case ok = "ok"
     
-    init?(rawValue: String) {
-        switch rawValue {
-        case "enter_username":
-            self = .enterUsername
-        default:
-            return nil
-        }
+    var localized: String {
+        rawValue.localized(bundle: Bundle(for: FollowersView.self))
     }
 }

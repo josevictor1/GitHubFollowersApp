@@ -28,8 +28,14 @@ public class GetFollowersCoordinator: NavigationCoordinator {
     // MARK: - Life Cycle
 
     public func start() {
-        navigationController?.setNavigationBarHidden(true, animated: false)
         navigateToGetFollowers()
+        setUpNavigationLayout()
+    }
+    
+    private func setUpNavigationLayout() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .chateauGreen
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     // MARK: - Navigation
@@ -39,8 +45,10 @@ public class GetFollowersCoordinator: NavigationCoordinator {
         navigationController?.pushViewController(viewController, animated: false)
     }
     
-    func navigateToFollowers(with followers: [Follower]) {
-        let viewController: FollowersViewController = .makeFollowers()
+    func navigateToFollowers(with userFollowers: UserFollowers) {
+        let viewController: FollowersViewController = .makeFollowers(userFollowers: userFollowers)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.isOpaque = true
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
