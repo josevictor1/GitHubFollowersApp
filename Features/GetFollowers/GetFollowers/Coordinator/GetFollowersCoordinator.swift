@@ -47,8 +47,6 @@ public class GetFollowersCoordinator: NavigationCoordinator {
     
     func navigateToFollowers(with userFollowers: UserFollowers) {
         let viewController: FollowersViewController = .makeFollowers(userFollowers: userFollowers)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.isOpaque = true
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
