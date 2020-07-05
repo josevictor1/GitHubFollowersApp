@@ -48,7 +48,7 @@ public final class GetFollowersView: UIView {
     private lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         let placeholder: LocalizedStrings = .enterUsername
-        textField.placeholder = placeholder.rawValue.localized(bundle: bundle)
+        textField.placeholder = placeholder.localized
         textField.textAlignment = .center
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = cornerRadius
