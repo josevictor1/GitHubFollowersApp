@@ -9,9 +9,10 @@
 import Commons
 
 enum LocalizedStrings: String {
-    case enterUsername = "enter_username"
-    case somethingWentWrong = "something_went_wrong"
-    case ok = "ok"
+    case enterUsername
+    case somethingWentWrong
+    case getFollowers
+    case ok
     
     var localized: String {
         rawValue.localized(bundle: Bundle(for: FollowersView.self))

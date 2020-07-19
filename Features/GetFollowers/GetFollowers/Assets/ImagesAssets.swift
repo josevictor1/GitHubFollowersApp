@@ -12,7 +12,6 @@ enum ImagesAssets: String {
     
     case getFollowersLogo = "gh-logo"
     
-    
     init?(rawValue: String) {
         switch rawValue {
         case "gh-logo":

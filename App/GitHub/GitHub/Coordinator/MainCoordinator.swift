@@ -33,12 +33,16 @@ class MainCoordinator: Coordinator {
         tabBarController?.viewControllers = [setUpSearchFollowersTab()]
         tabBarController?.tabBar.tintColor = .chateauGreen
     }
-
+    
+    private func tabBarItem() -> UITabBarItem {
+        UITabBarItem(title: "Search",
+                     image: UIImage(named: "magnifyingglass"),
+                     tag: .zero)
+    }
+    
     private func setUpSearchFollowersTab() -> UIViewController {
         let coordinator: GetFollowersCoordinator = .instantiate()
-        coordinator.navigationController?.tabBarItem = UITabBarItem(title: "Search",
-                                                                    image: UIImage(named: "magnifyingglass"),
-                                                                    tag: .zero)
+        coordinator.navigationController?.tabBarItem = tabBarItem()
         children.append(coordinator)
         coordinator.start()
         return coordinator.navigationController!

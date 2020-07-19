@@ -6,6 +6,7 @@
   Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 */
 
-"enter_username" = "Enter Username";
-"something_went_wrong" = "Something went wrong";
+"enterUsername" = "Enter Username";
+"somethingWentWrong" = "Something went wrong";
 "ok" = "Ok";
+"getFollowers" = "Get Followers";

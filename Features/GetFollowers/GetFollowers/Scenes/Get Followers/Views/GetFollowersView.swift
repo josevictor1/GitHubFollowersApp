@@ -39,7 +39,8 @@ public final class GetFollowersView: UIView {
     // MARK: - Subviews
     
     private lazy var logoImageView: UIImageView = {
-        let image = UIImage(named: ImagesAssets.getFollowersLogo.rawValue)
+        let imageAsset: ImagesAssets = .getFollowersLogo
+        let image = UIImage(named: imageAsset.rawValue)
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -64,7 +65,8 @@ public final class GetFollowersView: UIView {
     
     private lazy var getFollowersButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Get Followers", for: .normal)
+        let title: LocalizedStrings = .getFollowers
+        button.setTitle(title.localized, for: .normal)
         button.titleLabel?.numberOfLines = .zero
         button.titleLabel?.font = .preferredFont(forTextStyle: .body)
         button.titleLabel?.adjustsFontForContentSizeCategory = true
