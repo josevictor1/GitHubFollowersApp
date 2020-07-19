@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 /// The abstraction that handles keyboard notifications.
 public class KeyboardObserver {
     
@@ -55,7 +57,5 @@ public class KeyboardObserver {
     
     // MARK: - Deinitializer
     
-    deinit {
-        notification.removeObserver(self)
-    }
+    deinit { notification.removeObserver(self) }
 }

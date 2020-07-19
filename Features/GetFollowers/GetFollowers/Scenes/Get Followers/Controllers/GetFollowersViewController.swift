@@ -41,7 +41,6 @@ class GetFollowersViewController: UIViewController {
     // MARK: - Life Cycle
     
     override func loadView() {
-        super.loadView()
         view = getFollowersView
     }
     
@@ -98,6 +97,7 @@ extension GetFollowersViewController {
     static func makeGetFollowers(delegate: GetFollowersViewControllerDelegate,
                                  presenter: GetFollowersAlertPresenterProtocol = GetFollowersAlertPresenter(),
                                  logicController: GetFollowersLogicControllerProtocol = GetFollowersLogicController()) -> GetFollowersViewController {
+        
         let viewController = GetFollowersViewController()
         viewController.presenter = presenter
         viewController.logicController = logicController

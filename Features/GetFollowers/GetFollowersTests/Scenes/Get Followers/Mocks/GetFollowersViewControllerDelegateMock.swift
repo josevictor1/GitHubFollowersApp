@@ -15,9 +15,8 @@ class GetFollowersViewControllerDelegateMock: GetFollowersViewControllerDelegate
     
     var expectationCompletion: (() -> Void)?
     
-    func viewControllerDidGetFollowers(_ followers: [Follower]) {
+    func viewControllerDidGetFollowers(_ userFollowers: UserFollowers) {
         didViewControllerGotFollowers.toggle()
         expectationCompletion?()
     }
-    
 }

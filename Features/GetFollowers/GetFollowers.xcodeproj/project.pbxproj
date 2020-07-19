@@ -32,6 +32,8 @@
 		1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */; };
 		1AAD12BB247B387400C563F9 /* FollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD12BA247B387400C563F9 /* FollowersView.swift */; };
 		1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB702562443CDFF006F4CDD /* UIComponents.framework */; };
+		1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */; };
+		1AC556A024C4768100EE1E08 /* FollowersModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5569F24C4768100EE1E08 /* FollowersModelController.swift */; };
 		1AD82C282460DE00000CCD95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD82C272460DE00000CCD95 /* Localizable.strings */; };
 		1AED2CFA247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED2CF9247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift */; };
 		1AEFAEB9245F7BAB00F64C17 /* ImagesAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */; };
@@ -77,6 +79,8 @@
 		1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		1AAD12BA247B387400C563F9 /* FollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersView.swift; sourceTree = "<group>"; };
 		1AB702562443CDFF006F4CDD /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicController.swift; sourceTree = "<group>"; };
+		1AC5569F24C4768100EE1E08 /* FollowersModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersModelController.swift; sourceTree = "<group>"; };
 		1AD82C272460DE00000CCD95 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1AED2CF9247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAssets.swift; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */,
+				1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */,
+				1AC5569F24C4768100EE1E08 /* FollowersModelController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -430,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AEFAEBB245F7BC600F64C17 /* LocalizedStrings.swift in Sources */,
+				1AC556A024C4768100EE1E08 /* FollowersModelController.swift in Sources */,
 				1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */,
 				1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */,
 				1A952913244D385600A5ED5D /* GetFollowersNetworkingRequest.swift in Sources */,
@@ -443,6 +450,7 @@
 				1A1C2F49242E85F200096731 /* Follower.swift in Sources */,
 				1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */,
 				1A65D7FB2483DEA2001772EC /* UserFollowers.swift in Sources */,
+				1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */,
 				1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */,
 				1A1C2F4C242E85F200096731 /* GetFollowersViewController.swift in Sources */,
 				1A1C2F4D242E85F200096731 /* GetFollowersView.swift in Sources */,
