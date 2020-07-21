@@ -58,8 +58,6 @@ extension FollowersViewController: UISearchBarDelegate {
         performQuery(with: searchText)
     }
     
-    
-    
     private func performQuery(with filter: String?) {
         
     }
@@ -68,7 +66,7 @@ extension FollowersViewController: UISearchBarDelegate {
 
 extension FollowersViewController {
     
-    static func makeFollowers(userFollowers: UserFollowers) -> FollowersViewController {
+    static func makeFollowers(with userFollowers: UserFollowers) -> FollowersViewController {
         let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
         viewController.userFollowers = userFollowers
         return viewController

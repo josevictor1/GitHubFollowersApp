@@ -17,26 +17,29 @@ class FollowersView: UIView {
         return searchBar
     }()
     
+    
+    
     private lazy var layout: UICollectionViewLayout = {
-        UICollectionViewCompositionalLayout { ( _, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection in
-            let contentSize = layoutEnvironment.container.effectiveContentSize
+        UICollectionViewCompositionalLayout { (_, _) -> NSCollectionLayoutSection in
+            let insets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
             let columns = 2
             let spacing = CGFloat(10)
+            
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                   heightDimension: .absolute(100))
+            
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                    heightDimension: .absolute(100))
+            
             let group: NSCollectionLayoutGroup = .horizontal(layoutSize: groupSize,
                                                              subitem: item,
                                                              count: columns)
             group.interItemSpacing = .fixed(spacing)
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = spacing
-            section.contentInsets = NSDirectionalEdgeInsets(top: 10,
-                                                            leading: 10,
-                                                            bottom: 10,
-                                                            trailing: 10)
+            section.contentInsets = insets
             return section
         }
     }()
@@ -62,27 +65,27 @@ class FollowersView: UIView {
         setUpConstraints()
     }
     
-    func setUpConstraints() {
+    private func setUpConstraints() {
         setUpSearchBarConstraints()
         setUpCollectionViewConstraints()
     }
     
-    func setUpSearchBarConstraints() {
-        let constraint = [
+    private func setUpSearchBarConstraints() {
+        let constraints = [
             searchBar.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             searchBar.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             searchBar.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor)
         ]
-        place(searchBar, with: constraint)
+        place(searchBar, with: constraints)
     }
     
-    func setUpCollectionViewConstraints() {
-        let constraint = [
+    private func setUpCollectionViewConstraints() {
+        let constraints = [
             collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
         ]
-        place(collectionView, with: constraint)
+        place(collectionView, with: constraints)
     }
 }
