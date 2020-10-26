@@ -13,14 +13,20 @@ class FollowersViewController: UICollectionViewController {
     // MARK: - Propeties
     
     var userFollowers: UserFollowers?
-    private var searchController: UISearchController?
+    
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.autocapitalizationType = .none
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        return searchController
+    }()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpLayout()
-        setupNavigationController()
+        setUp()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,17 +41,30 @@ class FollowersViewController: UICollectionViewController {
     
     // MARK: - Setup
     
+    private func setUp() {
+        setUpLayout()
+        setUpNavigationController()
+    }
+    
     private func setUpLayout() {
+        setUpTitle()
+        setUpBackgroundColor()
+        setUpCollectionViewBackgroundColor()
+    }
+    
+    private func setUpTitle() {
         title = userFollowers?.username ?? String()
+    }
+    
+    private func setUpBackgroundColor() {
         view.backgroundColor = .systemBackground
+    }
+    
+    private func setUpCollectionViewBackgroundColor() {
         collectionView.backgroundColor = .systemBackground
     }
     
-    private func setupNavigationController() {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.autocapitalizationType = .none
-        searchController.searchBar.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
+    private func setUpNavigationController() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
         definesPresentationContext = true

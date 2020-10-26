@@ -10,7 +10,6 @@ import UIKit
 import Commons
 
 protocol GetFollowersViewControllerDelegate: AnyObject {
-    
     func viewControllerDidGetFollowers(_ userFollowers: UserFollowers)
 }
 
