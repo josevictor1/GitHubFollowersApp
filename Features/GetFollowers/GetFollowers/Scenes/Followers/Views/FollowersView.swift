@@ -17,8 +17,6 @@ class FollowersView: UIView {
         return searchBar
     }()
     
-    
-    
     private lazy var layout: UICollectionViewLayout = {
         UICollectionViewCompositionalLayout { (_, _) -> NSCollectionLayoutSection in
             let insets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
