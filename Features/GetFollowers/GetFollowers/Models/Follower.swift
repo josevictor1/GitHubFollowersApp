@@ -9,11 +9,12 @@
 import Foundation
 
 struct Follower {
-    let photo: String
+    let imageURL: String
     let login: String
+    let identifier = UUID()
     
     init(response: FollowerResponse) {
         self.login = response.login
-        self.photo = response.avatarURL
+        self.imageURL = response.avatarURL
     }
 }

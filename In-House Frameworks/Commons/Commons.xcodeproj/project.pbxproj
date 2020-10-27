@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A02EDDD25489E7100C86CCD /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A02EDDC25489E7100C86CCD /* UIView+Identifier.swift */; };
 		1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F01242E48E700096731 /* ErrorMessage.swift */; };
 		1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65D7F7248323DF001772EC /* UIView+Bundle.swift */; };
 		1A6A3948246A02810097C195 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3947246A02810097C195 /* Notification+.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A02EDDC25489E7100C86CCD /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
 		1A1C2F01242E48E700096731 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		1A65D7F7248323DF001772EC /* UIView+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bundle.swift"; sourceTree = "<group>"; };
 		1A6A3947246A02810097C195 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				1A8F829E241865F600D25A68 /* UIViewController+.swift */,
 				1A6A3947246A02810097C195 /* Notification+.swift */,
 				1A65D7F7248323DF001772EC /* UIView+Bundle.swift */,
+				1A02EDDC25489E7100C86CCD /* UIView+Identifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */,
+				1A02EDDD25489E7100C86CCD /* UIView+Identifier.swift in Sources */,
 				1A6A3948246A02810097C195 /* Notification+.swift in Sources */,
 				1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */,
 				1AA6175924808128005752CD /* String+.swift in Sources */,

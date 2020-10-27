@@ -38,7 +38,7 @@ public final class GetFollowersView: UIView {
     
     // MARK: - Subviews
     
-    private lazy var logoImageView: UIImageView = {
+    private let logoImageView: UIImageView = {
         let imageAsset: ImagesAssets = .getFollowersLogo
         let image = UIImage(named: imageAsset.rawValue)
         let imageView = UIImageView(image: image)

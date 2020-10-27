@@ -15,6 +15,6 @@ enum LocalizedStrings: String {
     case ok
     
     var localized: String {
-        rawValue.localized(bundle: Bundle(for: FollowersView.self))
+        rawValue.localized(bundle: Bundle(for: GetFollowersCoordinator.self))
     }
 }

@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import Commons
+
+typealias FollowersCollectionViewDataSource = UICollectionViewDiffableDataSource<Section, Follower>
+typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSource.CellProvider
 
 class FollowersViewController: UICollectionViewController {
     
-    // MARK: - Propeties
+    private var modelController: FollowersModelControllerProtocol?
     
-    var userFollowers: UserFollowers?
+    private lazy var dataSource: FollowersCollectionViewDataSource = {
+        FollowersCollectionViewDataSource(collectionView: collectionView,
+                                          cellProvider: cellProvider)
+    }()
+    
+    private lazy var cellProvider: FollowersCollectionViewCellProvider = { [unowned self] collectionView, indexPath, item in
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowersCollectionViewCell.identifier,
+                                                      for: indexPath)
+        
+        return cell
+    }
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -21,8 +35,6 @@ class FollowersViewController: UICollectionViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         return searchController
     }()
-    
-    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +51,6 @@ class FollowersViewController: UICollectionViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    // MARK: - Setup
-    
     private func setUp() {
         setUpLayout()
         setUpNavigationController()
@@ -53,7 +63,7 @@ class FollowersViewController: UICollectionViewController {
     }
     
     private func setUpTitle() {
-        title = userFollowers?.username ?? String()
+        title = modelController?.username ?? String()
     }
     
     private func setUpBackgroundColor() {
@@ -78,16 +88,23 @@ extension FollowersViewController: UISearchBarDelegate {
     }
     
     private func performQuery(with filter: String?) {
-        
+        guard let followers = modelController?.search(forFollower: filter) else { return }
+        reloadDataSource(with: followers)
+    }
+    
+    private func reloadDataSource(with followers: [Follower]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(followers)
+        dataSource.apply(snapshot)
     }
 }
-
 
 extension FollowersViewController {
     
     static func makeFollowers(with userFollowers: UserFollowers) -> FollowersViewController {
         let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        viewController.userFollowers = userFollowers
+        viewController.modelController = FollowersModelController(userFollowers: userFollowers)
         return viewController
     }
 }
