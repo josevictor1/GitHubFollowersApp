@@ -8,6 +8,7 @@
 
 import UIKit
 
-class FollowersCollectionViewCell: UICollectionViewCell {
+class FollowerCollectionViewCell: UICollectionViewCell {
+    
     
 }
