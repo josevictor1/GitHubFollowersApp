@@ -34,7 +34,7 @@
 		1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB702562443CDFF006F4CDD /* UIComponents.framework */; };
 		1ABEB91A2548696E00B04478 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* Section.swift */; };
 		1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB91F254869E000B04478 /* Follower+Hashble.swift */; };
-		1ABEB92525486F1600B04478 /* FollowersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB92425486F1600B04478 /* FollowersCollectionViewCell.swift */; };
+		1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */; };
 		1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */; };
 		1AC556A024C4768100EE1E08 /* FollowersModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5569F24C4768100EE1E08 /* FollowersModelController.swift */; };
 		1AD82C282460DE00000CCD95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD82C272460DE00000CCD95 /* Localizable.strings */; };
@@ -84,7 +84,7 @@
 		1AB702562443CDFF006F4CDD /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABEB9192548696E00B04478 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		1ABEB91F254869E000B04478 /* Follower+Hashble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follower+Hashble.swift"; sourceTree = "<group>"; };
-		1ABEB92425486F1600B04478 /* FollowersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCollectionViewCell.swift; sourceTree = "<group>"; };
+		1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicController.swift; sourceTree = "<group>"; };
 		1AC5569F24C4768100EE1E08 /* FollowersModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersModelController.swift; sourceTree = "<group>"; };
 		1AD82C272460DE00000CCD95 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 		1ABEB92325486EF600B04478 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1ABEB92425486F1600B04478 /* FollowersCollectionViewCell.swift */,
+				1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,7 +457,7 @@
 				1AED2CFA247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift in Sources */,
 				1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */,
 				1A1C2F4A242E85F200096731 /* GetFollowersError.swift in Sources */,
-				1ABEB92525486F1600B04478 /* FollowersCollectionViewCell.swift in Sources */,
+				1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */,
 				1A94FD24243379EF0095932A /* FollowersRequest.swift in Sources */,
 				1A1C2F49242E85F200096731 /* Follower.swift in Sources */,
 				1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */,

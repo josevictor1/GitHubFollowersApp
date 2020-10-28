@@ -15,6 +15,7 @@ typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSourc
 class FollowersViewController: UICollectionViewController {
     
     private var modelController: FollowersModelControllerProtocol?
+    private var configurator: FollowersCollectionViewConfiguratorProtocol?
     
     private lazy var dataSource: FollowersCollectionViewDataSource = {
         FollowersCollectionViewDataSource(collectionView: collectionView,
@@ -22,7 +23,7 @@ class FollowersViewController: UICollectionViewController {
     }()
     
     private lazy var cellProvider: FollowersCollectionViewCellProvider = { [unowned self] collectionView, indexPath, item in
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowersCollectionViewCell.identifier,
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCollectionViewCell.identifier,
                                                       for: indexPath)
         
         return cell
@@ -105,6 +106,7 @@ extension FollowersViewController {
     static func makeFollowers(with userFollowers: UserFollowers) -> FollowersViewController {
         let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
         viewController.modelController = FollowersModelController(userFollowers: userFollowers)
+        viewController.configurator = FollowersCollectionViewConfigurator()
         return viewController
     }
 }

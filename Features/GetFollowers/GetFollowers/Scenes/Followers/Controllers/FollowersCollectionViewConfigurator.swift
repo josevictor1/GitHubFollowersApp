@@ -15,6 +15,6 @@ protocol FollowersCollectionViewConfiguratorProtocol {
 class FollowersCollectionViewConfigurator: FollowersCollectionViewConfiguratorProtocol {
     
     func configure(_ cell: UICollectionViewCell, with model: Follower) {
-        guard let cell = cell as? FollowersCollectionViewCell else { return }
+        guard let cell = cell as? FollowerCollectionViewCell else { return }
     }
 }
