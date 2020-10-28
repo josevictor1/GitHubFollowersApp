@@ -9,11 +9,11 @@
 import Foundation
 
 extension Follower: Hashable {
-    
+
     static func == (lhs: Follower, rhs: Follower) -> Bool {
         return lhs.identifier == rhs.identifier
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }

@@ -31,7 +31,7 @@ public class GetFollowersCoordinator: NavigationCoordinator {
         navigateToGetFollowers()
         setUpNavigationLayout()
     }
-    
+
     private func setUpNavigationLayout() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .chateauGreen
@@ -44,7 +44,7 @@ public class GetFollowersCoordinator: NavigationCoordinator {
         let viewController: GetFollowersViewController = .makeGetFollowers(delegate: self)
         navigationController?.pushViewController(viewController, animated: false)
     }
-    
+
     func navigateToFollowers(with userFollowers: UserFollowers) {
         let viewController: FollowersViewController = .makeFollowers(with: userFollowers)
         navigationController?.pushViewController(viewController, animated: true)

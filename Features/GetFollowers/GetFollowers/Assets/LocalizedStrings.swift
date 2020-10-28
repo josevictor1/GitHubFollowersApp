@@ -13,7 +13,7 @@ enum LocalizedStrings: String {
     case somethingWentWrong
     case getFollowers
     case ok
-    
+
     var localized: String {
         rawValue.localized(bundle: Bundle(for: GetFollowersCoordinator.self))
     }

@@ -16,13 +16,13 @@ protocol FollowersProvider {
 }
 
 class FollowersService: FollowersProvider {
-    
+
     private let networkingProvider: NetworkingProvider
-    
+
     init(networkingProvider: NetworkingProvider = NetworkingProvider()) {
         self.networkingProvider = networkingProvider
     }
-    
+
     func requestFollowers(_ request: FollowersRequest, completion: @escaping FollowersServiceCompletion) {
         let networkingRequest = GetFollowersNetworkingRequest(followerRequest: request)
 

@@ -10,9 +10,9 @@ import XCTest
 @testable import Networking
 
 class NetworkingResponseTest: XCTestCase {
-    
+
     // MARK: - Mocks
-    
+
     let followerDataMock = """
     [
         {
@@ -37,33 +37,33 @@ class NetworkingResponseTest: XCTestCase {
         }
     ]
     """.data(using: .utf8)!
-    
+
     let httpURLResponseMock: HTTPURLResponse = {
         let url = URL(string: "api.github.com")!
         return HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
     }()
-    
+
     let followersMock = [FollowerTestModel(login: "octocat", id: 1)]
-    
+
     // MARK: - Factories
-    
+
     func mockSUT(with data: Data, response: HTTPURLResponse) -> NetworkingResponse {
         NetworkingResponse(data: data, response: response)
     }
-    
+
     // MARK: - Tests
-    
+
     func testCanDecodeWithMap() throws {
         let sut = mockSUT(with: followerDataMock, response: httpURLResponseMock)
-        
+
         let followers = try sut.map([FollowerTestModel].self)
-        
+
         XCTAssertEqual(followers, followersMock)
     }
-    
+
     func testDecodeWithError() {
         let sut = mockSUT(with: Data(), response: httpURLResponseMock)
-        
+
         XCTAssertThrowsError(try sut.map([FollowerTestModel].self))
     }
 }

@@ -27,7 +27,7 @@ struct FollowerResponse: Decodable {
     let receivedEventsURL: String
     let type: String
     let siteAdmin: Bool
-    
+
     enum CodingKeys: String, CodingKey {
         case login
         case id

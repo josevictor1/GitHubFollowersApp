@@ -20,9 +20,9 @@ extension NetworkingError: Equatable {
             return true
         case (.encoding(let lhsError), .encoding(let rhsError)):
             return lhsError.localizedDescription == rhsError.localizedDescription
-        case (.client(_ , let lhsResponse), .client(_ , let rhsResponse)):
+        case (.client(_, let lhsResponse), .client(_, let rhsResponse)):
             return lhsResponse == rhsResponse
-        case (.redirection(_ , let lhsResponse), .redirection( _, let rhsResponse)):
+        case (.redirection(_, let lhsResponse), .redirection( _, let rhsResponse)):
             return lhsResponse == rhsResponse
         case (.server(_, let lhsResponse), . server(_, let rhsResponse)):
             return lhsResponse == rhsResponse

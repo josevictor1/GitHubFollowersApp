@@ -9,12 +9,12 @@
 import UIKit
 
 public extension Notification {
-    
+
     /// Returns the keyboard frame in the received view.
     /// - Parameter view: The received view.
     /// - Returns: The `CGRect` that represents the keyboard frame.
     func keyboardFrame(for view: UIView) -> CGRect {
-        
+
         guard let userInfo = self.userInfo,
             let keyboardValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
                 return .zero

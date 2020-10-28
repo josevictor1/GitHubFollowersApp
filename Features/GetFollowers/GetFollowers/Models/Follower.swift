@@ -12,7 +12,7 @@ struct Follower {
     let imageURL: String
     let login: String
     let identifier = UUID()
-    
+
     init(response: FollowerResponse) {
         self.login = response.login
         self.imageURL = response.avatarURL

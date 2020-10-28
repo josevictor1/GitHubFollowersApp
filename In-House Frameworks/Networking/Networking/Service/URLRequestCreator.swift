@@ -13,13 +13,13 @@ protocol URLRequestProvider {
 }
 
 class URLRequestCreator: URLRequestProvider {
-    
+
     private let encoder: JSONEncoder
-    
+
     init(encoder: JSONEncoder = JSONEncoder()) {
         self.encoder = encoder
     }
-    
+
     func encode(_ encodable: Encodable?) throws -> Data? {
         guard let encodable = encodable else { return nil }
         do {
@@ -29,22 +29,22 @@ class URLRequestCreator: URLRequestProvider {
             throw NetworkingError.encoding(error)
         }
     }
-    
+
     func createURLRequest(from request: Request) throws -> URLRequest {
-        
+
         let endpoint = Endpoint(path: request.path,
                                 scheme: request.scheme,
                                 host: request.host,
                                 queryStrings: request.queryString)
-        
+
         let components = URLComponents(endpoint: endpoint)
-        
+
         guard let url = components.url else { throw NetworkingError.invalidURL }
-        
+
         var urlRequest = URLRequest(url: url)
         urlRequest.httpBody = try encode(request.body)
         urlRequest.allHTTPHeaderFields = request.header
-        
+
         return urlRequest
     }
 

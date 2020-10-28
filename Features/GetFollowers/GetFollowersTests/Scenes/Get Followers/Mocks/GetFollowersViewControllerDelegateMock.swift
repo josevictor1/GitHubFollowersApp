@@ -10,11 +10,11 @@ import Foundation
 @testable import GetFollowers
 
 class GetFollowersViewControllerDelegateMock: GetFollowersViewControllerDelegate {
-    
+
     var didViewControllerGotFollowers = false
-    
+
     var expectationCompletion: (() -> Void)?
-    
+
     func viewControllerDidGetFollowers(_ userFollowers: UserFollowers) {
         didViewControllerGotFollowers.toggle()
         expectationCompletion?()

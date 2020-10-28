@@ -10,13 +10,13 @@ import Foundation
 @testable import GetFollowers
 
 class GetFollowersLogicControllerMock: GetFollowersLogicControllerProtocol {
-    
+
     var error: GetFollowersError = .requestFail
     var followers: [Follower]?
-    
+
     func getFollowers(of username: String, completion: @escaping ((Result<[Follower], GetFollowersError>) -> Void)) {
         guard let followers = followers else { return completion(.failure(error)) }
         completion(.success(followers))
     }
-    
+
 }

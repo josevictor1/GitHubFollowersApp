@@ -10,34 +10,34 @@ import UIKit
 import Commons
 
 public final class GetFollowersView: UIView {
-    
+
     // MARK: - Properties
-    
+
     private var bottomButtonConstraint: NSLayoutConstraint?
     private let cornerRadius: CGFloat = 12
     private let smallPadding: CGFloat = 10
     private let mediumPadding: CGFloat = 31
     private let largePadding: CGFloat = 62
     private let extraLargePadding: CGFloat = 200
-    
+
     // MARK: - Closures
-    
+
     var onGetFollowersButtonTapped: ((String?) -> Void)?
-    
+
     // MARK: - Initializers
-    
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
     }
-    
+
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUp()
     }
-    
+
     // MARK: - Subviews
-    
+
     private let logoImageView: UIImageView = {
         let imageAsset: ImagesAssets = .getFollowersLogo
         let image = UIImage(named: imageAsset.rawValue)
@@ -45,7 +45,7 @@ public final class GetFollowersView: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
+
     private lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         let placeholder: LocalizedStrings = .enterUsername
@@ -62,7 +62,7 @@ public final class GetFollowersView: UIView {
         textField.layer.masksToBounds = true
         return textField
     }()
-    
+
     private lazy var getFollowersButton: UIButton = {
         let button = UIButton()
         let title: LocalizedStrings = .getFollowers
@@ -76,7 +76,7 @@ public final class GetFollowersView: UIView {
         button.addTarget(self, action: #selector(getFollowersButtonTapped), for: .touchUpInside)
         return button
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .fill
@@ -87,22 +87,22 @@ public final class GetFollowersView: UIView {
         stackView.addArrangedSubview(usernameTextField)
         return stackView
     }()
-    
+
     // MARK: - Actions
-    
+
     @objc private func getFollowersButtonTapped() {
         onGetFollowersButtonTapped?(usernameTextField.text)
     }
-    
+
     func scrollUpGetFollowersButton(at height: CGFloat) {
         UIView.animate(withDuration: 0.25) { [unowned self] in
             self.bottomButtonConstraint?.constant = height > .zero ? -height : -self.mediumPadding
             self.layoutIfNeeded()
         }
     }
-    
+
     // MARK: - Setup
-    
+
     private func setUp() {
         setUpSatckView()
         setUpLogoImageView()
@@ -110,23 +110,23 @@ public final class GetFollowersView: UIView {
         setUpGetFollowersButton()
         backgroundColor = .systemBackground
     }
-    
+
     func set(textFieldDelegate: UITextFieldDelegate) {
         usernameTextField.delegate = textFieldDelegate
     }
-    
+
     // MARK: - Constraints
-    
+
     private func setUpLogoImageView() {
         logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: extraLargePadding).isActive = true
     }
-    
+
     private func setUpUsernameTextField() {
         usernameTextField.heightAnchor.constraint(equalToConstant: largePadding).isActive = true
     }
-    
+
     private func setUpSatckView() {
-        
+
         let constraints = [stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: largePadding),
                            stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
                                                               constant: mediumPadding),
@@ -135,7 +135,7 @@ public final class GetFollowersView: UIView {
         ]
         place(stackView, with: constraints)
     }
-    
+
     private func setUpGetFollowersButton() {
         bottomButtonConstraint = getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor,
                                                                             constant: -mediumPadding)

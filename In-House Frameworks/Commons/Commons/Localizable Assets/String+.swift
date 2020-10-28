@@ -9,7 +9,7 @@
 import Foundation
 
 public extension String {
-    
+
     /// Returns a localized string from a specific key, using the main bundle if one is not specified.
     ///
     ///  This method is a wrapper of the original function NSLocalizedString.

@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIView {
-    
+
     static var identifier: String {
         String(describing: Self.self)
     }

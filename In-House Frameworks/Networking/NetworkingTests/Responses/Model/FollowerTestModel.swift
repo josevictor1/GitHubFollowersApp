@@ -9,10 +9,10 @@
 import Foundation
 
 struct FollowerTestModel: Decodable {
-    
+
     let login: String
     let id: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case login
         case id
@@ -20,7 +20,7 @@ struct FollowerTestModel: Decodable {
 }
 
 extension FollowerTestModel: Equatable {
-    
+
     static func ==(_ lhs: FollowerTestModel, _ rhs: FollowerTestModel) -> Bool {
         return lhs.login == rhs.login && lhs.id == rhs.id
     }

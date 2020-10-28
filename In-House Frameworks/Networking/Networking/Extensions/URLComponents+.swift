@@ -9,7 +9,7 @@
 import Foundation
 
 extension URLComponents {
-    
+
     init(endpoint: Endpoint) {
         self.init()
         scheme = endpoint.scheme.rawValue
@@ -17,5 +17,5 @@ extension URLComponents {
         path = endpoint.path
         queryItems = endpoint.queryItem
     }
-    
+
 }

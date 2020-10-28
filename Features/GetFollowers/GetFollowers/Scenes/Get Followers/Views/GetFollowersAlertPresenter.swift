@@ -10,11 +10,11 @@ import UIKit
 import UIComponents
 
 protocol GetFollowersAlertPresenterProtocol {
-    
+
     /// Present an alert with the passed error.
     /// - Parameter error: Error to be presented.
     func present(_ error: GetFollowersError)
-    
+
     func configureAlert(to presentingViewController: UIViewController)
 }
 
@@ -26,7 +26,7 @@ class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
     private weak var alertController: UIViewController?
 
     // MARK: - Configuration
-    
+
     func configureAlert(to presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
     }

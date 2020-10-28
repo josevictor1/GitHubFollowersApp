@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIImage {
-    
+
     convenience init?(named: String, in bundle: Bundle) {
         self.init(named: named, in: bundle, with: .none)
     }

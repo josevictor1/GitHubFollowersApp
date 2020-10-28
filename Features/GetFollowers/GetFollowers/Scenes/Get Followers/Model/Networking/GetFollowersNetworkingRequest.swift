@@ -10,23 +10,23 @@ import Foundation
 import Networking
 
 struct GetFollowersNetworkingRequest: Request {
-    
+
     let followerRequest: FollowersRequest
-    
+
     var method: HTTPMethod { .get }
-    
+
     var scheme: URIScheme { .https }
-    
+
     var host: String { "api.github.com" }
-    
+
     var path: String { "/users/\(followerRequest.login)/followers" }
-    
+
     var body: Encodable?
-    
+
     var queryString: QueryString?
-    
+
     var header: Header?
-    
+
     init(followerRequest: FollowersRequest) {
         self.followerRequest = followerRequest
     }

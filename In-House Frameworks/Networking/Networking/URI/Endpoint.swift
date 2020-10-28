@@ -12,20 +12,20 @@ import Foundation
 ///
 /// This structure is based on three elements of URI(Uniform Resource Identifier).
 public struct Endpoint {
-    
+
     /// Attribute that idetify a resource within the scope
     /// of the URI's scheme and naming authority (if any).
     let path: String
-    
+
     /// Attribute that idicates which protocol should be used, i.e `http`.
     let scheme: URIScheme
-    
+
     /// Attribute that identify the service `host`.
     let host: String
-    
+
     /// Attribute that defines request query strings
     let queryStrings: [String: String]?
-    
+
     var queryItem: [URLQueryItem] {
         queryStrings?.map({ URLQueryItem(name: $0.key, value: $0.value) }) ?? []
     }

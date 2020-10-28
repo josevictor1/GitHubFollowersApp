@@ -9,10 +9,9 @@
 import Foundation
 
 protocol FollowerBusinessLogic {
-    
-    
+
 }
 
 class FollowersLogicController {
-    
+
 }

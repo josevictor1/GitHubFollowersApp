@@ -15,17 +15,17 @@ protocol GetFollowersLogicControllerProtocol {
 }
 
 class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
-    
+
     private let provider: FollowersProvider
-    
-    init(provider: FollowersProvider = FollowersService()){
+
+    init(provider: FollowersProvider = FollowersService()) {
         self.provider = provider
     }
-    
+
     func getFollowers(of user: String, completion: @escaping GetFollowersResponseCompletion) {
-        
+
         let request = FollowersRequest(login: user)
-        
+
         provider.requestFollowers(request) { [unowned self] result in
             switch result {
             case .success(let response):
@@ -35,7 +35,7 @@ class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
             }
         }
     }
-    
+
     private func handleSuccess(with response: [FollowerResponse], completion: GetFollowersResponseCompletion) {
         completion(.success(response.map(Follower.init)))
     }

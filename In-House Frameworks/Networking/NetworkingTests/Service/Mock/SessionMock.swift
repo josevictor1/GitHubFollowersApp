@@ -12,17 +12,17 @@ import XCTest
 typealias SessionMockCompletion = ((URLRequest) throws -> (HTTPURLResponse, Data))
 
 class SessionMock: URLProtocol {
-    
+
     static var requestHandler: SessionMockCompletion?
-    
+
     override class func canInit(with request: URLRequest) -> Bool {
         return true
     }
-    
+
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
-    
+
     override func startLoading() {
         guard let handler = SessionMock.requestHandler else {
             return XCTFail("Received unexpected request with no handler set")
@@ -36,7 +36,7 @@ class SessionMock: URLProtocol {
             client?.urlProtocol(self, didFailWithError: error)
         }
     }
-    
+
     override func stopLoading() { }
-    
+
 }

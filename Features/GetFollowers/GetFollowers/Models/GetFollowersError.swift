@@ -14,7 +14,7 @@ enum GetFollowersError: Error {
     case invalidUsername
     case invalidResponse
     case requestFail
-    
+
     init(_ error: NetworkingError) {
         switch error {
         case .server:
@@ -25,7 +25,7 @@ enum GetFollowersError: Error {
             self = .invalidResponse
         }
     }
-    
+
     var message: ErrorMessage {
         switch self {
         case .invalidUsername:
