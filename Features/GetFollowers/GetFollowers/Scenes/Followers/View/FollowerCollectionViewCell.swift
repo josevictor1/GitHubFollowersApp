@@ -32,17 +32,50 @@ class FollowerCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
+    var avatarImage: UIImage? {
+        get { avatarImageView.image }
+        set { avatarImageView.image = newValue }
+    }
+    
+    var username: String? {
+        get { usernameLabel.text }
+        set { usernameLabel.text = newValue }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUp()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setUp()
     }
     
     private func setUp() {
-        
+        setUpConstraints()
+        setUpStackViewArrangedSubviews()
     }
     
+    private func setUpConstraints() {
+        setUpStackViewConstraints()
+        setUpAvatarImageViewConstraints()
+    }
     
+    private func setUpAvatarImageViewConstraints() {
+        let constraints = [
+            avatarImageView.heightAnchor.constraint(equalToConstant: 90),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 90)
+        ]
+        NSLayoutConstraint.activate(constraints)
+    }
+    
+    private func setUpStackViewConstraints() {
+        embed(stackView)
+    }
+    
+    private func setUpStackViewArrangedSubviews() {
+        stackView.addArrangedSubview(avatarImageView)
+        stackView.addArrangedSubview(usernameLabel)
+    }
 }
