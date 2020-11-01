@@ -17,7 +17,7 @@ class CustomAlertView: UIView {
 
     // MARK: - Initializer
 
-    init(alert: Alert, action: Action?) {
+    init(alert: Alert, action: Action? = nil) {
         super.init(frame: .zero)
         setUp(alert)
         confirmButtonAction = action

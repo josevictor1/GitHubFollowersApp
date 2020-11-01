@@ -8,10 +8,30 @@
 
 import Foundation
 
-protocol FollowerBusinessLogic {
+typealias SearchFollowersCompletion = (Result<[Follower], Error>) -> Void
+typealias LoadFollowersCompletion = ([Follower]) -> Void
 
+protocol FollowersLogicControllerProtocol {
+    var username: String { get }
+    func search(for follower: String?, completion: @escaping SearchFollowersCompletion)
 }
 
-class FollowersLogicController {
-
+class FollowersLogicController: FollowersLogicControllerProtocol {
+    
+    private let userFollowers: UserFollowers
+    
+    var username: String {
+        userFollowers.username
+    }
+    
+    init(userFollowers: UserFollowers) {
+        self.userFollowers = userFollowers
+    }
+    
+    func search(for follower: String?, completion: @escaping SearchFollowersCompletion) {
+        guard let follower = follower, !follower.isEmpty else {
+            return completion(.success(userFollowers.followers))
+        }
+        completion(.success([]))
+    }
 }

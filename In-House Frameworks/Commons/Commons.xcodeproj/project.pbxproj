@@ -18,6 +18,7 @@
 		1AE20BF42407361C00867692 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE20BEA2407361C00867692 /* Commons.framework */; };
 		1AE20BF92407361C00867692 /* CommonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BF82407361C00867692 /* CommonsTests.swift */; };
 		1AE20BFB2407361C00867692 /* Commons.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE20BED2407361C00867692 /* Commons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AFCE03D254E2D8E00CCC878 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCE03C254E2D8E00CCC878 /* UICollectionView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		1AE20BF32407361C00867692 /* CommonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20BF82407361C00867692 /* CommonsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonsTests.swift; sourceTree = "<group>"; };
 		1AE20BFA2407361C00867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AFCE03C254E2D8E00CCC878 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				1A6A3947246A02810097C195 /* Notification+.swift */,
 				1A65D7F7248323DF001772EC /* UIView+Bundle.swift */,
 				1A02EDDC25489E7100C86CCD /* UIView+Identifier.swift */,
+				1AFCE03C254E2D8E00CCC878 /* UICollectionView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */,
 				1A02EDDD25489E7100C86CCD /* UIView+Identifier.swift in Sources */,
+				1AFCE03D254E2D8E00CCC878 /* UICollectionView+.swift in Sources */,
 				1A6A3948246A02810097C195 /* Notification+.swift in Sources */,
 				1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */,
 				1AA6175924808128005752CD /* String+.swift in Sources */,

@@ -22,5 +22,4 @@ class GetFollowersAlertPresenterMock: GetFollowersAlertPresenterProtocol {
     func present(_ error: GetFollowersError) {
         onAlertPresented?(error)
     }
-
 }

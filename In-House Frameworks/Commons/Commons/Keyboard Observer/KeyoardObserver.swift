@@ -17,7 +17,7 @@ public class KeyboardObserver {
     public var onKeyboardAppeared: ((_ notification: Notification) -> Void)?
 
     /// The action called when keyoard disappeard.
-    public var onKeyboardDisappearerd: ((_ notification: Notification) -> Void)?
+    public var onKeyboardDisappeared: ((_ notification: Notification) -> Void)?
 
     // MARK: - Properties
 
@@ -50,7 +50,7 @@ public class KeyboardObserver {
     }
 
     @objc private func keyboardWillDisappear(notification: Notification) {
-        onKeyboardDisappearerd?(notification)
+        onKeyboardDisappeared?(notification)
     }
 
     // MARK: - Deinitializer

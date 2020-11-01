@@ -18,6 +18,7 @@ public final class CustomAlertController: UIViewController {
 
     /// An instance of `CustomAlertView`.
     private var alertView: CustomAlertView!
+    private var confirmButtonAction: Action?
 
     // MARK: - Initializers
 
@@ -27,9 +28,10 @@ public final class CustomAlertController: UIViewController {
     /// - Parameters:
     ///   - alert: The alert cotaining a title, description and a button title.
     ///   - action: The action called when the allert button is tapped.
-    public init(alert: Alert, action: Action?) {
+    public init(alert: Alert, action: Action? = nil) {
         super.init(nibName: nil, bundle: nil)
-        alertView = CustomAlertView(alert: alert, action: action)
+        confirmButtonAction = action
+        alertView = CustomAlertView(alert: alert)
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
     }
@@ -48,6 +50,12 @@ public final class CustomAlertController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setUpAlertViewConstraints()
+    }
+    
+    private func setUpCostomAlertViewAction() {
+        alertView.confirmButtonAction = { [unowned self] in
+            dismiss(animated: true, completion: self.confirmButtonAction)
+        }
     }
 
     // MARK: - Setup

@@ -27,11 +27,13 @@ class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
         let request = FollowersRequest(login: user)
 
         provider.requestFollowers(request) { [unowned self] result in
-            switch result {
-            case .success(let response):
-                self.handleSuccess(with: response, completion: completion)
-            case .failure(let error):
-                completion(.failure(error))
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    self.handleSuccess(with: response, completion: completion)
+                case .failure(let error):
+                    completion(.failure(error))
+                }                
             }
         }
     }
