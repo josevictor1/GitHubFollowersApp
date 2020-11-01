@@ -11,7 +11,7 @@
 		1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F01242E48E700096731 /* ErrorMessage.swift */; };
 		1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65D7F7248323DF001772EC /* UIView+Bundle.swift */; };
 		1A6A3948246A02810097C195 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3947246A02810097C195 /* Notification+.swift */; };
-		1A6A394B246A06FD0097C195 /* KeyoardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A394A246A06FD0097C195 /* KeyoardObserver.swift */; };
+		1A6A394B246A06FD0097C195 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A394A246A06FD0097C195 /* KeyboardObserver.swift */; };
 		1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F829E241865F600D25A68 /* UIViewController+.swift */; };
 		1AA1C3502470D40100A6D3C1 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA1C34F2470D40100A6D3C1 /* Core.framework */; };
 		1AA6175924808128005752CD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6175824808128005752CD /* String+.swift */; };
@@ -36,7 +36,7 @@
 		1A1C2F01242E48E700096731 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		1A65D7F7248323DF001772EC /* UIView+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bundle.swift"; sourceTree = "<group>"; };
 		1A6A3947246A02810097C195 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
-		1A6A394A246A06FD0097C195 /* KeyoardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyoardObserver.swift; sourceTree = "<group>"; };
+		1A6A394A246A06FD0097C195 /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		1A8F829E241865F600D25A68 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		1AA1C34F2470D40100A6D3C1 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA6175824808128005752CD /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		1A6A3949246A06E40097C195 /* Keyboard Observer */ = {
 			isa = PBXGroup;
 			children = (
-				1A6A394A246A06FD0097C195 /* KeyoardObserver.swift */,
+				1A6A394A246A06FD0097C195 /* KeyboardObserver.swift */,
 			);
 			path = "Keyboard Observer";
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 				1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */,
 				1AA6175924808128005752CD /* String+.swift in Sources */,
 				1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */,
-				1A6A394B246A06FD0097C195 /* KeyoardObserver.swift in Sources */,
+				1A6A394B246A06FD0097C195 /* KeyboardObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
