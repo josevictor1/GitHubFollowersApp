@@ -20,7 +20,8 @@ class FollowerCollectionViewCell: UICollectionViewCell {
     private let usernameLabel: UILabel = {
         let usernameLabel = UILabel()
         usernameLabel.numberOfLines = .zero
-        usernameLabel.font = .preferredFont(forTextStyle: .title3)
+        usernameLabel.font = .preferredFont(forTextStyle: .footnote)
+        usernameLabel.tintColor = .label
         usernameLabel.adjustsFontForContentSizeCategory = true
         return usernameLabel
     }()
@@ -28,7 +29,8 @@ class FollowerCollectionViewCell: UICollectionViewCell {
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
+        stackView.spacing = 13
         return stackView
     }()
 
@@ -64,8 +66,8 @@ class FollowerCollectionViewCell: UICollectionViewCell {
 
     private func setUpAvatarImageViewConstraints() {
         let constraints = [
-            avatarImageView.heightAnchor.constraint(equalToConstant: 90),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 90)
+            avatarImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 90),
+            avatarImageView.widthAnchor.constraint(greaterThanOrEqualToConstant: 90)
         ]
         NSLayoutConstraint.activate(constraints)
     }

@@ -26,6 +26,7 @@ class FollowersViewController: UICollectionViewController {
     private lazy var cellProvider: FollowersCollectionViewCellProvider = { [unowned self] collectionView, indexPath, item in
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCollectionViewCell.identifier,
                                                       for: indexPath)
+        self.configurator?.configure(cell, with: item)
         return cell
     }
     
@@ -46,7 +47,6 @@ class FollowersViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        registerCell()
         loadData()
     }
     
@@ -68,7 +68,9 @@ class FollowersViewController: UICollectionViewController {
     private func setUpLayout() {
         setUpTitle()
         setUpBackgroundColor()
+        setUpCollectionViewLayout()
         setUpCollectionViewBackgroundColor()
+        registerCell()
     }
     
     private func setUpTitle() {
@@ -95,6 +97,33 @@ class FollowersViewController: UICollectionViewController {
     
     private func loadData() {
         performQuery(with: .none)
+    }
+    
+    func createLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewCompositionalLayout { sectionIndex,
+                                                            layoutEnvironment in
+            let columns = 3
+            let spacing = CGFloat(10)
+            let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(90),
+                                                  heightDimension: .estimated(119))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                   heightDimension: .estimated(119))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
+            group.interItemSpacing = .fixed(spacing)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            section.interGroupSpacing = spacing
+            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            
+            return section
+        }
+        return layout
+    }
+    
+    private func setUpCollectionViewLayout() {
+        collectionView = UICollectionView(frame: view.frame,
+                                          collectionViewLayout: createLayout())
     }
 }
 
