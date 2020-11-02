@@ -9,7 +9,7 @@
 import XCTest
 @testable import GetFollowers
 
-class GetFollowersModelControllerTests: XCTestCase {
+final class GetFollowersModelControllerTests: XCTestCase {
 
     // MARK: - Mocks
 

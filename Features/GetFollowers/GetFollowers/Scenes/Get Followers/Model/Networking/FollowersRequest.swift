@@ -9,5 +9,5 @@
 import Foundation
 
 struct FollowersRequest {
-    let login: String
+    let username: String
 }

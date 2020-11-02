@@ -14,16 +14,16 @@ protocol GetFollowersLogicControllerProtocol {
     func getFollowers(of user: String, completion: @escaping GetFollowersResponseCompletion)
 }
 
-class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
+final class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
 
-    private let provider: FollowersProvider
+    private let provider: GetFollowersProvider
 
-    init(provider: FollowersProvider = FollowersService()) {
+    init(provider: GetFollowersProvider = GetFollowersService()) {
         self.provider = provider
     }
 
     func getFollowers(of user: String, completion: @escaping GetFollowersResponseCompletion) {
-        let request = FollowersRequest(login: user)
+        let request = FollowersRequest(username: user)
 
         provider.requestFollowers(request) { [weak self] result in
             DispatchQueue.main.async {

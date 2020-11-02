@@ -11,11 +11,11 @@ import Networking
 
 typealias FollowersServiceCompletion = (Result<[FollowerResponse], GetFollowersError>) -> Void
 
-protocol FollowersProvider {
+protocol GetFollowersProvider {
     func requestFollowers(_ request: FollowersRequest, completion: @escaping FollowersServiceCompletion)
 }
 
-class FollowersService: FollowersProvider {
+final class GetFollowersService: GetFollowersProvider {
 
     private let networkingProvider: NetworkingProvider
 

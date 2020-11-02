@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FollowerCollectionViewCell: UICollectionViewCell {
+final class FollowerCollectionViewCell: UICollectionViewCell {
 
     private let avatarImageView: UIImageView = {
         let avatarImageView = UIImageView()

@@ -9,7 +9,7 @@
 import XCTest
 @testable import GetFollowers
 
-class GetFollowersViewControllerTests: XCTestCase {
+final class GetFollowersViewControllerTests: XCTestCase {
 
     // MARK: - Mocks
 
@@ -75,5 +75,4 @@ class GetFollowersViewControllerTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
         XCTAssertTrue(delegateMock.didViewControllerGotFollowers, "The delegate shold be called")
     }
-
 }

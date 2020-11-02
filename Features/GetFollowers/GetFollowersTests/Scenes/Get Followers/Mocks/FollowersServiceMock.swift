@@ -9,7 +9,7 @@
 import Foundation
 @testable import GetFollowers
 
-class FollowersServiceMock: FollowersProvider {
+final class FollowersServiceMock: GetFollowersProvider {
 
     var followers: [FollowerResponse]?
     var error: GetFollowersError?

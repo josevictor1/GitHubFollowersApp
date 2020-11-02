@@ -13,7 +13,7 @@ import Commons
 typealias FollowersCollectionViewDataSource = UICollectionViewDiffableDataSource<Section, Follower>
 typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSource.CellProvider
 
-class FollowersViewController: UICollectionViewController {
+final class FollowersViewController: UICollectionViewController {
     
     private var logicController: FollowersLogicControllerProtocol?
     private var configurator: FollowersCollectionViewConfiguratorProtocol?

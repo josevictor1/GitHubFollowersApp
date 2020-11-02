@@ -33,7 +33,6 @@ public class NetworkingProvider {
     ///   - request: The request data.
     ///   - completion: The call back completion with a `Decodable` parameter.
     public func performRequestWithDecodable<D: Decodable>(_ request: Request, completion: @escaping (Result<D, NetworkingError>) -> Void) {
-
         service.send(request) { result in
             switch result {
             case .success(let response):
@@ -48,5 +47,4 @@ public class NetworkingProvider {
             }
         }
     }
-
 }

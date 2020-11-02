@@ -9,7 +9,7 @@
 import UIKit
 import Commons
 
-public final class GetFollowersView: UIView {
+final class GetFollowersView: UIView {
 
     // MARK: - Properties
 
@@ -104,28 +104,37 @@ public final class GetFollowersView: UIView {
     // MARK: - Setup
 
     private func setUp() {
-        setUpSatckView()
-        setUpLogoImageView()
-        setUpUsernameTextField()
-        setUpGetFollowersButton()
+        setUpConstraints()
+        setUpBackgroundColor()
+    }
+    
+    private func setUpConstraints() {
+        setUpStackViewConstraints()
+        setUpLogoImageViewConstraints()
+        setUpUsernameTextFieldConstraints()
+        setUpGetFollowersButtonConstraints()
+    }
+    
+    private func setUpBackgroundColor() {
         backgroundColor = .systemBackground
     }
 
     func set(textFieldDelegate: UITextFieldDelegate) {
         usernameTextField.delegate = textFieldDelegate
     }
+    
 
     // MARK: - Constraints
 
-    private func setUpLogoImageView() {
+    private func setUpLogoImageViewConstraints() {
         logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: extraLargePadding).isActive = true
     }
 
-    private func setUpUsernameTextField() {
+    private func setUpUsernameTextFieldConstraints() {
         usernameTextField.heightAnchor.constraint(equalToConstant: largePadding).isActive = true
     }
 
-    private func setUpSatckView() {
+    private func setUpStackViewConstraints() {
 
         let constraints = [stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: largePadding),
                            stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
@@ -136,7 +145,7 @@ public final class GetFollowersView: UIView {
         place(stackView, with: constraints)
     }
 
-    private func setUpGetFollowersButton() {
+    private func setUpGetFollowersButtonConstraints() {
         bottomButtonConstraint = getFollowersButton.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor,
                                                                             constant: -mediumPadding)
         let constraints = [getFollowersButton.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,

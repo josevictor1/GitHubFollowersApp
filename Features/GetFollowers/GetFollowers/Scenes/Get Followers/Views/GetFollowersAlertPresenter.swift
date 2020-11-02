@@ -18,7 +18,7 @@ protocol GetFollowersAlertPresenterProtocol {
     func configureAlert(to presentingViewController: UIViewController)
 }
 
-class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
+final class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
 
     // MARK: - Properties
 

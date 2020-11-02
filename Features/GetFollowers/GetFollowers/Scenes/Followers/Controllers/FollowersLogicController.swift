@@ -9,29 +9,32 @@
 import Foundation
 
 typealias SearchFollowersCompletion = (Result<[Follower], Error>) -> Void
-typealias LoadFollowersCompletion = ([Follower]) -> Void
 
 protocol FollowersLogicControllerProtocol {
     var username: String { get }
     func search(for follower: String?, completion: @escaping SearchFollowersCompletion)
 }
 
-class FollowersLogicController: FollowersLogicControllerProtocol {
+final class FollowersLogicController: FollowersLogicControllerProtocol {
     
     private let userFollowers: UserFollowers
+    private let service: FollowersProvider
     
     var username: String {
         userFollowers.username
     }
     
-    init(userFollowers: UserFollowers) {
+    init(userFollowers: UserFollowers, service: FollowersProvider = FollowersService()) {
         self.userFollowers = userFollowers
+        self.service = service
     }
     
     func search(for follower: String?, completion: @escaping SearchFollowersCompletion) {
         guard let follower = follower, !follower.isEmpty else {
             return completion(.success(userFollowers.followers))
         }
-        completion(.success([]))
+        
+        let request = FollowersRequest(username: follower)
+        
     }
 }

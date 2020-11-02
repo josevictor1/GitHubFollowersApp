@@ -12,7 +12,7 @@ protocol FollowersCollectionViewConfiguratorProtocol {
     func configure(_ cell: UICollectionViewCell, with model: Follower)
 }
 
-class FollowersCollectionViewConfigurator: FollowersCollectionViewConfiguratorProtocol {
+final class FollowersCollectionViewConfigurator: FollowersCollectionViewConfiguratorProtocol {
 
     func configure(_ cell: UICollectionViewCell, with follower: Follower) {
         guard let cell = cell as? FollowerCollectionViewCell else { return }

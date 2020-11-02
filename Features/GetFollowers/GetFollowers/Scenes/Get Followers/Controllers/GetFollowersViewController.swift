@@ -13,7 +13,7 @@ protocol GetFollowersViewControllerDelegate: AnyObject {
     func viewControllerDidGetFollowers(_ userFollowers: UserFollowers)
 }
 
-class GetFollowersViewController: UIViewController {
+final class GetFollowersViewController: UIViewController {
     
     private(set) var logicController: GetFollowersLogicControllerProtocol?
     private(set) var presenter: GetFollowersAlertPresenterProtocol?

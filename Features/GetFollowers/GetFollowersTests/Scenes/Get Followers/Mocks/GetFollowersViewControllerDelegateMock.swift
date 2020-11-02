@@ -9,7 +9,7 @@
 import Foundation
 @testable import GetFollowers
 
-class GetFollowersViewControllerDelegateMock: GetFollowersViewControllerDelegate {
+final class GetFollowersViewControllerDelegateMock: GetFollowersViewControllerDelegate {
 
     var didViewControllerGotFollowers = false
 

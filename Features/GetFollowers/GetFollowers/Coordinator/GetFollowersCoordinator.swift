@@ -11,7 +11,7 @@ import Commons
 import Core
 import UIKit
 
-public class GetFollowersCoordinator: NavigationCoordinator {
+public final class GetFollowersCoordinator: NavigationCoordinator {
 
     // MARK: - Properties
 

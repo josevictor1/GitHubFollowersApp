@@ -9,7 +9,7 @@
 import UIKit
 @testable import GetFollowers
 
-class GetFollowersAlertPresenterMock: GetFollowersAlertPresenterProtocol {
+final class GetFollowersAlertPresenterMock: GetFollowersAlertPresenterProtocol {
 
     var viewController: UIViewController?
 
