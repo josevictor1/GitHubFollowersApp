@@ -23,14 +23,13 @@ class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
     }
 
     func getFollowers(of user: String, completion: @escaping GetFollowersResponseCompletion) {
-
         let request = FollowersRequest(login: user)
 
-        provider.requestFollowers(request) { [unowned self] result in
+        provider.requestFollowers(request) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let response):
-                    self.handleSuccess(with: response, completion: completion)
+                    self?.handleSuccess(with: response, completion: completion)
                 case .failure(let error):
                     completion(.failure(error))
                 }                
