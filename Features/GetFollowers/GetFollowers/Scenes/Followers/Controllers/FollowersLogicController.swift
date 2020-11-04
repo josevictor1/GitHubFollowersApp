@@ -33,14 +33,18 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
         guard let follower = follower, !follower.isEmpty else {
             return completion(.success(userFollowers.followers))
         }
-        
         service.searchFollowers(with: follower) { result in
             switch result {
             case .success(let response):
-                break
+                let followers = self.convertIntoFollowerList(response)
+                completion(.success(followers))
             case .failure(let error):
-                break
+                completion(.failure(<#T##Error#>))
             }
         }
+    }
+    
+    private func convertIntoFollowerList(_ followerResponse: [FollowerResponse]) -> [Follower] {
+        followerResponse.map { Follower(response: $0) }
     }
 }
