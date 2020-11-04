@@ -34,7 +34,13 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
             return completion(.success(userFollowers.followers))
         }
         
-        let request = FollowersRequest(username: follower)
-        
+        service.searchFollowers(with: follower) { result in
+            switch result {
+            case .success(let response):
+                break
+            case .failure(let error):
+                break
+            }
+        }
     }
 }
