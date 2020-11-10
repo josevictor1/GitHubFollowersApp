@@ -37,12 +37,15 @@ public class NetworkingProvider {
             switch result {
             case .success(let response):
                 do {
+                    debugPrint(response)
                     let result = try response.map(D.self)
                     completion(.success(result))
                 } catch {
+                    debugPrint(error)
                     completion(.failure(.decoding(error)))
                 }
             case .failure(let error):
+                debugPrint(error)
                 completion(.failure(error))
             }
         }

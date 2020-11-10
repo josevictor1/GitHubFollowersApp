@@ -18,6 +18,8 @@
 		1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */; };
 		1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */; };
 		1A4247D02550B104007E42C5 /* FollowersNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4247CF2550B104007E42C5 /* FollowersNetworkingRequest.swift */; };
+		1A5174E8255B5A48006ACB76 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174E7255B5A48006ACB76 /* UserResponse.swift */; };
+		1A5174EC255B5C4C006ACB76 /* GetUserNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */; };
 		1A65D7FB2483DEA2001772EC /* UserFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65D7FA2483DEA2001772EC /* UserFollowers.swift */; };
 		1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A3954246A0EFE0097C195 /* Commons.framework */; };
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
@@ -69,6 +71,8 @@
 		1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenter.swift; sourceTree = "<group>"; };
 		1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersCoordinator.swift; sourceTree = "<group>"; };
 		1A4247CF2550B104007E42C5 /* FollowersNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersNetworkingRequest.swift; sourceTree = "<group>"; };
+		1A5174E7255B5A48006ACB76 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserNetworkingRequest.swift; sourceTree = "<group>"; };
 		1A65D7FA2483DEA2001772EC /* UserFollowers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowers.swift; sourceTree = "<group>"; };
 		1A6A3954246A0EFE0097C195 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 				1A94FD252433936C0095932A /* FollowerResponse.swift */,
 				1A94FD23243379EF0095932A /* FollowersRequest.swift */,
 				1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */,
+				1A5174E7255B5A48006ACB76 /* UserResponse.swift */,
+				1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -485,11 +491,13 @@
 				1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */,
 				1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */,
 				1A952913244D385600A5ED5D /* GetFollowersNetworkingRequest.swift in Sources */,
+				1A5174EC255B5C4C006ACB76 /* GetUserNetworkingRequest.swift in Sources */,
 				1AFCE0472550A49F00CCC878 /* FollowersService.swift in Sources */,
 				1AEFAEB9245F7BAB00F64C17 /* ImagesAssets.swift in Sources */,
 				1ABEB91A2548696E00B04478 /* Section.swift in Sources */,
 				1A94FD1F243378710095932A /* GetFollowersService.swift in Sources */,
 				1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */,
+				1A5174E8255B5A48006ACB76 /* UserResponse.swift in Sources */,
 				1AED2CFA247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift in Sources */,
 				1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */,
 				1A1C2F4A242E85F200096731 /* GetFollowersError.swift in Sources */,

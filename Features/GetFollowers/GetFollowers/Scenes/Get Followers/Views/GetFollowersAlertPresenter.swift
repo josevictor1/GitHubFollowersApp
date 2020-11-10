@@ -46,11 +46,13 @@ final class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
         let viewController = CustomAlertController(alert: alert(to: error)) { [unowned self]  in
             self.alertController?.dismiss(animated: true)
         }
-
         alertController = viewController
-
+        present(viewController)
+    }
+    
+    private func present(_ viewController: UIViewController) {
         if let presentingViewController = presentingViewController,
-            let navigationController = presentingViewController.navigationController {
+           let navigationController = presentingViewController.navigationController {
             navigationController.present(viewController, animated: true)
         } else {
             presentingViewController?.present(viewController, animated: true)
