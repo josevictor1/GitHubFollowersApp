@@ -34,7 +34,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
             return completion(.success(userFollowers.followers))
         }
         
-        service.searchFollowers(with: follower) { result in
+        service.searchFollowers(with: follower) { [unowned self] result in
             switch result {
             case .success(let response):
                 let followers = self.convertIntoFollowerList(response)
