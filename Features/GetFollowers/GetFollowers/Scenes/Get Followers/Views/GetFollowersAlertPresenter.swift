@@ -23,7 +23,7 @@ final class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
     // MARK: - Properties
 
     private weak var presentingViewController: UIViewController?
-    private weak var alertController: UIViewController?
+    private weak var alertViewController: UIViewController?
 
     // MARK: - Configuration
 
@@ -33,7 +33,7 @@ final class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
 
     // MARK: - Presentation
 
-    private func alert(to error: GetFollowersError) -> Alert {
+    private func makeAlert(for error: GetFollowersError) -> Alert {
         let title = LocalizedStrings.somethingWentWrong.localized
         let description = error.message.localizedMessage
         let buttonTitle = LocalizedStrings.ok.localized
@@ -43,11 +43,15 @@ final class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
     /// Present an alert over current context.
     /// - Parameter error: The error message to be presented.
     func present(_ error: GetFollowersError) {
-        let viewController = CustomAlertController(alert: alert(to: error)) { [unowned self]  in
-            self.alertController?.dismiss(animated: true)
+        let alertViewController = makeAlertController(for: error)
+        self.alertViewController = alertViewController
+        present(alertViewController)
+    }
+    
+    private func makeAlertController(for error: GetFollowersError) -> UIViewController {
+        CustomAlertController(alert: makeAlert(for: error)) { [unowned self]  in
+            self.alertViewController?.dismiss(animated: true)
         }
-        alertController = viewController
-        present(viewController)
     }
     
     private func present(_ viewController: UIViewController) {

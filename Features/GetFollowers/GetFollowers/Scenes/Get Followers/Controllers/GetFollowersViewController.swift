@@ -27,7 +27,7 @@ final class GetFollowersViewController: UIViewController {
         return view
     }()
     
-    lazy var onGetFollowersButtonTapped: (String?) -> Void = { [unowned self] username in
+    private lazy var onGetFollowersButtonTapped: (String?) -> Void = { [unowned self] username in
         self.fetchUser(with: username)
     }
     
