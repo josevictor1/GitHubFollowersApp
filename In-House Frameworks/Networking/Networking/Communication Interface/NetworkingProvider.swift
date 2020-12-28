@@ -12,7 +12,7 @@ import Foundation
 public typealias ResponseCompletion = (_ result: Result<NetworkingResponse, NetworkingError>) -> Void
 
 /// Networking interface that provides.
-public class NetworkingProvider {
+public final class NetworkingProvider {
 
     private let service: NetworkingServiceProtocol = NetworkingService()
 

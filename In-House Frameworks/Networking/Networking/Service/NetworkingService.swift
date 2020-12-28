@@ -12,10 +12,10 @@ protocol NetworkingServiceProtocol {
     func send(_ request: Request, completion: @escaping ResponseCompletion)
 }
 
-class NetworkingService: NetworkingServiceProtocol {
+final class NetworkingService: NetworkingServiceProtocol {
 
-    let session: URLSession
-    let requestProvider: URLRequestProvider
+    private let session: URLSession
+    private let requestProvider: URLRequestProvider
 
     init(requestProvider: URLRequestProvider = URLRequestCreator(), session: URLSession = .shared) {
         self.session = session
@@ -33,7 +33,6 @@ class NetworkingService: NetworkingServiceProtocol {
                 completion(result)
             }.resume()
         } catch {
-
             guard let networkingError = error as? NetworkingError else {
                 return completion(.failure(.unknown))
             }
@@ -56,9 +55,7 @@ class NetworkingService: NetworkingServiceProtocol {
     }
 
     func convertErrorToNetworkingError(_ error: Error, with response: NetworkingResponse) -> NetworkingError {
-
         switch response.statusCode {
-
         case (300...399):
             return .redirection(error, response)
         case (400...499):

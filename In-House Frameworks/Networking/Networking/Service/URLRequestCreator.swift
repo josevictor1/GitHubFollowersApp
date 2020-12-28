@@ -12,7 +12,7 @@ protocol URLRequestProvider {
     func createURLRequest(from request: Request) throws -> URLRequest
 }
 
-class URLRequestCreator: URLRequestProvider {
+final class URLRequestCreator: URLRequestProvider {
 
     private let encoder: JSONEncoder
 
@@ -31,7 +31,6 @@ class URLRequestCreator: URLRequestProvider {
     }
 
     func createURLRequest(from request: Request) throws -> URLRequest {
-
         let endpoint = Endpoint(path: request.path,
                                 scheme: request.scheme,
                                 host: request.host,
@@ -47,5 +46,4 @@ class URLRequestCreator: URLRequestProvider {
 
         return urlRequest
     }
-
 }

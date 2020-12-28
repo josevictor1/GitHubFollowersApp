@@ -17,5 +17,4 @@ extension URLComponents {
         path = endpoint.path
         queryItems = endpoint.queryItem
     }
-
 }

@@ -32,5 +32,4 @@ public protocol Request {
 
     /// The attribute that define the necessary headers.
     var header: Header? { get }
-
 }
