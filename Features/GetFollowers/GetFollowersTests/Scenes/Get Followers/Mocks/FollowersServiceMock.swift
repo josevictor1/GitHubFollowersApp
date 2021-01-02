@@ -11,10 +11,10 @@ import Foundation
 
 final class FollowersServiceMock: GetFollowersProvider {
 
-    var followers: [FollowerResponse]?
+    var followers: [UserResponse]?
     var error: GetFollowersError?
 
-    func requestFollowers(_ request: FollowersRequest, completion: @escaping FollowersServiceCompletion) {
+    func requestUserInformation(for username: String, completion: @escaping FollowersServiceCompletion) {
         if let followers = followers {
             completion(.success(followers))
         } else if let error = error {
