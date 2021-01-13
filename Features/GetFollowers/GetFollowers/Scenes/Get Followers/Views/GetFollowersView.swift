@@ -9,34 +9,30 @@
 import UIKit
 import Commons
 
-final class GetFollowersView: UIView {
+protocol GetFollowersViewProtocol: UIView {
+    func scrollUpGetFollowersButton(at height: CGFloat)
+}
 
-    // MARK: - Properties
+typealias GetFollowersViewDelegate = GetFollowersViewControllerInput & UITextFieldDelegate
 
+final class GetFollowersView: UIView, GetFollowersViewProtocol {
+    
     private var bottomButtonConstraint: NSLayoutConstraint?
     private let cornerRadius: CGFloat = 12
     private let smallPadding: CGFloat = 10
     private let mediumPadding: CGFloat = 31
     private let largePadding: CGFloat = 62
     private let extraLargePadding: CGFloat = 200
-
-    // MARK: - Closures
-
-    var onGetFollowersButtonTapped: ((String?) -> Void)?
-
-    // MARK: - Initializers
-
+    public weak var delegate: GetFollowersViewDelegate?
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
     }
-
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUp()
     }
-
-    // MARK: - Subviews
 
     private let logoImageView: UIImageView = {
         let imageAsset: ImagesAssets = .getFollowersLogo
@@ -91,7 +87,8 @@ final class GetFollowersView: UIView {
     // MARK: - Actions
 
     @objc private func getFollowersButtonTapped() {
-        onGetFollowersButtonTapped?(usernameTextField.text)
+        guard let username = usernameTextField.text else { return }
+        delegate?.viewController(didSelectFollower: username)
     }
 
     func scrollUpGetFollowersButton(at height: CGFloat) {
@@ -100,8 +97,6 @@ final class GetFollowersView: UIView {
             self.layoutIfNeeded()
         }
     }
-
-    // MARK: - Setup
 
     private func setUp() {
         setUpConstraints()
@@ -119,13 +114,6 @@ final class GetFollowersView: UIView {
         backgroundColor = .systemBackground
     }
 
-    func set(textFieldDelegate: UITextFieldDelegate) {
-        usernameTextField.delegate = textFieldDelegate
-    }
-    
-
-    // MARK: - Constraints
-
     private func setUpLogoImageViewConstraints() {
         logoImageView.heightAnchor.constraint(lessThanOrEqualToConstant: extraLargePadding).isActive = true
     }
@@ -135,7 +123,6 @@ final class GetFollowersView: UIView {
     }
 
     private func setUpStackViewConstraints() {
-
         let constraints = [stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: largePadding),
                            stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
                                                               constant: mediumPadding),

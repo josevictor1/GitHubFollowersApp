@@ -13,13 +13,13 @@ final class GetFollowersViewControllerTests: XCTestCase {
 
     // MARK: - Mocks
 
-    let logicController = GetFollowersLogicControllerMock()
-    let alertPresenterMock = GetFollowersAlertPresenterMock()
-    let delegateMock = GetFollowersViewControllerDelegateMock()
+    private let logicController = GetFollowersLogicControllerMock()
+    private let alertPresenterMock = GetFollowersAlertPresenterMock()
+    private let delegateMock = GetFollowersViewControllerDelegateMock()
 
     // MARK: - SUT Factory
 
-    func makeSUT() -> GetFollowersViewController {
+    private func makeSUT() -> GetFollowersViewController {
         .makeGetFollowers(delegate: delegateMock,
                           presenter: alertPresenterMock,
                           logicController: logicController)
@@ -38,7 +38,7 @@ final class GetFollowersViewControllerTests: XCTestCase {
             expectation?.fulfill()
         }
 
-        sut.onGetFollowersButtonTapped(username)
+        //sut.onGetFollowersButtonTapped(username)
 
         wait(for: [expectation], timeout: 1)
         XCTAssertEqual(presentedError, .requestFail, "The alert should be presented with request fail error")
@@ -55,7 +55,7 @@ final class GetFollowersViewControllerTests: XCTestCase {
             expectation?.fulfill()
         }
 
-        sut.onGetFollowersButtonTapped(username)
+        //sut.onGetFollowersButtonTapped(username)
 
         wait(for: [expectation], timeout: 1)
         XCTAssertEqual(presentedError, .invalidUsername, "The alert should be presented with invalid username error")
@@ -70,7 +70,7 @@ final class GetFollowersViewControllerTests: XCTestCase {
         }
         let username = "test"
 
-        sut.onGetFollowersButtonTapped(username)
+        //sut.onGetFollowersButtonTapped(username)
 
         wait(for: [expectation], timeout: 1)
         XCTAssertTrue(delegateMock.didViewControllerGotFollowers, "The delegate shold be called")

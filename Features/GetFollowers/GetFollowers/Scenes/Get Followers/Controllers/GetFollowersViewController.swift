@@ -13,22 +13,25 @@ protocol GetFollowersViewControllerDelegate: AnyObject {
     func viewControllerDidGetFollowers(_ userFollowers: UserFollowers)
 }
 
+protocol GetFollowersViewControllerInput {
+    func viewController(didSelectFollower selectedFollower: String)
+}
+
 final class GetFollowersViewController: UIViewController {
     
     private(set) var logicController: GetFollowersLogicControllerProtocol?
     private(set) var presenter: GetFollowersAlertPresenterProtocol?
     private let keyboardObserver = KeyboardObserver()
     private(set) weak var delegate: GetFollowersViewControllerDelegate?
+    private let getFollowersView: GetFollowersViewProtocol
     
-    private lazy var getFollowersView: GetFollowersView = {
-        let view = GetFollowersView()
-        view.onGetFollowersButtonTapped = onGetFollowersButtonTapped
-        view.set(textFieldDelegate: self)
-        return view
-    }()
+    init(view: GetFollowersViewProtocol) {
+        getFollowersView = view
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    private lazy var onGetFollowersButtonTapped: (String?) -> Void = { [unowned self] username in
-        self.fetchUser(with: username)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func loadView() {
@@ -75,6 +78,13 @@ extension GetFollowersViewController: UITextFieldDelegate {
     }
 }
 
+extension GetFollowersViewController: GetFollowersViewControllerInput {
+    
+    func viewController(didSelectFollower selectedFollower: String) {
+        fetchUser(with: selectedFollower)
+    }
+}
+
 // MARK: - Factory
 
 extension GetFollowersViewController {
@@ -83,7 +93,9 @@ extension GetFollowersViewController {
                                  presenter: GetFollowersAlertPresenterProtocol = GetFollowersAlertPresenter(),
                                  logicController: GetFollowersLogicControllerProtocol = GetFollowersLogicController()) -> GetFollowersViewController {
         
-        let viewController = GetFollowersViewController()
+        let view = GetFollowersView()
+        let viewController = GetFollowersViewController(view: view)
+        view.delegate = viewController
         viewController.presenter = presenter
         viewController.logicController = logicController
         viewController.delegate = delegate

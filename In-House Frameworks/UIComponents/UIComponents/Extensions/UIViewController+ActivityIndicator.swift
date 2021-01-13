@@ -27,5 +27,4 @@ public extension UIViewController {
         activityIndicator.removeFromSuperview()
         activityIndicator.stop()
     }
-
 }
