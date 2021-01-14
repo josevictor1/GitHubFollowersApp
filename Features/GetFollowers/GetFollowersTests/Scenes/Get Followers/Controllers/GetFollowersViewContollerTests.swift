@@ -13,64 +13,76 @@ final class GetFollowersViewControllerTests: XCTestCase {
 
     // MARK: - Mocks
 
-    private let logicController = GetFollowersLogicControllerMock()
+    private let logicControllerMock = GetFollowersLogicControllerMock()
     private let alertPresenterMock = GetFollowersAlertPresenterMock()
     private let delegateMock = GetFollowersViewControllerDelegateMock()
-
+    private var presentedError: GetFollowersError?
+    
     // MARK: - SUT Factory
 
-    private func makeSUT() -> GetFollowersViewController {
+    private lazy var sut: GetFollowersViewController = {
         .makeGetFollowers(delegate: delegateMock,
                           presenter: alertPresenterMock,
-                          logicController: logicController)
+                          logicController: logicControllerMock)
+    }()
+    
+    
+    private func prepareLogicController(with error: GetFollowersError) {
+        logicControllerMock.error = error
+    }
+    
+    private func prepareAlerPresenterMock(with expectation: XCTestExpectation) {
+        alertPresenterMock.onAlertPresented = { [weak expectation, weak self] error in
+            self?.presentedError = error
+            expectation?.fulfill()
+        }
+    }
+    
+    private func setUpLogicControllersFollowersAsEmpty() {
+        logicControllerMock.followers = []
+    }
+    
+    private func prepareGetFollowersControllerDalegate(with expectation: XCTestExpectation) {
+        delegateMock.expectationCompletion = { [weak expectation] in
+            expectation?.fulfill()
+        }
+    }
+    
+    private func callGetFollowersButtonTappedMethod() {
+        //let username = "test"
+        //sut.onGetFollowersButtonTapped(username)
     }
 
     // MARK: - Tests
 
     func testGetFollowersFailWithRequestFailMessage() {
-        let sut = makeSUT()
-        logicController.error = .requestFail
-        var presentedError: GetFollowersError?
-        let username = "test"
         let expectation = XCTestExpectation(description: "The onAlertPresented closure should be executed")
-        alertPresenterMock.onAlertPresented = { [weak expectation] error in
-            presentedError = error
-            expectation?.fulfill()
-        }
+        prepareLogicController(with: .requestFail)
+        prepareAlerPresenterMock(with: expectation)
 
-        //sut.onGetFollowersButtonTapped(username)
+        callGetFollowersButtonTappedMethod()
 
         wait(for: [expectation], timeout: 1)
         XCTAssertEqual(presentedError, .requestFail, "The alert should be presented with request fail error")
     }
 
     func testGetFollowersFailWithIvalidUsernameMessage() {
-        let sut = makeSUT()
-        logicController.error = .invalidUsername
-        var presentedError: GetFollowersError?
-        let username = "test"
         let expectation = XCTestExpectation(description: "The onAlertPresented closure should be executed")
-        alertPresenterMock.onAlertPresented = { [weak expectation] error in
-            presentedError = error
-            expectation?.fulfill()
-        }
+        prepareLogicController(with: .invalidUsername)
+        prepareAlerPresenterMock(with: expectation)
 
-        //sut.onGetFollowersButtonTapped(username)
+        callGetFollowersButtonTappedMethod()
 
         wait(for: [expectation], timeout: 1)
         XCTAssertEqual(presentedError, .invalidUsername, "The alert should be presented with invalid username error")
     }
 
     func testGetFollowersWithSuccess() {
-        let sut = makeSUT()
-        logicController.followers = []
         let expectation = XCTestExpectation(description: "The viewControllerDidGetFollowers should be called")
-        delegateMock.expectationCompletion = { [weak expectation] in
-            expectation?.fulfill()
-        }
-        let username = "test"
-
-        //sut.onGetFollowersButtonTapped(username)
+        setUpLogicControllersFollowersAsEmpty()
+        prepareGetFollowersControllerDalegate(with: expectation)
+        
+        callGetFollowersButtonTappedMethod()
 
         wait(for: [expectation], timeout: 1)
         XCTAssertTrue(delegateMock.didViewControllerGotFollowers, "The delegate shold be called")

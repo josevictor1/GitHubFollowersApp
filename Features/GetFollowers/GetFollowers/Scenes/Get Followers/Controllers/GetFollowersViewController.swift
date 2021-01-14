@@ -21,8 +21,8 @@ final class GetFollowersViewController: UIViewController {
     
     private(set) var logicController: GetFollowersLogicControllerProtocol?
     private(set) var presenter: GetFollowersAlertPresenterProtocol?
-    private let keyboardObserver = KeyboardObserver()
     private(set) weak var delegate: GetFollowersViewControllerDelegate?
+    private let keyboardObserver = KeyboardObserver()
     private let getFollowersView: GetFollowersViewProtocol
     
     init(view: GetFollowersViewProtocol) {
