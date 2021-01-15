@@ -10,6 +10,7 @@ import UIKit
 import Commons
 
 protocol GetFollowersViewProtocol: UIView {
+    var delegate: GetFollowersViewDelegate? { get set }
     func scrollUpGetFollowersButton(at height: CGFloat)
 }
 
@@ -23,13 +24,13 @@ final class GetFollowersView: UIView, GetFollowersViewProtocol {
     private let mediumPadding: CGFloat = 31
     private let largePadding: CGFloat = 62
     private let extraLargePadding: CGFloat = 200
-    public weak var delegate: GetFollowersViewDelegate?
+    weak var delegate: GetFollowersViewDelegate?
     
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
     }
-    public required init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUp()
     }

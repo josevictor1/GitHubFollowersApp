@@ -44,6 +44,8 @@
 		1AEFAEB9245F7BAB00F64C17 /* ImagesAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */; };
 		1AEFAEBB245F7BC600F64C17 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEBA245F7BC600F64C17 /* LocalizedStrings.swift */; };
 		1AFCE0472550A49F00CCC878 /* FollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCE0462550A49F00CCC878 /* FollowersService.swift */; };
+		1AFEF7CB25B11758001DC70B /* GetFollowersViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFEF7CA25B11758001DC70B /* GetFollowersViewMock.swift */; };
+		1AFEF7CF25B1262F001DC70B /* KeyboardObserverMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFEF7CE25B1262F001DC70B /* KeyboardObserverMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAssets.swift; sourceTree = "<group>"; };
 		1AEFAEBA245F7BC600F64C17 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		1AFCE0462550A49F00CCC878 /* FollowersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersService.swift; sourceTree = "<group>"; };
+		1AFEF7CA25B11758001DC70B /* GetFollowersViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewMock.swift; sourceTree = "<group>"; };
+		1AFEF7CE25B1262F001DC70B /* KeyboardObserverMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserverMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +262,8 @@
 				1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */,
 				1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */,
 				1A94FD4B2433CCD30095932A /* FollowersServiceMock.swift */,
+				1AFEF7CA25B11758001DC70B /* GetFollowersViewMock.swift */,
+				1AFEF7CE25B1262F001DC70B /* KeyboardObserverMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -517,10 +523,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFEF7CF25B1262F001DC70B /* KeyboardObserverMock.swift in Sources */,
 				1A94FD1524327C3D0095932A /* GetFollowersLogicControllerMock.swift in Sources */,
 				1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */,
 				1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */,
 				1A94FD4C2433CCD30095932A /* FollowersServiceMock.swift in Sources */,
+				1AFEF7CB25B11758001DC70B /* GetFollowersViewMock.swift in Sources */,
 				1A94FD1D24336A230095932A /* GetFollowersModelControllerTests.swift in Sources */,
 				1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */,
 			);

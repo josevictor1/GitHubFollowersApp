@@ -22,11 +22,12 @@ final class GetFollowersViewController: UIViewController {
     private(set) var logicController: GetFollowersLogicControllerProtocol?
     private(set) var presenter: GetFollowersAlertPresenterProtocol?
     private(set) weak var delegate: GetFollowersViewControllerDelegate?
-    private let keyboardObserver = KeyboardObserver()
+    private let keyboardObserver: KeyboardObserverProtocol
     private let getFollowersView: GetFollowersViewProtocol
     
-    init(view: GetFollowersViewProtocol) {
+    init(view: GetFollowersViewProtocol, keyboardObserver: KeyboardObserverProtocol) {
         getFollowersView = view
+        self.keyboardObserver = keyboardObserver
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -89,12 +90,13 @@ extension GetFollowersViewController: GetFollowersViewControllerInput {
 
 extension GetFollowersViewController {
     
-    static func makeGetFollowers(delegate: GetFollowersViewControllerDelegate,
+    static func makeGetFollowers(view: GetFollowersViewProtocol = GetFollowersView(),
+                                 delegate: GetFollowersViewControllerDelegate,
                                  presenter: GetFollowersAlertPresenterProtocol = GetFollowersAlertPresenter(),
-                                 logicController: GetFollowersLogicControllerProtocol = GetFollowersLogicController()) -> GetFollowersViewController {
+                                 logicController: GetFollowersLogicControllerProtocol = GetFollowersLogicController(),
+                                 keyboardObserver: KeyboardObserverProtocol = KeyboardObserver()) -> GetFollowersViewController {
         
-        let view = GetFollowersView()
-        let viewController = GetFollowersViewController(view: view)
+        let viewController = GetFollowersViewController(view: view, keyboardObserver: keyboardObserver)
         view.delegate = viewController
         viewController.presenter = presenter
         viewController.logicController = logicController

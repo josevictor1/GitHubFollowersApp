@@ -10,7 +10,7 @@ import Foundation
 @testable import GetFollowers
 
 final class GetFollowersLogicControllerMock: GetFollowersLogicControllerProtocol {
-
+    
     var error: GetFollowersError = .requestFail
     var followers: [Follower]?
 
@@ -18,5 +18,4 @@ final class GetFollowersLogicControllerMock: GetFollowersLogicControllerProtocol
         guard let followers = followers else { return completion(.failure(error)) }
         completion(.success(followers))
     }
-
 }

@@ -10,15 +10,14 @@ import UIKit
 @testable import GetFollowers
 
 final class GetFollowersAlertPresenterMock: GetFollowersAlertPresenterProtocol {
-
+    
     var viewController: UIViewController?
+    var onAlertPresented: ((GetFollowersError) -> Void)?
 
     func configureAlert(to presentingViewController: UIViewController) {
         viewController = presentingViewController
     }
-
-    var onAlertPresented: ((GetFollowersError) -> Void)?
-
+    
     func present(_ error: GetFollowersError) {
         onAlertPresented?(error)
     }

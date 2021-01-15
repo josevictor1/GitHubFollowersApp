@@ -10,9 +10,8 @@ import Foundation
 @testable import GetFollowers
 
 final class GetFollowersViewControllerDelegateMock: GetFollowersViewControllerDelegate {
-
+    
     var didViewControllerGotFollowers = false
-
     var expectationCompletion: (() -> Void)?
 
     func viewControllerDidGetFollowers(_ userFollowers: UserFollowers) {
