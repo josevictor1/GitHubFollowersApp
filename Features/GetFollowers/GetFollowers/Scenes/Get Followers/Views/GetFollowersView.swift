@@ -17,7 +17,6 @@ protocol GetFollowersViewProtocol: UIView {
 typealias GetFollowersViewDelegate = GetFollowersViewControllerInput & UITextFieldDelegate
 
 final class GetFollowersView: UIView, GetFollowersViewProtocol {
-    
     private var bottomButtonConstraint: NSLayoutConstraint?
     private let cornerRadius: CGFloat = 12
     private let smallPadding: CGFloat = 10

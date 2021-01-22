@@ -155,48 +155,4 @@ class NetworkingServiceTests: XCTestCase {
         XCTAssertNotNil(receivedError)
         XCTAssertEqual(receivedError, expectedError)
     }
-
-    func testConvertErrorToNetworkingErrorWithRedirection() {
-        let sut = makeSUT()
-        let responseMock = NetworkingResponse(data: dataMock, response: makeHTTPURLResponse(with: .redirection))
-        let mockError = makeNSError(with: .redirection)
-        let expectedError: NetworkingError = .redirection(mockError, responseMock)
-
-        let error = sut.convertErrorToNetworkingError(mockError, with: responseMock)
-
-        XCTAssertEqual(error, expectedError)
-    }
-
-    func testConvertErrorToNetworkingErrorWithClientError() {
-        let sut = makeSUT()
-        let responseMock = NetworkingResponse(data: dataMock, response: makeHTTPURLResponse(with: .clientError))
-        let mockError = makeNSError(with: .clientError)
-        let expectedError: NetworkingError = .client(mockError, responseMock)
-
-        let error = sut.convertErrorToNetworkingError(mockError, with: responseMock)
-
-        XCTAssertEqual(error, expectedError)
-    }
-
-    func testConvertErrorToNetworkingErrorWithServerError() {
-        let sut = makeSUT()
-        let responseMock = NetworkingResponse(data: dataMock, response: makeHTTPURLResponse(with: .serverError))
-        let mockError = makeNSError(with: .serverError)
-        let expectedError: NetworkingError = .server(mockError, responseMock)
-
-        let error = sut.convertErrorToNetworkingError(mockError, with: responseMock)
-
-        XCTAssertEqual(error, expectedError)
-    }
-
-    func testConvertErrorToNetowrkingErrorWithUnknownError() {
-        let sut = makeSUT()
-        let responseMock = NetworkingResponse(data: Data(), response: makeHTTPURLResponse(with: .unknownError))
-        let mockError = makeNSError(with: .unknownError)
-
-        let error = sut.convertErrorToNetworkingError(mockError, with: responseMock)
-
-        XCTAssertEqual(error, .unknown)
-    }
-
 }

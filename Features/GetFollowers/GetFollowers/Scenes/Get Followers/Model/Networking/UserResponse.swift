@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct UserResponse: Codable {
-    let login: String
+struct UserNetworkingResponse: Decodable {
+    let login: String?
     let id: Int
     let nodeID: String
     let avatarURL: String
@@ -31,7 +31,7 @@ struct UserResponse: Codable {
     let company: String
     let blog: String
     let location: String
-    let email: String
+    let email: String?
     let hireable: Bool
     let bio: String
     let twitterUsername: String

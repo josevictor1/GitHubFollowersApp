@@ -10,13 +10,12 @@ import Foundation
 @testable import GetFollowers
 
 final class FollowersServiceMock: GetFollowersProvider {
-    
-    var followers: [UserResponse]?
+    var userInformation: UserNetworkingResponse?
     var error: GetFollowersError?
 
     func requestUserInformation(for username: String, completion: @escaping FollowersServiceCompletion) {
-        if let followers = followers {
-            completion(.success(followers))
+        if let userInformation = userInformation {
+            completion(.success(userInformation))
         } else if let error = error {
             completion(.failure(error))
         }

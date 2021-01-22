@@ -10,28 +10,17 @@ import UIKit
 import UIComponents
 
 protocol GetFollowersAlertPresenterProtocol {
-
-    /// Present an alert with the passed error.
-    /// - Parameter error: Error to be presented.
     func present(_ error: GetFollowersError)
-
     func configureAlert(to presentingViewController: UIViewController)
 }
 
 final class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
-
-    // MARK: - Properties
-
     private weak var presentingViewController: UIViewController?
     private weak var alertViewController: UIViewController?
-
-    // MARK: - Configuration
 
     func configureAlert(to presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
     }
-
-    // MARK: - Presentation
 
     private func makeAlert(for error: GetFollowersError) -> Alert {
         let title = LocalizedStrings.somethingWentWrong.localized
@@ -40,8 +29,6 @@ final class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
         return Alert(title: title, description: description, buttonTitle: buttonTitle)
     }
 
-    /// Present an alert over current context.
-    /// - Parameter error: The error message to be presented.
     func present(_ error: GetFollowersError) {
         let alertViewController = makeAlertController(for: error)
         self.alertViewController = alertViewController

@@ -20,8 +20,9 @@
 		1A4247D02550B104007E42C5 /* FollowersNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4247CF2550B104007E42C5 /* FollowersNetworkingRequest.swift */; };
 		1A5174E8255B5A48006ACB76 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174E7255B5A48006ACB76 /* UserResponse.swift */; };
 		1A5174EC255B5C4C006ACB76 /* GetUserNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */; };
-		1A65D7FB2483DEA2001772EC /* UserFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65D7FA2483DEA2001772EC /* UserFollowers.swift */; };
 		1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A3954246A0EFE0097C195 /* Commons.framework */; };
+		1A6A673925BA2F06004F1FC1 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A673825BA2F06004F1FC1 /* UserInformation.swift */; };
+		1A6A675D25BA84EA004F1FC1 /* UserInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6A675C25BA84EA004F1FC1 /* UserInformation.json */; };
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
 		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
 		1A94FD1524327C3D0095932A /* GetFollowersLogicControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1424327C3D0095932A /* GetFollowersLogicControllerMock.swift */; };
@@ -75,8 +76,9 @@
 		1A4247CF2550B104007E42C5 /* FollowersNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersNetworkingRequest.swift; sourceTree = "<group>"; };
 		1A5174E7255B5A48006ACB76 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserNetworkingRequest.swift; sourceTree = "<group>"; };
-		1A65D7FA2483DEA2001772EC /* UserFollowers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowers.swift; sourceTree = "<group>"; };
 		1A6A3954246A0EFE0097C195 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6A673825BA2F06004F1FC1 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		1A6A675C25BA84EA004F1FC1 /* UserInformation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserInformation.json; sourceTree = "<group>"; };
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
 		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
 		1A94FD1424327C3D0095932A /* GetFollowersLogicControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerMock.swift; sourceTree = "<group>"; };
@@ -233,9 +235,17 @@
 			children = (
 				1A1C2F3F242E85F200096731 /* Follower.swift */,
 				1A1C2F40242E85F200096731 /* GetFollowersError.swift */,
-				1A65D7FA2483DEA2001772EC /* UserFollowers.swift */,
+				1A6A673825BA2F06004F1FC1 /* UserInformation.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1A6A675B25BA84BA004F1FC1 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				1A6A675C25BA84EA004F1FC1 /* UserInformation.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		1A94FD0A2431692B0095932A /* Scenes */ = {
@@ -249,6 +259,7 @@
 		1A94FD0B243169330095932A /* Get Followers */ = {
 			isa = PBXGroup;
 			children = (
+				1A6A675B25BA84BA004F1FC1 /* JSON */,
 				1A94FD0F24326FC40095932A /* Mocks */,
 				1A94FD1A24329E630095932A /* Controllers */,
 			);
@@ -481,6 +492,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6A675D25BA84EA004F1FC1 /* UserInformation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,9 +523,9 @@
 				1A94FD24243379EF0095932A /* FollowersRequest.swift in Sources */,
 				1A1C2F49242E85F200096731 /* Follower.swift in Sources */,
 				1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */,
-				1A65D7FB2483DEA2001772EC /* UserFollowers.swift in Sources */,
 				1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */,
 				1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */,
+				1A6A673925BA2F06004F1FC1 /* UserInformation.swift in Sources */,
 				1A1C2F4C242E85F200096731 /* GetFollowersViewController.swift in Sources */,
 				1A1C2F4D242E85F200096731 /* GetFollowersView.swift in Sources */,
 			);

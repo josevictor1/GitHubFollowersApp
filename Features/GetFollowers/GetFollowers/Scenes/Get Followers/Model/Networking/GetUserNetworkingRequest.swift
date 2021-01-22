@@ -18,7 +18,7 @@ struct GetUserNetworkingRequest: Request {
     
     var host: String { "api.github.com" }
     
-    var path: String { "/users/\(username)/followers" }
+    var path: String { "/users/\(username)" }
     
     var body: Encodable?
     

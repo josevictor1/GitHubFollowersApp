@@ -9,7 +9,7 @@
 import Foundation
 import Networking
 
-typealias FollowersServiceCompletion = (Result<[UserResponse], GetFollowersError>) -> Void
+typealias FollowersServiceCompletion = (Result<UserNetworkingResponse, GetFollowersError>) -> Void
 
 protocol GetFollowersProvider {
     func requestUserInformation(for username: String, completion: @escaping FollowersServiceCompletion)
@@ -26,8 +26,10 @@ final class GetFollowersService: GetFollowersProvider {
     func requestUserInformation(for username: String, completion: @escaping FollowersServiceCompletion) {
         let networkingRequest = GetUserNetworkingRequest(username: username)
 
-        networkingProvider.performRequestWithDecodable(networkingRequest) { (result: Result<[UserResponse], NetworkingError>) in
-            completion(result.mapError(GetFollowersError.init))
+        networkingProvider.performRequestWithDecodable(networkingRequest) { (result: Result<UserNetworkingResponse, NetworkingError>) in
+            DispatchQueue.main.async {
+                completion(result.mapError(GetFollowersError.init))
+            }
         }
     }
 }

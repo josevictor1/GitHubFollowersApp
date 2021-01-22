@@ -9,7 +9,7 @@
 import Networking
 
 protocol FollowersProvider {
-    func searchFollowers(with username: String, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void )
+    func searchFollowers(for username: String, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void )
 }
 
 final class FollowersService: FollowersProvider {
@@ -20,7 +20,7 @@ final class FollowersService: FollowersProvider {
         self.networkingProvider = networkingProvider
     }
     
-    func searchFollowers(with username: String, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void) {
+    func searchFollowers(for username: String, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void) {
         let request = FollowersNetworkingRequest(username: username)
         networkingProvider.performRequestWithDecodable(request) { (result: Result<[FollowerResponse], NetworkingError>) in
             completion(result.mapError(GetFollowersError.init))

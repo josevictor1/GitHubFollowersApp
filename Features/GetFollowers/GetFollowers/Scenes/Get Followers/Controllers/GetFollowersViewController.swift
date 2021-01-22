@@ -10,7 +10,7 @@ import UIKit
 import Commons
 
 protocol GetFollowersViewControllerDelegate: AnyObject {
-    func viewControllerDidGetFollowers(_ userFollowers: UserFollowers)
+    func viewControllerDidGetFollowers(_ userFollowers: UserInformation)
 }
 
 protocol GetFollowersViewControllerInput {
@@ -18,7 +18,6 @@ protocol GetFollowersViewControllerInput {
 }
 
 final class GetFollowersViewController: UIViewController {
-    
     private(set) var logicController: GetFollowersLogicControllerProtocol?
     private(set) var presenter: GetFollowersAlertPresenterProtocol?
     private(set) weak var delegate: GetFollowersViewControllerDelegate?
@@ -47,11 +46,10 @@ final class GetFollowersViewController: UIViewController {
     private func fetchUser(with username: String?) {
         guard let username = username, !username.isEmpty else { return }
         startLoading()
-        logicController?.getFollowers(of: username) { [unowned self] result in
+        logicController?.fetchFollowers(for: username) { [unowned self] result in
             switch result {
-            case .success(let followers):
-                let userFollowers = UserFollowers(username: username, followers: followers)
-                self.delegate?.viewControllerDidGetFollowers(userFollowers)
+            case .success(let user):
+               self.delegate?.viewControllerDidGetFollowers(user)
             case .failure(let error):
                 self.presenter?.present(error)
             }

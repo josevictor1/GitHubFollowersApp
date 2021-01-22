@@ -16,33 +16,40 @@ protocol FollowersLogicControllerProtocol {
 }
 
 final class FollowersLogicController: FollowersLogicControllerProtocol {
-    
-    private let userFollowers: UserFollowers
+    private let userInformation: UserInformation
     private let service: FollowersProvider
+    private var followers = [Follower]()
     
     var username: String {
-        userFollowers.username
+        userInformation.login
     }
     
-    init(userFollowers: UserFollowers, service: FollowersProvider = FollowersService()) {
-        self.userFollowers = userFollowers
+    init(userFollowers: UserInformation, service: FollowersProvider = FollowersService()) {
+        self.userInformation = userFollowers
         self.service = service
     }
     
     func search(for follower: String?, completion: @escaping SearchFollowersCompletion) {
-        guard let follower = follower, !follower.isEmpty else {
-            return completion(.success(userFollowers.followers))
+        guard let follower = follower, !followers.isEmpty else {
+            return completion(.success(followers))
         }
-        
-        service.searchFollowers(with: follower) { [unowned self] result in
+        search(for: follower, completion: completion)
+    }
+    
+    private func search(for follower: String, completion: @escaping SearchFollowersCompletion) {
+        service.searchFollowers(for: follower) { [unowned self] result in
             switch result {
             case .success(let response):
-                let followers = self.convertIntoFollowerList(response)
-                completion(.success(followers))
+                self.handleSuccess(with: response, completion: completion)
             case .failure(let error):
                 completion(.failure(error))
             }
         }
+    }
+    
+    private func handleSuccess(with response: [FollowerResponse], completion: @escaping SearchFollowersCompletion) {
+        let followers = convertIntoFollowerList(response)
+        completion(.success(followers))
     }
     
     private func convertIntoFollowerList(_ followerResponse: [FollowerResponse]) -> [Follower] {

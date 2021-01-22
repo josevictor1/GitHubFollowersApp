@@ -54,7 +54,7 @@ final class NetworkingService: NetworkingServiceProtocol {
         }
     }
 
-    func convertErrorToNetworkingError(_ error: Error, with response: NetworkingResponse) -> NetworkingError {
+    private func convertErrorToNetworkingError(_ error: Error, with response: NetworkingResponse) -> NetworkingError {
         switch response.statusCode {
         case (300...399):
             return .redirection(error, response)

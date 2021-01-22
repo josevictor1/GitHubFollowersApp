@@ -19,7 +19,7 @@ struct FollowersNetworkingRequest: Request {
     
     var host: String { "api.github.com" }
     
-    var path: String { "/users/\(username)/following/josevictor1"}
+    var path: String { "/users/\(username)/followers"}
     
     var body: Encodable?
     

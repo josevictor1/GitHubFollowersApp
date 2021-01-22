@@ -154,7 +154,7 @@ extension FollowersViewController: UISearchBarDelegate {
 
 extension FollowersViewController {
     
-    static func makeFollowers(with userFollowers: UserFollowers) -> FollowersViewController {
+    static func makeFollowers(with userFollowers: UserInformation) -> FollowersViewController {
         let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
         viewController.logicController = FollowersLogicController(userFollowers: userFollowers)
         viewController.configurator = FollowersCollectionViewConfigurator()

@@ -10,18 +10,13 @@ import XCTest
 @testable import GetFollowers
 
 final class GetFollowersViewControllerTests: XCTestCase {
-    
-    // MARK: - Mocks
-    
     private let logicControllerMock = GetFollowersLogicControllerMock()
     private let alertPresenterMock = GetFollowersAlertPresenterMock()
     private let delegateMock = GetFollowersViewControllerDelegateMock()
     private let keyboardObseverMock = KeyboardObserverMock()
     private let viewMock = GetFollowersViewMock()
     private var presentedError: GetFollowersError?
-    
-    // MARK: - SUT Factory
-    
+
     private lazy var sut: GetFollowersViewController = {
         .makeGetFollowers(view: viewMock,
                           delegate: delegateMock,
@@ -35,15 +30,15 @@ final class GetFollowersViewControllerTests: XCTestCase {
         logicControllerMock.error = error
     }
     
+    private func prepareLogicControllerToLoadUserInformation() {
+        
+    }
+    
     private func prepareAlertPresenterMock(with expectation: XCTestExpectation) {
         alertPresenterMock.onAlertPresented = { [weak expectation, weak self] error in
             self?.presentedError = error
             expectation?.fulfill()
         }
-    }
-    
-    private func setUpLogicControllersFollowersAsEmpty() {
-        logicControllerMock.followers = []
     }
     
     private func prepareGetFollowersControllerDalegate(with expectation: XCTestExpectation) {
@@ -110,7 +105,7 @@ final class GetFollowersViewControllerTests: XCTestCase {
     func testGetFollowersWithSuccess() {
         let expectation = XCTestExpectation(description: "The viewControllerDidGetFollowers should be called")
         prepareGetFollowersControllerDalegate(with: expectation)
-        setUpLogicControllersFollowersAsEmpty()
+        prepareLogicControllerToLoadUserInformation()
         
         callGetFollowersButtonTappedMethod()
         
