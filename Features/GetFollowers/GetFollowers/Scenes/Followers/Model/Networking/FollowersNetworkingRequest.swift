@@ -10,8 +10,9 @@ import Foundation
 import Networking
 
 struct FollowersNetworkingRequest: Request {
-    
     let username: String
+    let pageNumber: Int
+    let resultsPerPage: Int
     
     var method: HTTPMethod { .get }
     
@@ -23,11 +24,20 @@ struct FollowersNetworkingRequest: Request {
     
     var body: Encodable?
     
-    var queryString: QueryString?
+    var queryString: QueryString? {
+        [
+            "page": "\(pageNumber)",
+            "per_page": "\(resultsPerPage)"
+        ]
+    }
     
     var header: Header?
     
-    init(username: String) {
+    init(username: String,
+         pageNumber: Int,
+         resultsPerPage: Int) {
         self.username = username
+        self.pageNumber = pageNumber
+        self.resultsPerPage = resultsPerPage
     }
 }

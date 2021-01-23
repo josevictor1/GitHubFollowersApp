@@ -11,33 +11,55 @@ import Foundation
 typealias SearchFollowersCompletion = (Result<[Follower], Error>) -> Void
 
 protocol FollowersLogicControllerProtocol {
-    var username: String { get }
-    func search(for follower: String?, completion: @escaping SearchFollowersCompletion)
+    var userLogin: String { get }
+    func loadFollowers()
+}
+
+protocol FollowersLogicControllerOutput: AnyObject {
+    func showFailureOnFetchFollowers()
+    func showFollowers(_ followers: [Follower])
 }
 
 final class FollowersLogicController: FollowersLogicControllerProtocol {
     private let userInformation: UserInformation
     private let service: FollowersProvider
+    private let resultsPerPage = 20
+    private unowned let viewController: FollowersLogicControllerOutput
     private var followers = [Follower]()
     
-    var username: String {
+    var userLogin: String {
         userInformation.login
     }
     
-    init(userFollowers: UserInformation, service: FollowersProvider = FollowersService()) {
+    init(viewController: FollowersLogicControllerOutput,
+         userFollowers: UserInformation,
+         service: FollowersProvider = FollowersService()) {
+        self.viewController = viewController
         self.userInformation = userFollowers
         self.service = service
     }
     
-    func search(for follower: String?, completion: @escaping SearchFollowersCompletion) {
-        guard let follower = follower, !followers.isEmpty else {
-            return completion(.success(followers))
+    func loadFollowers() {
+        searchFollowers() { [unowned self] result in
+            switch result {
+            case .success(let reponse):
+                self.updateFollowers(with: reponse)
+            case .failure:
+                self.viewController.showFailureOnFetchFollowers()
+            }
         }
-        search(for: follower, completion: completion)
     }
     
-    private func search(for follower: String, completion: @escaping SearchFollowersCompletion) {
-        service.searchFollowers(for: follower) { [unowned self] result in
+    private func updateFollowers(with response: [Follower]) {
+        followers += response
+        viewController.showFollowers(followers)
+    }
+    
+    private func searchFollowers(completion: @escaping SearchFollowersCompletion) {
+        let followersRequest = FollowersRequest(username: userLogin,
+                                                pageNumber: 0,
+                                                resultsPerPage: resultsPerPage)
+        service.searchFollowers(for: followersRequest) { [unowned self] result in
             switch result {
             case .success(let response):
                 self.handleSuccess(with: response, completion: completion)

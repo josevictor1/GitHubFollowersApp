@@ -9,21 +9,24 @@
 import Networking
 
 protocol FollowersProvider {
-    func searchFollowers(for username: String, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void )
+    func searchFollowers(for request: FollowersRequest, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void)
 }
 
 final class FollowersService: FollowersProvider {
-    
     private let networkingProvider: NetworkingProvider
     
     init(networkingProvider: NetworkingProvider = NetworkingProvider()) {
         self.networkingProvider = networkingProvider
     }
     
-    func searchFollowers(for username: String, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void) {
-        let request = FollowersNetworkingRequest(username: username)
+    func searchFollowers(for request: FollowersRequest, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void) {
+        let request = FollowersNetworkingRequest(username: request.username,
+                                                 pageNumber: request.pageNumber,
+                                                 resultsPerPage: request.resultsPerPage)
         networkingProvider.performRequestWithDecodable(request) { (result: Result<[FollowerResponse], NetworkingError>) in
-            completion(result.mapError(GetFollowersError.init))
+            DispatchQueue.main.async {
+                completion(result.mapError(GetFollowersError.init))
+            }
         }
     }
 }

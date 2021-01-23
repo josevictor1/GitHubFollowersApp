@@ -14,7 +14,6 @@ typealias FollowersCollectionViewDataSource = UICollectionViewDiffableDataSource
 typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSource.CellProvider
 
 final class FollowersViewController: UICollectionViewController {
-    
     private var logicController: FollowersLogicControllerProtocol?
     private var configurator: FollowersCollectionViewConfiguratorProtocol?
     
@@ -74,7 +73,7 @@ final class FollowersViewController: UICollectionViewController {
     }
     
     private func setUpTitle() {
-        title = logicController?.username ?? String()
+        title = logicController?.userLogin ?? String()
     }
     
     private func setUpBackgroundColor() {
@@ -96,7 +95,8 @@ final class FollowersViewController: UICollectionViewController {
     }
     
     private func loadData() {
-        performQuery(with: .none)
+        startLoading()
+        logicController?.loadFollowers()
     }
     
     func createLayout() -> UICollectionViewLayout {
@@ -134,14 +134,7 @@ extension FollowersViewController: UISearchBarDelegate {
     }
     
     private func performQuery(with filter: String?) {
-        logicController?.search(for: filter) { [weak self] result in
-            switch result {
-            case .success(let followers):
-                self?.reloadDataSource(with: followers)
-            case .failure:
-                break
-            }
-        }
+
     }
     
     private func reloadDataSource(with followers: [Follower]) {
@@ -152,11 +145,24 @@ extension FollowersViewController: UISearchBarDelegate {
     }
 }
 
+extension FollowersViewController: FollowersLogicControllerOutput {
+    
+    func showFailureOnFetchFollowers() {
+        stopLoading()
+    }
+    
+    func showFollowers(_ followers: [Follower]) {
+        stopLoading()
+        reloadDataSource(with: followers)
+    }
+}
+
 extension FollowersViewController {
     
     static func makeFollowers(with userFollowers: UserInformation) -> FollowersViewController {
         let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        viewController.logicController = FollowersLogicController(userFollowers: userFollowers)
+        viewController.logicController = FollowersLogicController(viewController: viewController,
+                                                                  userFollowers: userFollowers)
         viewController.configurator = FollowersCollectionViewConfigurator()
         return viewController
     }

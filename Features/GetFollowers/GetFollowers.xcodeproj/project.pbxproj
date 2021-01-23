@@ -23,13 +23,13 @@
 		1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A3954246A0EFE0097C195 /* Commons.framework */; };
 		1A6A673925BA2F06004F1FC1 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A673825BA2F06004F1FC1 /* UserInformation.swift */; };
 		1A6A675D25BA84EA004F1FC1 /* UserInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6A675C25BA84EA004F1FC1 /* UserInformation.json */; };
+		1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A67B825BBB9EB004F1FC1 /* FollowersRequest.swift */; };
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
 		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
 		1A94FD1524327C3D0095932A /* GetFollowersLogicControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1424327C3D0095932A /* GetFollowersLogicControllerMock.swift */; };
 		1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */; };
 		1A94FD1D24336A230095932A /* GetFollowersModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1C24336A230095932A /* GetFollowersModelControllerTests.swift */; };
 		1A94FD1F243378710095932A /* GetFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1E243378710095932A /* GetFollowersService.swift */; };
-		1A94FD24243379EF0095932A /* FollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD23243379EF0095932A /* FollowersRequest.swift */; };
 		1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD252433936C0095932A /* FollowerResponse.swift */; };
 		1A94FD4C2433CCD30095932A /* FollowersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD4B2433CCD30095932A /* FollowersServiceMock.swift */; };
 		1A95290B244D122B00A5ED5D /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A95290A244D122B00A5ED5D /* Networking.framework */; };
@@ -79,13 +79,13 @@
 		1A6A3954246A0EFE0097C195 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6A673825BA2F06004F1FC1 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		1A6A675C25BA84EA004F1FC1 /* UserInformation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserInformation.json; sourceTree = "<group>"; };
+		1A6A67B825BBB9EB004F1FC1 /* FollowersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersRequest.swift; sourceTree = "<group>"; };
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
 		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
 		1A94FD1424327C3D0095932A /* GetFollowersLogicControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerMock.swift; sourceTree = "<group>"; };
 		1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerDelegateMock.swift; sourceTree = "<group>"; };
 		1A94FD1C24336A230095932A /* GetFollowersModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersModelControllerTests.swift; sourceTree = "<group>"; };
 		1A94FD1E243378710095932A /* GetFollowersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersService.swift; sourceTree = "<group>"; };
-		1A94FD23243379EF0095932A /* FollowersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersRequest.swift; sourceTree = "<group>"; };
 		1A94FD252433936C0095932A /* FollowerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerResponse.swift; sourceTree = "<group>"; };
 		1A94FD4B2433CCD30095932A /* FollowersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersServiceMock.swift; sourceTree = "<group>"; };
 		1A95290A244D122B00A5ED5D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				1A94FD252433936C0095932A /* FollowerResponse.swift */,
-				1A94FD23243379EF0095932A /* FollowersRequest.swift */,
 				1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */,
 				1A5174E7255B5A48006ACB76 /* UserResponse.swift */,
 				1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */,
@@ -380,6 +379,7 @@
 			children = (
 				1ABEB9192548696E00B04478 /* Section.swift */,
 				1ABEB91F254869E000B04478 /* Follower+Hashble.swift */,
+				1A6A67B825BBB9EB004F1FC1 /* FollowersRequest.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -514,13 +514,13 @@
 				1AEFAEB9245F7BAB00F64C17 /* ImagesAssets.swift in Sources */,
 				1ABEB91A2548696E00B04478 /* Section.swift in Sources */,
 				1A94FD1F243378710095932A /* GetFollowersService.swift in Sources */,
+				1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */,
 				1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */,
 				1A5174E8255B5A48006ACB76 /* UserResponse.swift in Sources */,
 				1AED2CFA247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift in Sources */,
 				1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */,
 				1A1C2F4A242E85F200096731 /* GetFollowersError.swift in Sources */,
 				1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */,
-				1A94FD24243379EF0095932A /* FollowersRequest.swift in Sources */,
 				1A1C2F49242E85F200096731 /* Follower.swift in Sources */,
 				1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */,
 				1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */,
