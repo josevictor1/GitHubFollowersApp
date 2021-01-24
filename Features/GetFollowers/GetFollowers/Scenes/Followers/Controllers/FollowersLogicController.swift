@@ -43,13 +43,14 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
     
     func searchFollower(withLogin login: String) {
-        guard !login.isEmpty else {
-            return viewController.showFollowers(followers)
+        if login.isEmpty {
+            viewController.showFollowers(followers)
+        } else {
+            searchFollowerLocally(withLogin: login)
         }
-        search(for: login)
     }
     
-    private func search(for login: String) {
+    private func searchFollowerLocally(withLogin login: String) {
         let filteredFollowers = filterPlayers(withLogin: login)
         guard !filteredFollowers.isEmpty else {
             return viewController.showFollowerNotFound()
