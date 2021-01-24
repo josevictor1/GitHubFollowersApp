@@ -133,19 +133,14 @@ extension FollowersViewController: UISearchBarDelegate {
         performQuery(with: searchText)
     }
     
-    private func performQuery(with filter: String?) {
-
-    }
-    
-    private func reloadDataSource(with followers: [Follower]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(followers)
-        dataSource.apply(snapshot)
+    private func performQuery(with filter: String) {
+        logicController?.searchFollower(withLogin: filter)
     }
 }
 
 extension FollowersViewController: FollowersLogicControllerOutput {
+    
+    func showFollowerNotFound() { }
     
     func showFailureOnFetchFollowers() {
         stopLoading()
@@ -154,6 +149,13 @@ extension FollowersViewController: FollowersLogicControllerOutput {
     func showFollowers(_ followers: [Follower]) {
         stopLoading()
         reloadDataSource(with: followers)
+    }
+    
+    private func reloadDataSource(with followers: [Follower]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(followers)
+        dataSource.apply(snapshot)
     }
 }
 

@@ -9,7 +9,7 @@
 import Networking
 
 protocol FollowersProvider {
-    func searchFollowers(for request: FollowersRequest, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void)
+    func fetchFollowes(for request: FollowersRequest, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void)
 }
 
 final class FollowersService: FollowersProvider {
@@ -19,7 +19,7 @@ final class FollowersService: FollowersProvider {
         self.networkingProvider = networkingProvider
     }
     
-    func searchFollowers(for request: FollowersRequest, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void) {
+    func fetchFollowes(for request: FollowersRequest, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void) {
         let request = FollowersNetworkingRequest(username: request.username,
                                                  pageNumber: request.pageNumber,
                                                  resultsPerPage: request.resultsPerPage)

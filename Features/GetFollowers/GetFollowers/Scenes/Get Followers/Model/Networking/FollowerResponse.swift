@@ -10,7 +10,7 @@ import Foundation
 
 struct FollowerResponse: Decodable {
     let login: String
-    let id: Int
+    let id: Int?
     let nodeID: String
     let avatarURL: String
     let gravatarID: String
