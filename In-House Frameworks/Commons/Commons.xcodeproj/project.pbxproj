@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1A02EDDD25489E7100C86CCD /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A02EDDC25489E7100C86CCD /* UIView+Identifier.swift */; };
+		1A08072525BDF23900624694 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08072425BDF23900624694 /* CacheTests.swift */; };
+		1A08072D25BDF2D400624694 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08072C25BDF2D400624694 /* Cache.swift */; };
+		1A08073F25BE658600624694 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08073E25BE658600624694 /* Entry.swift */; };
+		1A08074325BE65AA00624694 /* WrappedKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08074225BE65AA00624694 /* WrappedKey.swift */; };
+		1A08074A25BE693200624694 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08074925BE693200624694 /* ImageDownloader.swift */; };
 		1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F01242E48E700096731 /* ErrorMessage.swift */; };
 		1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65D7F7248323DF001772EC /* UIView+Bundle.swift */; };
 		1A6A3948246A02810097C195 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3947246A02810097C195 /* Notification+.swift */; };
@@ -19,7 +24,6 @@
 		1AA1C3502470D40100A6D3C1 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA1C34F2470D40100A6D3C1 /* Core.framework */; };
 		1AA6175924808128005752CD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6175824808128005752CD /* String+.swift */; };
 		1AE20BF42407361C00867692 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE20BEA2407361C00867692 /* Commons.framework */; };
-		1AE20BF92407361C00867692 /* CommonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20BF82407361C00867692 /* CommonsTests.swift */; };
 		1AE20BFB2407361C00867692 /* Commons.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE20BED2407361C00867692 /* Commons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AFCE03D254E2D8E00CCC878 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCE03C254E2D8E00CCC878 /* UICollectionView+.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +40,11 @@
 
 /* Begin PBXFileReference section */
 		1A02EDDC25489E7100C86CCD /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
+		1A08072425BDF23900624694 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
+		1A08072C25BDF2D400624694 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		1A08073E25BE658600624694 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		1A08074225BE65AA00624694 /* WrappedKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedKey.swift; sourceTree = "<group>"; };
+		1A08074925BE693200624694 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		1A1C2F01242E48E700096731 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		1A65D7F7248323DF001772EC /* UIView+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bundle.swift"; sourceTree = "<group>"; };
 		1A6A3947246A02810097C195 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
@@ -50,7 +59,6 @@
 		1AE20BED2407361C00867692 /* Commons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Commons.h; sourceTree = "<group>"; };
 		1AE20BEE2407361C00867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AE20BF32407361C00867692 /* CommonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AE20BF82407361C00867692 /* CommonsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonsTests.swift; sourceTree = "<group>"; };
 		1AE20BFA2407361C00867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AFCE03C254E2D8E00CCC878 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +83,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A08072025BDF1A900624694 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				1A08072225BDF1CA00624694 /* Cache */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		1A08072225BDF1CA00624694 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				1A08072C25BDF2D400624694 /* Cache.swift */,
+				1A08073E25BE658600624694 /* Entry.swift */,
+				1A08074225BE65AA00624694 /* WrappedKey.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		1A08072325BDF1E800624694 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				1A08072425BDF23900624694 /* CacheTests.swift */,
+			);
+			path = ImageCache;
+			sourceTree = "<group>";
+		};
+		1A08074825BE691500624694 /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				1A08074925BE693200624694 /* ImageDownloader.swift */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
 		1A1C2F00242E488D00096731 /* Error Messages */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +208,8 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1A08074825BE691500624694 /* ImageDownloader */,
+				1A08072025BDF1A900624694 /* Cache */,
 				1A6A674425BA7E33004F1FC1 /* FileReader */,
 				1A6A3949246A06E40097C195 /* Keyboard Observer */,
 				1AD82C292460F0D7000CCD95 /* Supporting Files */,
@@ -179,9 +223,9 @@
 		1AE20BF72407361C00867692 /* CommonsTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A08072325BDF1E800624694 /* ImageCache */,
 				1A6A675225BA81CB004F1FC1 /* JSON */,
 				1A6A674B25BA800A004F1FC1 /* FileReaderTests */,
-				1AE20BF82407361C00867692 /* CommonsTests.swift */,
 				1AE20BFA2407361C00867692 /* Info.plist */,
 			);
 			path = CommonsTests;
@@ -308,13 +352,17 @@
 			files = (
 				1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */,
 				1A02EDDD25489E7100C86CCD /* UIView+Identifier.swift in Sources */,
+				1A08074A25BE693200624694 /* ImageDownloader.swift in Sources */,
+				1A08072D25BDF2D400624694 /* Cache.swift in Sources */,
 				1AFCE03D254E2D8E00CCC878 /* UICollectionView+.swift in Sources */,
 				1A6A674625BA7E47004F1FC1 /* FileReader.swift in Sources */,
 				1A6A3948246A02810097C195 /* Notification+.swift in Sources */,
+				1A08073F25BE658600624694 /* Entry.swift in Sources */,
 				1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */,
 				1AA6175924808128005752CD /* String+.swift in Sources */,
 				1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */,
 				1A6A394B246A06FD0097C195 /* KeyboardObserver.swift in Sources */,
+				1A08074325BE65AA00624694 /* WrappedKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A6A674D25BA8068004F1FC1 /* FileReaderTests.swift in Sources */,
-				1AE20BF92407361C00867692 /* CommonsTests.swift in Sources */,
+				1A08072525BDF23900624694 /* CacheTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

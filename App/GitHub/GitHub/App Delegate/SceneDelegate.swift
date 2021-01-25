@@ -9,7 +9,6 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var mainCoordinator: MainCoordinator?
     var window: UIWindow?
 
@@ -25,5 +24,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mainCoordinator = MainCoordinator(window: window!)
         mainCoordinator?.start()
     }
-
 }
