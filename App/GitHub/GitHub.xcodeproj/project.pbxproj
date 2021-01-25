@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A08075A25BEEBF000624694 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08075925BEEBF000624694 /* GitHubTests.swift */; };
 		1A1C2F52242E865700096731 /* GetFollowers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F51242E865700096731 /* GetFollowers.framework */; };
 		1A1C2F53242E865700096731 /* GetFollowers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F51242E865700096731 /* GetFollowers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A51042824296D4700B0130A /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA4811A240A060C0086B6BB /* Commons.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A08075925BEEBF000624694 /* GitHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTests.swift; sourceTree = "<group>"; };
 		1A1C2F12242E4FE400096731 /* SearchFollowers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SearchFollowers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1C2F51242E865700096731 /* GetFollowers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GetFollowers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A95290E244D131900A5ED5D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1AE20C292407390400867692 /* Info.plist */,
+				1A08075925BEEBF000624694 /* GitHubTests.swift */,
 			);
 			path = GitHubTests;
 			sourceTree = "<group>";
@@ -275,7 +278,7 @@
 					};
 					1AE20C222407390400867692 = {
 						CreatedOnToolsVersion = 11.3.1;
-						LastSwiftMigration = 1140;
+						LastSwiftMigration = 1230;
 						TestTargetID = 1AE20C0C2407390200867692;
 					};
 					1AE20C2D2407390400867692 = {
@@ -367,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A08075A25BEEBF000624694 /* GitHubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
