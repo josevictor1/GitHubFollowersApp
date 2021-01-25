@@ -18,7 +18,7 @@
 		1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */; };
 		1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */; };
 		1A4247D02550B104007E42C5 /* FollowersNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4247CF2550B104007E42C5 /* FollowersNetworkingRequest.swift */; };
-		1A5174E8255B5A48006ACB76 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174E7255B5A48006ACB76 /* UserResponse.swift */; };
+		1A5174E8255B5A48006ACB76 /* UserNetworkingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174E7255B5A48006ACB76 /* UserNetworkingResponse.swift */; };
 		1A5174EC255B5C4C006ACB76 /* GetUserNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */; };
 		1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A3954246A0EFE0097C195 /* Commons.framework */; };
 		1A6A673925BA2F06004F1FC1 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A673825BA2F06004F1FC1 /* UserInformation.swift */; };
@@ -27,7 +27,7 @@
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
 		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
 		1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */; };
-		1A94FD1D24336A230095932A /* GetFollowersModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1C24336A230095932A /* GetFollowersModelControllerTests.swift */; };
+		1A94FD1D24336A230095932A /* GetFollowersLogicControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1C24336A230095932A /* GetFollowersLogicControllerTests.swift */; };
 		1A94FD1F243378710095932A /* GetFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1E243378710095932A /* GetFollowersService.swift */; };
 		1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD252433936C0095932A /* FollowerResponse.swift */; };
 		1A94FD4C2433CCD30095932A /* GetFollowersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD4B2433CCD30095932A /* GetFollowersServiceMock.swift */; };
@@ -73,7 +73,7 @@
 		1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenter.swift; sourceTree = "<group>"; };
 		1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersCoordinator.swift; sourceTree = "<group>"; };
 		1A4247CF2550B104007E42C5 /* FollowersNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersNetworkingRequest.swift; sourceTree = "<group>"; };
-		1A5174E7255B5A48006ACB76 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		1A5174E7255B5A48006ACB76 /* UserNetworkingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkingResponse.swift; sourceTree = "<group>"; };
 		1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserNetworkingRequest.swift; sourceTree = "<group>"; };
 		1A6A3954246A0EFE0097C195 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6A673825BA2F06004F1FC1 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
 		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
 		1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerDelegateMock.swift; sourceTree = "<group>"; };
-		1A94FD1C24336A230095932A /* GetFollowersModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersModelControllerTests.swift; sourceTree = "<group>"; };
+		1A94FD1C24336A230095932A /* GetFollowersLogicControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerTests.swift; sourceTree = "<group>"; };
 		1A94FD1E243378710095932A /* GetFollowersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersService.swift; sourceTree = "<group>"; };
 		1A94FD252433936C0095932A /* FollowerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerResponse.swift; sourceTree = "<group>"; };
 		1A94FD4B2433CCD30095932A /* GetFollowersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersServiceMock.swift; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */,
-				1A94FD1C24336A230095932A /* GetFollowersModelControllerTests.swift */,
+				1A94FD1C24336A230095932A /* GetFollowersLogicControllerTests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 			children = (
 				1A94FD252433936C0095932A /* FollowerResponse.swift */,
 				1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */,
-				1A5174E7255B5A48006ACB76 /* UserResponse.swift */,
+				1A5174E7255B5A48006ACB76 /* UserNetworkingResponse.swift */,
 				1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */,
 			);
 			path = Networking;
@@ -513,7 +513,7 @@
 				1A94FD1F243378710095932A /* GetFollowersService.swift in Sources */,
 				1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */,
 				1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */,
-				1A5174E8255B5A48006ACB76 /* UserResponse.swift in Sources */,
+				1A5174E8255B5A48006ACB76 /* UserNetworkingResponse.swift in Sources */,
 				1AED2CFA247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift in Sources */,
 				1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */,
 				1A1C2F4A242E85F200096731 /* GetFollowersError.swift in Sources */,
@@ -537,7 +537,7 @@
 				1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */,
 				1A94FD4C2433CCD30095932A /* GetFollowersServiceMock.swift in Sources */,
 				1AFEF7CB25B11758001DC70B /* GetFollowersViewMock.swift in Sources */,
-				1A94FD1D24336A230095932A /* GetFollowersModelControllerTests.swift in Sources */,
+				1A94FD1D24336A230095932A /* GetFollowersLogicControllerTests.swift in Sources */,
 				1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

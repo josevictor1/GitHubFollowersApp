@@ -10,19 +10,11 @@ import UIKit
 import Core
 import GetFollowers
 
-class MainCoordinator: Coordinator {
-
-    // MARK: - Properties
-
+final class MainCoordinator: Coordinator {
     var parent: Coordinator?
     var children: [Coordinator] = []
     private var tabBarController: UITabBarController?
 
-    // MARK: - Initializers
-
-    /// Create a `MainCoordinator` object  with and set the `rootViewController`.
-    /// - Parameters:
-    ///   - window: The host `UIWindow` that holds a `UITabBarController` as  `rootViewController`
     init(window: UIWindow) {
         tabBarController = UITabBarController()
         window.rootViewController = tabBarController

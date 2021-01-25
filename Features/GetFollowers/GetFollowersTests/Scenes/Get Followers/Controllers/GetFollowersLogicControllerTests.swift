@@ -9,7 +9,7 @@
 import XCTest
 @testable import GetFollowers
 
-final class GetFollowersModelControllerTests: XCTestCase {
+final class GetFollowersLogicControllerTests: XCTestCase {
     private let followersProviderMock = GetFollowersServiceMock()
     private var receivedUserInformation: UserInformation?
     private var receivedError: GetFollowersError?
