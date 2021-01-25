@@ -10,10 +10,11 @@ import XCTest
 @testable import GetFollowers
 
 final class GetFollowersViewControllerTests: XCTestCase {
-    private let logicControllerMock = GetFollowersLogicControllerMock()
+    private let providerMock = GetFollowersServiceMock()
     private let alertPresenterMock = GetFollowersAlertPresenterMock()
     private let delegateMock = GetFollowersViewControllerDelegateMock()
     private let keyboardObseverMock = KeyboardObserverMock()
+    private lazy var logicControllerMock = GetFollowersLogicController(provider: providerMock)
     private let viewMock = GetFollowersViewMock()
     private var presentedError: GetFollowersError?
 
@@ -27,11 +28,7 @@ final class GetFollowersViewControllerTests: XCTestCase {
     
     
     private func prepareLogicController(with error: GetFollowersError) {
-        logicControllerMock.error = error
-    }
-    
-    private func prepareLogicControllerToLoadUserInformation() {
-        
+        providerMock.error = error
     }
     
     private func prepareAlertPresenterMock(with expectation: XCTestExpectation) {
@@ -105,7 +102,6 @@ final class GetFollowersViewControllerTests: XCTestCase {
     func testGetFollowersWithSuccess() {
         let expectation = XCTestExpectation(description: "The viewControllerDidGetFollowers should be called")
         prepareGetFollowersControllerDalegate(with: expectation)
-        prepareLogicControllerToLoadUserInformation()
         
         callGetFollowersButtonTappedMethod()
         

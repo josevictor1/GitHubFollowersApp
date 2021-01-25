@@ -1,24 +1,23 @@
 //
-//  File.swift
+//  FollowersServiceMock.swift
 //  GetFollowersTests
 //
-//  Created by José Victor Pereira Costa on 30/03/20.
+//  Created by José Victor Pereira Costa on 31/03/20.
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
 import Commons
 @testable import GetFollowers
 
-final class GetFollowersLogicControllerMock: GetFollowersLogicControllerProtocol {
+final class GetFollowersServiceMock: GetFollowersProvider {
     var error: GetFollowersError?
     private let fileReader: FileReader = {
-        let bundle = Bundle(for: GetFollowersLogicControllerMock.self)
+        let bundle = Bundle(for: GetFollowersServiceMock.self)
         let fileReader = FileReader(bundle: bundle)
         return fileReader
     }()
 
-    func fetchFollowers(for user: String, completion: @escaping GetFollowersResponseCompletion) {
+    func requestUserInformation(for username: String, completion: @escaping FollowersServiceCompletion) {
         if let error = error {
             completion(.failure(error))
         } else {
@@ -26,20 +25,13 @@ final class GetFollowersLogicControllerMock: GetFollowersLogicControllerProtocol
         }
     }
     
-    private func loadUserInformation(completion: @escaping GetFollowersResponseCompletion) {
+    private func loadUserInformation(completion: @escaping FollowersServiceCompletion) {
         do {
-            guard let userInformation = try readLoadInformationFromJSON() else {
-                return completion(.failure(.invalidResponse))
-            }
+            let userInformation = try loadUserInformationFromJSON()
             completion(.success(userInformation))
         } catch {
             completion(.failure(.invalidResponse))
         }
-    }
-    
-    private func readLoadInformationFromJSON() throws -> UserInformation? {
-        let userInformationResponse = try loadUserInformationFromJSON()
-        return UserInformation(userNetworkingResponse: userInformationResponse)
     }
     
     private func loadUserInformationFromJSON() throws -> UserNetworkingResponse {

@@ -45,9 +45,6 @@
       }
     },
     {
-      "skippedTests" : [
-        "GetFollowersModelControllerTests"
-      ],
       "target" : {
         "containerPath" : "container:..\/..\/Features\/GetFollowers\/GetFollowers.xcodeproj",
         "identifier" : "1A1C2F27242E859100096731",
