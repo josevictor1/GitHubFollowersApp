@@ -22,6 +22,9 @@
       location = "group:In-House Frameworks"
       name = "In-House Frameworks">
       <FileRef
+         location = "group:ImageDownloader/ImageDownloader.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Networking/Networking.xcodeproj">
       </FileRef>
       <FileRef

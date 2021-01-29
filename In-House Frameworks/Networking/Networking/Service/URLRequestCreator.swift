@@ -10,26 +10,16 @@ import Foundation
 
 protocol URLRequestProvider {
     func createURLRequest(from request: Request) throws -> URLRequest
+    func createURLRequest(fromString string: String) throws -> URLRequest
 }
 
 final class URLRequestCreator: URLRequestProvider {
-
     private let encoder: JSONEncoder
 
     init(encoder: JSONEncoder = JSONEncoder()) {
         self.encoder = encoder
     }
-
-    func encode(_ encodable: Encodable?) throws -> Data? {
-        guard let encodable = encodable else { return nil }
-        do {
-            let encodable = AnyEncodable(encodable)
-            return try encoder.encode(encodable)
-        } catch {
-            throw NetworkingError.encoding(error)
-        }
-    }
-
+    
     func createURLRequest(from request: Request) throws -> URLRequest {
         let endpoint = Endpoint(path: request.path,
                                 scheme: request.scheme,
@@ -45,5 +35,20 @@ final class URLRequestCreator: URLRequestProvider {
         urlRequest.allHTTPHeaderFields = request.header
 
         return urlRequest
+    }
+    
+    private func encode(_ encodable: Encodable?) throws -> Data? {
+        guard let encodable = encodable else { return nil }
+        do {
+            let encodable = AnyEncodable(encodable)
+            return try encoder.encode(encodable)
+        } catch {
+            throw NetworkingError.encoding(error)
+        }
+    }
+    
+    func createURLRequest(fromString string: String) throws -> URLRequest {
+        guard let url = URL(string: string) else { throw NetworkingError.invalidURL }
+        return URLRequest(url: url)
     }
 }

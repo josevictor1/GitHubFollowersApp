@@ -11,15 +11,15 @@ import Foundation
 public final class Cache<Key: Hashable, Value> {
     private let cache: NSCache<WrappedKey<Key>, Entry<Value>>
     
-    init(cache: NSCache<WrappedKey<Key>, Entry<Value>> = NSCache<WrappedKey<Key>, Entry<Value>>()) {
+    public init(cache: NSCache<WrappedKey<Key>, Entry<Value>> = NSCache<WrappedKey<Key>, Entry<Value>>()) {
         self.cache = cache
     }
     
-    func saveData(_ data: Value, forKey key: Key) {
+    public func saveData(_ data: Value, forKey key: Key) {
         cache.setObject(Entry(value: data), forKey: WrappedKey(key: key))
     }
     
-    func data(forKey key: Key) -> Value? {
+    public func data(forKey key: Key) -> Value? {
         guard let entry = cache.object(forKey: WrappedKey(key: key)) else {
             return nil
         }

@@ -10,37 +10,53 @@ import Foundation
 
 protocol NetworkingServiceProtocol {
     func send(_ request: Request, completion: @escaping ResponseCompletion)
+    func sendRequest(with url: String, completion: @escaping ResponseCompletion)
 }
 
 final class NetworkingService: NetworkingServiceProtocol {
-
     private let session: URLSession
     private let requestProvider: URLRequestProvider
-
+    
     init(requestProvider: URLRequestProvider = URLRequestCreator(), session: URLSession = .shared) {
         self.session = session
         self.requestProvider = requestProvider
+    }
+    
+    func sendRequest(with url: String, completion: @escaping ResponseCompletion) {
+        do {
+            let request = try requestProvider.createURLRequest(fromString: url)
+            executeTask(for: request, completion: completion)
+        } catch {
+            handleNetworkingError(error, completion: completion)
+        }
     }
 
     func send(_ request: Request, completion: @escaping ResponseCompletion) {
         do {
             let request = try requestProvider.createURLRequest(from: request)
-
-            session.dataTask(with: request) { [weak self] data, response, error in
-                guard let self = self else { return completion(.failure(.unknown)) }
-                let httpResponse = response as? HTTPURLResponse
-                let result = self.convertResponseToResult(data, request, httpResponse, error)
-                completion(result)
-            }.resume()
+            executeTask(for: request, completion: completion)
         } catch {
-            guard let networkingError = error as? NetworkingError else {
-                return completion(.failure(.unknown))
-            }
-            completion(.failure(networkingError))
+            handleNetworkingError(error, completion: completion)
         }
     }
-
-    func convertResponseToResult(_ data: Data?, _ request: URLRequest, _ response: HTTPURLResponse?, _ error: Error?) -> Result<NetworkingResponse, NetworkingError> {
+    
+    private func executeTask(for request: URLRequest, completion: @escaping ResponseCompletion) {
+        session.dataTask(with: request) { [weak self] data, response, error in
+            guard let self = self else { return completion(.failure(.unknown)) }
+            let httpResponse = response as? HTTPURLResponse
+            let result = self.convertResponseToResult(data, request, httpResponse, error)
+            completion(result)
+        }.resume()
+    }
+    
+    private func handleNetworkingError(_ error: Error, completion: @escaping ResponseCompletion) {
+        guard let networkingError = error as? NetworkingError else {
+            return completion(.failure(.unknown))
+        }
+        completion(.failure(networkingError))
+    }
+    
+    private func convertResponseToResult(_ data: Data?, _ request: URLRequest, _ response: HTTPURLResponse?, _ error: Error?) -> Result<NetworkingResponse, NetworkingError> {
         switch (response, data, error) {
         case let (.some(response), data, .none):
             let response = NetworkingResponse(data: data ?? Data(), request: request, response: response)
@@ -53,7 +69,7 @@ final class NetworkingService: NetworkingServiceProtocol {
             return .failure(.unknown)
         }
     }
-
+    
     private func convertErrorToNetworkingError(_ error: Error, with response: NetworkingResponse) -> NetworkingError {
         switch response.statusCode {
         case (300...399):

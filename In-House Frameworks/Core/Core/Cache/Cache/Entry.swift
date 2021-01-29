@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Entry<Value> {
+public final class Entry<Value> {
     let value: Value
     
     init(value: Value) {

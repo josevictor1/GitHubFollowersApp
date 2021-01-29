@@ -64,6 +64,13 @@
         "identifier" : "1A94FD392433CA690095932A",
         "name" : "NetworkingTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/In-House Frameworks\/ImageDownloader\/ImageDownloader.xcodeproj",
+        "identifier" : "1A622C1F25C22F250083782E",
+        "name" : "ImageDownloaderTests"
+      }
     }
   ],
   "version" : 1

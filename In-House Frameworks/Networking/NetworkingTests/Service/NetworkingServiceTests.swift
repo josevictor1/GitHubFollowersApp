@@ -114,45 +114,4 @@ class NetworkingServiceTests: XCTestCase {
 
         wait(for: [expectation], timeout: 1)
     }
-
-    func testConvertResponseToResultWithSuccess() {
-        let sut = makeSUT()
-        let httpURLResponseMock = makeHTTPURLResponse(with: .success)
-        let expectedResponse = NetworkingResponse(data: Data(), request: requestMock, response: httpURLResponseMock)
-        var receivedResponse: NetworkingResponse?
-
-        let result = sut.convertResponseToResult(Data(), requestMock, httpURLResponseMock, nil)
-
-        switch result {
-        case .success(let response):
-            receivedResponse = response
-        case .failure:
-            XCTFail()
-        }
-
-        XCTAssertNotNil(receivedResponse)
-        XCTAssertEqual(receivedResponse, expectedResponse)
-    }
-
-    func testConvertResponseToResultWithNetworkingError() {
-        let sut = makeSUT()
-        let mockError = makeNSError(with: .serverError)
-        let httpURLResponseMock = makeHTTPURLResponse(with: .serverError)
-        let responseMock = NetworkingResponse(data: Data(), request: requestMock, response: httpURLResponseMock)
-        let expectedError: NetworkingError = .server(mockError, responseMock)
-
-        var receivedError: NetworkingError?
-
-        let result = sut.convertResponseToResult(nil, requestMock, httpURLResponseMock, mockError)
-
-        switch result {
-        case .success:
-            XCTFail()
-        case .failure(let error):
-            receivedError = error
-        }
-
-        XCTAssertNotNil(receivedError)
-        XCTAssertEqual(receivedError, expectedError)
-    }
 }

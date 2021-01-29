@@ -8,16 +8,16 @@
 
 import Foundation
 
-final class WrappedKey<Key: Hashable>: NSObject {
+public final class WrappedKey<Key: Hashable>: NSObject {
     private let key: Key
     
     init(key: Key) {
         self.key = key
     }
     
-    override var hash: Int { key.hashValue }
+    public override var hash: Int { key.hashValue }
     
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         guard let value = object as? WrappedKey else {
             return false
         }

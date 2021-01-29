@@ -13,11 +13,18 @@ public typealias ResponseCompletion = (_ result: Result<NetworkingResponse, Netw
 
 /// Networking interface that provides.
 public final class NetworkingProvider {
-
     private let service: NetworkingServiceProtocol = NetworkingService()
 
     /// Creates an object of the type `NetworkigProvider`.
     public init() { }
+    
+    /// Performs a networking request executing a completion call back at the end of this.
+    /// - Parameters:
+    ///   - url: The `URL` addres to request the data.
+    ///   - completion: The call back completion .
+    public func requestData(fromURL url: String, completion: @escaping ResponseCompletion) {
+        service.sendRequest(with: url, completion: completion)
+    }
 
     /// Performs a networking request executing a completion call back at the end of this.
     /// - Parameters:

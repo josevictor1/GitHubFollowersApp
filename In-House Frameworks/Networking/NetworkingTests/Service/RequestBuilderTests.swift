@@ -18,14 +18,6 @@ class RequestBuilderTests: XCTestCase {
         URLRequestCreator()
     }
 
-    func testEcoding() throws {
-        let sut = makeSUT()
-
-        let data = try sut.encode(bodyMock)
-
-        XCTAssertNotNil(data)
-    }
-
     func testCreateURLRequestFromRequest() throws {
         let sut = makeSUT()
 
@@ -44,6 +36,5 @@ class RequestBuilderTests: XCTestCase {
             XCTAssertEqual(error as! NetworkingError, .invalidURL)
         }
     }
-
 }
 
