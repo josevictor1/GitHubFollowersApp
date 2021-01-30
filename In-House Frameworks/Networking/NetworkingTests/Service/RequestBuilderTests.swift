@@ -9,25 +9,18 @@
 import XCTest
 @testable import Networking
 
-class RequestBuilderTests: XCTestCase {
-
-    var requestMock = RequestMock()
-    var bodyMock = EncodableMock()
-
-    func makeSUT() -> URLRequestCreator {
-        URLRequestCreator()
-    }
+final class RequestBuilderTests: XCTestCase {
+    private var requestMock = RequestMock()
+    private var bodyMock = EncodableMock()
+    private let sut = URLRequestCreator()
 
     func testCreateURLRequestFromRequest() throws {
-        let sut = makeSUT()
-
         let urlRequest = try sut.createURLRequest(from: requestMock)
 
         XCTAssertNotNil(urlRequest)
     }
 
     func testCreateURLRequestFromRequestWithInvialidURL() {
-        let sut = makeSUT()
         let randomString = "...---"
         requestMock.urlHost = randomString
         requestMock.urlPath = randomString

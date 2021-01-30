@@ -9,18 +9,18 @@
 import XCTest
 @testable import Networking
 
-class NetworkingServiceTests: XCTestCase {
+final class NetworkingServiceTests: XCTestCase {
 
     // MARK: - Mocks
 
-    let urlMock = URL(string: "api.github.com")!
-    lazy var requestMock: URLRequest = {
+    private let urlMock = URL(string: "api.github.com")!
+    private lazy var requestMock: URLRequest = {
         URLRequest(url: urlMock)
     }()
 
     // MARK: - Factories
 
-    func makeSUT(session: URLSession = .shared) -> NetworkingService {
+    private func makeSUT(session: URLSession = .shared) -> NetworkingService {
         NetworkingService(requestProvider: URLRequestCreator(), session: session)
     }
 
