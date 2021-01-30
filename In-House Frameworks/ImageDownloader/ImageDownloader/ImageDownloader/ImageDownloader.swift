@@ -19,7 +19,7 @@ public final class ImageDownloader {
         self.networkingService = networkingService
     }
     
-    func requestImage(fromURL url: String, completion: @escaping RequestImageCompletion) {
+    func loadImage(fromURL url: String, completion: @escaping RequestImageCompletion) {
         if let image = loadCachedImage(forURL: url) {
             completion(.success(image))
         } else {

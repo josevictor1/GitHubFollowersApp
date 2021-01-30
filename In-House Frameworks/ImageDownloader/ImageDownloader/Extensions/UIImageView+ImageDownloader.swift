@@ -17,7 +17,7 @@ public extension UIImageView {
     private func loadImage(forURL url: String) {
         let imageDownloader = ImageDownloader()
         
-        imageDownloader.requestImage(fromURL: url) { result in
+        imageDownloader.loadImage(fromURL: url) { result in
             switch result {
             case .success(let image):
                 self.image = image

@@ -13,7 +13,7 @@ final class UIImageViewExtensionTests: XCTestCase {
     
     private func setUpImageViewWithPlaceHolder() {
         sut.loadImage(forULR: "https://simple.wikipedia.org/wiki/Black#/media/File:Black.png",
-                      placeHolder: .placeHolderMockImage)
+                      placeHolder: .blackImage)
     }
     
     private func checkPlaceHolderSetupOnImageView() {
@@ -22,7 +22,7 @@ final class UIImageViewExtensionTests: XCTestCase {
     }
     
     private func checkIfTheImagesMatchWithThePassedPlaceHolder() {
-        XCTAssertEqual(sut.image, .placeHolderMockImage)
+        XCTAssertEqual(sut.image, .blackImage)
     }
     
     private func checkIfTheImageNilForImageView() {

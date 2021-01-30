@@ -12,6 +12,7 @@
 		1A622C2825C22F250083782E /* ImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A622C1A25C22F250083782E /* ImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A80A39F25C3A55C00B00496 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A80A39E25C3A55C00B00496 /* Core.framework */; };
 		1A80A3A025C3A55C00B00496 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A80A39E25C3A55C00B00496 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A8846D825C515DE0084C6A1 /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8846D725C515DE0084C6A1 /* NetworkingServiceTests.swift */; };
 		1A99918825C23E0A00C89CE5 /* UIImageView+ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A99918725C23E0A00C89CE5 /* UIImageView+ImageDownloader.swift */; };
 		1A99918D25C23FEF00C89CE5 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A99918C25C23FEF00C89CE5 /* Networking.framework */; };
 		1A99918E25C23FEF00C89CE5 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A99918C25C23FEF00C89CE5 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -57,6 +58,7 @@
 		1A622C2525C22F250083782E /* UIImageViewExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensionTests.swift; sourceTree = "<group>"; };
 		1A622C2725C22F250083782E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A80A39E25C3A55C00B00496 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8846D725C515DE0084C6A1 /* NetworkingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingServiceTests.swift; sourceTree = "<group>"; };
 		1A99918725C23E0A00C89CE5 /* UIImageView+ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageDownloader.swift"; sourceTree = "<group>"; };
 		1A99918C25C23FEF00C89CE5 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A99919125C2415300C89CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,13 +124,38 @@
 		1A622C2425C22F250083782E /* ImageDownloaderTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A622C2725C22F250083782E /* Info.plist */,
 				1A99919125C2415300C89CE5 /* Assets.xcassets */,
 				1A99919D25C24D6400C89CE5 /* Extensions */,
-				1A622C2525C22F250083782E /* UIImageViewExtensionTests.swift */,
-				1A622C2725C22F250083782E /* Info.plist */,
-				1A9991A025C2514C00C89CE5 /* ImageDownloaderTests.swift */,
+				1A8846D525C515980084C6A1 /* ImageDownloader */,
+				1A8846D425C515680084C6A1 /* UImageView+ImageDownloader */,
 			);
 			path = ImageDownloaderTests;
+			sourceTree = "<group>";
+		};
+		1A8846D425C515680084C6A1 /* UImageView+ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				1A622C2525C22F250083782E /* UIImageViewExtensionTests.swift */,
+			);
+			path = "UImageView+ImageDownloader";
+			sourceTree = "<group>";
+		};
+		1A8846D525C515980084C6A1 /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				1A9991A025C2514C00C89CE5 /* ImageDownloaderTests.swift */,
+				1A8846D625C515A40084C6A1 /* Mocks */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
+		1A8846D625C515A40084C6A1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1A8846D725C515DE0084C6A1 /* NetworkingServiceTests.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		1A99918B25C23FEF00C89CE5 /* Frameworks */ = {
@@ -299,6 +326,7 @@
 				1A622C2625C22F250083782E /* UIImageViewExtensionTests.swift in Sources */,
 				1A99919B25C24D5F00C89CE5 /* UIImage+PlaceHolderMock.swift in Sources */,
 				1A9991A125C2514C00C89CE5 /* ImageDownloaderTests.swift in Sources */,
+				1A8846D825C515DE0084C6A1 /* NetworkingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
