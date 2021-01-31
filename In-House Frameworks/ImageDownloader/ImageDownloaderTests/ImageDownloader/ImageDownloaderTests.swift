@@ -8,7 +8,6 @@
 import XCTest
 @testable import ImageDownloader
 
- 
 final class ImageDownloaderTests: XCTestCase {
     private let imageDownloader: ImageDownloader = {
         let mockNetowrkingService = NetworkingServiceMock()
