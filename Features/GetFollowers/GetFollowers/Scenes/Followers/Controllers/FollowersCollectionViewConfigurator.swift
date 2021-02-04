@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageDownloader
 
 protocol FollowersCollectionViewConfiguratorProtocol {
     func configure(_ cell: UICollectionViewCell, with model: Follower)
@@ -16,6 +17,6 @@ final class FollowersCollectionViewConfigurator: FollowersCollectionViewConfigur
 
     func configure(_ cell: UICollectionViewCell, with follower: Follower) {
         guard let cell = cell as? FollowerCollectionViewCell else { return }
-        cell.username = follower.login
+        cell.configure(with: follower)
     }
 }

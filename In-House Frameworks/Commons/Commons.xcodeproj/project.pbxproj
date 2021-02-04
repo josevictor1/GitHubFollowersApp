@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A02EDDD25489E7100C86CCD /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A02EDDC25489E7100C86CCD /* UIView+Identifier.swift */; };
 		1A08072525BDF23900624694 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08072425BDF23900624694 /* CacheTests.swift */; };
-		1A08074A25BE693200624694 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08074925BE693200624694 /* ImageDownloader.swift */; };
 		1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F01242E48E700096731 /* ErrorMessage.swift */; };
 		1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65D7F7248323DF001772EC /* UIView+Bundle.swift */; };
 		1A6A3948246A02810097C195 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3947246A02810097C195 /* Notification+.swift */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		1A02EDDC25489E7100C86CCD /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
 		1A08072425BDF23900624694 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
-		1A08074925BE693200624694 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		1A1C2F01242E48E700096731 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		1A65D7F7248323DF001772EC /* UIView+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bundle.swift"; sourceTree = "<group>"; };
 		1A6A3947246A02810097C195 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
@@ -83,14 +81,6 @@
 				1A08072425BDF23900624694 /* CacheTests.swift */,
 			);
 			path = ImageCache;
-			sourceTree = "<group>";
-		};
-		1A08074825BE691500624694 /* ImageDownloader */ = {
-			isa = PBXGroup;
-			children = (
-				1A08074925BE693200624694 /* ImageDownloader.swift */,
-			);
-			path = ImageDownloader;
 			sourceTree = "<group>";
 		};
 		1A1C2F00242E488D00096731 /* Error Messages */ = {
@@ -184,7 +174,6 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				1A08074825BE691500624694 /* ImageDownloader */,
 				1A6A674425BA7E33004F1FC1 /* FileReader */,
 				1A6A3949246A06E40097C195 /* Keyboard Observer */,
 				1AD82C292460F0D7000CCD95 /* Supporting Files */,
@@ -327,7 +316,6 @@
 			files = (
 				1A1C2F02242E48E700096731 /* ErrorMessage.swift in Sources */,
 				1A02EDDD25489E7100C86CCD /* UIView+Identifier.swift in Sources */,
-				1A08074A25BE693200624694 /* ImageDownloader.swift in Sources */,
 				1AFCE03D254E2D8E00CCC878 /* UICollectionView+.swift in Sources */,
 				1A6A674625BA7E47004F1FC1 /* FileReader.swift in Sources */,
 				1A6A3948246A02810097C195 /* Notification+.swift in Sources */,

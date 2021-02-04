@@ -104,11 +104,11 @@ final class FollowersViewController: UICollectionViewController {
                                                             layoutEnvironment in
             let columns = 3
             let spacing = CGFloat(10)
-            let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(90),
-                                                  heightDimension: .estimated(119))
+            let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(100),
+                                                  heightDimension: .estimated(120))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                   heightDimension: .estimated(119))
+                                                   heightDimension: .estimated(120))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
             group.interItemSpacing = .fixed(spacing)
             

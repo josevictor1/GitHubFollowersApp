@@ -6,6 +6,7 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
+import ImageDownloader
 import UIKit
 
 final class FollowerCollectionViewCell: UICollectionViewCell {
@@ -30,19 +31,10 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
+        stackView.alignment = .center
         stackView.spacing = 13
         return stackView
     }()
-
-    var avatarImage: UIImage? {
-        get { avatarImageView.image }
-        set { avatarImageView.image = newValue }
-    }
-
-    var username: String? {
-        get { usernameLabel.text }
-        set { usernameLabel.text = newValue }
-    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,8 +58,8 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
 
     private func setUpAvatarImageViewConstraints() {
         let constraints = [
-            avatarImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 90),
-            avatarImageView.widthAnchor.constraint(greaterThanOrEqualToConstant: 90)
+            avatarImageView.heightAnchor.constraint(equalToConstant: 90),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 90)
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -79,5 +71,10 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
     private func setUpStackViewArrangedSubviews() {
         stackView.addArrangedSubview(avatarImageView)
         stackView.addArrangedSubview(usernameLabel)
+    }
+    
+    func configure(with follower: Follower) {
+        avatarImageView.loadImage(forULR: follower.imageURL, placeHolder: UIImage())
+        usernameLabel.text = follower.login
     }
 }

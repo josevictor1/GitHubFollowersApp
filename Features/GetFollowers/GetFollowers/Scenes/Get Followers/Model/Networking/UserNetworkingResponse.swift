@@ -32,7 +32,7 @@ struct UserNetworkingResponse: Decodable {
     let blog: String
     let location: String
     let email: String?
-    let hireable: Bool
+    let hireable: Bool?
     let bio: String
     let twitterUsername: String
     let publicRepos: Int

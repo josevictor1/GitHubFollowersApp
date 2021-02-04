@@ -69,5 +69,4 @@ public final class CustomAlertController: UIViewController {
                                                                constant: -47)]
         view.place(alertView, with: constraints)
     }
-
 }

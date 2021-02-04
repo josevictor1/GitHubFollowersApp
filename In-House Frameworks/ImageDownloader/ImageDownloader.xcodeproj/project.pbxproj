@@ -22,7 +22,6 @@
 		1A99919B25C24D5F00C89CE5 /* UIImage+PlaceHolderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A99919A25C24D5F00C89CE5 /* UIImage+PlaceHolderMock.swift */; };
 		1A9991A125C2514C00C89CE5 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9991A025C2514C00C89CE5 /* ImageDownloaderTests.swift */; };
 		1A9991A725C253EA00C89CE5 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9991A625C253EA00C89CE5 /* NetworkingService.swift */; };
-		1A9991AB25C2558200C89CE5 /* ImageNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9991AA25C2558200C89CE5 /* ImageNetworkingRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +65,6 @@
 		1A99919A25C24D5F00C89CE5 /* UIImage+PlaceHolderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PlaceHolderMock.swift"; sourceTree = "<group>"; };
 		1A9991A025C2514C00C89CE5 /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
 		1A9991A625C253EA00C89CE5 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
-		1A9991AA25C2558200C89CE5 /* ImageNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkingRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				1A9991A625C253EA00C89CE5 /* NetworkingService.swift */,
-				1A9991AA25C2558200C89CE5 /* ImageNetworkingRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -315,7 +312,6 @@
 				1A9991A725C253EA00C89CE5 /* NetworkingService.swift in Sources */,
 				1A99919625C244DD00C89CE5 /* ImageDownloader.swift in Sources */,
 				1A99918825C23E0A00C89CE5 /* UIImageView+ImageDownloader.swift in Sources */,
-				1A9991AB25C2558200C89CE5 /* ImageNetworkingRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +471,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ImageDownloader/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,6 +498,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ImageDownloader/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
