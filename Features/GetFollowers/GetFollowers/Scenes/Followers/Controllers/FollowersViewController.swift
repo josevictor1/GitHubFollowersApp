@@ -46,12 +46,12 @@ final class FollowersViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

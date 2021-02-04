@@ -9,7 +9,7 @@
 import UIKit
 import Commons
 
-class CustomAlertView: UIView {
+final class CustomAlertView: UIView {
 
     // MARK: - Closures
 

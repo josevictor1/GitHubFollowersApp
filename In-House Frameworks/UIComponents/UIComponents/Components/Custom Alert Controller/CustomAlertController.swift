@@ -50,6 +50,7 @@ public final class CustomAlertController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setUpAlertViewConstraints()
+        setUpCostomAlertViewAction()
     }
     
     private func setUpCostomAlertViewAction() {
