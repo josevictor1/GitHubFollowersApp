@@ -67,9 +67,11 @@ final class FollowersViewController: UICollectionViewController {
     private func setUpLayout() {
         setUpTitle()
         setUpBackgroundColor()
-        setUpCollectionViewLayout()
-        setUpCollectionViewBackgroundColor()
-        registerCell()
+        setUpCollectionView()
+    }
+    
+    private func setUpCollectionViewDataSource() {
+        //collectionView.prefetchDataSource = self
     }
     
     private func setUpTitle() {
@@ -78,6 +80,12 @@ final class FollowersViewController: UICollectionViewController {
     
     private func setUpBackgroundColor() {
         view.backgroundColor = .systemBackground
+    }
+    
+    private func setUpCollectionView() {
+        setUpCollectionViewLayout()
+        setUpCollectionViewBackgroundColor()
+        registerCell()
     }
     
     private func setUpCollectionViewBackgroundColor() {

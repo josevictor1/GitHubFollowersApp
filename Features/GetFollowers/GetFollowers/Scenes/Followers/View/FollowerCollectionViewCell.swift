@@ -35,6 +35,8 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
         stackView.spacing = 13
         return stackView
     }()
+    
+    
 
     override init(frame: CGRect) {
         super.init(frame: frame)

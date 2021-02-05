@@ -16,7 +16,7 @@ public extension UIImageView {
     }
     
     private func loadImage(forURL url: String, withAnimation animation: Bool) {
-        DispatchQueue.global().async {
+        DispatchQueue.global(qos: .background).async {
             UIImageView.imageDownloader.loadImage(fromURL: url) { [weak self] result in
                 DispatchQueue.main.async {
                     switch result {
@@ -40,7 +40,7 @@ public extension UIImageView {
     
     private func setImageWithAnimation(_ image: UIImage) {
         UIView.transition(with: self,
-                          duration: 0.25,
+                          duration: 0.5,
                           options: .transitionCrossDissolve,
                           animations: { self.image = image })
     }
