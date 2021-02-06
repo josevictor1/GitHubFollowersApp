@@ -9,8 +9,8 @@
 import Foundation
 
 protocol NetworkingServiceProtocol {
-    func send(_ request: Request, completion: @escaping ResponseCompletion)
-    func sendRequest(with url: String, completion: @escaping ResponseCompletion)
+    func send(_ request: Request, completion: @escaping ResponseCompletion) -> URLSessionDataTask?
+    func sendRequest(with url: String, completion: @escaping ResponseCompletion) -> URLSessionDataTask?
 }
 
 final class NetworkingService: NetworkingServiceProtocol {
@@ -22,31 +22,37 @@ final class NetworkingService: NetworkingServiceProtocol {
         self.requestProvider = requestProvider
     }
     
-    func sendRequest(with url: String, completion: @escaping ResponseCompletion) {
+    func sendRequest(with url: String, completion: @escaping ResponseCompletion) -> URLSessionDataTask? {
+        var dataTask: URLSessionDataTask?
         do {
             let request = try requestProvider.createURLRequest(fromString: url)
-            executeTask(for: request, completion: completion)
+            dataTask = executeTask(for: request, completion: completion)
         } catch {
             handleNetworkingError(error, completion: completion)
         }
-    }
-
-    func send(_ request: Request, completion: @escaping ResponseCompletion) {
-        do {
-            let request = try requestProvider.createURLRequest(from: request)
-            executeTask(for: request, completion: completion)
-        } catch {
-            handleNetworkingError(error, completion: completion)
-        }
+        return dataTask
     }
     
-    private func executeTask(for request: URLRequest, completion: @escaping ResponseCompletion) {
-        session.dataTask(with: request) { [weak self] data, response, error in
+    func send(_ request: Request, completion: @escaping ResponseCompletion) -> URLSessionDataTask? {
+        var dataTask: URLSessionDataTask?
+        do {
+            let request = try requestProvider.createURLRequest(from: request)
+            dataTask = executeTask(for: request, completion: completion)
+        } catch {
+            handleNetworkingError(error, completion: completion)
+        }
+        return dataTask
+    }
+    
+    private func executeTask(for request: URLRequest, completion: @escaping ResponseCompletion) -> URLSessionDataTask {
+        let dataTask = session.dataTask(with: request) { [weak self] data, response, error in
             guard let self = self else { return completion(.failure(.unknown)) }
             let httpResponse = response as? HTTPURLResponse
             let result = self.convertResponseToResult(data, request, httpResponse, error)
             completion(result)
-        }.resume()
+        }
+        dataTask.resume()
+        return dataTask
     }
     
     private func handleNetworkingError(_ error: Error, completion: @escaping ResponseCompletion) {

@@ -22,16 +22,18 @@ public final class NetworkingProvider {
     /// - Parameters:
     ///   - url: The `URL` addres to request the data.
     ///   - completion: The call back completion .
-    public func requestData(fromURL url: String, completion: @escaping ResponseCompletion) {
-        service.sendRequest(with: url, completion: completion)
+    @discardableResult
+    public func requestData(fromURL url: String, completion: @escaping ResponseCompletion) -> URLSessionDataTask? {
+        return service.sendRequest(with: url, completion: completion)
     }
 
     /// Performs a networking request executing a completion call back at the end of this.
     /// - Parameters:
     ///   - request: The request data.
     ///   - completion: The call back completion .
-    public func performRequest(_ request: Request, completion: @escaping ResponseCompletion) {
-        service.send(request, completion: completion)
+    @discardableResult
+    public func performRequest(_ request: Request, completion: @escaping ResponseCompletion) -> URLSessionDataTask? {
+        return service.send(request, completion: completion)
     }
 
     /// Performs a networking request executing a copletion call back at the end of this.
@@ -39,8 +41,9 @@ public final class NetworkingProvider {
     /// - Parameters:
     ///   - request: The request data.
     ///   - completion: The call back completion with a `Decodable` parameter.
-    public func performRequestWithDecodable<D: Decodable>(_ request: Request, completion: @escaping (Result<D, NetworkingError>) -> Void) {
-        service.send(request) { result in
+    @discardableResult
+    public func performRequestWithDecodable<D: Decodable>(_ request: Request, completion: @escaping (Result<D, NetworkingError>) -> Void) -> URLSessionDataTask? {
+        return service.send(request) { result in
             switch result {
             case .success(let response):
                 do {

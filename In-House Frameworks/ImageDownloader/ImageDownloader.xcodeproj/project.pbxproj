@@ -11,11 +11,9 @@
 		1A622C2625C22F250083782E /* UIImageViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A622C2525C22F250083782E /* UIImageViewExtensionTests.swift */; };
 		1A622C2825C22F250083782E /* ImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A622C1A25C22F250083782E /* ImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A80A39F25C3A55C00B00496 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A80A39E25C3A55C00B00496 /* Core.framework */; };
-		1A80A3A025C3A55C00B00496 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A80A39E25C3A55C00B00496 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A8846D825C515DE0084C6A1 /* NetworkingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8846D725C515DE0084C6A1 /* NetworkingServiceTests.swift */; };
 		1A99918825C23E0A00C89CE5 /* UIImageView+ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A99918725C23E0A00C89CE5 /* UIImageView+ImageDownloader.swift */; };
 		1A99918D25C23FEF00C89CE5 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A99918C25C23FEF00C89CE5 /* Networking.framework */; };
-		1A99918E25C23FEF00C89CE5 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A99918C25C23FEF00C89CE5 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A99919225C2415300C89CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A99919125C2415300C89CE5 /* Assets.xcassets */; };
 		1A99919625C244DD00C89CE5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A99919525C244DD00C89CE5 /* ImageDownloader.swift */; };
 		1A99919825C24A6C00C89CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A99919125C2415300C89CE5 /* Assets.xcassets */; };
@@ -33,21 +31,6 @@
 			remoteInfo = ImageDownloader;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1A99918F25C23FEF00C89CE5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1A99918E25C23FEF00C89CE5 /* Networking.framework in Embed Frameworks */,
-				1A80A3A025C3A55C00B00496 /* Core.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A622C1725C22F250083782E /* ImageDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,7 +202,6 @@
 				1A622C1325C22F250083782E /* Sources */,
 				1A622C1425C22F250083782E /* Frameworks */,
 				1A622C1525C22F250083782E /* Resources */,
-				1A99918F25C23FEF00C89CE5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

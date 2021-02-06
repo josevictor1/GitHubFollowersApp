@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A02EDE22548B05400C86CCD /* FollowersCollectionViewConfigurator.swift */; };
 		1A1BD93125C64BDC008E9088 /* ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */; };
-		1A1BD93225C64BDC008E9088 /* ImageDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A1C2F29242E859100096731 /* GetFollowers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F1F242E859100096731 /* GetFollowers.framework */; };
 		1A1C2F30242E859100096731 /* GetFollowers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1C2F22242E859100096731 /* GetFollowers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A1C2F49242E85F200096731 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F3F242E85F200096731 /* Follower.swift */; };
@@ -59,20 +58,6 @@
 			remoteInfo = GetFollowers;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1A1BD93325C64BDC008E9088 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1A1BD93225C64BDC008E9088 /* ImageDownloader.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A02EDE22548B05400C86CCD /* FollowersCollectionViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCollectionViewConfigurator.swift; sourceTree = "<group>"; };
@@ -430,7 +415,6 @@
 				1A1C2F1B242E859000096731 /* Sources */,
 				1A1C2F1C242E859000096731 /* Frameworks */,
 				1A1C2F1D242E859000096731 /* Resources */,
-				1A1BD93325C64BDC008E9088 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
