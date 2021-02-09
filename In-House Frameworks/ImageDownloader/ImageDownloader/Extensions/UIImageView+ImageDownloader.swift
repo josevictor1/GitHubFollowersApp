@@ -16,15 +16,13 @@ public extension UIImageView {
     }
     
     private func loadImage(forURL url: String, withAnimation animation: Bool) {
-        DispatchQueue.global(qos: .background).async {
-            UIImageView.imageDownloader.loadImage(fromURL: url) { [weak self] result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .success(let image):
-                        self?.setImage(image, withAnimation: animation)
-                    case .failure:
-                        break
-                    }
+        UIImageView.imageDownloader.loadImage(fromURL: url) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let image):
+                    self?.setImage(image, withAnimation: animation)
+                case .failure:
+                    break
                 }
             }
         }

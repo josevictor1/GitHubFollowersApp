@@ -83,7 +83,7 @@ final class NetworkingServiceTests: XCTestCase {
         let request = RequestMock()
         let expectation = XCTestExpectation(description: "response")
 
-        sut.send(request) { result in
+        _ = sut.send(request) { result in
             switch result {
             case .success(let response):
                 XCTAssertEqual(response.statusCode, 200)
@@ -102,7 +102,7 @@ final class NetworkingServiceTests: XCTestCase {
         let request = RequestMock()
         let expectation = XCTestExpectation(description: "response")
 
-        sut.send(request) { result in
+        _ = sut.send(request) { result in
             switch result {
             case .success:
                 XCTFail()

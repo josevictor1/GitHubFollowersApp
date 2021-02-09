@@ -36,8 +36,6 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
