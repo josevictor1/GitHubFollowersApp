@@ -15,6 +15,7 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
         let avatarImageView = UIImageView()
         avatarImageView.contentMode = .scaleAspectFit
         avatarImageView.layer.cornerRadius = 8
+        avatarImageView.clipsToBounds = true
         return avatarImageView
     }()
 
