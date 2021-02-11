@@ -16,8 +16,8 @@ final class ImageDownloaderTests: XCTestCase {
     private let expectation = XCTestExpectation(description: "Should have downloaded the image.")
     
     private func setUpImageDownloaderLoadImage() {
-        imageDownloader.loadImage(fromURL: "https://simple.wikipedia.org/wiki/Black#/media/File:Black.png",
-                                  completion: downloadImageCompletion)
+        _ = imageDownloader.loadImage(fromURL: "https://simple.wikipedia.org/wiki/Black#/media/File:Black.png",
+                                      completion: downloadImageCompletion)
     }
     private var downloadImageCompletion: (Result<UIImage, Error>) -> Void {
         { [unowned self] result in
