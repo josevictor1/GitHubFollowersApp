@@ -8,19 +8,20 @@
 import UIKit
 
 public extension UIImageView {
-    private static let imageDownloader = ImageDownloader()
+    private static let imageLoader = ImageLoader()
     
     func loadImage(forULR url: String, placeHolder: UIImage, withAnimation animation: Bool = true) {
         image = placeHolder
         loadImage(forURL: url, withAnimation: animation)
+        
     }
     
     private func loadImage(forURL url: String, withAnimation animation: Bool) {
-        UIImageView.imageDownloader.loadImage(fromURL: url) { [weak self] result in
-            DispatchQueue.main.async {
+        UIImageView.imageLoader.loadImage(forURL: url, imageView: self) { result in
+            DispatchQueue.main.async { [unowned self] in
                 switch result {
                 case .success(let image):
-                    self?.setImage(image, withAnimation: animation)
+                    self.setImage(image, withAnimation: animation)
                 case .failure:
                     break
                 }

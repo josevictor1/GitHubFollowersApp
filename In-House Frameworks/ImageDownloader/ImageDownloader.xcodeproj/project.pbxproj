@@ -20,6 +20,7 @@
 		1A99919B25C24D5F00C89CE5 /* UIImage+PlaceHolderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A99919A25C24D5F00C89CE5 /* UIImage+PlaceHolderMock.swift */; };
 		1A9991A125C2514C00C89CE5 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9991A025C2514C00C89CE5 /* ImageDownloaderTests.swift */; };
 		1A9991A725C253EA00C89CE5 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9991A625C253EA00C89CE5 /* NetworkingService.swift */; };
+		1A9F377D25D4C06200F0AB93 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9F377C25D4C06200F0AB93 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		1A99919A25C24D5F00C89CE5 /* UIImage+PlaceHolderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+PlaceHolderMock.swift"; sourceTree = "<group>"; };
 		1A9991A025C2514C00C89CE5 /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
 		1A9991A625C253EA00C89CE5 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		1A9F377C25D4C06200F0AB93 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		1A622C1925C22F250083782E /* ImageDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				1A9F377B25D4C02E00F0AB93 /* ImageLoader */,
 				1A9991A525C253CD00C89CE5 /* Networking */,
 				1A9991A425C2538D00C89CE5 /* ImageDownloader */,
 				1A9991A325C2537C00C89CE5 /* Extensions */,
@@ -178,6 +181,14 @@
 				1A9991A625C253EA00C89CE5 /* NetworkingService.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		1A9F377B25D4C02E00F0AB93 /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				1A9F377C25D4C06200F0AB93 /* ImageLoader.swift */,
+			);
+			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 			files = (
 				1A9991A725C253EA00C89CE5 /* NetworkingService.swift in Sources */,
 				1A99919625C244DD00C89CE5 /* ImageDownloader.swift in Sources */,
+				1A9F377D25D4C06200F0AB93 /* ImageLoader.swift in Sources */,
 				1A99918825C23E0A00C89CE5 /* UIImageView+ImageDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,8 +11,8 @@ import Foundation
 struct UserNetworkingResponse: Decodable {
     let login: String?
     let id: Int
-    let nodeID: String
-    let avatarURL: String
+    let nodeID: String?
+    let avatarURL: String?
     let gravatarID: String
     let url: String
     let htmlURL: String
@@ -28,13 +28,13 @@ struct UserNetworkingResponse: Decodable {
     let type: String
     let siteAdmin: Bool
     let name: String
-    let company: String
+    let company: String?
     let blog: String
-    let location: String
+    let location: String?
     let email: String?
     let hireable: Bool?
-    let bio: String
-    let twitterUsername: String
+    let bio: String?
+    let twitterUsername: String?
     let publicRepos: Int
     let publicGists: Int
     let followers: Int

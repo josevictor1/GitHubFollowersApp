@@ -19,20 +19,21 @@ public final class ImageDownloader {
         self.networkingService = networkingService
     }
     
-    func loadImage(fromURL url: String, completion: @escaping RequestImageCompletion) {
+    func loadImage(fromURL url: String, completion: @escaping RequestImageCompletion) -> URLSessionDataTask? {
         if let image = loadCachedImage(forURL: url) {
             completion(.success(image))
         } else {
-            downloadImage(fromURL: url, completion: completion)
+            return downloadImage(fromURL: url, completion: completion)
         }
+        return nil
     }
     
     private func loadCachedImage(forURL url: String) -> UIImage? {
         cache.data(forKey: url)
     }
     
-    private func downloadImage(fromURL url: String, completion: @escaping RequestImageCompletion) {
-        networkingService.downloadImage(fromURL: url) { [weak self] result in
+    private func downloadImage(fromURL url: String, completion: @escaping RequestImageCompletion) -> URLSessionDataTask? {
+        return networkingService.downloadImage(fromURL: url) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.handleSuccess(forURL: url, with: response, completion: completion)
