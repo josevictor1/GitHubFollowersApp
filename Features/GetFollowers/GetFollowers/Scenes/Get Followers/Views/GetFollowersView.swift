@@ -23,7 +23,10 @@ final class GetFollowersView: UIView, GetFollowersViewProtocol {
     private let mediumPadding: CGFloat = 31
     private let largePadding: CGFloat = 62
     private let extraLargePadding: CGFloat = 200
-    weak var delegate: GetFollowersViewDelegate?
+    
+    weak var delegate: GetFollowersViewDelegate? {
+        didSet { usernameTextField.delegate = delegate }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,10 +53,11 @@ final class GetFollowersView: UIView, GetFollowersViewProtocol {
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = cornerRadius
         textField.layer.borderColor = UIColor.tertiarySystemFill.cgColor
-        textField.returnKeyType = .continue
+        textField.returnKeyType = .done
         textField.backgroundColor = .secondarySystemBackground
         textField.font = .preferredFont(forTextStyle: .body)
         textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
         textField.adjustsFontForContentSizeCategory = true
         textField.layer.masksToBounds = true
         return textField

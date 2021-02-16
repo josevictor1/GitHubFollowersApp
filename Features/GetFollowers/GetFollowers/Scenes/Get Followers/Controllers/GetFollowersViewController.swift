@@ -75,6 +75,7 @@ extension GetFollowersViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
+    
 }
 
 extension GetFollowersViewController: GetFollowersViewControllerInput {
