@@ -107,31 +107,9 @@ final class FollowersViewController: UICollectionViewController {
         logicController?.loadFollowers()
     }
     
-    func createLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { sectionIndex,
-                                                            layoutEnvironment in
-            let columns = 3
-            let spacing = CGFloat(10)
-            let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(100),
-                                                  heightDimension: .estimated(120))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                   heightDimension: .estimated(120))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: columns)
-            group.interItemSpacing = .fixed(spacing)
-            
-            let section = NSCollectionLayoutSection(group: group)
-            section.interGroupSpacing = spacing
-            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-            
-            return section
-        }
-        return layout
-    }
-    
     private func setUpCollectionViewLayout() {
         collectionView = UICollectionView(frame: view.frame,
-                                          collectionViewLayout: createLayout())
+                                          collectionViewLayout: UICollectionView.defaultCollectionViewLayout())
     }
 }
 

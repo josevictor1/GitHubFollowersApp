@@ -19,6 +19,7 @@ public final class ImageDownloader {
         self.networkingService = networkingService
     }
     
+    @discardableResult
     func loadImage(fromURL url: String, completion: @escaping RequestImageCompletion) -> URLSessionDataTask? {
         if let image = loadCachedImage(forURL: url) {
             completion(.success(image))

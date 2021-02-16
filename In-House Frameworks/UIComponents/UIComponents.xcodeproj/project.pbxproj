@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A1C2EC4242D637A00096731 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2EC3242D637A00096731 /* Commons.framework */; };
+		1A27FF2525DC4A4B00D51479 /* UICollectionView+CollectionViewLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A27FF2425DC4A4B00D51479 /* UICollectionView+CollectionViewLayoutProvider.swift */; };
+		1A27FF2925DC4A6000D51479 /* CollectionViewLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A27FF2825DC4A6000D51479 /* CollectionViewLayoutBuilder.swift */; };
 		1A6A3950246A0D540097C195 /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A394F246A0D540097C195 /* UIViewController+ActivityIndicator.swift */; };
 		1A6A3952246A0D640097C195 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3951246A0D640097C195 /* ActivityIndicatorView.swift */; };
 		1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07520242C11CB00DACD0A /* CustomAlertController.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		1A1C2EC3242D637A00096731 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A27FF2425DC4A4B00D51479 /* UICollectionView+CollectionViewLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CollectionViewLayoutProvider.swift"; sourceTree = "<group>"; };
+		1A27FF2825DC4A6000D51479 /* CollectionViewLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutBuilder.swift; sourceTree = "<group>"; };
 		1A6A394F246A0D540097C195 /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		1A6A3951246A0D640097C195 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		1AA07520242C11CB00DACD0A /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				1A6A394F246A0D540097C195 /* UIViewController+ActivityIndicator.swift */,
+				1A27FF2425DC4A4B00D51479 /* UICollectionView+CollectionViewLayoutProvider.swift */,
+				1A27FF2825DC4A6000D51479 /* CollectionViewLayoutBuilder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,10 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A27FF2525DC4A4B00D51479 /* UICollectionView+CollectionViewLayoutProvider.swift in Sources */,
 				1AA07528242C185800DACD0A /* Alert.swift in Sources */,
 				1A6A3952246A0D640097C195 /* ActivityIndicatorView.swift in Sources */,
 				1A6A3950246A0D540097C195 /* UIViewController+ActivityIndicator.swift in Sources */,
 				1AA07523242C124C00DACD0A /* CustomAlertView.swift in Sources */,
+				1A27FF2925DC4A6000D51479 /* CollectionViewLayoutBuilder.swift in Sources */,
 				1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
