@@ -148,7 +148,7 @@ extension FollowersViewController: FollowersLogicControllerOutput {
 extension FollowersViewController: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        <#code#>
+        
     }
 }
 
