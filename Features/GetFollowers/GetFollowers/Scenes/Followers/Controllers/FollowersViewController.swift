@@ -109,7 +109,7 @@ final class FollowersViewController: UICollectionViewController {
     
     private func setUpCollectionViewLayout() {
         collectionView = UICollectionView(frame: view.frame,
-                                          collectionViewLayout: UICollectionView.defaultCollectionViewLayout())
+                                          collectionViewLayout: .defaultCollectionViewLayout())
     }
 }
 

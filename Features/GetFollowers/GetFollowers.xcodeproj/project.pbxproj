@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A02EDE22548B05400C86CCD /* FollowersCollectionViewConfigurator.swift */; };
-		1A1BD93125C64BDC008E9088 /* ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */; };
 		1A1C2F29242E859100096731 /* GetFollowers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F1F242E859100096731 /* GetFollowers.framework */; };
 		1A1C2F30242E859100096731 /* GetFollowers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1C2F22242E859100096731 /* GetFollowers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A1C2F49242E85F200096731 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F3F242E85F200096731 /* Follower.swift */; };
@@ -34,6 +33,7 @@
 		1A94FD4C2433CCD30095932A /* GetFollowersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD4B2433CCD30095932A /* GetFollowersServiceMock.swift */; };
 		1A95290B244D122B00A5ED5D /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A95290A244D122B00A5ED5D /* Networking.framework */; };
 		1A952913244D385600A5ED5D /* GetFollowersNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */; };
+		1AA35DB525DC67630034DD84 /* ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */; };
 		1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */; };
 		1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB702562443CDFF006F4CDD /* UIComponents.framework */; };
 		1ABEB91A2548696E00B04478 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* Section.swift */; };
@@ -113,7 +113,7 @@
 				1A95290B244D122B00A5ED5D /* Networking.framework in Frameworks */,
 				1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */,
 				1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */,
-				1A1BD93125C64BDC008E9088 /* ImageDownloader.framework in Frameworks */,
+				1AA35DB525DC67630034DD84 /* ImageDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

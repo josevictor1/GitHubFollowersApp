@@ -99,8 +99,19 @@ final class GetFollowersView: UIView, GetFollowersViewProtocol {
     }
 
     private func setUp() {
+        setUpDismissOnTapOutOfTheKeyboard()
         setUpConstraints()
         setUpBackgroundColor()
+    }
+    
+    private func setUpDismissOnTapOutOfTheKeyboard() {
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(dismissKeyboard))
+        addGestureRecognizer(gesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        usernameTextField.resignFirstResponder()
     }
     
     private func setUpConstraints() {
