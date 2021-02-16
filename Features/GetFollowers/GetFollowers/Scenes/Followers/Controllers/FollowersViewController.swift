@@ -71,7 +71,7 @@ final class FollowersViewController: UICollectionViewController {
     }
     
     private func setUpCollectionViewDataSource() {
-        //collectionView.prefetchDataSource = self
+        collectionView.prefetchDataSource = self
     }
     
     private func setUpTitle() {
@@ -142,6 +142,13 @@ extension FollowersViewController: FollowersLogicControllerOutput {
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         dataSource.apply(snapshot)
+    }
+}
+
+extension FollowersViewController: UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        <#code#>
     }
 }
 
