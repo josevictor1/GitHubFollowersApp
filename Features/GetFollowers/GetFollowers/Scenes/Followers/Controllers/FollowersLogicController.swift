@@ -13,6 +13,7 @@ typealias SearchFollowersCompletion = (Result<[Follower], Error>) -> Void
 protocol FollowersLogicControllerProtocol {
     var userLogin: String { get }
     func loadFollowers()
+    func loadNextPage()
     func searchFollower(withLogin login: String)
 }
 
@@ -25,10 +26,15 @@ protocol FollowersLogicControllerOutput: AnyObject {
 final class FollowersLogicController: FollowersLogicControllerProtocol {
     private let userInformation: UserInformation
     private let service: FollowersProvider
-    private let resultsPerPage: Int = 20
-    private var currentPage: Int = .zero
     private unowned let viewController: FollowersLogicControllerOutput
+    private let minimumNumberOfResultsPerPage = 20
     private var followers = [Follower]()
+    private var currentPage: Int = .zero
+    private var isLoadingData = false
+    
+    private lazy var remainingResults: Int = {
+        userInformation.numberOfFollowers
+    }()
     
     var userLogin: String {
         userInformation.login
@@ -62,11 +68,30 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
         followers.filter { $0.login.contains(login) }
     }
     
+    func loadNextPage() {
+        guard remainingResults > .zero, !isLoadingData else { return }
+        loadFollowers()
+        isLoadingData = true
+    }
+    
     func loadFollowers() {
+        let resultsPerPage = currentPage == .zero ? minimumNumberOfResultsPerPage : remainingResults
         let request = FollowersRequest(username: userLogin,
-                                       pageNumber: .zero,
+                                       pageNumber: currentPage,
                                        resultsPerPage: resultsPerPage)
         fetchFollowers(with: request)
+    }
+    
+    private func updateRemainingPages() {
+        currentPage += 1
+    }
+    
+    private func updateRemainingResults() {
+        if remainingResults >= minimumNumberOfResultsPerPage {
+            remainingResults -= minimumNumberOfResultsPerPage
+        } else {
+            remainingResults = .zero
+        }
     }
     
     private func fetchFollowers(with request: FollowersRequest) {
@@ -82,6 +107,8 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     
     private func updateFollowers(with response: [Follower]) {
         followers += response
+        updateRemainingPages()
+        updateRemainingResults()
         viewController.showFollowers(followers)
     }
     
@@ -93,6 +120,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
             case .failure(let error):
                 completion(.failure(error))
             }
+            self.isLoadingData = false
         }
     }
     

@@ -11,6 +11,7 @@ import Foundation
 struct UserInformation {
     let login: String
     let name: String
+    let numberOfFollowers: Int
 }
 
 extension UserInformation {
@@ -18,6 +19,7 @@ extension UserInformation {
     init?(userNetworkingResponse: UserNetworkingResponse) {
         guard let login = userNetworkingResponse.login else { return nil }
         self.init(login: login,
-                  name: userNetworkingResponse.name)
+                  name: userNetworkingResponse.name,
+                  numberOfFollowers: userNetworkingResponse.followers)
     }
 }

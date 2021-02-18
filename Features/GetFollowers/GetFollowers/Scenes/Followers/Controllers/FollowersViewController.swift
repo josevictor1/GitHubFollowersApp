@@ -69,11 +69,7 @@ final class FollowersViewController: UICollectionViewController {
         setUpBackgroundColor()
         setUpCollectionView()
     }
-    
-    private func setUpCollectionViewDataSource() {
-        collectionView.prefetchDataSource = self
-    }
-    
+
     private func setUpTitle() {
         title = logicController?.userLogin ?? String()
     }
@@ -110,6 +106,7 @@ final class FollowersViewController: UICollectionViewController {
     private func setUpCollectionViewLayout() {
         collectionView = UICollectionView(frame: view.frame,
                                           collectionViewLayout: .defaultCollectionViewLayout())
+        collectionView.setContentOffset(.zero, animated: true)
     }
 }
 
@@ -121,6 +118,14 @@ extension FollowersViewController: UISearchBarDelegate {
     
     private func performQuery(with filter: String) {
         logicController?.searchFollower(withLogin: filter)
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentPoint = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let scrollViewHeight = scrollView.frame.size.height
+        guard currentPoint > scrollViewHeight - contentHeight else { return }
+        logicController?.loadNextPage()
     }
 }
 
@@ -142,13 +147,6 @@ extension FollowersViewController: FollowersLogicControllerOutput {
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         dataSource.apply(snapshot)
-    }
-}
-
-extension FollowersViewController: UICollectionViewDataSourcePrefetching {
-    
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        
     }
 }
 
