@@ -29,7 +29,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     private unowned let viewController: FollowersLogicControllerOutput
     private let minimumNumberOfResultsPerPage = 20
     private var followers = [Follower]()
-    private var currentPage: Int = .zero
+    private var currentPage: Int = 1
     private var isLoadingData = false
     
     private lazy var remainingResults: Int = {
