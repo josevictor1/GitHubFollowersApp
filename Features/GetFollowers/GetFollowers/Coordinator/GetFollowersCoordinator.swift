@@ -12,20 +12,13 @@ import Core
 import UIKit
 
 public final class GetFollowersCoordinator: NavigationCoordinator {
-
-    // MARK: - Properties
-
     public var parent: Coordinator?
     public var children: [Coordinator] = []
     public var navigationController: UINavigationController?
 
-    // MARK: - Intitializer
-
     public required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-
-    // MARK: - Life Cycle
 
     public func start() {
         navigateToGetFollowers()
@@ -37,8 +30,6 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
         navigationController?.navigationBar.tintColor = .chateauGreen
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
-    // MARK: - Navigation
 
     func navigateToGetFollowers() {
         let viewController: GetFollowersViewController = .makeGetFollowers(delegate: self)

@@ -13,17 +13,17 @@ import GetFollowers
 final class MainCoordinator: Coordinator {
     var parent: Coordinator?
     var children: [Coordinator] = []
-    private var tabBarController: UITabBarController?
+    private let tabBarController: UITabBarController
 
-    init(window: UIWindow) {
-        tabBarController = UITabBarController()
+    init(window: UIWindow, tabBarController: UITabBarController = UITabBarController()) {
+        self.tabBarController = tabBarController
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
     }
 
     func start() {
-        tabBarController?.viewControllers = [setUpSearchFollowersTab()]
-        tabBarController?.tabBar.tintColor = .chateauGreen
+        tabBarController.viewControllers = [setUpSearchFollowersTab()]
+        tabBarController.tabBar.tintColor = .chateauGreen
     }
 
     private func tabBarItem() -> UITabBarItem {

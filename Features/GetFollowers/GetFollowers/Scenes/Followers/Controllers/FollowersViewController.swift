@@ -131,7 +131,10 @@ extension FollowersViewController: UISearchBarDelegate {
 
 extension FollowersViewController: FollowersLogicControllerOutput {
     
-    func showFollowerNotFound() { }
+    func showFollowersNotFound() {
+        let emptyState = FollowersEmptyBackgroundView()
+        view.embed(emptyState)
+    }
     
     func showFailureOnFetchFollowers() {
         stopLoading()

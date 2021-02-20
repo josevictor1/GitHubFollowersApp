@@ -10,3 +10,4 @@
 "somethingWentWrong" = "Something went wrong";
 "ok" = "Ok";
 "getFollowers" = "Get Followers";
+"followersNotFound" = "This user doesn’t have any followers.";

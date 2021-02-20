@@ -18,7 +18,7 @@ protocol FollowersLogicControllerProtocol {
 }
 
 protocol FollowersLogicControllerOutput: AnyObject {
-    func showFollowerNotFound()
+    func showFollowersNotFound()
     func showFailureOnFetchFollowers()
     func showFollowers(_ followers: [Follower])
 }
@@ -59,7 +59,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     private func searchFollowerLocally(withLogin login: String) {
         let filteredFollowers = filterPlayers(withLogin: login)
         guard !filteredFollowers.isEmpty else {
-            return viewController.showFollowerNotFound()
+            return viewController.showFollowersNotFound()
         }
         viewController.showFollowers(filteredFollowers)
     }
