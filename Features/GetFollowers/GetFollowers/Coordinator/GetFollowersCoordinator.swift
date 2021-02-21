@@ -41,7 +41,7 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func navigateToUserInformation(with follower: Follower) {
+    func navigateToUserInformation(with follower: String) {
         
     }
 }

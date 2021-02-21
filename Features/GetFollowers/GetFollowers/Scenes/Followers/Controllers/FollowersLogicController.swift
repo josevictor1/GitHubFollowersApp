@@ -16,13 +16,14 @@ protocol FollowersLogicControllerProtocol {
     func loadNextPage()
     func searchFollower(withLogin login: String)
     func selectFollower(atIndex index: Int)
+    func cancelSearch()
 }
 
 protocol FollowersLogicControllerOutput: AnyObject {
     func showFollowersNotFound()
     func showFailureOnFetchFollowers(_ error: GetFollowersError)
     func showFollowers(_ followers: [Follower])
-    func show(follower: Follower)
+    func showUserInformation(for login: String)
 }
 
 final class FollowersLogicController: FollowersLogicControllerProtocol {
@@ -112,8 +113,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     
     func searchFollower(withLogin login: String) {
         if login.isEmpty {
-            viewController.showFollowers(followers)
-            cleanFilteredFollowers()
+            showUnfilteredFollowers()
         } else {
             searchFollowerLocally(withLogin: login)
         }
@@ -121,9 +121,9 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     
     func selectFollower(atIndex index: Int) {
         if filteredFollowers.isEmpty {
-            viewController.show(follower: followers[index])
+            viewController.showUserInformation(for: followers[index].login)
         } else {
-            viewController.show(follower: filteredFollowers[index])
+            viewController.showUserInformation(for: filteredFollowers[index].login)
         }
     }
     
@@ -141,5 +141,14 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     
     private func filterPlayers(withLogin login: String) -> [Follower] {
         followers.filter { $0.login.contains(login) }
+    }
+    
+    func cancelSearch() {
+        showUnfilteredFollowers()
+    }
+    
+    private func showUnfilteredFollowers() {
+        viewController.showFollowers(followers)
+        cleanFilteredFollowers()
     }
 }

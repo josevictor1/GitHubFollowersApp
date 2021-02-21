@@ -14,7 +14,7 @@ typealias FollowersCollectionViewDataSource = UICollectionViewDiffableDataSource
 typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSource.CellProvider
 
 protocol FollowersCoordinator {
-    func showInformation(for follower: Follower)
+    func showInformation(for login: String)
 }
 
 final class FollowersViewController: UICollectionViewController {
@@ -133,6 +133,10 @@ extension FollowersViewController: UISearchBarDelegate {
         guard currentPoint > scrollViewHeight - contentHeight else { return }
         logicController?.loadNextPage()
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        logicController?.searchFollower(withLogin: String())
+    }
 }
 
 extension FollowersViewController: FollowersLogicControllerOutput {
@@ -143,8 +147,8 @@ extension FollowersViewController: FollowersLogicControllerOutput {
     }
     
     func showFollowersNotFound() {
-        let emptyState = FollowersEmptyBackgroundView()
-        view.embed(emptyState)
+        //let emptyState = FollowersEmptyBackgroundView()
+        //view.embed(emptyState)
     }
     
     func showFollowers(_ followers: [Follower]) {
@@ -152,8 +156,8 @@ extension FollowersViewController: FollowersLogicControllerOutput {
         reloadDataSource(with: followers)
     }
     
-    func show(follower: Follower) {
-        coordinator?.showInformation(for: follower)
+    func showUserInformation(for login: String) {
+        coordinator?.showInformation(for: login)
     }
     
     private func reloadDataSource(with followers: [Follower]) {
