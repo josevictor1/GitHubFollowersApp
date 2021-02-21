@@ -16,7 +16,7 @@ typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSourc
 final class FollowersViewController: UICollectionViewController {
     private var logicController: FollowersLogicControllerProtocol?
     private var configurator: FollowersCollectionViewConfiguratorProtocol?
-    private var preseter: GetFollowersAlertPresenter?
+    private var presenter: GetFollowersAlertPresenter?
     
     private lazy var dataSource: FollowersCollectionViewDataSource = {
         FollowersCollectionViewDataSource(collectionView: collectionView,
@@ -128,7 +128,7 @@ extension FollowersViewController: FollowersLogicControllerOutput {
     
     func showFailureOnFetchFollowers(_ error: GetFollowersError) {
         stopLoading()
-        preseter?.present(error)
+        presenter?.present(error)
     }
     
     func showFollowersNotFound() {
@@ -158,7 +158,7 @@ extension FollowersViewController {
                                                                   userFollowers: userFollowers)
         viewController.configurator = FollowersCollectionViewConfigurator()
         presenter.configureAlert(to: viewController)
-        viewController.preseter = presenter
+        viewController.presenter = presenter
         return viewController
     }
 }
