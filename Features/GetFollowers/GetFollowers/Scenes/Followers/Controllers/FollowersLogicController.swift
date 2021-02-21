@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias SearchFollowersCompletion = (Result<[Follower], Error>) -> Void
+typealias SearchFollowersCompletion = (Result<[Follower], GetFollowersError>) -> Void
 
 protocol FollowersLogicControllerProtocol {
     var userLogin: String { get }
@@ -19,7 +19,7 @@ protocol FollowersLogicControllerProtocol {
 
 protocol FollowersLogicControllerOutput: AnyObject {
     func showFollowersNotFound()
-    func showFailureOnFetchFollowers()
+    func showFailureOnFetchFollowers(_ error: GetFollowersError)
     func showFollowers(_ followers: [Follower])
 }
 
@@ -99,8 +99,8 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
             switch result {
             case .success(let reponse):
                 self.updateFollowers(with: reponse)
-            case .failure:
-                self.viewController.showFailureOnFetchFollowers()
+            case .failure(let error):
+                self.viewController.showFailureOnFetchFollowers(error)
             }
         }
     }

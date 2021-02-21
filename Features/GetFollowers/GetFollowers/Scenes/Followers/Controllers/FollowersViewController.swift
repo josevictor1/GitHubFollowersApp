@@ -16,6 +16,7 @@ typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSourc
 final class FollowersViewController: UICollectionViewController {
     private var logicController: FollowersLogicControllerProtocol?
     private var configurator: FollowersCollectionViewConfiguratorProtocol?
+    private var preseter: GetFollowersAlertPresenter?
     
     private lazy var dataSource: FollowersCollectionViewDataSource = {
         FollowersCollectionViewDataSource(collectionView: collectionView,
@@ -35,12 +36,6 @@ final class FollowersViewController: UICollectionViewController {
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         return searchController
-    }()
-    
-    private let alert: CustomAlertController = {
-        let alert = Alert(title: "", description: "", buttonTitle: "")
-        let customAlert = CustomAlertController(alert: alert)
-        return customAlert
     }()
     
     override func viewDidLoad() {
@@ -131,13 +126,14 @@ extension FollowersViewController: UISearchBarDelegate {
 
 extension FollowersViewController: FollowersLogicControllerOutput {
     
+    func showFailureOnFetchFollowers(_ error: GetFollowersError) {
+        stopLoading()
+        preseter?.present(error)
+    }
+    
     func showFollowersNotFound() {
         let emptyState = FollowersEmptyBackgroundView()
         view.embed(emptyState)
-    }
-    
-    func showFailureOnFetchFollowers() {
-        stopLoading()
     }
     
     func showFollowers(_ followers: [Follower]) {
@@ -157,9 +153,12 @@ extension FollowersViewController {
     
     static func makeFollowers(with userFollowers: UserInformation) -> FollowersViewController {
         let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let presenter = GetFollowersAlertPresenter()
         viewController.logicController = FollowersLogicController(viewController: viewController,
                                                                   userFollowers: userFollowers)
         viewController.configurator = FollowersCollectionViewConfigurator()
+        presenter.configureAlert(to: viewController)
+        viewController.preseter = presenter
         return viewController
     }
 }
