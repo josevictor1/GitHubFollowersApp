@@ -60,18 +60,6 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
         fetchFollowers(with: request)
     }
     
-    private func updateRemainingPages() {
-        currentPage += 1
-    }
-    
-    private func updateRemainingResults() {
-        if remainingResults >= minimumNumberOfResultsPerPage {
-            remainingResults -= minimumNumberOfResultsPerPage
-        } else {
-            remainingResults = .zero
-        }
-    }
-    
     private func fetchFollowers(with request: FollowersRequest) {
         fetchFollowers(with: request) { [unowned self] result in
             switch result {
@@ -84,10 +72,29 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
     
     private func updateFollowers(with response: [Follower]) {
-        followers += response
+        set(followers: response)
         updateRemainingPages()
         updateRemainingResults()
         viewController.showFollowers(followers)
+    }
+    
+    private func set(followers: [Follower]) {
+        self.followers += followers
+        if followers.isEmpty {
+            viewController.showFollowersNotFound()
+        }
+    }
+    
+    private func updateRemainingPages() {
+        currentPage += 1
+    }
+    
+    private func updateRemainingResults() {
+        if remainingResults >= minimumNumberOfResultsPerPage {
+            remainingResults -= minimumNumberOfResultsPerPage
+        } else {
+            remainingResults = .zero
+        }
     }
     
     private func fetchFollowers(with request: FollowersRequest, completion: @escaping SearchFollowersCompletion) {
@@ -133,9 +140,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     
     private func searchFollowerLocally(withLogin login: String) {
         filteredFollowers = filterPlayers(withLogin: login)
-        guard !filteredFollowers.isEmpty else {
-            return viewController.showFollowersNotFound()
-        }
+        guard !filteredFollowers.isEmpty else { return }
         viewController.showFollowers(filteredFollowers)
     }
     
