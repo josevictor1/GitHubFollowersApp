@@ -21,7 +21,7 @@ jobs:
       
     - name: Codecov
       uses: codecov/codecov-action@v1.2.1
-       with:
+      with:
          token: '6920283f-cfd3-4b06-883c-e4c19ecabaf1'
          files: ./coverage1.xml,./coverage2.xml # optional
          flags: unittests # optional
