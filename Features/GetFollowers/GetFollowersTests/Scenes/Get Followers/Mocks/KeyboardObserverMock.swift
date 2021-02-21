@@ -6,7 +6,6 @@
 //  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 
-import XCTest
 import UIKit
 import Commons
 
