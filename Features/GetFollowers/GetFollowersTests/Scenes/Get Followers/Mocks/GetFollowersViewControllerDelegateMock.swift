@@ -9,7 +9,7 @@
 import Foundation
 @testable import GetFollowers
 
-final class GetFollowersViewControllerDelegateMock: GetFollowersViewControllerDelegate {
+final class GetFollowersViewControllerDelegateMock: SearchCoordinator {
     var didViewControllerGotFollowers = false
     var expectationCompletion: (() -> Void)?
 

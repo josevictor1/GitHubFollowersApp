@@ -8,25 +8,31 @@
 
 import Networking
 
+typealias FetchFollowersResult = Result<[FollowerResponse], NetworkingError>
+typealias FetchFollowersRequestCompletion = (Result<[FollowerResponse], GetFollowersError>) -> Void
+
 protocol FollowersProvider {
-    func fetchFollowes(for request: FollowersRequest, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void)
+    func fetchFollowes(for request: FollowersRequest, completion: @escaping FetchFollowersRequestCompletion)
 }
 
 final class FollowersService: FollowersProvider {
     private let networkingProvider: NetworkingProvider
+    private var dataTask: URLSessionDataTask?
     
     init(networkingProvider: NetworkingProvider = NetworkingProvider()) {
         self.networkingProvider = networkingProvider
     }
     
-    func fetchFollowes(for request: FollowersRequest, completion: @escaping (Result<[FollowerResponse], GetFollowersError>) -> Void) {
+    func fetchFollowes(for request: FollowersRequest, completion: @escaping FetchFollowersRequestCompletion) {
         let request = FollowersNetworkingRequest(username: request.username,
                                                  pageNumber: request.pageNumber,
                                                  resultsPerPage: request.resultsPerPage)
-        networkingProvider.performRequestWithDecodable(request) { (result: Result<[FollowerResponse], NetworkingError>) in
-            DispatchQueue.main.async {
-                completion(result.mapError(GetFollowersError.init))
-            }
+        fetchFollowers(for: request, completion: completion)
+    }
+    
+    private func fetchFollowers(for request: FollowersNetworkingRequest, completion: @escaping FetchFollowersRequestCompletion) {
+        dataTask = networkingProvider.performRequestWithDecodable(request) { (result: FetchFollowersResult) in
+            DispatchQueue.main.async { completion(result.mapError(GetFollowersError.init)) }
         }
     }
 }

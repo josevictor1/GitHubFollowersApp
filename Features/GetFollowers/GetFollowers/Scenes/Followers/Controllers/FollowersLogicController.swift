@@ -15,12 +15,14 @@ protocol FollowersLogicControllerProtocol {
     func loadFollowers()
     func loadNextPage()
     func searchFollower(withLogin login: String)
+    func selectFollower(atIndex index: Int)
 }
 
 protocol FollowersLogicControllerOutput: AnyObject {
     func showFollowersNotFound()
     func showFailureOnFetchFollowers(_ error: GetFollowersError)
     func showFollowers(_ followers: [Follower])
+    func show(follower: Follower)
 }
 
 final class FollowersLogicController: FollowersLogicControllerProtocol {
@@ -29,16 +31,11 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     private unowned let viewController: FollowersLogicControllerOutput
     private let minimumNumberOfResultsPerPage = 20
     private var followers = [Follower]()
+    private var filteredFollowers = [Follower]()
     private var currentPage: Int = 1
     private var isLoadingData = false
-    
-    private lazy var remainingResults: Int = {
-        userInformation.numberOfFollowers
-    }()
-    
-    var userLogin: String {
-        userInformation.login
-    }
+    private lazy var remainingResults = userInformation.numberOfFollowers
+    var userLogin: String { userInformation.login }
     
     init(viewController: FollowersLogicControllerOutput,
          userFollowers: UserInformation,
@@ -46,26 +43,6 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
         self.viewController = viewController
         self.userInformation = userFollowers
         self.service = service
-    }
-    
-    func searchFollower(withLogin login: String) {
-        if login.isEmpty {
-            viewController.showFollowers(followers)
-        } else {
-            searchFollowerLocally(withLogin: login)
-        }
-    }
-    
-    private func searchFollowerLocally(withLogin login: String) {
-        let filteredFollowers = filterPlayers(withLogin: login)
-        guard !filteredFollowers.isEmpty else {
-            return viewController.showFollowersNotFound()
-        }
-        viewController.showFollowers(filteredFollowers)
-    }
-    
-    private func filterPlayers(withLogin login: String) -> [Follower] {
-        followers.filter { $0.login.contains(login) }
     }
     
     func loadNextPage() {
@@ -131,5 +108,38 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     
     private func convertIntoFollowerList(_ followerResponse: [FollowerResponse]) -> [Follower] {
         followerResponse.map { Follower(response: $0) }
+    }
+    
+    func searchFollower(withLogin login: String) {
+        if login.isEmpty {
+            viewController.showFollowers(followers)
+            cleanFilteredFollowers()
+        } else {
+            searchFollowerLocally(withLogin: login)
+        }
+    }
+    
+    func selectFollower(atIndex index: Int) {
+        if filteredFollowers.isEmpty {
+            viewController.show(follower: followers[index])
+        } else {
+            viewController.show(follower: filteredFollowers[index])
+        }
+    }
+    
+    private func cleanFilteredFollowers() {
+        filteredFollowers.removeAll()
+    }
+    
+    private func searchFollowerLocally(withLogin login: String) {
+        filteredFollowers = filterPlayers(withLogin: login)
+        guard !filteredFollowers.isEmpty else {
+            return viewController.showFollowersNotFound()
+        }
+        viewController.showFollowers(filteredFollowers)
+    }
+    
+    private func filterPlayers(withLogin login: String) -> [Follower] {
+        followers.filter { $0.login.contains(login) }
     }
 }

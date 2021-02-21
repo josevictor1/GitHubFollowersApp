@@ -9,8 +9,8 @@
 import UIKit
 import Commons
 
-protocol GetFollowersViewControllerDelegate: AnyObject {
-    func viewControllerDidGetFollowers(_ userFollowers: UserInformation)
+protocol SearchCoordinator: AnyObject {
+    func showFollowers(_ userFollowers: UserInformation)
 }
 
 protocol GetFollowersViewControllerInput {
@@ -20,7 +20,7 @@ protocol GetFollowersViewControllerInput {
 final class GetFollowersViewController: UIViewController {
     private(set) var logicController: GetFollowersLogicControllerProtocol?
     private(set) var presenter: GetFollowersAlertPresenterProtocol?
-    private(set) weak var delegate: GetFollowersViewControllerDelegate?
+    private(set) weak var delegate: SearchCoordinator?
     private let keyboardObserver: KeyboardObserverProtocol
     private let getFollowersView: GetFollowersViewProtocol
     
@@ -49,7 +49,7 @@ final class GetFollowersViewController: UIViewController {
         logicController?.fetchFollowers(for: username) { [unowned self] result in
             switch result {
             case .success(let user):
-               self.delegate?.viewControllerDidGetFollowers(user)
+               self.delegate?.showFollowers(user)
             case .failure(let error):
                 self.presenter?.present(error)
             }
@@ -85,7 +85,7 @@ extension GetFollowersViewController: GetFollowersViewControllerInput {
 extension GetFollowersViewController {
     
     static func makeGetFollowers(view: GetFollowersViewProtocol = GetFollowersView(),
-                                 delegate: GetFollowersViewControllerDelegate,
+                                 delegate: SearchCoordinator,
                                  presenter: GetFollowersAlertPresenterProtocol = GetFollowersAlertPresenter(),
                                  logicController: GetFollowersLogicControllerProtocol = GetFollowersLogicController(),
                                  keyboardObserver: KeyboardObserverProtocol = KeyboardObserver()) -> GetFollowersViewController {

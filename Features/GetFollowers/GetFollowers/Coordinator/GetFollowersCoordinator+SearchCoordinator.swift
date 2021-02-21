@@ -1,5 +1,5 @@
 //
-//  GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift
+//  GetFollowersCoordintaor+SearchCoordinator.swift
 //  GetFollowers
 //
 //  Created by José Victor Pereira Costa on 23/05/20.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension GetFollowersCoordinator: GetFollowersViewControllerDelegate {
+extension GetFollowersCoordinator: SearchCoordinator {
 
-    func viewControllerDidGetFollowers(_ userFollowers: UserInformation) {
+    func showFollowers(_ userFollowers: UserInformation) {
         navigateToFollowers(with: userFollowers)
     }
 }

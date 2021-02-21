@@ -37,7 +37,11 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
     }
 
     func navigateToFollowers(with userFollowers: UserInformation) {
-        let viewController: FollowersViewController = .makeFollowers(with: userFollowers)
+        let viewController: FollowersViewController = .makeFollowers(with: userFollowers, coordinator: self)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func navigateToUserInformation(with follower: Follower) {
+        
     }
 }

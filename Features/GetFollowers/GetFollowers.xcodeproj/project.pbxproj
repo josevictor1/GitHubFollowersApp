@@ -40,13 +40,14 @@
 		1AB7CBF525E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */; };
 		1AB7CC0025E2143300A4780D /* FollowersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBFF25E2143300A4780D /* FollowersViewControllerTests.swift */; };
 		1AB7CC0625E2144F00A4780D /* FollowersLogicControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CC0525E2144F00A4780D /* FollowersLogicControllerTests.swift */; };
+		1AB7CC0A25E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CC0925E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift */; };
 		1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */; };
 		1ABEB91A2548696E00B04478 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* Section.swift */; };
 		1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB91F254869E000B04478 /* Follower+Hashble.swift */; };
 		1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */; };
 		1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */; };
 		1AD82C282460DE00000CCD95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD82C272460DE00000CCD95 /* Localizable.strings */; };
-		1AED2CFA247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED2CF9247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift */; };
+		1AED2CFA247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED2CF9247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift */; };
 		1AEFAEB9245F7BAB00F64C17 /* ImagesAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */; };
 		1AEFAEBB245F7BC600F64C17 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEBA245F7BC600F64C17 /* LocalizedStrings.swift */; };
 		1AFCE0472550A49F00CCC878 /* FollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCE0462550A49F00CCC878 /* FollowersService.swift */; };
@@ -101,13 +102,14 @@
 		1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerTestAPI.swift; sourceTree = "<group>"; };
 		1AB7CBFF25E2143300A4780D /* FollowersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewControllerTests.swift; sourceTree = "<group>"; };
 		1AB7CC0525E2144F00A4780D /* FollowersLogicControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicControllerTests.swift; sourceTree = "<group>"; };
+		1AB7CC0925E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFollowersCoordinator+FollowersCoordinator.swift"; sourceTree = "<group>"; };
 		1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersEmptyBackgroundView.swift; sourceTree = "<group>"; };
 		1ABEB9192548696E00B04478 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		1ABEB91F254869E000B04478 /* Follower+Hashble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follower+Hashble.swift"; sourceTree = "<group>"; };
 		1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicController.swift; sourceTree = "<group>"; };
 		1AD82C272460DE00000CCD95 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		1AED2CF9247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		1AED2CF9247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFollowersCoordinator+SearchCoordinator.swift"; sourceTree = "<group>"; };
 		1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAssets.swift; sourceTree = "<group>"; };
 		1AEFAEBA245F7BC600F64C17 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		1AFCE0462550A49F00CCC878 /* FollowersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersService.swift; sourceTree = "<group>"; };
@@ -182,7 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */,
-				1AED2CF9247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift */,
+				1AB7CC0925E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift */,
+				1AED2CF9247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -558,7 +561,8 @@
 				1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */,
 				1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */,
 				1A5174E8255B5A48006ACB76 /* UserNetworkingResponse.swift in Sources */,
-				1AED2CFA247A19FE000BC13A /* GetFollowersCoordintaor+GetFollowersViewControllerDelegate.swift in Sources */,
+				1AB7CC0A25E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift in Sources */,
+				1AED2CFA247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift in Sources */,
 				1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */,
 				1A1C2F4A242E85F200096731 /* GetFollowersError.swift in Sources */,
 				1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */,
