@@ -10,109 +10,45 @@ import XCTest
 @testable import GetFollowers
 
 final class GetFollowersViewControllerTests: XCTestCase {
-    private let providerMock = GetFollowersServiceMock()
-    private let alertPresenterMock = GetFollowersAlertPresenterMock()
-    private let delegateMock = GetFollowersViewControllerDelegateMock()
-    private let keyboardObseverMock = KeyboardObserverMock()
-    private lazy var logicControllerMock = GetFollowersLogicController(provider: providerMock)
-    private let viewMock = GetFollowersViewMock()
-    private var presentedError: GetFollowersError?
-
-    private lazy var sut: GetFollowersViewController = {
-        .makeGetFollowers(view: viewMock,
-                          delegate: delegateMock,
-                          presenter: alertPresenterMock,
-                          logicController: logicControllerMock,
-                          keyboardObserver: keyboardObseverMock)
-    }()
-    
-    
-    private func prepareLogicController(with error: GetFollowersError) {
-        providerMock.error = error
-    }
-    
-    private func prepareAlertPresenterMock(with expectation: XCTestExpectation) {
-        alertPresenterMock.onAlertPresented = { [weak expectation, weak self] error in
-            self?.presentedError = error
-            expectation?.fulfill()
-        }
-    }
-    
-    private func prepareGetFollowersControllerDalegate(with expectation: XCTestExpectation) {
-        delegateMock.expectationCompletion = { [weak expectation] in
-            expectation?.fulfill()
-        }
-    }
-    
-    private func callGetFollowersButtonTappedMethod() {
-        setUpViewDelegate()
-        viewMock.getFllowersButtonTapped()
-    }
-    
-    private func checkPresentedError(with expectation: XCTestExpectation, error: GetFollowersError) {
-        wait(for: [expectation], timeout: 1)
-        XCTAssertEqual(presentedError, error, "The alert should be presented with \(error) error")
-    }
-    
-    private func checkViewControllerFetchDataWithSuccess(with expectation: XCTestExpectation) {
-        wait(for: [expectation], timeout: 1)
-        XCTAssertTrue(delegateMock.didViewControllerGotFollowers, "The delegate shold be called")
-    }
-    
-    private func prepareViewController() {
-        setUpViewDelegate()
-        sut.viewDidLoad()
-    }
-    
-    private func setUpViewDelegate() {
-        viewMock.delegate = sut
-    }
-    
-    private func setUpKeyboardAsTouched() {
-        keyboardObseverMock.callKeyboardAppeard()
-    }
-    
-    private func checkViewDidScroll() {
-        XCTAssertTrue(viewMock.scrollUpCalled)
-    }
-    
-    
-    // MARK: - Tests
+    private let test = GetFollowersViewControllerTestAPI()
     
     func testGetFollowersFailWithRequestFailMessage() {
         let expectation = XCTestExpectation(description: "The onAlertPresented closure should be executed")
-        prepareAlertPresenterMock(with: expectation)
-        prepareLogicController(with: .requestFail)
+        test.prepareAlertPresenterMock(with: expectation)
+        test.prepareLogicController(with: .requestFail)
         
-        callGetFollowersButtonTappedMethod()
+        test.callGetFollowersButtonTappedMethod()
         
-        checkPresentedError(with: expectation, error: .requestFail)
+        wait(for: [expectation], timeout: 1)
+        test.checkPresentedError(error: .requestFail)
     }
     
     func testGetFollowersFailWithIvalidUsernameMessage() {
         let expectation = XCTestExpectation(description: "The onAlertPresented closure should be executed")
-        prepareAlertPresenterMock(with: expectation)
-        prepareLogicController(with: .invalidUsername)
+        test.prepareAlertPresenterMock(with: expectation)
+        test.prepareLogicController(with: .invalidUsername)
         
-        callGetFollowersButtonTappedMethod()
+        test.callGetFollowersButtonTappedMethod()
         
-        checkPresentedError(with: expectation, error: .invalidUsername)
+        wait(for: [expectation], timeout: 1)
+        test.checkPresentedError(error: .invalidUsername)
     }
     
     func testGetFollowersWithSuccess() {
         let expectation = XCTestExpectation(description: "The viewControllerDidGetFollowers should be called")
-        prepareGetFollowersControllerDalegate(with: expectation)
+        test.prepareGetFollowersControllerDalegate(with: expectation)
         
-        callGetFollowersButtonTappedMethod()
+        test.callGetFollowersButtonTappedMethod()
         
-        checkViewControllerFetchDataWithSuccess(with: expectation)
+        wait(for: [expectation], timeout: 1)
+        test.checkViewControllerFetchDataWithSuccess()
     }
     
     func testGetFollowerViewControllerNotifyKeyboardDidAppeard() {
-        prepareViewController()
+        test.prepareViewController()
         
-        setUpKeyboardAsTouched()
+        test.setUpKeyboardAsTouched()
         
-        checkViewDidScroll()
+        test.checkViewDidScroll()
     }
 }

@@ -36,6 +36,8 @@
 		1AA35DB525DC67630034DD84 /* ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */; };
 		1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */; };
 		1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB702562443CDFF006F4CDD /* UIComponents.framework */; };
+		1AB7CBE325E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBE225E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift */; };
+		1AB7CBF525E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */; };
 		1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */; };
 		1ABEB91A2548696E00B04478 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* Section.swift */; };
 		1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB91F254869E000B04478 /* Follower+Hashble.swift */; };
@@ -93,6 +95,8 @@
 		1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersNetworkingRequest.swift; sourceTree = "<group>"; };
 		1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		1AB702562443CDFF006F4CDD /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB7CBE225E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerTestAPI.swift; sourceTree = "<group>"; };
+		1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerTestAPI.swift; sourceTree = "<group>"; };
 		1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersEmptyBackgroundView.swift; sourceTree = "<group>"; };
 		1ABEB9192548696E00B04478 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		1ABEB91F254869E000B04478 /* Follower+Hashble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follower+Hashble.swift"; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 			children = (
 				1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */,
 				1A94FD1C24336A230095932A /* GetFollowersLogicControllerTests.swift */,
+				1AB7CBE225E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift */,
+				1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -540,12 +546,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB7CBE325E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift in Sources */,
 				1AFEF7CF25B1262F001DC70B /* KeyboardObserverMock.swift in Sources */,
 				1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */,
 				1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */,
 				1A94FD4C2433CCD30095932A /* GetFollowersServiceMock.swift in Sources */,
 				1AFEF7CB25B11758001DC70B /* GetFollowersViewMock.swift in Sources */,
 				1A94FD1D24336A230095932A /* GetFollowersLogicControllerTests.swift in Sources */,
+				1AB7CBF525E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift in Sources */,
 				1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
