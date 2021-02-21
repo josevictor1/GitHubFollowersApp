@@ -19,12 +19,6 @@ jobs:
     - name: Build and test
       run: xcodebuild clean build test -workspace GitHub.xcworkspace -scheme "GitHub" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
       
-    - name: Codecov
-      uses: codecov/codecov-action@v1.2.1
-      with:
-         token: '6920283f-cfd3-4b06-883c-e4c19ecabaf1'
-         flags: unittests # optional
-         name: codecov-umbrella # optional
-         fail_ci_if_error: true
-         verbose: true
+    - name: swift-codecov
+      uses: mattpolzin/swift-codecov-action@0.5.0
 
