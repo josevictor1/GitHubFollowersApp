@@ -125,6 +125,26 @@
                ReferencedContainer = "container:../../In-House Frameworks/ImageDownloader/ImageDownloader.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1AB7CBB525E1F53800A4780D"
+               BuildableName = "UserInformationTests.xctest"
+               BlueprintName = "UserInformationTests"
+               ReferencedContainer = "container:../../Features/UserInformation/UserInformation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1AB7CBB525E1F53800A4780D"
+               BuildableName = "UserInformationTests.xctest"
+               BlueprintName = "UserInformationTests"
+               ReferencedContainer = "container:../../Features/UserInformation/UserInformation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

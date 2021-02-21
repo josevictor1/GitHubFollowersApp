@@ -22,7 +22,7 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
     private let usernameLabel: UILabel = {
         let usernameLabel = UILabel()
         usernameLabel.numberOfLines = .zero
-        usernameLabel.font = .preferredFont(forTextStyle: .footnote)
+        usernameLabel.font = .preferredFont(forTextStyle: .headline)
         usernameLabel.tintColor = .label
         usernameLabel.adjustsFontForContentSizeCategory = true
         return usernameLabel

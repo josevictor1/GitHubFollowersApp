@@ -71,6 +71,13 @@
         "identifier" : "1A622C1F25C22F250083782E",
         "name" : "ImageDownloaderTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/Features\/UserInformation\/UserInformation.xcodeproj",
+        "identifier" : "1AB7CBB525E1F53800A4780D",
+        "name" : "UserInformationTests"
+      }
     }
   ],
   "version" : 1
