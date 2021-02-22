@@ -41,6 +41,10 @@
 		1AB7CC0025E2143300A4780D /* FollowersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBFF25E2143300A4780D /* FollowersViewControllerTests.swift */; };
 		1AB7CC0625E2144F00A4780D /* FollowersLogicControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CC0525E2144F00A4780D /* FollowersLogicControllerTests.swift */; };
 		1AB7CC0A25E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CC0925E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift */; };
+		1AB7CC1825E2999200A4780D /* FollowersLogicControllerOutputMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CC1725E2999200A4780D /* FollowersLogicControllerOutputMock.swift */; };
+		1AB7CC1C25E2A8C300A4780D /* FollowersLogicControllerTestsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CC1B25E2A8C300A4780D /* FollowersLogicControllerTestsAPI.swift */; };
+		1AB7CC2025E2AA0800A4780D /* FollowersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CC1F25E2AA0800A4780D /* FollowersServiceMock.swift */; };
+		1AB7CC2525E2B51000A4780D /* Followers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7CC2425E2B51000A4780D /* Followers.json */; };
 		1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */; };
 		1ABEB91A2548696E00B04478 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* Section.swift */; };
 		1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB91F254869E000B04478 /* Follower+Hashble.swift */; };
@@ -103,6 +107,10 @@
 		1AB7CBFF25E2143300A4780D /* FollowersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewControllerTests.swift; sourceTree = "<group>"; };
 		1AB7CC0525E2144F00A4780D /* FollowersLogicControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicControllerTests.swift; sourceTree = "<group>"; };
 		1AB7CC0925E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFollowersCoordinator+FollowersCoordinator.swift"; sourceTree = "<group>"; };
+		1AB7CC1725E2999200A4780D /* FollowersLogicControllerOutputMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicControllerOutputMock.swift; sourceTree = "<group>"; };
+		1AB7CC1B25E2A8C300A4780D /* FollowersLogicControllerTestsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicControllerTestsAPI.swift; sourceTree = "<group>"; };
+		1AB7CC1F25E2AA0800A4780D /* FollowersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersServiceMock.swift; sourceTree = "<group>"; };
+		1AB7CC2425E2B51000A4780D /* Followers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Followers.json; sourceTree = "<group>"; };
 		1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersEmptyBackgroundView.swift; sourceTree = "<group>"; };
 		1ABEB9192548696E00B04478 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		1ABEB91F254869E000B04478 /* Follower+Hashble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follower+Hashble.swift"; sourceTree = "<group>"; };
@@ -329,6 +337,7 @@
 		1AB7CBFA25E2131100A4780D /* Followers */ = {
 			isa = PBXGroup;
 			children = (
+				1AB7CC2325E2AB6900A4780D /* JSON */,
 				1AB7CBFE25E213F500A4780D /* Mocks */,
 				1AB7CBFD25E213E900A4780D /* Controllers */,
 			);
@@ -340,6 +349,7 @@
 			children = (
 				1AB7CBFF25E2143300A4780D /* FollowersViewControllerTests.swift */,
 				1AB7CC0525E2144F00A4780D /* FollowersLogicControllerTests.swift */,
+				1AB7CC1B25E2A8C300A4780D /* FollowersLogicControllerTestsAPI.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,8 +357,18 @@
 		1AB7CBFE25E213F500A4780D /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				1AB7CC1725E2999200A4780D /* FollowersLogicControllerOutputMock.swift */,
+				1AB7CC1F25E2AA0800A4780D /* FollowersServiceMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		1AB7CC2325E2AB6900A4780D /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				1AB7CC2425E2B51000A4780D /* Followers.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		1ABEB92325486EF600B04478 /* View */ = {
@@ -536,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A6A675D25BA84EA004F1FC1 /* UserInformation.json in Resources */,
+				1AB7CC2525E2B51000A4780D /* Followers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,10 +602,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB7CBE325E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift in Sources */,
+				1AB7CC1C25E2A8C300A4780D /* FollowersLogicControllerTestsAPI.swift in Sources */,
 				1AFEF7CF25B1262F001DC70B /* KeyboardObserverMock.swift in Sources */,
 				1AB7CC0025E2143300A4780D /* FollowersViewControllerTests.swift in Sources */,
+				1AB7CC2025E2AA0800A4780D /* FollowersServiceMock.swift in Sources */,
 				1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */,
 				1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */,
+				1AB7CC1825E2999200A4780D /* FollowersLogicControllerOutputMock.swift in Sources */,
 				1A94FD4C2433CCD30095932A /* GetFollowersServiceMock.swift in Sources */,
 				1AB7CC0625E2144F00A4780D /* FollowersLogicControllerTests.swift in Sources */,
 				1AFEF7CB25B11758001DC70B /* GetFollowersViewMock.swift in Sources */,
