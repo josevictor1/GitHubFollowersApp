@@ -17,7 +17,7 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode.app
 
     - name: Build and test
-      run: xcodebuild clean build test -workspace GitHub.xcworkspace -scheme "GitHub" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO 
+      run: xcodebuild clean build test -workspace GitHub.xcworkspace -scheme "GitHub" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES VALID_ARCHS=x86_64 CODE_SIGNING_REQUIRED=NO 
       
     - name: Codecov
       uses: codecov/codecov-action@v1.2.1
