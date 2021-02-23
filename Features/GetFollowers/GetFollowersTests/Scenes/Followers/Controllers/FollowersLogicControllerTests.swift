@@ -65,7 +65,7 @@ final class FollowersLogicControllerTests: XCTestCase {
         test.cancelSearch()
         
         wait(for: [expectation], timeout: 1)
-        test.checkIfSearchWasCanceled()
+        test.checkIfFollowersAreNotFiltered()
     }
     
     func testFollowersNotFound() {
@@ -91,9 +91,29 @@ final class FollowersLogicControllerTests: XCTestCase {
         test.checkIfErrorRequestFailedWasShown()
     }
     
-    func testSearchEmptyInput() {
+    func testSelectFollowerFilteredOnSearch() {
+        let expectation = XCTestExpectation(description: "The output controller should be called when search followers.")
+        test.setUpLogicControllerWithFollowers()
+        test.loadTestFollowers()
+        test.setUpLogicControllerOutput(with: expectation)
         
+        test.searchForTestFollowers()
+        test.selectFollowerAtFirstPosition()
         
+        wait(for: [expectation], timeout: 1)
+        test.checkIfSelectedFollowerIsTheExpected()
+    }
+    
+    func testSearchFilterDisappearsAfterClean() {
+        let expectation = XCTestExpectation(description: "The output controller should be called when search followers.")
+        test.setUpLogicControllerWithFollowers()
+        test.loadTestFollowers()
+        test.setUpLogicControllerOutput(with: expectation)
         
+        test.searchForTestFollowers()
+        test.deleteSearchFilter()
+        
+        wait(for: [expectation], timeout: 1)
+        test.checkIfFollowersAreNotFiltered()
     }
 }

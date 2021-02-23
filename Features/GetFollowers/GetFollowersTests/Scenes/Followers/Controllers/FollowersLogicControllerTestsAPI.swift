@@ -42,6 +42,10 @@ final class FollowersLogicControllerTestsAPI {
         sut?.cancelSearch()
     }
     
+    func deleteSearchFilter() {
+        sut?.searchFollower(withLogin: "")
+    }
+    
     func setUpSearchState(with expectation: XCTestExpectation) {
         setUpLogicControllerOutput(with: expectation)
         loadTestFollowers()
@@ -95,7 +99,7 @@ final class FollowersLogicControllerTestsAPI {
         XCTAssertTrue(logicControllerOutputMock.followers.isEmpty)
     }
     
-    func checkIfSearchWasCanceled() {
+    func checkIfFollowersAreNotFiltered() {
         XCTAssertNotEqual(logicControllerOutputMock.followers, filteredFollowers)
     }
     
