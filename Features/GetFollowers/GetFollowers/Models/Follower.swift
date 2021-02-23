@@ -12,7 +12,10 @@ struct Follower {
     let imageURL: String
     let login: String
     let identifier = UUID()
+}
 
+extension Follower {
+    
     init(response: FollowerResponse) {
         self.login = response.login
         self.imageURL = response.avatarURL

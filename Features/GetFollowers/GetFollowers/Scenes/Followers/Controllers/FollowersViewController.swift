@@ -18,10 +18,10 @@ protocol FollowersCoordinator {
 }
 
 final class FollowersViewController: UICollectionViewController {
-    private var logicController: FollowersLogicControllerProtocol?
-    private var configurator: FollowersCollectionViewConfiguratorProtocol?
-    private var presenter: GetFollowersAlertPresenter?
-    private var coordinator: FollowersCoordinator?
+    var logicController: FollowersLogicControllerProtocol?
+    var configurator: FollowersCollectionViewConfiguratorProtocol?
+    var presenter: GetFollowersAlertPresenter?
+    var coordinator: FollowersCoordinator?
     
     private lazy var dataSource: FollowersCollectionViewDataSource = {
         FollowersCollectionViewDataSource(collectionView: collectionView,
@@ -119,11 +119,7 @@ final class FollowersViewController: UICollectionViewController {
 extension FollowersViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        performQuery(with: searchText)
-    }
-    
-    private func performQuery(with filter: String) {
-        logicController?.searchFollower(withLogin: filter)
+        logicController?.searchFollower(withLogin: searchText)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -135,7 +131,7 @@ extension FollowersViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        logicController?.searchFollower(withLogin: String())
+        logicController?.cancelSearch()
     }
 }
 
@@ -147,8 +143,8 @@ extension FollowersViewController: FollowersLogicControllerOutput {
     }
     
     func showFollowersNotFound() {
-        //let emptyState = FollowersEmptyBackgroundView()
-        //view.embed(emptyState)
+        let emptyState = FollowersEmptyBackgroundView()
+        view.embed(emptyState)
     }
     
     func showFollowers(_ followers: [Follower]) {

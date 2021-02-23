@@ -9,5 +9,37 @@
 import XCTest
 
 final class FollowersViewControllerTests: XCTestCase {
+    private let test = FollowersViewControllerTestsAPI()
     
+    func testLoadFollowers() {
+        test.loadViewController()
+        
+        test.checkIfFollowersWereLoaded()
+    }
+    
+    func testLoadNextPage() {
+        test.loadMockFollowers()
+        
+        test.scrollDown()
+        
+        test.checkIfNextPageWasLoaded()
+    }
+    
+    func testSearchFollower() {
+        test.setUpSearch()
+        
+        test.checkIfFollowerWasSearched()
+    }
+    
+    func testSelectFollower() {
+        test.tapFirstFollower()
+        
+        test.checkIfItemWasSelected()
+    }
+    
+    func testCancelSearch() {
+        test.tapCancel()
+        
+        test.checkIfSearchedWasCanceled()
+    }
 }

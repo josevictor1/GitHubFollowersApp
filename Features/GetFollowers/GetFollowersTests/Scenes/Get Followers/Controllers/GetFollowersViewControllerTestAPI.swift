@@ -26,7 +26,6 @@ final class GetFollowersViewControllerTestAPI {
                           keyboardObserver: keyboardObseverMock)
     }()
     
-    
     func prepareLogicController(with error: GetFollowersError) {
         providerMock.error = error
     }

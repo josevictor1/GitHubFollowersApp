@@ -53,6 +53,14 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
     
     func loadFollowers() {
+        if userInformation.numberOfFollowers > .zero {
+            fetchFollowers()
+        } else {
+            viewController.showFollowersNotFound()
+        }
+    }
+    
+    private func fetchFollowers() {
         let resultsPerPage = currentPage == .zero ? minimumNumberOfResultsPerPage : remainingResults
         let request = FollowersRequest(username: userLogin,
                                        pageNumber: currentPage,
