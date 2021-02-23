@@ -15,31 +15,31 @@ final class FollowersLogicControllerTestsAPI {
     private let serviceMock = FollowersServiceMock()
     private let userInformationMock = UserInformation(login: "test",
                                                       numberOfFollowers: 1)
+    private let alternativeUserInformation = UserInformation(login: "test",
+                                                             numberOfFollowers: 0)
     private var filteredFollowers = [Follower]()
-    private lazy var sut: FollowersLogicController = {
+    private var sut: FollowersLogicController?
+    
+    private func makeFollowersLogicController(with userInformation: UserInformation) -> FollowersLogicController {
         FollowersLogicController(viewController: logicControllerOutputMock,
-                                 userFollowers: userInformationMock,
+                                 userFollowers: userInformation,
                                  service: serviceMock)
-    }()
+    }
     
     func loadTestFollowers() {
-        sut.loadFollowers()
+        sut?.loadFollowers()
     }
     
     func loadNextFollowersPage() {
-        sut.loadNextPage()
-    }
-    
-    func setUpEmptyReturnWhenLoadFollowers() {
-        serviceMock.shouldReturnEmpty = true
+        sut?.loadNextPage()
     }
     
     func searchForTestFollowers() {
-        sut.searchFollower(withLogin: "octocat")
+        sut?.searchFollower(withLogin: "octocat")
     }
     
     func cancelSearch() {
-        sut.cancelSearch()
+        sut?.cancelSearch()
     }
     
     func setUpSearchState(with expectation: XCTestExpectation) {
@@ -58,6 +58,19 @@ final class FollowersLogicControllerTestsAPI {
         logicControllerOutputMock.expection = expectation
     }
     
+    func setUpLogicControllerWithFollowers() {
+        sut = makeFollowersLogicController(with: userInformationMock)
+    }
+    
+    func setUpLogicControllerWithoutFollowers() {
+        sut = makeFollowersLogicController(with: alternativeUserInformation)
+        setUpEmptyReturnWhenLoadFollowers()
+    }
+    
+    private func setUpEmptyReturnWhenLoadFollowers() {
+        serviceMock.shouldReturnEmpty = true
+    }
+    
     func checkIfFollowersWereFiltered() {
         checkIfFollowersWereLoad()
         let filtered = logicControllerOutputMock.followers.reduce(true) {
@@ -71,7 +84,7 @@ final class FollowersLogicControllerTestsAPI {
     }
     
     func selectFollowerAtFirstPosition() {
-        sut.selectFollower(atIndex: .zero)
+        sut?.selectFollower(atIndex: .zero)
     }
     
     func checkIfSelectedFollowerIsTheExpected() {

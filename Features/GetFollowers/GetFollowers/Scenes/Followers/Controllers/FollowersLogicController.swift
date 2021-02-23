@@ -80,17 +80,10 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
     
     private func updateFollowers(with response: [Follower]) {
-        set(followers: response)
+        self.followers += response
         updateRemainingPages()
         updateRemainingResults()
         viewController.showFollowers(followers)
-    }
-    
-    private func set(followers: [Follower]) {
-        self.followers += followers
-        if followers.isEmpty {
-            viewController.showFollowersNotFound()
-        }
     }
     
     private func updateRemainingPages() {

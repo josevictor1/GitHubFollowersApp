@@ -13,6 +13,7 @@ final class FollowersLogicControllerTests: XCTestCase {
     
     func testLoadFollowers() {
         let expectation = XCTestExpectation(description: "The output controller should be called when followers load.")
+        test.setUpLogicControllerWithFollowers()
         test.setUpLogicControllerOutput(with: expectation)
         
         test.loadTestFollowers()
@@ -23,6 +24,7 @@ final class FollowersLogicControllerTests: XCTestCase {
     
     func testLoadNextPage() {
         let expectation = XCTestExpectation(description: "The output controller should be called when followers load.")
+        test.setUpLogicControllerWithFollowers()
         test.setUpLogicControllerOutput(with: expectation)
         
         test.loadNextFollowersPage()
@@ -33,6 +35,7 @@ final class FollowersLogicControllerTests: XCTestCase {
     
     func testSearchFollowersByLogin() {
         let expectation = XCTestExpectation(description: "The output controller should be called when search followers.")
+        test.setUpLogicControllerWithFollowers()
         test.loadTestFollowers()
         test.setUpLogicControllerOutput(with: expectation)
         
@@ -44,6 +47,7 @@ final class FollowersLogicControllerTests: XCTestCase {
     
     func testSelectFollower() {
         let expectation = XCTestExpectation(description: "The output controller should be caller when a follower is selected.")
+        test.setUpLogicControllerWithFollowers()
         test.setUpLogicControllerOutput(with: expectation)
         test.loadTestFollowers()
         
@@ -55,6 +59,7 @@ final class FollowersLogicControllerTests: XCTestCase {
     
     func testCancelSearch() {
         let expectation = XCTestExpectation(description: "The output controller should be caller when search is canceled.")
+        test.setUpLogicControllerWithFollowers()
         test.setUpSearchState(with: expectation)
         
         test.cancelSearch()
@@ -65,8 +70,8 @@ final class FollowersLogicControllerTests: XCTestCase {
     
     func testFollowersNotFound() {
         let expectation = XCTestExpectation(description: "The output controller should be called when followers load.")
-        test.setUpEmptyReturnWhenLoadFollowers()
         test.setUpLogicControllerOutput(with: expectation)
+        test.setUpLogicControllerWithoutFollowers()
         
         test.loadTestFollowers()
         
@@ -76,6 +81,7 @@ final class FollowersLogicControllerTests: XCTestCase {
     
     func testLoadFollowersWithError() {
         let expectation = XCTestExpectation(description: "The output controller should be called when followers load with error.")
+        test.setUpLogicControllerWithFollowers()
         test.setUpLoadFollowersWithError()
         test.setUpLogicControllerOutput(with: expectation)
         
@@ -83,5 +89,11 @@ final class FollowersLogicControllerTests: XCTestCase {
         
         wait(for: [expectation], timeout: 1)
         test.checkIfErrorRequestFailedWasShown()
+    }
+    
+    func testSearchEmptyInput() {
+        
+        
+        
     }
 }
