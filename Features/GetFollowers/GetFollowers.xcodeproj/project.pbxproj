@@ -48,7 +48,6 @@
 		1ABAA92F25E4597100981313 /* FollowersViewControllerTestsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAA92E25E4597100981313 /* FollowersViewControllerTestsAPI.swift */; };
 		1ABAA93325E45C4400981313 /* FollowersLogicControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAA93225E45C4400981313 /* FollowersLogicControllerMock.swift */; };
 		1ABAA93725E45F2C00981313 /* FollowersCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAA93625E45F2C00981313 /* FollowersCoordinatorMock.swift */; };
-		1ABAA93E25E4986800981313 /* UserInformation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAA93D25E4986800981313 /* UserInformation+.swift */; };
 		1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */; };
 		1ABEB91A2548696E00B04478 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* Section.swift */; };
 		1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB91F254869E000B04478 /* Follower+Hashble.swift */; };
@@ -118,7 +117,6 @@
 		1ABAA92E25E4597100981313 /* FollowersViewControllerTestsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewControllerTestsAPI.swift; sourceTree = "<group>"; };
 		1ABAA93225E45C4400981313 /* FollowersLogicControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicControllerMock.swift; sourceTree = "<group>"; };
 		1ABAA93625E45F2C00981313 /* FollowersCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCoordinatorMock.swift; sourceTree = "<group>"; };
-		1ABAA93D25E4986800981313 /* UserInformation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInformation+.swift"; sourceTree = "<group>"; };
 		1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersEmptyBackgroundView.swift; sourceTree = "<group>"; };
 		1ABEB9192548696E00B04478 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		1ABEB91F254869E000B04478 /* Follower+Hashble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follower+Hashble.swift"; sourceTree = "<group>"; };
@@ -345,7 +343,6 @@
 		1AB7CBFA25E2131100A4780D /* Followers */ = {
 			isa = PBXGroup;
 			children = (
-				1ABAA93C25E4984A00981313 /* Extension */,
 				1AB7CC2325E2AB6900A4780D /* JSON */,
 				1AB7CBFE25E213F500A4780D /* Mocks */,
 				1AB7CBFD25E213E900A4780D /* Controllers */,
@@ -381,14 +378,6 @@
 				1AB7CC2425E2B51000A4780D /* Followers.json */,
 			);
 			path = JSON;
-			sourceTree = "<group>";
-		};
-		1ABAA93C25E4984A00981313 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				1ABAA93D25E4986800981313 /* UserInformation+.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		1ABEB92325486EF600B04478 /* View */ = {
@@ -630,7 +619,6 @@
 				1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */,
 				1ABAA92F25E4597100981313 /* FollowersViewControllerTestsAPI.swift in Sources */,
 				1AB7CC1825E2999200A4780D /* FollowersLogicControllerOutputMock.swift in Sources */,
-				1ABAA93E25E4986800981313 /* UserInformation+.swift in Sources */,
 				1A94FD4C2433CCD30095932A /* GetFollowersServiceMock.swift in Sources */,
 				1ABAA93725E45F2C00981313 /* FollowersCoordinatorMock.swift in Sources */,
 				1AB7CC0625E2144F00A4780D /* FollowersLogicControllerTests.swift in Sources */,
