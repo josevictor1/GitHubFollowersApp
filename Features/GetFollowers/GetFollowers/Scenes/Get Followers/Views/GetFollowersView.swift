@@ -138,7 +138,8 @@ final class GetFollowersView: UIView, GetFollowersViewProtocol {
     }
 
     private func setUpStackViewConstraints() {
-        let constraints = [stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: largePadding),
+        let constraints = [stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor,
+                                                          constant: largePadding),
                            stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor,
                                                               constant: mediumPadding),
                            stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor,

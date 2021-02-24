@@ -30,7 +30,8 @@ final class FollowersService: FollowersProvider {
         fetchFollowers(for: request, completion: completion)
     }
 
-    private func fetchFollowers(for request: FollowersNetworkingRequest, completion: @escaping FetchFollowersRequestCompletion) {
+    private func fetchFollowers(for request: FollowersNetworkingRequest,
+                                completion: @escaping FetchFollowersRequestCompletion) {
         dataTask = networkingProvider.performRequestWithDecodable(request) { (result: FetchFollowersResult) in
             DispatchQueue.main.async { completion(result.mapError(GetFollowersError.init)) }
         }

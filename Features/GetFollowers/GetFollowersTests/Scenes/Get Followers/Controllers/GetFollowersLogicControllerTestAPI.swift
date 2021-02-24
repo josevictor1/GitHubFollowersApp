@@ -23,7 +23,7 @@ final class GetFollowersLogicControllerTestAPI {
                 XCTFail("The getFollowers method should return with error")
             case .failure(let error):
                 expectation.fulfill()
-                receivedError = error
+                self.receivedError = error
             }
         }
     }
