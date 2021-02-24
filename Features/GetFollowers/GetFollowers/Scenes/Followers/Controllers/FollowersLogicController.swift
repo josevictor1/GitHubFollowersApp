@@ -54,7 +54,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
 
     func loadFollowers() {
-        if userInformation.numberOfFollowers > .zero {
+        if paginationController.areThereLeftPages {
             fetchFollowers()
         } else {
             viewController.showFollowersNotFound()
@@ -69,37 +69,26 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
 
     private func fetchFollowers(with request: FollowersRequest) {
-        fetchFollowers(with: request) { [unowned self] result in
+        service.fetchFollowes(for: request) { [unowned self] result in
             switch result {
-            case .success(let reponse):
-                self.updateFollowers(with: reponse)
+            case .success(let response):
+                self.handleSuccess(with: response)
             case .failure(let error):
                 self.viewController.showFailureOnFetchFollowers(error)
             }
+            self.isLoadingData = false
         }
+    }
+
+    private func handleSuccess(with response: [FollowerResponse]) {
+        let followers = convertIntoFollowerList(response)
+        updateFollowers(with: followers)
     }
 
     private func updateFollowers(with response: [Follower]) {
         self.followers += response
         paginationController.turnPage()
         viewController.showFollowers(followers)
-    }
-
-    private func fetchFollowers(with request: FollowersRequest, completion: @escaping SearchFollowersCompletion) {
-        service.fetchFollowes(for: request) { [unowned self] result in
-            switch result {
-            case .success(let response):
-                self.handleSuccess(with: response, completion: completion)
-            case .failure(let error):
-                completion(.failure(error))
-            }
-            self.isLoadingData = false
-        }
-    }
-
-    private func handleSuccess(with response: [FollowerResponse], completion: @escaping SearchFollowersCompletion) {
-        let followers = convertIntoFollowerList(response)
-        completion(.success(followers))
     }
 
     private func convertIntoFollowerList(_ followerResponse: [FollowerResponse]) -> [Follower] {
