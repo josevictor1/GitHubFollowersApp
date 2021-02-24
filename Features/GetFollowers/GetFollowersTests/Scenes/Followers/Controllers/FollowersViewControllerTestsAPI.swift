@@ -10,14 +10,16 @@ import XCTest
 @testable import GetFollowers
 
 final class FollowersViewControllerTestsAPI {
-    private var logicControllerMock = FollowersLogicControllerMock()
-    private var coordinatorMock = FollowersCoordinatorMock()
+    private let logicControllerMock = FollowersLogicControllerMock()
+    private let coordinatorMock = FollowersCoordinatorMock()
+    private let presenterMock = GetFollowersAlertPresenterMock()
     private let userInformationMock = UserInformation(login: "test",
                                                       numberOfFollowers: 1)
     private lazy var sut: FollowersViewController = {
         let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
         viewController.logicController = logicControllerMock
         viewController.coordinator = coordinatorMock
+        viewController.presenter = presenterMock
         return viewController
     }()
     
@@ -53,6 +55,14 @@ final class FollowersViewControllerTestsAPI {
         sut.scrollViewDidScroll(scrollView)
     }
     
+    func setUpLoadFollowersWithError() {
+        sut.showFailureOnFetchFollowers(.requestFail)
+    }
+    
+    func setUpFollowersNotFound() {
+        sut.showFollowersNotFound()
+    }
+    
     func checkIfItemWasSelected() {
         XCTAssertEqual(logicControllerMock.selectedIndex, .zero)
     }
@@ -71,5 +81,14 @@ final class FollowersViewControllerTestsAPI {
     
     func checkIfFollowersWereLoaded() {
         XCTAssertTrue(logicControllerMock.wereFollowersLoaded)
+    }
+    
+    func checkIfPresenterWasCalledWithError() {
+        XCTAssertEqual(presenterMock.presentedError, .requestFail)
+    }
+    
+    func checkIfPresentFollowersNotFoundEmptyState() {
+        let topView = sut.view.subviews.last ?? UIView()
+        XCTAssertTrue(topView is FollowersEmptyBackgroundView)
     }
 }

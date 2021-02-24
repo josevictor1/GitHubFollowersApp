@@ -42,4 +42,16 @@ final class FollowersViewControllerTests: XCTestCase {
         
         test.checkIfSearchedWasCanceled()
     }
+    
+    func testPresentError() {
+        test.setUpLoadFollowersWithError()
+        
+        test.checkIfPresenterWasCalledWithError()
+    }
+    
+    func testEmptyState() {
+        test.setUpFollowersNotFound()
+        
+        test.checkIfPresentFollowersNotFoundEmptyState()
+    }
 }

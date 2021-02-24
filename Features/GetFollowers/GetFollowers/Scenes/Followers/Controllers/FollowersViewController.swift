@@ -20,7 +20,7 @@ protocol FollowersCoordinator {
 final class FollowersViewController: UICollectionViewController {
     var logicController: FollowersLogicControllerProtocol?
     var configurator: FollowersCollectionViewConfiguratorProtocol?
-    var presenter: GetFollowersAlertPresenter?
+    var presenter: GetFollowersAlertPresenterProtocol?
     var coordinator: FollowersCoordinator?
     
     private lazy var dataSource: FollowersCollectionViewDataSource = {
