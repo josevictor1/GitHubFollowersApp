@@ -85,14 +85,14 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
         updateFollowers(with: followers)
     }
 
+    private func convertIntoFollowerList(_ followerResponse: [FollowerResponse]) -> [Follower] {
+        followerResponse.map { Follower(response: $0) }
+    }
+
     private func updateFollowers(with response: [Follower]) {
         self.followers += response
         paginationController.turnPage()
         viewController.showFollowers(followers)
-    }
-
-    private func convertIntoFollowerList(_ followerResponse: [FollowerResponse]) -> [Follower] {
-        followerResponse.map { Follower(response: $0) }
     }
 
     func searchFollower(withLogin login: String) {
