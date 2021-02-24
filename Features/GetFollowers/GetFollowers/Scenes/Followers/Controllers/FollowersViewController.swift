@@ -169,8 +169,9 @@ extension FollowersViewController {
     static func makeFollowers(with userFollowers: UserInformation, coordinator: FollowersCoordinator) -> FollowersViewController {
         let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
         let presenter = GetFollowersAlertPresenter()
+        let paginationController = PaginationController(numberOfItems: userFollowers.numberOfFollowers)
         viewController.logicController = FollowersLogicController(viewController: viewController,
-                                                                  userFollowers: userFollowers)
+                                                                  userFollowers: userFollowers, paginationController: paginationController)
         viewController.configurator = FollowersCollectionViewConfigurator()
         viewController.coordinator = coordinator
         presenter.configureAlert(to: viewController)

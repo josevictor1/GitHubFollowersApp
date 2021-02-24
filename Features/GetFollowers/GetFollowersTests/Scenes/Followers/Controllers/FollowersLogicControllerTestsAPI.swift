@@ -21,9 +21,11 @@ final class FollowersLogicControllerTestsAPI {
     private var sut: FollowersLogicController?
     
     private func makeFollowersLogicController(with userInformation: UserInformation) -> FollowersLogicController {
-        FollowersLogicController(viewController: logicControllerOutputMock,
-                                 userFollowers: userInformation,
-                                 service: serviceMock)
+        let paginationController = PaginationController(numberOfItems: userInformation.numberOfFollowers)
+        return FollowersLogicController(viewController: logicControllerOutputMock,
+                                        userFollowers: userInformation,
+                                        paginationController: paginationController,
+                                        service: serviceMock)
     }
     
     func loadTestFollowers() {

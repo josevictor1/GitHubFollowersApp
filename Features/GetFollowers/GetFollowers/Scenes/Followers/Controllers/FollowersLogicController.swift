@@ -29,25 +29,26 @@ protocol FollowersLogicControllerOutput: AnyObject {
 final class FollowersLogicController: FollowersLogicControllerProtocol {
     private let userInformation: UserInformation
     private let service: FollowersProvider
+    private let paginationController: PaginationControllerProtocol
     private unowned let viewController: FollowersLogicControllerOutput
-    private let minimumNumberOfResultsPerPage = 20
     private var followers = [Follower]()
     private var filteredFollowers = [Follower]()
-    private var currentPage: Int = 1
     private var isLoadingData = false
-    private lazy var remainingResults = userInformation.numberOfFollowers
     var userLogin: String { userInformation.login }
     
     init(viewController: FollowersLogicControllerOutput,
          userFollowers: UserInformation,
+         paginationController: PaginationControllerProtocol,
          service: FollowersProvider = FollowersService()) {
         self.viewController = viewController
         self.userInformation = userFollowers
+        self.paginationController = paginationController
         self.service = service
     }
     
     func loadNextPage() {
-        guard remainingResults > .zero, !isLoadingData else { return }
+        guard paginationController.areThereLeftPages,
+              !isLoadingData else { return }
         loadFollowers()
         isLoadingData = true
     }
@@ -61,10 +62,9 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
     
     private func fetchFollowers() {
-        let resultsPerPage = currentPage == .zero ? minimumNumberOfResultsPerPage : remainingResults
         let request = FollowersRequest(username: userLogin,
-                                       pageNumber: currentPage,
-                                       resultsPerPage: resultsPerPage)
+                                       pageNumber: paginationController.currentPage,
+                                       resultsPerPage: paginationController.currentPageSize)
         fetchFollowers(with: request)
     }
     
@@ -81,21 +81,8 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     
     private func updateFollowers(with response: [Follower]) {
         self.followers += response
-        updateRemainingPages()
-        updateRemainingResults()
+        paginationController.turnPage()
         viewController.showFollowers(followers)
-    }
-    
-    private func updateRemainingPages() {
-        currentPage += 1
-    }
-    
-    private func updateRemainingResults() {
-        if remainingResults >= minimumNumberOfResultsPerPage {
-            remainingResults -= minimumNumberOfResultsPerPage
-        } else {
-            remainingResults = .zero
-        }
     }
     
     private func fetchFollowers(with request: FollowersRequest, completion: @escaping SearchFollowersCompletion) {
