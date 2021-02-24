@@ -10,13 +10,13 @@ import Foundation
 
 public final class WrappedKey<Key: Hashable>: NSObject {
     private let key: Key
-    
+
     init(key: Key) {
         self.key = key
     }
-    
+
     public override var hash: Int { key.hashValue }
-    
+
     public override func isEqual(_ object: Any?) -> Bool {
         guard let value = object as? WrappedKey else {
             return false

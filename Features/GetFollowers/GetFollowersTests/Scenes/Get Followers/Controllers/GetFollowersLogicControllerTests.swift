@@ -11,12 +11,12 @@ import XCTest
 
 final class GetFollowersLogicControllerTests: XCTestCase {
     private let test = GetFollowersLogicControllerTestAPI()
-    
+
     func testGetFollowersWithSuccess() {
         let expectation = XCTestExpectation(description: "Should succeded.")
-        
+
         test.executeSuccessfulSearchForTestFollowers(with: expectation)
-        
+
         wait(for: [expectation], timeout: 1)
         test.checkIfReceivedUserInformation()
     }
@@ -24,9 +24,9 @@ final class GetFollowersLogicControllerTests: XCTestCase {
     func testGetFollowersWithInvalidUser() {
         let expectation = XCTestExpectation(description: "Should failed.")
         test.prepareProviderWithInvalidUser()
-        
+
         test.executeFailedSearchForTestFollowers(with: expectation)
-        
+
         wait(for: [expectation], timeout: 1)
         test.checkIfUsernameIsInvalid()
     }
@@ -34,9 +34,9 @@ final class GetFollowersLogicControllerTests: XCTestCase {
     func testGetFollowersWithRequestFail() {
         let expectation = XCTestExpectation(description: "Should failed.")
         test.prepareProviderWithFailedRequest()
-        
+
         test.executeFailedSearchForTestFollowers(with: expectation)
-        
+
         wait(for: [expectation], timeout: 1)
         test.checkIfRequestFailed()
     }

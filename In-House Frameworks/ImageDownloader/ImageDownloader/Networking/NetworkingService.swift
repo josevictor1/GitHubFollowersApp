@@ -16,7 +16,7 @@ protocol NetworkingServiceProtocol {
 
 final class NetworkingService: NetworkingServiceProtocol {
     private let networkingProvider = NetworkingProvider()
-    
+
     func downloadImage(fromURL url: String, completion: @escaping DownloadImageCompletion) -> URLSessionDataTask? {
         return networkingProvider.requestData(fromURL: url) { result in
             switch result {

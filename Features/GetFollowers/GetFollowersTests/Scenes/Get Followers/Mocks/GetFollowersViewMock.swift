@@ -11,11 +11,11 @@ import UIKit
 final class GetFollowersViewMock: UIView, GetFollowersViewProtocol {
     weak var delegate: GetFollowersViewDelegate?
     var scrollUpCalled = false
-    
+
     func scrollUpGetFollowersButton(at height: CGFloat) {
         scrollUpCalled = true
     }
-    
+
     func getFllowersButtonTapped() {
         delegate?.viewController(didSelectFollower: "test")
     }

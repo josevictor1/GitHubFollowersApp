@@ -14,7 +14,7 @@ struct UserInformation {
 }
 
 extension UserInformation {
-    
+
     init?(userNetworkingResponse: UserNetworkingResponse) {
         guard let login = userNetworkingResponse.login else { return nil }
         self.init(login: login,

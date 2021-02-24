@@ -22,71 +22,71 @@ final class FollowersViewControllerTestsAPI {
         viewController.presenter = presenterMock
         return viewController
     }()
-    
+
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: CGRect(x: .zero, y: .zero, width: 100, height: 100))
         let bottomOffset = CGPoint(x: 0, y: 200)
         scrollView.setContentOffset(bottomOffset, animated: false)
         return scrollView
     }()
-    
+
     func loadViewController() {
         sut.viewDidAppear(false)
     }
-    
+
     func loadMockFollowers() {
         sut.showFollowers((.zero...40).map { Follower(imageURL: "\($0)", login: "\($0)") })
     }
-    
+
     func tapFirstFollower() {
         sut.collectionView(sut.collectionView,
                            didSelectItemAt: IndexPath(row: 0, section: 0))
     }
-    
+
     func tapCancel() {
         sut.searchBarCancelButtonClicked(UISearchBar())
     }
-    
+
     func setUpSearch() {
         sut.searchBar(UISearchBar(), textDidChange: "0")
     }
-    
+
     func scrollDown() {
         sut.scrollViewDidScroll(scrollView)
     }
-    
+
     func setUpLoadFollowersWithError() {
         sut.showFailureOnFetchFollowers(.requestFail)
     }
-    
+
     func setUpFollowersNotFound() {
         sut.showFollowersNotFound()
     }
-    
+
     func checkIfItemWasSelected() {
         XCTAssertEqual(logicControllerMock.selectedIndex, .zero)
     }
-    
+
     func checkIfNextPageWasLoaded() {
         XCTAssertTrue(logicControllerMock.wasNextPagedLoaded)
     }
-    
+
     func checkIfFollowerWasSearched() {
         XCTAssertEqual(logicControllerMock.searchedLogin, "0")
     }
-    
+
     func checkIfSearchedWasCanceled() {
         XCTAssertTrue(logicControllerMock.wasSearchCanceled)
     }
-    
+
     func checkIfFollowersWereLoaded() {
         XCTAssertTrue(logicControllerMock.wereFollowersLoaded)
     }
-    
+
     func checkIfPresenterWasCalledWithError() {
         XCTAssertEqual(presenterMock.presentedError, .requestFail)
     }
-    
+
     func checkIfPresentFollowersNotFoundEmptyState() {
         let topView = sut.view.subviews.last ?? UIView()
         XCTAssertTrue(topView is FollowersEmptyBackgroundView)

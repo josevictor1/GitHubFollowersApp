@@ -12,18 +12,18 @@ import Commons
 final class FollowersServiceMock: FollowersProvider {
     var error: GetFollowersError?
     var shouldReturnEmpty = false
-    
+
     func resetTestVariables() {
         error = nil
         shouldReturnEmpty = false
     }
-    
+
     private let fileReader: FileReader = {
         let bundle = Bundle(for: FollowersServiceMock.self)
         let fileReader = FileReader(bundle: bundle)
         return fileReader
     }()
-    
+
     func fetchFollowes(for request: FollowersRequest, completion: @escaping FetchFollowersRequestCompletion) {
         if let error = error {
             completion(.failure(error))
@@ -33,7 +33,7 @@ final class FollowersServiceMock: FollowersProvider {
             loadFollowers(completion: completion)
         }
     }
-    
+
     private func loadFollowers(completion: @escaping FetchFollowersRequestCompletion) {
         do {
             let userInformation = try loadFollowersFromJSON()
@@ -42,7 +42,7 @@ final class FollowersServiceMock: FollowersProvider {
             completion(.failure(.invalidResponse))
         }
     }
-    
+
     private func loadFollowersFromJSON() throws -> [FollowerResponse] {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601

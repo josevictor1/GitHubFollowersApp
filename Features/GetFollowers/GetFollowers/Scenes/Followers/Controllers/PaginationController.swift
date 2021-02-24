@@ -21,30 +21,30 @@ final class PaginationController: PaginationControllerProtocol {
     private(set) var currentPage: Int
     private(set) var currentPageSize: Int
     var areThereLeftPages: Bool { numberOfItems != .zero }
-    
+
     init(maximumPageSize: Int = 20, numberOfItems: Int, startPage: Int = 1) {
         self.maximumPageSize = maximumPageSize
         self.numberOfItems = numberOfItems
         currentPageSize = maximumPageSize
         currentPage = startPage
     }
-    
+
     func turnPage() {
         guard areThereLeftPages else { return }
         updateNumberOfItems()
         updateCurrentPage()
         updateCurrentPageSize()
     }
-    
+
     private func updateCurrentPage() {
         currentPage += 1
     }
-    
+
     private func updateCurrentPageSize() {
         guard numberOfItems < maximumPageSize else { return }
         currentPageSize = numberOfItems
     }
-    
+
     private func updateNumberOfItems() {
         if numberOfItems >= maximumPageSize {
             numberOfItems -= maximumPageSize

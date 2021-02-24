@@ -14,11 +14,11 @@ public typealias RequestImageCompletion = (Result<UIImage, Error>) -> Void
 public final class ImageDownloader {
     private let networkingService: NetworkingServiceProtocol
     private let cache = Cache<String, UIImage>()
-    
+
     init(networkingService: NetworkingServiceProtocol = NetworkingService()) {
         self.networkingService = networkingService
     }
-    
+
     @discardableResult
     func loadImage(fromURL url: String, completion: @escaping RequestImageCompletion) -> URLSessionDataTask? {
         if let image = loadCachedImage(forURL: url) {
@@ -28,12 +28,13 @@ public final class ImageDownloader {
         }
         return nil
     }
-    
+
     private func loadCachedImage(forURL url: String) -> UIImage? {
         cache.data(forKey: url)
     }
-    
-    private func downloadImage(fromURL url: String, completion: @escaping RequestImageCompletion) -> URLSessionDataTask? {
+
+    private func downloadImage(fromURL url: String,
+                               completion: @escaping RequestImageCompletion) -> URLSessionDataTask? {
         return networkingService.downloadImage(fromURL: url) { [weak self] result in
             switch result {
             case .success(let response):
@@ -43,7 +44,7 @@ public final class ImageDownloader {
             }
         }
     }
-    
+
     private func handleSuccess(forURL url: String, with response: Data, completion: @escaping RequestImageCompletion) {
         guard let image = UIImage(data: response) else { return }
         cache.saveData(image, forKey: url)

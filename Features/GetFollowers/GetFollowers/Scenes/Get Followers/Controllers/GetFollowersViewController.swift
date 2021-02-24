@@ -23,26 +23,26 @@ final class GetFollowersViewController: UIViewController {
     private(set) weak var delegate: SearchCoordinator?
     private let keyboardObserver: KeyboardObserverProtocol
     private let getFollowersView: GetFollowersViewProtocol
-    
+
     init(view: GetFollowersViewProtocol, keyboardObserver: KeyboardObserverProtocol) {
         getFollowersView = view
         self.keyboardObserver = keyboardObserver
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func loadView() {
         view = getFollowersView
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpKeyboardObserver()
     }
-    
+
     private func fetchUser(with username: String?) {
         guard let username = username, !username.isEmpty else { return }
         startLoading()
@@ -56,7 +56,7 @@ final class GetFollowersViewController: UIViewController {
             self.stopLoading()
         }
     }
-    
+
     private func setUpKeyboardObserver() {
         keyboardObserver.onKeyboardAppeared = { [unowned self] notification in
             let rect = notification.keyboardFrame(for: self.view)
@@ -69,27 +69,27 @@ final class GetFollowersViewController: UIViewController {
 }
 
 extension GetFollowersViewController: UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
 }
 
 extension GetFollowersViewController: GetFollowersViewControllerInput {
-    
+
     func viewController(didSelectFollower selectedFollower: String) {
         fetchUser(with: selectedFollower)
     }
 }
 
 extension GetFollowersViewController {
-    
+
     static func makeGetFollowers(view: GetFollowersViewProtocol = GetFollowersView(),
                                  delegate: SearchCoordinator,
                                  presenter: GetFollowersAlertPresenterProtocol = GetFollowersAlertPresenter(),
                                  logicController: GetFollowersLogicControllerProtocol = GetFollowersLogicController(),
                                  keyboardObserver: KeyboardObserverProtocol = KeyboardObserver()) -> GetFollowersViewController {
-        
+
         let viewController = GetFollowersViewController(view: view, keyboardObserver: keyboardObserver)
         view.delegate = viewController
         viewController.presenter = presenter

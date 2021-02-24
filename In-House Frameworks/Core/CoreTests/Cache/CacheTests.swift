@@ -11,12 +11,12 @@ import XCTest
 
 final class CacheTests: XCTestCase {
     private let sut = Cache<String, String>()
-    
+
     func testStoreDataOnTemporaryCache() {
         let test = "Test"
-        
+
         sut.saveData(test, forKey: test)
-        
+
         let data = sut.data(forKey: test)
         XCTAssertNotNil(data)
         XCTAssertEqual(data, test)

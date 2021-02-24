@@ -10,7 +10,7 @@ import Foundation
 
 public final class Entry<Value> {
     let value: Value
-    
+
     init(value: Value) {
         self.value = value
     }

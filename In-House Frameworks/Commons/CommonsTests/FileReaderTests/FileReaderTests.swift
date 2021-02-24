@@ -20,7 +20,7 @@ final class FileReaderTests: XCTestCase {
         let data = try sut.readDataForFile(withName: "Test", type: .JSON)
         XCTAssertNotNil(data)
     }
-    
+
     func testFileNotFound() {
         XCTAssertThrowsError(try sut.readDataForFile(withName: "FileNotFound", type: .JSON))
     }

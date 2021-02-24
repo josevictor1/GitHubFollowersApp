@@ -11,7 +11,7 @@ import UIKit
 
 final class NetworkingServiceMock: NetworkingServiceProtocol {
     var error: Error?
-    
+
     func downloadImage(fromURL url: String, completion: @escaping DownloadImageCompletion) -> URLSessionDataTask? {
         if let error = error {
             completion(.failure(error))
@@ -19,7 +19,7 @@ final class NetworkingServiceMock: NetworkingServiceProtocol {
             let data = UIImage.blackImage.pngData()
             completion(.success(data ?? Data()))
         }
-        
+
         return nil
     }
 }

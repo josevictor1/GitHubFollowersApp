@@ -9,20 +9,20 @@
 import Networking
 
 struct GetUserNetworkingRequest: Request {
-    
+
     let username: String
-    
+
     var method: HTTPMethod { .get }
-    
+
     var scheme: URIScheme { .https }
-    
+
     var host: String { "api.github.com" }
-    
+
     var path: String { "/users/\(username)" }
-    
+
     var body: Encodable?
-    
+
     var queryString: QueryString?
-    
+
     var header: Header?
 }

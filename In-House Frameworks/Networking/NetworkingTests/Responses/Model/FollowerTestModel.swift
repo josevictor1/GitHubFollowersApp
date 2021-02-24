@@ -21,7 +21,7 @@ struct FollowerTestModel: Decodable {
 
 extension FollowerTestModel: Equatable {
 
-    static func ==(_ lhs: FollowerTestModel, _ rhs: FollowerTestModel) -> Bool {
+    static func == (_ lhs: FollowerTestModel, _ rhs: FollowerTestModel) -> Bool {
         return lhs.login == rhs.login && lhs.id == rhs.id
     }
 }

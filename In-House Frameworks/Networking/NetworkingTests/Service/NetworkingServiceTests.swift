@@ -88,7 +88,7 @@ final class NetworkingServiceTests: XCTestCase {
             case .success(let response):
                 XCTAssertEqual(response.statusCode, 200)
             case .failure:
-                XCTFail()
+                XCTFail("Test should be succeded")
             }
             expectation.fulfill()
         }
@@ -105,7 +105,7 @@ final class NetworkingServiceTests: XCTestCase {
         _ = sut.send(request) { result in
             switch result {
             case .success:
-                XCTFail()
+                XCTFail("Test should fail")
             case .failure(let error):
                 XCTAssertNotNil(error)
             }

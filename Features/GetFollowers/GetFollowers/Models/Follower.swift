@@ -15,12 +15,12 @@ struct Follower {
 }
 
 extension Follower {
-    
+
     init(response: FollowerResponse) {
         self.login = response.login
         self.imageURL = response.avatarURL
     }
-    
+
     func contains(_ filter: String?) -> Bool {
         guard let filterText = filter else { return true }
         if filterText.isEmpty { return true }

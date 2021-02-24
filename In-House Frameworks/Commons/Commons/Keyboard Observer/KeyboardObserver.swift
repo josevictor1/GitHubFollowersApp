@@ -8,11 +8,10 @@
 
 import UIKit
 
-
 public protocol KeyboardObserverProtocol: AnyObject {
     /// The action called when keyboard appeared.
     var onKeyboardAppeared: ((_ notification: Notification) -> Void)? { get set }
-    
+
     /// The action called when keyoard disappeard.
     var onKeyboardDisappeared: ((_ notification: Notification) -> Void)? { get set }
 }

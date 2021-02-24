@@ -44,7 +44,7 @@ extension NetworkingResponse {
             return try decodeAsISO8601(D.self, data: data, decoder: decoder)
         }
     }
-    
+
     private func decodeAsISO8601<D: Decodable>(_ type: D.Type, data: Data, decoder: JSONDecoder) throws -> D {
         decoder.dateDecodingStrategy = .iso8601
         return try decoder.decode(D.self, from: data)

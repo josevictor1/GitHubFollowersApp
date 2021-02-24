@@ -26,8 +26,7 @@ final class RequestBuilderTests: XCTestCase {
         requestMock.urlPath = randomString
 
         XCTAssertThrowsError(try sut.createURLRequest(from: requestMock)) { error in
-            XCTAssertEqual(error as! NetworkingError, .invalidURL)
+            XCTAssertEqual((error as? NetworkingError) ?? .unknown, .invalidURL)
         }
     }
 }
-

@@ -11,7 +11,7 @@ import Foundation
 
 final class FollowersCoordinatorMock: FollowersCoordinator {
     var loginToBeShown = String()
-    
+
     func showInformation(for login: String) {
         self.loginToBeShown = login
     }

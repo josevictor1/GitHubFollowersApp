@@ -22,7 +22,7 @@ enum ImagesAssets: String {
             return nil
         }
     }
-    
+
     var image: UIImage {
         UIImage(named: self.rawValue) ?? UIImage()
     }

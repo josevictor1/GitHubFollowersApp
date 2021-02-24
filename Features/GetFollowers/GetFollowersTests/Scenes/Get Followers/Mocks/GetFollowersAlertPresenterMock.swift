@@ -17,7 +17,7 @@ final class GetFollowersAlertPresenterMock: GetFollowersAlertPresenterProtocol {
     func configureAlert(to presentingViewController: UIViewController) {
         viewController = presentingViewController
     }
-    
+
     func present(_ error: GetFollowersError) {
         presentedError = error
         onAlertPresented?(error)

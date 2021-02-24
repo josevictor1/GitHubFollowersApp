@@ -24,7 +24,7 @@ final class GetFollowersServiceMock: GetFollowersProvider {
             loadUserInformation(completion: completion)
         }
     }
-    
+
     private func loadUserInformation(completion: @escaping FollowersServiceCompletion) {
         do {
             let userInformation = try loadUserInformationFromJSON()
@@ -33,7 +33,7 @@ final class GetFollowersServiceMock: GetFollowersProvider {
             completion(.failure(.invalidResponse))
         }
     }
-    
+
     private func loadUserInformationFromJSON() throws -> UserNetworkingResponse {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601

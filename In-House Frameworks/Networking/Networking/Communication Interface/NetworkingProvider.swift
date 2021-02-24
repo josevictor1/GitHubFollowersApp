@@ -17,7 +17,7 @@ public final class NetworkingProvider {
 
     /// Creates an object of the type `NetworkigProvider`.
     public init() { }
-    
+
     /// Performs a networking request executing a completion call back at the end of this.
     /// - Parameters:
     ///   - url: The `URL` addres to request the data.
@@ -42,7 +42,8 @@ public final class NetworkingProvider {
     ///   - request: The request data.
     ///   - completion: The call back completion with a `Decodable` parameter.
     @discardableResult
-    public func performRequestWithDecodable<D: Decodable>(_ request: Request, completion: @escaping (Result<D, NetworkingError>) -> Void) -> URLSessionDataTask? {
+    public func performRequestWithDecodable<D: Decodable>(_ request: Request,
+                                                          completion: @escaping (Result<D, NetworkingError>) -> Void) -> URLSessionDataTask? {
         return service.send(request) { result in
             switch result {
             case .success(let response):

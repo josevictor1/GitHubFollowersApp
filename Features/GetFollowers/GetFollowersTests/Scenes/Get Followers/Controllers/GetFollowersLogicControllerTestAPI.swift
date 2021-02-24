@@ -15,7 +15,7 @@ final class GetFollowersLogicControllerTestAPI {
     private lazy var sut: GetFollowersLogicController = {
         GetFollowersLogicController(provider: followersProviderMock)
     }()
-    
+
     func executeFailedSearchForTestFollowers(with expectation: XCTestExpectation) {
         sut.fetchFollowers(for: "test") { [unowned self] result in
             switch result {
@@ -27,15 +27,15 @@ final class GetFollowersLogicControllerTestAPI {
             }
         }
     }
-    
+
     func prepareProviderWithInvalidUser() {
         followersProviderMock.error = .invalidUsername
     }
-    
+
     func prepareProviderWithFailedRequest() {
         followersProviderMock.error = .requestFail
     }
-    
+
     func executeSuccessfulSearchForTestFollowers(with expectation: XCTestExpectation) {
         sut.fetchFollowers(for: "test") { result in
             switch result {
@@ -47,15 +47,15 @@ final class GetFollowersLogicControllerTestAPI {
             }
         }
     }
-    
+
     func checkIfReceivedUserInformation() {
         XCTAssertNotNil(receivedUserInformation, "The received followers on success should not be nil")
     }
-    
+
     func checkIfRequestFailed() {
         XCTAssertEqual(receivedError, .requestFail, "The received error should be request fail")
     }
-    
+
     func checkIfUsernameIsInvalid() {
         XCTAssertEqual(receivedError, .invalidUsername, "The received error should be invalid usename")
     }

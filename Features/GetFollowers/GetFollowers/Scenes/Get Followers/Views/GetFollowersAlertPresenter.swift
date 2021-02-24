@@ -34,13 +34,13 @@ final class GetFollowersAlertPresenter: GetFollowersAlertPresenterProtocol {
         self.alertViewController = alertViewController
         present(alertViewController)
     }
-    
+
     private func makeAlertController(for error: GetFollowersError) -> UIViewController {
         CustomAlertController(alert: makeAlert(for: error)) { [unowned self]  in
             self.alertViewController?.dismiss(animated: true)
         }
     }
-    
+
     private func present(_ viewController: UIViewController) {
         if let presentingViewController = presentingViewController,
            let navigationController = presentingViewController.navigationController {

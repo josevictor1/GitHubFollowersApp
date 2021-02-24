@@ -52,7 +52,7 @@ public final class CustomAlertController: UIViewController {
         setUpAlertViewConstraints()
         setUpCostomAlertViewAction()
     }
-    
+
     private func setUpCostomAlertViewAction() {
         alertView.confirmButtonAction = { [unowned self] in
             dismiss(animated: true, completion: self.confirmButtonAction)

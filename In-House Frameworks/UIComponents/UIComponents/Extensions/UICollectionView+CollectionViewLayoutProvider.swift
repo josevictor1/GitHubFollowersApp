@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UICollectionViewLayout {
-    
+
     static func defaultCollectionViewLayout() -> UICollectionViewLayout {
         let provider = CollectionViewLayoutBuilder()
         return provider

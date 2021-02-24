@@ -16,12 +16,12 @@ protocol NetworkingServiceProtocol {
 final class NetworkingService: NetworkingServiceProtocol {
     private let session: URLSession
     private let requestProvider: URLRequestProvider
-    
+
     init(requestProvider: URLRequestProvider = URLRequestCreator(), session: URLSession = .shared) {
         self.session = session
         self.requestProvider = requestProvider
     }
-    
+
     func sendRequest(with url: String, completion: @escaping ResponseCompletion) -> URLSessionDataTask? {
         var dataTask: URLSessionDataTask?
         do {
@@ -32,7 +32,7 @@ final class NetworkingService: NetworkingServiceProtocol {
         }
         return dataTask
     }
-    
+
     func send(_ request: Request, completion: @escaping ResponseCompletion) -> URLSessionDataTask? {
         var dataTask: URLSessionDataTask?
         do {
@@ -43,7 +43,7 @@ final class NetworkingService: NetworkingServiceProtocol {
         }
         return dataTask
     }
-    
+
     private func executeTask(for request: URLRequest, completion: @escaping ResponseCompletion) -> URLSessionDataTask {
         let dataTask = session.dataTask(with: request) { [weak self] data, response, error in
             guard let self = self else { return completion(.failure(.unknown)) }
@@ -54,15 +54,18 @@ final class NetworkingService: NetworkingServiceProtocol {
         dataTask.resume()
         return dataTask
     }
-    
+
     private func handleNetworkingError(_ error: Error, completion: @escaping ResponseCompletion) {
         guard let networkingError = error as? NetworkingError else {
             return completion(.failure(.unknown))
         }
         completion(.failure(networkingError))
     }
-    
-    private func convertResponseToResult(_ data: Data?, _ request: URLRequest, _ response: HTTPURLResponse?, _ error: Error?) -> Result<NetworkingResponse, NetworkingError> {
+
+    private func convertResponseToResult(_ data: Data?,
+                                         _ request: URLRequest,
+                                         _ response: HTTPURLResponse?,
+                                         _ error: Error?) -> Result<NetworkingResponse, NetworkingError> {
         switch (response, data, error) {
         case let (.some(response), data, .none):
             let response = NetworkingResponse(data: data ?? Data(), request: request, response: response)
@@ -75,7 +78,7 @@ final class NetworkingService: NetworkingServiceProtocol {
             return .failure(.unknown)
         }
     }
-    
+
     private func convertErrorToNetworkingError(_ error: Error, with response: NetworkingResponse) -> NetworkingError {
         switch response.statusCode {
         case (300...399):

@@ -36,7 +36,7 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
         stackView.spacing = 13
         return stackView
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
@@ -73,7 +73,7 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(avatarImageView)
         stackView.addArrangedSubview(usernameLabel)
     }
-    
+
     func configure(with follower: Follower) {
         avatarImageView.loadImage(forULR: follower.imageURL, placeHolder: UIImage())
         usernameLabel.text = follower.login

@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UICollectionView {
-    
+
     final func registerCell<T: UICollectionViewCell>(_ cellClass: T.Type) {
         let identifier = String(describing: cellClass.self)
         register(cellClass.self, forCellWithReuseIdentifier: identifier)

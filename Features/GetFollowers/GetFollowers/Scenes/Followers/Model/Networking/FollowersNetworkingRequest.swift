@@ -13,26 +13,26 @@ struct FollowersNetworkingRequest: Request {
     let username: String
     let pageNumber: Int
     let resultsPerPage: Int
-    
+
     var method: HTTPMethod { .get }
-    
+
     var scheme: URIScheme { .https }
-    
+
     var host: String { "api.github.com" }
-    
+
     var path: String { "/users/\(username)/followers"}
-    
+
     var body: Encodable?
-    
+
     var queryString: QueryString? {
         [
             "page": "\(pageNumber)",
             "per_page": "\(resultsPerPage)"
         ]
     }
-    
+
     var header: Header?
-    
+
     init(username: String,
          pageNumber: Int,
          resultsPerPage: Int) {

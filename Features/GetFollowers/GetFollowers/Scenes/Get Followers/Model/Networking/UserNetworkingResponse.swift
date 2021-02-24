@@ -41,7 +41,7 @@ struct UserNetworkingResponse: Decodable {
     let following: Int
     let createdAt: Date
     let updatedAt: Date
-    
+
     enum CodingKeys: String, CodingKey {
         case login
         case id

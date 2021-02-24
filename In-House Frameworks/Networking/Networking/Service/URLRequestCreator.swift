@@ -19,7 +19,7 @@ final class URLRequestCreator: URLRequestProvider {
     init(encoder: JSONEncoder = JSONEncoder()) {
         self.encoder = encoder
     }
-    
+
     func createURLRequest(from request: Request) throws -> URLRequest {
         let endpoint = Endpoint(path: request.path,
                                 scheme: request.scheme,
@@ -36,7 +36,7 @@ final class URLRequestCreator: URLRequestProvider {
 
         return urlRequest
     }
-    
+
     private func encode(_ encodable: Encodable?) throws -> Data? {
         guard let encodable = encodable else { return nil }
         do {
@@ -46,7 +46,7 @@ final class URLRequestCreator: URLRequestProvider {
             throw NetworkingError.encoding(error)
         }
     }
-    
+
     func createURLRequest(fromString string: String) throws -> URLRequest {
         guard let url = URL(string: string) else { throw NetworkingError.invalidURL }
         return URLRequest(url: url)

@@ -23,11 +23,11 @@ final class GetFollowersView: UIView, GetFollowersViewProtocol {
     private let mediumPadding: CGFloat = 31
     private let largePadding: CGFloat = 62
     private let extraLargePadding: CGFloat = 200
-    
+
     weak var delegate: GetFollowersViewDelegate? {
         didSet { usernameTextField.delegate = delegate }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
@@ -107,24 +107,24 @@ final class GetFollowersView: UIView, GetFollowersViewProtocol {
         setUpConstraints()
         setUpBackgroundColor()
     }
-    
+
     private func setUpDismissOnTapOutOfTheKeyboard() {
         let gesture = UITapGestureRecognizer()
         gesture.addTarget(self, action: #selector(dismissKeyboard))
         addGestureRecognizer(gesture)
     }
-    
+
     @objc private func dismissKeyboard() {
         usernameTextField.resignFirstResponder()
     }
-    
+
     private func setUpConstraints() {
         setUpStackViewConstraints()
         setUpLogoImageViewConstraints()
         setUpUsernameTextFieldConstraints()
         setUpGetFollowersButtonConstraints()
     }
-    
+
     private func setUpBackgroundColor() {
         backgroundColor = .systemBackground
     }

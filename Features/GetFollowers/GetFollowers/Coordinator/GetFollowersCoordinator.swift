@@ -40,8 +40,8 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
         let viewController: FollowersViewController = .makeFollowers(with: userFollowers, coordinator: self)
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
+
     func navigateToUserInformation(with follower: String) {
-        
+
     }
 }

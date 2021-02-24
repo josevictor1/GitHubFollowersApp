@@ -16,23 +16,23 @@ final class FollowersLogicControllerMock: FollowersLogicControllerProtocol {
     var wereFollowersLoaded = false
     var wasNextPagedLoaded = false
     var wasSearchCanceled = false
-    
+
     func loadFollowers() {
         wereFollowersLoaded = true
     }
-    
+
     func loadNextPage() {
         wasNextPagedLoaded = true
     }
-    
+
     func searchFollower(withLogin login: String) {
         searchedLogin = login
     }
-    
+
     func selectFollower(atIndex index: Int) {
         self.selectedIndex = index
     }
-    
+
     func cancelSearch() {
         wasSearchCanceled = true
     }

@@ -19,38 +19,38 @@ final class FollowersEmptyBackgroundView: UIView {
         messageLabel.text = LocalizedStrings.followersNotFound.localized
         return messageLabel
     }()
-    
+
     private let backgroundImageView: UIImageView = {
         let backgroundImageView = UIImageView()
         backgroundImageView.contentMode = .bottomLeft
         backgroundImageView.image = ImagesAssets.emptyStateLogo.image
         return backgroundImageView
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setUp()
     }
-    
+
     private func setUp() {
         setUpLayout()
         setUpConstraints()
     }
-    
+
     private func setUpLayout() {
         backgroundColor = .systemBackground
     }
-    
+
     private func setUpConstraints() {
         setUpBackgroundImageViewConstraints()
         setUpMessageLabelConstraints()
     }
-    
+
     private func setUpMessageLabelConstraints() {
         let constraints = [
             messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 65),
@@ -59,13 +59,13 @@ final class FollowersEmptyBackgroundView: UIView {
         ]
         place(messageLabel, with: constraints)
     }
-    
+
     private func setUpBackgroundImageViewConstraints() {
         let constraints = [
             backgroundImageView.heightAnchor.constraint(equalToConstant: 436),
             backgroundImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 65),
             backgroundImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            backgroundImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ]
         place(backgroundImageView, with: constraints)
     }
