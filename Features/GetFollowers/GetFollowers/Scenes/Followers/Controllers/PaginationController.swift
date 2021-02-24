@@ -20,7 +20,7 @@ final class PaginationController: PaginationControllerProtocol {
     private let maximumPageSize: Int
     private(set) var currentPage: Int
     private(set) var currentPageSize: Int
-    var areThereLeftPages: Bool { numberOfItems != .zero }
+    var areThereLeftPages: Bool { numberOfItems > .zero }
 
     init(maximumPageSize: Int = 20, numberOfItems: Int, startPage: Int = 1) {
         self.maximumPageSize = maximumPageSize

@@ -128,7 +128,6 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
 
     private func searchFollowerLocally(withLogin login: String) {
         filteredFollowers = filterPlayers(withLogin: login)
-        guard !filteredFollowers.isEmpty else { return }
         viewController.showFollowers(filteredFollowers)
     }
 
