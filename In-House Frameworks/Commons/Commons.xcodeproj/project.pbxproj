@@ -19,6 +19,7 @@
 		1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F829E241865F600D25A68 /* UIViewController+.swift */; };
 		1AA1C3502470D40100A6D3C1 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA1C34F2470D40100A6D3C1 /* Core.framework */; };
 		1AA6175924808128005752CD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6175824808128005752CD /* String+.swift */; };
+		1ABABBE725E74AFC0071BC61 /* ImagesAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABABBE625E74AFC0071BC61 /* ImagesAssets.swift */; };
 		1AE20BF42407361C00867692 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE20BEA2407361C00867692 /* Commons.framework */; };
 		1AE20BFB2407361C00867692 /* Commons.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AE20BED2407361C00867692 /* Commons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AFCE03D254E2D8E00CCC878 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCE03C254E2D8E00CCC878 /* UICollectionView+.swift */; };
@@ -47,6 +48,7 @@
 		1A8F829E241865F600D25A68 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		1AA1C34F2470D40100A6D3C1 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA6175824808128005752CD /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		1ABABBE625E74AFC0071BC61 /* ImagesAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAssets.swift; sourceTree = "<group>"; };
 		1AE20BEA2407361C00867692 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20BED2407361C00867692 /* Commons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Commons.h; sourceTree = "<group>"; };
 		1AE20BEE2407361C00867692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,12 +93,12 @@
 			path = "Error Messages";
 			sourceTree = "<group>";
 		};
-		1A6A3949246A06E40097C195 /* Keyboard Observer */ = {
+		1A6A3949246A06E40097C195 /* KeyboardObserver */ = {
 			isa = PBXGroup;
 			children = (
 				1A6A394A246A06FD0097C195 /* KeyboardObserver.swift */,
 			);
-			path = "Keyboard Observer";
+			path = KeyboardObserver;
 			sourceTree = "<group>";
 		};
 		1A6A674425BA7E33004F1FC1 /* FileReader */ = {
@@ -143,6 +145,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1ABABBE525E74AD70071BC61 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1ABABBE625E74AFC0071BC61 /* ImagesAssets.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		1AD82C292460F0D7000CCD95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +184,9 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1ABABBE525E74AD70071BC61 /* Assets */,
 				1A6A674425BA7E33004F1FC1 /* FileReader */,
-				1A6A3949246A06E40097C195 /* Keyboard Observer */,
+				1A6A3949246A06E40097C195 /* KeyboardObserver */,
 				1AD82C292460F0D7000CCD95 /* Supporting Files */,
 				1AEFAEB2245D3DF400F64C17 /* Localizable Assets */,
 				1A1C2F00242E488D00096731 /* Error Messages */,
@@ -343,6 +354,7 @@
 				1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */,
 				1AA6175924808128005752CD /* String+.swift in Sources */,
 				1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */,
+				1ABABBE725E74AFC0071BC61 /* ImagesAssets.swift in Sources */,
 				1A6A394B246A06FD0097C195 /* KeyboardObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +515,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Commons/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,6 +546,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Commons/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -21,6 +21,35 @@ final class CollectionViewLayoutBuilder {
     private var contentInsets: NSDirectionalEdgeInsets = .zero
     private var groupSize: NSCollectionLayoutSize?
     private var groupLayout: NSCollectionLayoutGroup?
+    private var headerSize: NSCollectionLayoutSize?
+    private var footerSize: NSCollectionLayoutSize?
+
+    var layout: UICollectionViewCompositionalLayout? {
+        UICollectionViewCompositionalLayout { _, _ in
+            guard let group = self.groupLayout else { return nil }
+            let section = NSCollectionLayoutSection(group: group)
+            self.configureSupplementaryItems(on: section)
+            section.interGroupSpacing = self.interGroupSpacing
+            section.contentInsets = self.contentInsets
+            return section
+        }
+    }
+
+    private func configureSupplementaryItems(on section: NSCollectionLayoutSection) {
+        guard let headerSize = self.headerSize, let footerSize = self.footerSize else { return }
+
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: footerSize,
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
+        section.boundarySupplementaryItems = [sectionHeader, sectionFooter]
+    }
 
     func set(numberOfItems: Int) -> Self {
         self.numberOfItems = numberOfItems
@@ -37,16 +66,18 @@ final class CollectionViewLayoutBuilder {
         return self
     }
 
-    func setItemSize(withHeight height: CGFloat, andWidth width: CGFloat) -> Self {
-        let layoutSize = NSCollectionLayoutSize(widthDimension: .estimated(height),
-                                                heightDimension: .estimated(width))
+    func setItemSize(withHeight height: NSCollectionLayoutDimension,
+                     andWidth width: NSCollectionLayoutDimension) -> Self {
+        let layoutSize = NSCollectionLayoutSize(widthDimension: height,
+                                                heightDimension: width)
         itemLayout = NSCollectionLayoutItem(layoutSize: layoutSize)
         return self
     }
 
-    func setGroupSize(withHeight height: CGFloat, andFractionalWidth fractionalWidth: CGFloat) -> Self {
-        groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fractionalWidth),
-                                           heightDimension: .estimated(height))
+    func setGroupSize(withHeight height: NSCollectionLayoutDimension,
+                      andWidth width: NSCollectionLayoutDimension) -> Self {
+        groupSize = NSCollectionLayoutSize(widthDimension: width,
+                                           heightDimension: height)
         return self
     }
 
@@ -58,7 +89,14 @@ final class CollectionViewLayoutBuilder {
     func setOrientation(_ orientation: LayoutGroupOrientation) -> Self {
         guard let itemLayout = itemLayout,
               let groupSize = groupSize else { return self }
+
         switch orientation {
+        case .horizontal where numberOfItems == .zero:
+            groupLayout = .horizontal(layoutSize: groupSize,
+                                      subitems: [itemLayout])
+        case .vertical where numberOfItems == .zero:
+            groupLayout = .vertical(layoutSize: groupSize,
+                                    subitems: [itemLayout])
         case .horizontal:
             groupLayout = .horizontal(layoutSize: groupSize,
                                       subitem: itemLayout,
@@ -71,13 +109,17 @@ final class CollectionViewLayoutBuilder {
         return self
     }
 
-    var layout: UICollectionViewCompositionalLayout? {
-        UICollectionViewCompositionalLayout { _, _ in
-            guard let group = self.groupLayout else { return nil }
-            let section = NSCollectionLayoutSection(group: group)
-            section.interGroupSpacing = self.interGroupSpacing
-            section.contentInsets = self.contentInsets
-            return section
-        }
+    func setHeaderSize(withHeight height: NSCollectionLayoutDimension,
+                       andWidth width: NSCollectionLayoutDimension) -> Self {
+        headerSize = NSCollectionLayoutSize(widthDimension: width,
+                                            heightDimension: height)
+        return self
+    }
+
+    func setFooterSize(withHeight height: NSCollectionLayoutDimension,
+                       andWidth width: NSCollectionLayoutDimension) -> Self {
+        footerSize = NSCollectionLayoutSize(widthDimension: width,
+                                            heightDimension: height)
+        return self
     }
 }

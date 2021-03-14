@@ -10,12 +10,8 @@ import UIKit
 import UIComponents
 import Commons
 
-typealias FollowersCollectionViewDataSource = UICollectionViewDiffableDataSource<Section, Follower>
+typealias FollowersCollectionViewDataSource = UICollectionViewDiffableDataSource<FollowersSections, Follower>
 typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSource.CellProvider
-
-protocol FollowersCoordinator {
-    func showInformation(for login: String)
-}
 
 final class FollowersViewController: UICollectionViewController {
     var logicController: FollowersLogicControllerProtocol?
@@ -105,7 +101,7 @@ final class FollowersViewController: UICollectionViewController {
 
     private func setUpCollectionViewLayout() {
         collectionView = UICollectionView(frame: view.frame,
-                                          collectionViewLayout: .defaultCollectionViewLayout())
+                                          collectionViewLayout: .threeColumnLayout)
         collectionView.setContentOffset(.zero, animated: true)
     }
 
@@ -157,7 +153,7 @@ extension FollowersViewController: FollowersLogicControllerOutput {
     }
 
     private func reloadDataSource(with followers: [Follower]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+        var snapshot = NSDiffableDataSourceSnapshot<FollowersSections, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         dataSource.apply(snapshot)

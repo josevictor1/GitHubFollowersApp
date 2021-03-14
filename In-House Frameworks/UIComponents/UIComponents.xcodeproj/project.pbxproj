@@ -12,6 +12,8 @@
 		1A27FF2925DC4A6000D51479 /* CollectionViewLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A27FF2825DC4A6000D51479 /* CollectionViewLayoutBuilder.swift */; };
 		1A6A3950246A0D540097C195 /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A394F246A0D540097C195 /* UIViewController+ActivityIndicator.swift */; };
 		1A6A3952246A0D640097C195 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A3951246A0D640097C195 /* ActivityIndicatorView.swift */; };
+		1A9CA56C25EA95B200A98079 /* ContainerReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CA56B25EA95B200A98079 /* ContainerReusableView.swift */; };
+		1A9CA60725EB234500A98079 /* CollectionViewContainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CA60625EB234500A98079 /* CollectionViewContainter.swift */; };
 		1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07520242C11CB00DACD0A /* CustomAlertController.swift */; };
 		1AA07523242C124C00DACD0A /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07522242C124C00DACD0A /* CustomAlertView.swift */; };
 		1AA07528242C185800DACD0A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA07527242C185800DACD0A /* Alert.swift */; };
@@ -36,6 +38,8 @@
 		1A27FF2825DC4A6000D51479 /* CollectionViewLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutBuilder.swift; sourceTree = "<group>"; };
 		1A6A394F246A0D540097C195 /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		1A6A3951246A0D640097C195 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		1A9CA56B25EA95B200A98079 /* ContainerReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerReusableView.swift; sourceTree = "<group>"; };
+		1A9CA60625EB234500A98079 /* CollectionViewContainter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewContainter.swift; sourceTree = "<group>"; };
 		1AA07520242C11CB00DACD0A /* CustomAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertController.swift; sourceTree = "<group>"; };
 		1AA07522242C124C00DACD0A /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		1AA07527242C185800DACD0A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -85,12 +89,28 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		1A6A3953246A0D6B0097C195 /* Activity Indicator */ = {
+		1A6A3953246A0D6B0097C195 /* ActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
 				1A6A3951246A0D640097C195 /* ActivityIndicatorView.swift */,
 			);
-			path = "Activity Indicator";
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		1A9CA56425EA94DC00A98079 /* ContainerReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				1A9CA56B25EA95B200A98079 /* ContainerReusableView.swift */,
+			);
+			path = ContainerReusableView;
+			sourceTree = "<group>";
+		};
+		1A9CA60525EB230900A98079 /* CollectionViewContainter */ = {
+			isa = PBXGroup;
+			children = (
+				1A9CA60625EB234500A98079 /* CollectionViewContainter.swift */,
+			);
+			path = CollectionViewContainter;
 			sourceTree = "<group>";
 		};
 		1AD82C2B2460F182000CCD95 /* Supporting Files */ = {
@@ -143,20 +163,22 @@
 		1AF58A46242BC23700275733 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1A6A3953246A0D6B0097C195 /* Activity Indicator */,
-				1AF58A47242BC25800275733 /* Custom Alert Controller */,
+				1A9CA60525EB230900A98079 /* CollectionViewContainter */,
+				1A9CA56425EA94DC00A98079 /* ContainerReusableView */,
+				1A6A3953246A0D6B0097C195 /* ActivityIndicator */,
+				1AF58A47242BC25800275733 /* CustomAlertController */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		1AF58A47242BC25800275733 /* Custom Alert Controller */ = {
+		1AF58A47242BC25800275733 /* CustomAlertController */ = {
 			isa = PBXGroup;
 			children = (
 				1AA07520242C11CB00DACD0A /* CustomAlertController.swift */,
 				1AA07522242C124C00DACD0A /* CustomAlertView.swift */,
 				1AA07527242C185800DACD0A /* Alert.swift */,
 			);
-			path = "Custom Alert Controller";
+			path = CustomAlertController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,9 +314,11 @@
 			files = (
 				1A27FF2525DC4A4B00D51479 /* UICollectionView+CollectionViewLayoutProvider.swift in Sources */,
 				1AA07528242C185800DACD0A /* Alert.swift in Sources */,
+				1A9CA60725EB234500A98079 /* CollectionViewContainter.swift in Sources */,
 				1A6A3952246A0D640097C195 /* ActivityIndicatorView.swift in Sources */,
 				1A6A3950246A0D540097C195 /* UIViewController+ActivityIndicator.swift in Sources */,
 				1AA07523242C124C00DACD0A /* CustomAlertView.swift in Sources */,
+				1A9CA56C25EA95B200A98079 /* ContainerReusableView.swift in Sources */,
 				1A27FF2925DC4A6000D51479 /* CollectionViewLayoutBuilder.swift in Sources */,
 				1AA07521242C11CB00DACD0A /* CustomAlertController.swift in Sources */,
 			);

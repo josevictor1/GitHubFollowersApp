@@ -22,7 +22,6 @@ public protocol Coordinator: AnyObject {
 
     /// Start the coordinator flow doing all the necessary configuration.
     func start()
-
 }
 
 public extension Coordinator {

@@ -6,6 +6,7 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
+import Commons
 import ImageDownloader
 import UIKit
 
@@ -75,7 +76,8 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(with follower: Follower) {
-        avatarImageView.loadImage(forULR: follower.imageURL, placeHolder: UIImage())
+        avatarImageView.loadImage(forULR: follower.imageURL,
+                                  placeHolder: ImagesAssets.placeholder.image)
         usernameLabel.text = follower.login
     }
 }

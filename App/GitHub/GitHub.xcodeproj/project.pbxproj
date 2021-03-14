@@ -23,6 +23,9 @@
 		1AA35DBC25DC67CC0034DD84 /* ImageDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA35DB225DC67570034DD84 /* ImageDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA48123240A08E50086B6BB /* MainCoordinator.swift */; };
 		1AA48130240C71440086B6BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AA4812F240C71440086B6BB /* Localizable.strings */; };
+		1ABABB9825E7266F0071BC61 /* MainCoordinator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABABB9725E7266F0071BC61 /* MainCoordinator+.swift */; };
+		1ABABBBC25E733660071BC61 /* UserInformation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABABBBB25E733660071BC61 /* UserInformation.framework */; };
+		1ABABBBD25E733660071BC61 /* UserInformation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABABBBB25E733660071BC61 /* UserInformation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AE20C112407390200867692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C102407390200867692 /* AppDelegate.swift */; };
 		1AE20C132407390200867692 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE20C122407390200867692 /* SceneDelegate.swift */; };
 		1AE20C1A2407390300867692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE20C192407390300867692 /* Assets.xcassets */; };
@@ -57,6 +60,7 @@
 				1AA07526242C13E400DACD0A /* UIComponents.framework in Embed Frameworks */,
 				1AA35DAF25DC67220034DD84 /* GetFollowers.framework in Embed Frameworks */,
 				1AA35DBC25DC67CC0034DD84 /* ImageDownloader.framework in Embed Frameworks */,
+				1ABABBBD25E733660071BC61 /* UserInformation.framework in Embed Frameworks */,
 				1A51042B24296D4700B0130A /* Core.framework in Embed Frameworks */,
 				1A952910244D131900A5ED5D /* Networking.framework in Embed Frameworks */,
 			);
@@ -77,6 +81,8 @@
 		1AA4811B240A060C0086B6BB /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA48123240A08E50086B6BB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		1AA4812F240C71440086B6BB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1ABABB9725E7266F0071BC61 /* MainCoordinator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainCoordinator+.swift"; sourceTree = "<group>"; };
+		1ABABBBB25E733660071BC61 /* UserInformation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UserInformation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20C0D2407390200867692 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE20C102407390200867692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AE20C122407390200867692 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				1AA07525242C13E400DACD0A /* UIComponents.framework in Frameworks */,
 				1AA35DAE25DC67220034DD84 /* GetFollowers.framework in Frameworks */,
 				1AA35DBB25DC67CC0034DD84 /* ImageDownloader.framework in Frameworks */,
+				1ABABBBC25E733660071BC61 /* UserInformation.framework in Frameworks */,
 				1A51042A24296D4700B0130A /* Core.framework in Frameworks */,
 				1A95290F244D131900A5ED5D /* Networking.framework in Frameworks */,
 			);
@@ -123,6 +130,7 @@
 		1AA48119240A060C0086B6BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ABABBBB25E733660071BC61 /* UserInformation.framework */,
 				1AA35DB225DC67570034DD84 /* ImageDownloader.framework */,
 				1A95290E244D131900A5ED5D /* Networking.framework */,
 				1A1C2F51242E865700096731 /* GetFollowers.framework */,
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				1AA48123240A08E50086B6BB /* MainCoordinator.swift */,
+				1ABABB9725E7266F0071BC61 /* MainCoordinator+.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -367,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA48124240A08E50086B6BB /* MainCoordinator.swift in Sources */,
+				1ABABB9825E7266F0071BC61 /* MainCoordinator+.swift in Sources */,
 				1AE20C112407390200867692 /* AppDelegate.swift in Sources */,
 				1AE20C132407390200867692 /* SceneDelegate.swift in Sources */,
 			);
@@ -538,6 +548,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = "GitHub/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,6 +569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77FV36N6JL;
 				INFOPLIST_FILE = "GitHub/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

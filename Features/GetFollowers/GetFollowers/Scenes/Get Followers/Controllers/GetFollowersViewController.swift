@@ -46,7 +46,7 @@ final class GetFollowersViewController: UIViewController {
     private func fetchUser(with username: String?) {
         guard let username = username, !username.isEmpty else { return }
         startLoading()
-        logicController?.fetchFollowers(for: username) { [unowned self] result in
+        logicController?.fetchUserInformation(for: username) { [unowned self] result in
             switch result {
             case .success(let user):
                self.delegate?.showFollowers(user)

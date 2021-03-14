@@ -17,8 +17,8 @@ public final class CustomAlertController: UIViewController {
     // MARK: - Properties
 
     /// An instance of `CustomAlertView`.
-    private var alertView: CustomAlertView!
-    private var confirmButtonAction: Action?
+    private let alertView: CustomAlertView
+    private let confirmButtonAction: Action?
 
     // MARK: - Initializers
 
@@ -29,9 +29,13 @@ public final class CustomAlertController: UIViewController {
     ///   - alert: The alert cotaining a title, description and a button title.
     ///   - action: The action called when the allert button is tapped.
     public init(alert: Alert, action: Action? = nil) {
-        super.init(nibName: nil, bundle: nil)
-        confirmButtonAction = action
         alertView = CustomAlertView(alert: alert)
+        confirmButtonAction = action
+        super.init(nibName: nil, bundle: nil)
+        setUpPresentationStyle()
+    }
+    
+    private func setUpPresentationStyle() {
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
     }
@@ -44,16 +48,20 @@ public final class CustomAlertController: UIViewController {
 
     public override func loadView() {
         super.loadView()
+        setUpBackgroundColor()
+    }
+    
+    private func setUpBackgroundColor() {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
     }
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         setUpAlertViewConstraints()
-        setUpCostomAlertViewAction()
+        setUpCustomAlertViewAction()
     }
 
-    private func setUpCostomAlertViewAction() {
+    private func setUpCustomAlertViewAction() {
         alertView.confirmButtonAction = { [unowned self] in
             dismiss(animated: true, completion: self.confirmButtonAction)
         }
@@ -62,12 +70,14 @@ public final class CustomAlertController: UIViewController {
     // MARK: - Setup
 
     private func setUpAlertViewConstraints() {
-        let constraints = [alertView.centerYAnchor.constraint(equalTo: view.centerYAnchor,
-                                                              constant: -30),
-                           alertView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                              constant: 47),
-                           alertView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                               constant: -47)]
+        let constraints = [
+            alertView.centerYAnchor.constraint(equalTo: view.centerYAnchor,
+                                               constant: -30),
+            alertView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                               constant: 47),
+            alertView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                                constant: -47)
+        ]
         view.place(alertView, with: constraints)
     }
 }

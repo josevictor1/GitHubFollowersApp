@@ -11,7 +11,7 @@ import Foundation
 typealias GetFollowersResponseCompletion = ((Result<UserInformation, GetFollowersError>) -> Void)
 
 protocol GetFollowersLogicControllerProtocol {
-    func fetchFollowers(for user: String, completion: @escaping GetFollowersResponseCompletion)
+    func fetchUserInformation(for user: String, completion: @escaping GetFollowersResponseCompletion)
 }
 
 final class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
@@ -21,7 +21,7 @@ final class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
         self.provider = provider
     }
 
-    func fetchFollowers(for user: String, completion: @escaping GetFollowersResponseCompletion) {
+    func fetchUserInformation(for user: String, completion: @escaping GetFollowersResponseCompletion) {
         provider.requestUserInformation(for: user) { [weak self] result in
             switch result {
             case .success(let response):

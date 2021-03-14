@@ -8,12 +8,21 @@
 
 import UIKit
 import Core
+import UserInformation
 import GetFollowers
 
 final class MainCoordinator: Coordinator {
     var parent: Coordinator?
     var children: [Coordinator] = []
     private let tabBarController: UITabBarController
+
+    private var getFollowersNavigationController: UINavigationController {
+        let coordinator: GetFollowersCoordinator = .instantiate()
+        coordinator.navigationController?.tabBarItem = tabBarItem()
+        coordinator.delegate = self
+        addChildCoordinator(coordinator)
+        return coordinator.navigationController!
+    }
 
     init(window: UIWindow, tabBarController: UITabBarController = UITabBarController()) {
         self.tabBarController = tabBarController
@@ -22,7 +31,7 @@ final class MainCoordinator: Coordinator {
     }
 
     func start() {
-        tabBarController.viewControllers = [setUpSearchFollowersTab()]
+        tabBarController.viewControllers = [getFollowersNavigationController]
         tabBarController.tabBar.tintColor = .chateauGreen
     }
 
@@ -32,11 +41,17 @@ final class MainCoordinator: Coordinator {
                      tag: .zero)
     }
 
-    private func setUpSearchFollowersTab() -> UIViewController {
-        let coordinator: GetFollowersCoordinator = .instantiate()
-        coordinator.navigationController?.tabBarItem = tabBarItem()
-        children.append(coordinator)
+    func navigateToUserInformation(withLogin login: String) {
+        let coordinator: UserInformationCoordinator = .instantiate()
+        addChildCoordinator(coordinator)
+        coordinator.navigateToUserInformation(withLogin: login)
+        guard let navigationController = coordinator.navigationController else { return }
+        tabBarController.present(navigationController, animated: true)
+    }
+
+    private func addChildCoordinator(_ coordinator: Coordinator) {
+        coordinator.children.append(coordinator)
+        coordinator.parent = self
         coordinator.start()
-        return coordinator.navigationController!
     }
 }

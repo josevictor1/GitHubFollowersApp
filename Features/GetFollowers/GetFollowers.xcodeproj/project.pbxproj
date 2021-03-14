@@ -49,7 +49,7 @@
 		1ABAA93325E45C4400981313 /* FollowersLogicControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAA93225E45C4400981313 /* FollowersLogicControllerMock.swift */; };
 		1ABAA93725E45F2C00981313 /* FollowersCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAA93625E45F2C00981313 /* FollowersCoordinatorMock.swift */; };
 		1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */; };
-		1ABEB91A2548696E00B04478 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* Section.swift */; };
+		1ABEB91A2548696E00B04478 /* FollowersSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* FollowersSections.swift */; };
 		1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB91F254869E000B04478 /* Follower+Hashble.swift */; };
 		1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */; };
 		1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */; };
@@ -57,7 +57,6 @@
 		1AE42A0A25E5E49E00BB1505 /* PaginationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE42A0925E5E49E00BB1505 /* PaginationControllerTests.swift */; };
 		1AE42A0E25E5E74D00BB1505 /* PaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE42A0D25E5E74D00BB1505 /* PaginationController.swift */; };
 		1AED2CFA247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED2CF9247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift */; };
-		1AEFAEB9245F7BAB00F64C17 /* ImagesAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */; };
 		1AEFAEBB245F7BC600F64C17 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFAEBA245F7BC600F64C17 /* LocalizedStrings.swift */; };
 		1AFCE0472550A49F00CCC878 /* FollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCE0462550A49F00CCC878 /* FollowersService.swift */; };
 		1AFEF7CB25B11758001DC70B /* GetFollowersViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFEF7CA25B11758001DC70B /* GetFollowersViewMock.swift */; };
@@ -120,7 +119,7 @@
 		1ABAA93225E45C4400981313 /* FollowersLogicControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicControllerMock.swift; sourceTree = "<group>"; };
 		1ABAA93625E45F2C00981313 /* FollowersCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCoordinatorMock.swift; sourceTree = "<group>"; };
 		1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersEmptyBackgroundView.swift; sourceTree = "<group>"; };
-		1ABEB9192548696E00B04478 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		1ABEB9192548696E00B04478 /* FollowersSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersSections.swift; sourceTree = "<group>"; };
 		1ABEB91F254869E000B04478 /* Follower+Hashble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follower+Hashble.swift"; sourceTree = "<group>"; };
 		1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicController.swift; sourceTree = "<group>"; };
@@ -128,7 +127,6 @@
 		1AE42A0925E5E49E00BB1505 /* PaginationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationControllerTests.swift; sourceTree = "<group>"; };
 		1AE42A0D25E5E74D00BB1505 /* PaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationController.swift; sourceTree = "<group>"; };
 		1AED2CF9247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFollowersCoordinator+SearchCoordinator.swift"; sourceTree = "<group>"; };
-		1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAssets.swift; sourceTree = "<group>"; };
 		1AEFAEBA245F7BC600F64C17 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		1AFCE0462550A49F00CCC878 /* FollowersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersService.swift; sourceTree = "<group>"; };
 		1AFEF7CA25B11758001DC70B /* GetFollowersViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewMock.swift; sourceTree = "<group>"; };
@@ -438,7 +436,6 @@
 		1AEFAEB7245F7B6800F64C17 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				1AEFAEB8245F7BAB00F64C17 /* ImagesAssets.swift */,
 				1AEFAEBA245F7BC600F64C17 /* LocalizedStrings.swift */,
 			);
 			path = Assets;
@@ -455,7 +452,7 @@
 		1AFCE0452550A47700CCC878 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				1ABEB9192548696E00B04478 /* Section.swift */,
+				1ABEB9192548696E00B04478 /* FollowersSections.swift */,
 				1ABEB91F254869E000B04478 /* Follower+Hashble.swift */,
 				1A6A67B825BBB9EB004F1FC1 /* FollowersRequest.swift */,
 			);
@@ -612,8 +609,7 @@
 				1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */,
 				1A5174EC255B5C4C006ACB76 /* GetUserNetworkingRequest.swift in Sources */,
 				1AFCE0472550A49F00CCC878 /* FollowersService.swift in Sources */,
-				1AEFAEB9245F7BAB00F64C17 /* ImagesAssets.swift in Sources */,
-				1ABEB91A2548696E00B04478 /* Section.swift in Sources */,
+				1ABEB91A2548696E00B04478 /* FollowersSections.swift in Sources */,
 				1A94FD1F243378710095932A /* GetFollowersService.swift in Sources */,
 				1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */,
 				1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */,
@@ -803,6 +799,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/GetFollowers/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -827,6 +824,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/GetFollowers/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

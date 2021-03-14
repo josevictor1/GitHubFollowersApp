@@ -11,10 +11,15 @@ import Commons
 import Core
 import UIKit
 
+public protocol GetFollowersCoordinatorDelegate: AnyObject {
+    func getFollowersDidOpenUserInformation(withLogin login: String)
+}
+
 public final class GetFollowersCoordinator: NavigationCoordinator {
     public var parent: Coordinator?
     public var children: [Coordinator] = []
     public var navigationController: UINavigationController?
+    public weak var delegate: GetFollowersCoordinatorDelegate?
 
     public required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -42,6 +47,6 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
     }
 
     func navigateToUserInformation(with follower: String) {
-
+        delegate?.getFollowersDidOpenUserInformation(withLogin: follower)
     }
 }

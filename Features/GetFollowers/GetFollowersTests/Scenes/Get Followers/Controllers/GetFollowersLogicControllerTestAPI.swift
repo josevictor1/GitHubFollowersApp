@@ -17,7 +17,7 @@ final class GetFollowersLogicControllerTestAPI {
     }()
 
     func executeFailedSearchForTestFollowers(with expectation: XCTestExpectation) {
-        sut.fetchFollowers(for: "test") { [unowned self] result in
+        sut.fetchUserInformation(for: "test") { [unowned self] result in
             switch result {
             case .success:
                 XCTFail("The getFollowers method should return with error")
@@ -37,7 +37,7 @@ final class GetFollowersLogicControllerTestAPI {
     }
 
     func executeSuccessfulSearchForTestFollowers(with expectation: XCTestExpectation) {
-        sut.fetchFollowers(for: "test") { result in
+        sut.fetchUserInformation(for: "test") { result in
             switch result {
             case .success(let followers):
                 expectation.fulfill()

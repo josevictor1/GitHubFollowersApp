@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Section: CaseIterable {
+enum FollowersSections: CaseIterable {
     case main
 }

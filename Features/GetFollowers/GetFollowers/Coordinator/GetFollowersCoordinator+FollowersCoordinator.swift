@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol FollowersCoordinator {
+    func showInformation(for login: String)
+}
+
 extension GetFollowersCoordinator: FollowersCoordinator {
 
     func showInformation(for login: String) {

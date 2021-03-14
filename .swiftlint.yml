@@ -5,6 +5,8 @@ excluded:
 - Carthage
 - Pods
 - SwiftLint/Common/3rdPartyLib
+disabled_rules:
+- trailing_whitespace
 line_length:
     warning: 160
     error: 200
