@@ -42,11 +42,17 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
     }
 
     func navigateToFollowers(with userFollowers: UserInformation) {
-        let viewController: FollowersViewController = .makeFollowers(with: userFollowers, coordinator: self)
+        let viewController: FollowersCollectionViewController = .makeFollowers(with: userFollowers, coordinator: self)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
     func navigateToUserInformation(with follower: String) {
         delegate?.getFollowersDidOpenUserInformation(withLogin: follower)
+    }
+    
+    func reloadFollowers(withLogin login: String) {
+        let viewController = navigationController?.topViewController
+        guard let followersViewController = viewController as? FollowersCollectionViewController else { return }
+        
     }
 }

@@ -15,10 +15,10 @@
       location = "group:Features"
       name = "Features">
       <FileRef
-         location = "group:UserInformation/UserInformation.xcodeproj">
+         location = "group:GetFollowers/GetFollowers.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:GetFollowers/GetFollowers.xcodeproj">
+         location = "group:UserInformation/UserInformation.xcodeproj">
       </FileRef>
    </Group>
    <Group
@@ -38,6 +38,13 @@
       </FileRef>
       <FileRef
          location = "group:Commons/Commons.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Services"
+      name = "Services">
+      <FileRef
+         location = "group:GitHubServices/GitHubServices.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>

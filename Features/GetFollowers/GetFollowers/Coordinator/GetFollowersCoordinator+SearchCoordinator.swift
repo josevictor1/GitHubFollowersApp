@@ -10,7 +10,7 @@ import Foundation
 
 extension GetFollowersCoordinator: SearchCoordinator {
 
-    func showFollowers(_ userFollowers: UserInformation) {
+    func showUserInformation(_ userFollowers: UserInformation) {
         navigateToFollowers(with: userFollowers)
     }
 }

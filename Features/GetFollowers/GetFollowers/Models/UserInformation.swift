@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GitHubServices
 
 struct UserInformation {
     let login: String
@@ -15,7 +16,7 @@ struct UserInformation {
 
 extension UserInformation {
 
-    init?(userNetworkingResponse: UserNetworkingResponse) {
+    init?(userNetworkingResponse: UserInformationNetworkingResponse) {
         guard let login = userNetworkingResponse.login else { return nil }
         self.init(login: login,
                   numberOfFollowers: userNetworkingResponse.followers)

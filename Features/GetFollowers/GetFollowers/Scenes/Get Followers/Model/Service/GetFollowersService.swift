@@ -1,35 +1,45 @@
 //
-//  GetFollowersService.swift
+//  UserInformationService.swift
 //  GetFollowers
 //
-//  Created by José Victor Pereira Costa on 31/03/20.
-//  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
+//  Created by José Victor Pereira Costa on 22/03/21.
+//  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import Commons
+import GitHubServices
 import Networking
 
-typealias FollowersServiceCompletion = (Result<UserNetworkingResponse, GetFollowersError>) -> Void
-typealias FollowersServiceResult = Result<UserNetworkingResponse, NetworkingError>
+typealias GetFollowersResponseCompletion = (Result<UserInformation, GetFollowersError>) -> Void
 
-protocol GetFollowersProvider {
-    func requestUserInformation(for username: String, completion: @escaping FollowersServiceCompletion)
+protocol GetFollowersServiceProvider {
+    func fetchUserInformation(for user: String, completion: @escaping GetFollowersResponseCompletion)
 }
 
-final class GetFollowersService: GetFollowersProvider {
-
-    private let networkingProvider: NetworkingProvider
-
-    init(networkingProvider: NetworkingProvider = NetworkingProvider()) {
-        self.networkingProvider = networkingProvider
+final class GetFollowersProvider: GetFollowersServiceProvider {
+    
+    private let userInformationService: UserInformationService
+    
+    init(userInformationService: UserInformationService = UserInformationNetworkingService()) {
+        self.userInformationService = userInformationService
     }
-
-    func requestUserInformation(for username: String, completion: @escaping FollowersServiceCompletion) {
-        let networkingRequest = GetUserNetworkingRequest(username: username)
-        networkingProvider.performRequestWithDecodable(networkingRequest) { (result: FollowersServiceResult) in
-            DispatchQueue.main.async {
-                completion(result.mapError(GetFollowersError.init))
+    
+    func fetchUserInformation(for user: String, completion: @escaping GetFollowersResponseCompletion) {
+        userInformationService.requestUserInformation(for: user) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.handleSuccess(with: response, completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
+    }
+    
+    private func handleSuccess(with response: UserInformationNetworkingResponse,
+                               completion: GetFollowersResponseCompletion) {
+        guard let userInformation = UserInformation(userNetworkingResponse: response) else {
+            return completion(.failure(.invalidUsername))
+        }
+        completion(.success(userInformation))
     }
 }

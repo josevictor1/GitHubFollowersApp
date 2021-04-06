@@ -3,7 +3,9 @@
 //  UserInformation
 //
 //  Created by José Victor Pereira Costa on 25/02/21.
+//  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
+
 import ImageDownloader
 import Commons
 import UIKit
@@ -49,6 +51,7 @@ final class UserDetailsView: UIView {
         contentStackView.distribution = .fill
         contentStackView.alignment = .leading
         contentStackView.axis = .horizontal
+        contentStackView.spacing = 16
         return contentStackView
     }()
 
@@ -103,9 +106,10 @@ final class UserDetailsView: UIView {
 
     func configure(with userDetail: UserDetails) {
         avatarImageView.loadImage(forULR: userDetail.avatarURL,
-                                  placeHolder: ImagesAssets.placeholder.image)
+                                  placeHolder: ImageAssets.placeholder.image)
         loginLabel.text = userDetail.login
         nameLabel.text = userDetail.name
         userLocationView.location = userDetail.location
+        userLocationView.isHidden = userDetail.location.isEmpty
     }
 }

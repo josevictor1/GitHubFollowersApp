@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  UIComponents
+
+  Created by José Victor Pereira Costa on 03/04/21.
+  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
+*/
+
+"somethingWentWrong" = "Something went wrong";
+"ok" = "Ok";

@@ -7,17 +7,20 @@
 //
 
 import Commons
+import GitHubServices
+import Networking
+
 @testable import GetFollowers
 
-final class GetFollowersServiceMock: GetFollowersProvider {
-    var error: GetFollowersError?
+final class UserInformationServiceMock: UserInformationService {
+    var error: NetworkingError?
     private let fileReader: FileReader = {
-        let bundle = Bundle(for: GetFollowersServiceMock.self)
+        let bundle = Bundle(for: UserInformationServiceMock.self)
         let fileReader = FileReader(bundle: bundle)
         return fileReader
     }()
 
-    func requestUserInformation(for username: String, completion: @escaping FollowersServiceCompletion) {
+    func requestUserInformation(for username: String, completion: @escaping UserInformationServiceCompletion) {
         if let error = error {
             completion(.failure(error))
         } else {
@@ -25,19 +28,20 @@ final class GetFollowersServiceMock: GetFollowersProvider {
         }
     }
 
-    private func loadUserInformation(completion: @escaping FollowersServiceCompletion) {
+    private func loadUserInformation(completion: @escaping UserInformationServiceCompletion) {
         do {
             let userInformation = try loadUserInformationFromJSON()
             completion(.success(userInformation))
         } catch {
-            completion(.failure(.invalidResponse))
+            let error = NSError()
+            completion(.failure(.client(error, nil)))
         }
     }
 
-    private func loadUserInformationFromJSON() throws -> UserNetworkingResponse {
+    private func loadUserInformationFromJSON() throws -> UserInformationNetworkingResponse {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         let fileData = try fileReader.readDataForFile(withName: "UserInformation", type: .JSON)
-        return try decoder.decode(UserNetworkingResponse.self, from: fileData)
+        return try decoder.decode(UserInformationNetworkingResponse.self, from: fileData)
     }
 }

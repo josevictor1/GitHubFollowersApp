@@ -15,18 +15,6 @@ final class CustomAlertView: UIView {
     
     var confirmButtonAction: Action?
     
-    // MARK: - Initializer
-    
-    init(alert: Alert, action: Action? = nil) {
-        super.init(frame: .zero)
-        setUp(alert)
-        confirmButtonAction = action
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Subviews
     
     private let titleLabel: UILabel = {
@@ -68,6 +56,18 @@ final class CustomAlertView: UIView {
         stackView.spacing = 20
         return stackView
     }()
+    
+    // MARK: - Initializer
+    
+    init(alert: Alert, action: Action? = nil) {
+        super.init(frame: .zero)
+        setUp(alert)
+        confirmButtonAction = action
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Actions
     

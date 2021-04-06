@@ -1,5 +1,5 @@
 //
-//  ImagesAssets.swift
+//  ImageAssets.swift
 //  Commons
 //
 //  Created by José Victor Pereira Costa on 25/02/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum ImagesAssets: String {
+public enum ImageAssets: String {
     case getFollowersLogo
     case emptyStateLogo
     case companySateLogo

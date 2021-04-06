@@ -9,6 +9,6 @@
 import UIKit
 
 public extension UIColor {
-
     static let chateauGreen = UIColor(red: 45/255, green: 186/255, blue: 78/255, alpha: 1)
+    static let neutralBlackC = UIColor(red: 43/255, green: 49/255, blue: 55/255, alpha: 1)
 }

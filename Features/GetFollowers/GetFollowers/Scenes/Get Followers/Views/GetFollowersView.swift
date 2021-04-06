@@ -38,7 +38,7 @@ final class GetFollowersView: UIView, GetFollowersViewProtocol {
     }
 
     private let logoImageView: UIImageView = {
-        let imageAsset: ImagesAssets = .getFollowersLogo
+        let imageAsset: ImageAssets = .getFollowersLogo
         let image = UIImage(named: imageAsset.rawValue)
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit

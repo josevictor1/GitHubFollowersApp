@@ -11,15 +11,11 @@
 		1A1C2F29242E859100096731 /* GetFollowers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F1F242E859100096731 /* GetFollowers.framework */; };
 		1A1C2F30242E859100096731 /* GetFollowers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1C2F22242E859100096731 /* GetFollowers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A1C2F49242E85F200096731 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F3F242E85F200096731 /* Follower.swift */; };
-		1A1C2F4A242E85F200096731 /* GetFollowersError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F40242E85F200096731 /* GetFollowersError.swift */; };
 		1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F42242E85F200096731 /* GetFollowersLogicController.swift */; };
 		1A1C2F4C242E85F200096731 /* GetFollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F43242E85F200096731 /* GetFollowersViewController.swift */; };
 		1A1C2F4D242E85F200096731 /* GetFollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F45242E85F200096731 /* GetFollowersView.swift */; };
-		1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */; };
 		1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */; };
 		1A4247D02550B104007E42C5 /* FollowersNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4247CF2550B104007E42C5 /* FollowersNetworkingRequest.swift */; };
-		1A5174E8255B5A48006ACB76 /* UserNetworkingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174E7255B5A48006ACB76 /* UserNetworkingResponse.swift */; };
-		1A5174EC255B5C4C006ACB76 /* GetUserNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */; };
 		1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6A3954246A0EFE0097C195 /* Commons.framework */; };
 		1A6A673925BA2F06004F1FC1 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A673825BA2F06004F1FC1 /* UserInformation.swift */; };
 		1A6A675D25BA84EA004F1FC1 /* UserInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6A675C25BA84EA004F1FC1 /* UserInformation.json */; };
@@ -28,13 +24,11 @@
 		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
 		1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */; };
 		1A94FD1D24336A230095932A /* GetFollowersLogicControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1C24336A230095932A /* GetFollowersLogicControllerTests.swift */; };
-		1A94FD1F243378710095932A /* GetFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD1E243378710095932A /* GetFollowersService.swift */; };
 		1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD252433936C0095932A /* FollowerResponse.swift */; };
 		1A94FD4C2433CCD30095932A /* GetFollowersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD4B2433CCD30095932A /* GetFollowersServiceMock.swift */; };
 		1A95290B244D122B00A5ED5D /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A95290A244D122B00A5ED5D /* Networking.framework */; };
-		1A952913244D385600A5ED5D /* GetFollowersNetworkingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */; };
 		1AA35DB525DC67630034DD84 /* ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */; };
-		1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */; };
+		1AAD12B9247AAF4700C563F9 /* FollowersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD12B8247AAF4700C563F9 /* FollowersCollectionViewController.swift */; };
 		1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB702562443CDFF006F4CDD /* UIComponents.framework */; };
 		1AB7CBE325E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBE225E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift */; };
 		1AB7CBF525E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */; };
@@ -54,6 +48,9 @@
 		1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */; };
 		1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */; };
 		1AD82C282460DE00000CCD95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD82C272460DE00000CCD95 /* Localizable.strings */; };
+		1AE116B62606858E00B464E7 /* GitHubServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE116B52606858E00B464E7 /* GitHubServices.framework */; };
+		1AE116C326090DC800B464E7 /* GetFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE116C226090DC800B464E7 /* GetFollowersService.swift */; };
+		1AE116C82609384D00B464E7 /* GetFollowersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE116C72609384D00B464E7 /* GetFollowersServiceTests.swift */; };
 		1AE42A0A25E5E49E00BB1505 /* PaginationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE42A0925E5E49E00BB1505 /* PaginationControllerTests.swift */; };
 		1AE42A0E25E5E74D00BB1505 /* PaginationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE42A0D25E5E74D00BB1505 /* PaginationController.swift */; };
 		1AED2CFA247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AED2CF9247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift */; };
@@ -82,15 +79,11 @@
 		1A1C2F28242E859100096731 /* GetFollowersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetFollowersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1C2F2F242E859100096731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A1C2F3F242E85F200096731 /* Follower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
-		1A1C2F40242E85F200096731 /* GetFollowersError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersError.swift; sourceTree = "<group>"; };
 		1A1C2F42242E85F200096731 /* GetFollowersLogicController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicController.swift; sourceTree = "<group>"; };
 		1A1C2F43242E85F200096731 /* GetFollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersViewController.swift; sourceTree = "<group>"; };
 		1A1C2F45242E85F200096731 /* GetFollowersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersView.swift; sourceTree = "<group>"; };
-		1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenter.swift; sourceTree = "<group>"; };
 		1A1C2F4F242E863400096731 /* GetFollowersCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowersCoordinator.swift; sourceTree = "<group>"; };
 		1A4247CF2550B104007E42C5 /* FollowersNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersNetworkingRequest.swift; sourceTree = "<group>"; };
-		1A5174E7255B5A48006ACB76 /* UserNetworkingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkingResponse.swift; sourceTree = "<group>"; };
-		1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserNetworkingRequest.swift; sourceTree = "<group>"; };
 		1A6A3954246A0EFE0097C195 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6A673825BA2F06004F1FC1 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		1A6A675C25BA84EA004F1FC1 /* UserInformation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserInformation.json; sourceTree = "<group>"; };
@@ -99,12 +92,10 @@
 		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
 		1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerDelegateMock.swift; sourceTree = "<group>"; };
 		1A94FD1C24336A230095932A /* GetFollowersLogicControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerTests.swift; sourceTree = "<group>"; };
-		1A94FD1E243378710095932A /* GetFollowersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersService.swift; sourceTree = "<group>"; };
 		1A94FD252433936C0095932A /* FollowerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerResponse.swift; sourceTree = "<group>"; };
 		1A94FD4B2433CCD30095932A /* GetFollowersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersServiceMock.swift; sourceTree = "<group>"; };
 		1A95290A244D122B00A5ED5D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersNetworkingRequest.swift; sourceTree = "<group>"; };
-		1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
+		1AAD12B8247AAF4700C563F9 /* FollowersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCollectionViewController.swift; sourceTree = "<group>"; };
 		1AB702562443CDFF006F4CDD /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB7CBE225E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerTestAPI.swift; sourceTree = "<group>"; };
 		1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerTestAPI.swift; sourceTree = "<group>"; };
@@ -124,6 +115,9 @@
 		1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicController.swift; sourceTree = "<group>"; };
 		1AD82C272460DE00000CCD95 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1AE116B52606858E00B464E7 /* GitHubServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GitHubServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE116C226090DC800B464E7 /* GetFollowersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersService.swift; sourceTree = "<group>"; };
+		1AE116C72609384D00B464E7 /* GetFollowersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersServiceTests.swift; sourceTree = "<group>"; };
 		1AE42A0925E5E49E00BB1505 /* PaginationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationControllerTests.swift; sourceTree = "<group>"; };
 		1AE42A0D25E5E74D00BB1505 /* PaginationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationController.swift; sourceTree = "<group>"; };
 		1AED2CF9247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFollowersCoordinator+SearchCoordinator.swift"; sourceTree = "<group>"; };
@@ -140,6 +134,7 @@
 			files = (
 				1A95290B244D122B00A5ED5D /* Networking.framework in Frameworks */,
 				1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */,
+				1AE116B62606858E00B464E7 /* GitHubServices.framework in Frameworks */,
 				1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */,
 				1AA35DB525DC67630034DD84 /* ImageDownloader.framework in Frameworks */,
 			);
@@ -247,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				1A1C2F45242E85F200096731 /* GetFollowersView.swift */,
-				1A1C2F46242E85F200096731 /* GetFollowersAlertPresenter.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				1A1C2F3F242E85F200096731 /* Follower.swift */,
-				1A1C2F40242E85F200096731 /* GetFollowersError.swift */,
 				1A6A673825BA2F06004F1FC1 /* UserInformation.swift */,
 			);
 			path = Models;
@@ -290,6 +283,7 @@
 		1A94FD0B243169330095932A /* Get Followers */ = {
 			isa = PBXGroup;
 			children = (
+				1AE116C62609383700B464E7 /* Service */,
 				1A6A675B25BA84BA004F1FC1 /* JSON */,
 				1A94FD0F24326FC40095932A /* Mocks */,
 				1A94FD1A24329E630095932A /* Controllers */,
@@ -324,9 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				1A94FD252433936C0095932A /* FollowerResponse.swift */,
-				1A952912244D385600A5ED5D /* GetFollowersNetworkingRequest.swift */,
-				1A5174E7255B5A48006ACB76 /* UserNetworkingResponse.swift */,
-				1A5174EB255B5C4C006ACB76 /* GetUserNetworkingRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -334,6 +325,7 @@
 		1AB702552443CDFF006F4CDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AE116B52606858E00B464E7 /* GitHubServices.framework */,
 				1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */,
 				1A6A3954246A0EFE0097C195 /* Commons.framework */,
 				1A95290A244D122B00A5ED5D /* Networking.framework */,
@@ -397,9 +389,16 @@
 			children = (
 				1A1C2F22242E859100096731 /* GetFollowers.h */,
 				1A1C2F23242E859100096731 /* Info.plist */,
-				1AD82C272460DE00000CCD95 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AE116C62609383700B464E7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1AE116C72609384D00B464E7 /* GetFollowersServiceTests.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		1AED2CF52479FD67000BC13A /* Followers */ = {
@@ -415,7 +414,7 @@
 		1AED2CF62479FD83000BC13A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1AAD12B8247AAF4700C563F9 /* FollowersViewController.swift */,
+				1AAD12B8247AAF4700C563F9 /* FollowersCollectionViewController.swift */,
 				1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */,
 				1A02EDE22548B05400C86CCD /* FollowersCollectionViewConfigurator.swift */,
 				1AE42A0D25E5E74D00BB1505 /* PaginationController.swift */,
@@ -437,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				1AEFAEBA245F7BC600F64C17 /* LocalizedStrings.swift */,
+				1AD82C272460DE00000CCD95 /* Localizable.strings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -444,7 +444,7 @@
 		1AFCE0442550A45E00CCC878 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				1A94FD1E243378710095932A /* GetFollowersService.swift */,
+				1AE116C226090DC800B464E7 /* GetFollowersService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -603,27 +603,22 @@
 				1AEFAEBB245F7BC600F64C17 /* LocalizedStrings.swift in Sources */,
 				1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */,
 				1A4247D02550B104007E42C5 /* FollowersNetworkingRequest.swift in Sources */,
-				1A1C2F4E242E85F200096731 /* GetFollowersAlertPresenter.swift in Sources */,
 				1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */,
-				1A952913244D385600A5ED5D /* GetFollowersNetworkingRequest.swift in Sources */,
+				1AE116C326090DC800B464E7 /* GetFollowersService.swift in Sources */,
 				1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */,
-				1A5174EC255B5C4C006ACB76 /* GetUserNetworkingRequest.swift in Sources */,
 				1AFCE0472550A49F00CCC878 /* FollowersService.swift in Sources */,
 				1ABEB91A2548696E00B04478 /* FollowersSections.swift in Sources */,
-				1A94FD1F243378710095932A /* GetFollowersService.swift in Sources */,
 				1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */,
 				1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */,
-				1A5174E8255B5A48006ACB76 /* UserNetworkingResponse.swift in Sources */,
 				1AB7CC0A25E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift in Sources */,
 				1AED2CFA247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift in Sources */,
 				1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */,
-				1A1C2F4A242E85F200096731 /* GetFollowersError.swift in Sources */,
 				1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */,
 				1A1C2F49242E85F200096731 /* Follower.swift in Sources */,
 				1AE42A0E25E5E74D00BB1505 /* PaginationController.swift in Sources */,
 				1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */,
 				1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */,
-				1AAD12B9247AAF4700C563F9 /* FollowersViewController.swift in Sources */,
+				1AAD12B9247AAF4700C563F9 /* FollowersCollectionViewController.swift in Sources */,
 				1A6A673925BA2F06004F1FC1 /* UserInformation.swift in Sources */,
 				1A1C2F4C242E85F200096731 /* GetFollowersViewController.swift in Sources */,
 				1A1C2F4D242E85F200096731 /* GetFollowersView.swift in Sources */,
@@ -635,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB7CBE325E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift in Sources */,
+				1AE116C82609384D00B464E7 /* GetFollowersServiceTests.swift in Sources */,
 				1AB7CC1C25E2A8C300A4780D /* FollowersLogicControllerTestsAPI.swift in Sources */,
 				1AFEF7CF25B1262F001DC70B /* KeyboardObserverMock.swift in Sources */,
 				1AB7CC0025E2143300A4780D /* FollowersViewControllerTests.swift in Sources */,

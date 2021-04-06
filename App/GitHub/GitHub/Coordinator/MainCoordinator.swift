@@ -8,6 +8,7 @@
 
 import UIKit
 import Core
+import Commons
 import UserInformation
 import GetFollowers
 
@@ -37,7 +38,7 @@ final class MainCoordinator: Coordinator {
 
     private func tabBarItem() -> UITabBarItem {
         UITabBarItem(title: "Search",
-                     image: UIImage(named: "magnifyingglass"),
+                     image: ImageAssets.magnifyingglass.image,
                      tag: .zero)
     }
 

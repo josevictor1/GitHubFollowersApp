@@ -24,7 +24,7 @@ final class FollowersEmptyBackgroundView: UIView {
     private let backgroundImageView: UIImageView = {
         let backgroundImageView = UIImageView()
         backgroundImageView.contentMode = .bottomLeft
-        backgroundImageView.image = ImagesAssets.emptyStateLogo.image
+        backgroundImageView.image = ImageAssets.emptyStateLogo.image
         return backgroundImageView
     }()
 
@@ -54,9 +54,9 @@ final class FollowersEmptyBackgroundView: UIView {
 
     private func setUpMessageLabelConstraints() {
         let constraints = [
-            messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 65),
-            messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -65),
-            messageLabel.bottomAnchor.constraint(equalTo: self.centerYAnchor, constant: -30)
+            messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 65),
+            messageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -65),
+            messageLabel.bottomAnchor.constraint(equalTo: centerYAnchor, constant: -30)
         ]
         place(messageLabel, with: constraints)
     }
@@ -64,9 +64,9 @@ final class FollowersEmptyBackgroundView: UIView {
     private func setUpBackgroundImageViewConstraints() {
         let constraints = [
             backgroundImageView.heightAnchor.constraint(equalToConstant: 436),
-            backgroundImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 65),
-            backgroundImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            backgroundImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 65),
+            backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ]
         place(backgroundImageView, with: constraints)
     }

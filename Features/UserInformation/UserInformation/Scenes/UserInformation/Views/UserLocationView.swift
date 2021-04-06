@@ -3,6 +3,7 @@
 //  UserInformation
 //
 //  Created by José Victor Pereira Costa on 25/02/21.
+//  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 
 import Commons
@@ -12,7 +13,7 @@ final class UserLocationView: UIView {
 
     private let iconImageView: UIImageView = {
         let iconImageView = UIImageView()
-        iconImageView.image = ImagesAssets.locationIcon.image
+        iconImageView.image = ImageAssets.locationIcon.image
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.tintColor = .systemGray
         return iconImageView
@@ -30,6 +31,7 @@ final class UserLocationView: UIView {
         stackView.alignment = .bottom
         stackView.distribution = .fillProportionally
         stackView.axis = .horizontal
+        stackView.spacing = 5
         return stackView
     }()
 

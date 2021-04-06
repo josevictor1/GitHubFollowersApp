@@ -10,11 +10,15 @@ import XCTest
 @testable import GetFollowers
 
 final class GetFollowersViewControllerTestAPI {
-    private let providerMock = GetFollowersServiceMock()
+    private let serviceMock = UserInformationServiceMock()
     private let alertPresenterMock = GetFollowersAlertPresenterMock()
     private let delegateMock = GetFollowersViewControllerDelegateMock()
     private let keyboardObseverMock = KeyboardObserverMock()
-    private lazy var logicControllerMock = GetFollowersLogicController(provider: providerMock)
+    private lazy var logicControllerMock: GetFollowersLogicController = {
+        let provider = GetFollowersProvider(userInformationService: serviceMock)
+        return GetFollowersLogicController(provider: provider)
+        
+    }()
     private let viewMock = GetFollowersViewMock()
     private var presentedError: GetFollowersError?
 
@@ -27,7 +31,14 @@ final class GetFollowersViewControllerTestAPI {
     }()
 
     func prepareLogicController(with error: GetFollowersError) {
-        providerMock.error = error
+        switch error {
+        case .invalidUsername:
+            serviceMock.error = .client(NSError(), nil)
+        case .requestFail:
+            serviceMock.error = .server(NSError(), nil)
+        default:
+            break
+        }
     }
 
     func prepareAlertPresenterMock(with expectation: XCTestExpectation) {

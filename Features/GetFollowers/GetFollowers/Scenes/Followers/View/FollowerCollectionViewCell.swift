@@ -59,6 +59,7 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
     }
 
     private func setUpAvatarImageViewConstraints() {
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = true
         let constraints = [
             avatarImageView.heightAnchor.constraint(equalToConstant: 90),
             avatarImageView.widthAnchor.constraint(equalToConstant: 90)
@@ -77,7 +78,7 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
 
     func configure(with follower: Follower) {
         avatarImageView.loadImage(forULR: follower.imageURL,
-                                  placeHolder: ImagesAssets.placeholder.image)
+                                  placeHolder: ImageAssets.placeholder.image)
         usernameLabel.text = follower.login
     }
 }

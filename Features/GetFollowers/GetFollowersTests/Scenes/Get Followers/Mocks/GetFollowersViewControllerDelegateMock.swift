@@ -13,7 +13,7 @@ final class GetFollowersViewControllerDelegateMock: SearchCoordinator {
     var didViewControllerGotFollowers = false
     var expectationCompletion: (() -> Void)?
 
-    func showFollowers(_ userFollowers: UserInformation) {
+    func showUserInformation(_ userFollowers: UserInformation) {
         didViewControllerGotFollowers.toggle()
         expectationCompletion?()
     }

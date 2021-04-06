@@ -15,8 +15,8 @@ final class FollowersViewControllerTestsAPI {
     private let presenterMock = GetFollowersAlertPresenterMock()
     private let userInformationMock = UserInformation(login: "test",
                                                       numberOfFollowers: 1)
-    private lazy var sut: FollowersViewController = {
-        let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var sut: FollowersCollectionViewController = {
+        let viewController = FollowersCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         viewController.logicController = logicControllerMock
         viewController.coordinator = coordinatorMock
         viewController.presenter = presenterMock

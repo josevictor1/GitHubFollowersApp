@@ -9,18 +9,19 @@ import XCTest
 @testable import GetFollowers
 
 final class GetFollowersLogicControllerTestAPI {
-    private let followersProviderMock = GetFollowersServiceMock()
+    private let userInformationServiceMock = UserInformationServiceMock()
     private var receivedUserInformation: UserInformation?
     private var receivedError: GetFollowersError?
     private lazy var sut: GetFollowersLogicController = {
-        GetFollowersLogicController(provider: followersProviderMock)
+        let provider = GetFollowersProvider(userInformationService: userInformationServiceMock)
+        return GetFollowersLogicController(provider: provider)
     }()
 
     func executeFailedSearchForTestFollowers(with expectation: XCTestExpectation) {
         sut.fetchUserInformation(for: "test") { [unowned self] result in
             switch result {
             case .success:
-                XCTFail("The getFollowers method should return with error")
+                XCTFail("The fetchUserInformation method should return with error")
             case .failure(let error):
                 expectation.fulfill()
                 self.receivedError = error
@@ -29,11 +30,13 @@ final class GetFollowersLogicControllerTestAPI {
     }
 
     func prepareProviderWithInvalidUser() {
-        followersProviderMock.error = .invalidUsername
+        let error = NSError()
+        userInformationServiceMock.error = .client(error, nil)
     }
 
     func prepareProviderWithFailedRequest() {
-        followersProviderMock.error = .requestFail
+        let error = NSError()
+        userInformationServiceMock.error = .server(error, nil)
     }
 
     func executeSuccessfulSearchForTestFollowers(with expectation: XCTestExpectation) {
@@ -43,7 +46,7 @@ final class GetFollowersLogicControllerTestAPI {
                 expectation.fulfill()
                 self.receivedUserInformation = followers
             case .failure:
-                XCTFail("The getFollowers method should return with success")
+                XCTFail("The fetchUserInformation method should return with success")
             }
         }
     }

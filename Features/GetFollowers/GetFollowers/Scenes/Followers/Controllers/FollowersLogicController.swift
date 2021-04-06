@@ -6,7 +6,7 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import Commons
 
 typealias SearchFollowersCompletion = (Result<[Follower], GetFollowersError>) -> Void
 
@@ -90,7 +90,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
 
     private func updateFollowers(with response: [Follower]) {
-        self.followers += response
+        followers += response
         paginationController.turnPage()
         viewController.showFollowers(followers)
     }

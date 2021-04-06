@@ -43,22 +43,24 @@ public final class CustomAlertController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - Life cycle
-
-    public override func loadView() {
-        super.loadView()
+    
+    // MARK: - Life Cycle
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        setUp()
+    }
+    
+    // MARK: - Setup
+    
+    private func setUp() {
         setUpBackgroundColor()
+        setUpAlertViewConstraints()
+        setUpCustomAlertViewAction()
     }
     
     private func setUpBackgroundColor() {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
-    }
-
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpAlertViewConstraints()
-        setUpCustomAlertViewAction()
     }
 
     private func setUpCustomAlertViewAction() {
@@ -66,8 +68,6 @@ public final class CustomAlertController: UIViewController {
             dismiss(animated: true, completion: self.confirmButtonAction)
         }
     }
-
-    // MARK: - Setup
 
     private func setUpAlertViewConstraints() {
         let constraints = [

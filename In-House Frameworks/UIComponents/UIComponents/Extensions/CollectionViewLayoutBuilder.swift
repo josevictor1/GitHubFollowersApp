@@ -68,8 +68,8 @@ final class CollectionViewLayoutBuilder {
 
     func setItemSize(withHeight height: NSCollectionLayoutDimension,
                      andWidth width: NSCollectionLayoutDimension) -> Self {
-        let layoutSize = NSCollectionLayoutSize(widthDimension: height,
-                                                heightDimension: width)
+        let layoutSize = NSCollectionLayoutSize(widthDimension: width,
+                                                heightDimension: height)
         itemLayout = NSCollectionLayoutItem(layoutSize: layoutSize)
         return self
     }

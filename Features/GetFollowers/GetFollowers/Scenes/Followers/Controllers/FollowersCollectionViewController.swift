@@ -11,9 +11,10 @@ import UIComponents
 import Commons
 
 typealias FollowersCollectionViewDataSource = UICollectionViewDiffableDataSource<FollowersSections, Follower>
+typealias FollowersCollectionViewDataSourceSnapshot = NSDiffableDataSourceSnapshot<FollowersSections, Follower>
 typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSource.CellProvider
 
-final class FollowersViewController: UICollectionViewController {
+final class FollowersCollectionViewController: UICollectionViewController {
     var logicController: FollowersLogicControllerProtocol?
     var configurator: FollowersCollectionViewConfiguratorProtocol?
     var presenter: GetFollowersAlertPresenterProtocol?
@@ -112,7 +113,7 @@ final class FollowersViewController: UICollectionViewController {
     }
 }
 
-extension FollowersViewController: UISearchBarDelegate {
+extension FollowersCollectionViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         logicController?.searchFollower(withLogin: searchText)
@@ -131,7 +132,7 @@ extension FollowersViewController: UISearchBarDelegate {
     }
 }
 
-extension FollowersViewController: FollowersLogicControllerOutput {
+extension FollowersCollectionViewController: FollowersLogicControllerOutput {
 
     func showFailureOnFetchFollowers(_ error: GetFollowersError) {
         stopLoading()
@@ -147,25 +148,25 @@ extension FollowersViewController: FollowersLogicControllerOutput {
         stopLoading()
         reloadDataSource(with: followers)
     }
-
-    func showUserInformation(for login: String) {
-        coordinator?.showInformation(for: login)
-    }
-
+    
     private func reloadDataSource(with followers: [Follower]) {
-        var snapshot = NSDiffableDataSourceSnapshot<FollowersSections, Follower>()
+        var snapshot = FollowersCollectionViewDataSourceSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         dataSource.apply(snapshot)
     }
+
+    func showUserInformation(for login: String) {
+        coordinator?.showInformation(for: login)
+    }
 }
 
-extension FollowersViewController {
+extension FollowersCollectionViewController {
 
     static func makeFollowers(with userFollowers: UserInformation,
-                              coordinator: FollowersCoordinator) -> FollowersViewController {
-        let viewController = FollowersViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        let presenter = GetFollowersAlertPresenter()
+                              coordinator: FollowersCoordinator) -> FollowersCollectionViewController {
+        let viewController = FollowersCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let presenter = GetFollowersErrorAlertPresenter()
         let paginationController = PaginationController(numberOfItems: userFollowers.numberOfFollowers)
         viewController.logicController = FollowersLogicController(viewController: viewController,
                                                                   userFollowers: userFollowers,

@@ -8,34 +8,21 @@
 
 import Foundation
 
-typealias GetFollowersResponseCompletion = ((Result<UserInformation, GetFollowersError>) -> Void)
-
 protocol GetFollowersLogicControllerProtocol {
     func fetchUserInformation(for user: String, completion: @escaping GetFollowersResponseCompletion)
 }
 
 final class GetFollowersLogicController: GetFollowersLogicControllerProtocol {
-    private let provider: GetFollowersProvider
-
-    init(provider: GetFollowersProvider = GetFollowersService()) {
+    
+    private let provider: GetFollowersServiceProvider
+    
+    init(provider: GetFollowersServiceProvider = GetFollowersProvider()) {
         self.provider = provider
     }
-
+    
     func fetchUserInformation(for user: String, completion: @escaping GetFollowersResponseCompletion) {
-        provider.requestUserInformation(for: user) { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.handleSuccess(with: response, completion: completion)
-            case .failure(let error):
-                completion(.failure(error))
-            }
+        provider.fetchUserInformation(for: user) { result in
+            DispatchQueue.main.async { completion(result) }
         }
-    }
-
-    private func handleSuccess(with response: UserNetworkingResponse, completion: GetFollowersResponseCompletion) {
-        guard let userInformation = UserInformation(userNetworkingResponse: response) else {
-            return completion(.failure(.invalidUsername))
-        }
-        completion(.success(userInformation))
     }
 }
