@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Commons
 @testable import GetFollowers
 
 final class GetFollowersViewControllerTestAPI {
@@ -31,14 +32,7 @@ final class GetFollowersViewControllerTestAPI {
     }()
 
     func prepareLogicController(with error: GetFollowersError) {
-        switch error {
-        case .invalidUsername:
-            serviceMock.error = .client(NSError(), nil)
-        case .requestFail:
-            serviceMock.error = .server(NSError(), nil)
-        default:
-            break
-        }
+        serviceMock.error = error
     }
 
     func prepareAlertPresenterMock(with expectation: XCTestExpectation) {

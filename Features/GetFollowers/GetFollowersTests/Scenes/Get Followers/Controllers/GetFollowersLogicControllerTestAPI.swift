@@ -6,6 +6,7 @@
 //  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 import XCTest
+import Commons
 @testable import GetFollowers
 
 final class GetFollowersLogicControllerTestAPI {
@@ -30,13 +31,11 @@ final class GetFollowersLogicControllerTestAPI {
     }
 
     func prepareProviderWithInvalidUser() {
-        let error = NSError()
-        userInformationServiceMock.error = .client(error, nil)
+        userInformationServiceMock.error = .invalidUsername
     }
 
     func prepareProviderWithFailedRequest() {
-        let error = NSError()
-        userInformationServiceMock.error = .server(error, nil)
+        userInformationServiceMock.error = .requestFail
     }
 
     func executeSuccessfulSearchForTestFollowers(with expectation: XCTestExpectation) {

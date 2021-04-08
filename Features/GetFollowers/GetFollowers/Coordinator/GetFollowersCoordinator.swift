@@ -20,6 +20,7 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
     public var children: [Coordinator] = []
     public var navigationController: UINavigationController?
     public weak var delegate: GetFollowersCoordinatorDelegate?
+    private var getFollowersController: GetFollowersViewController?
 
     public required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -50,9 +51,7 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
         delegate?.getFollowersDidOpenUserInformation(withLogin: follower)
     }
     
-    func reloadFollowers(withLogin login: String) {
-        let viewController = navigationController?.topViewController
-        guard let followersViewController = viewController as? FollowersCollectionViewController else { return }
+    public func reloadFollowers(withLogin login: String) {
         
     }
 }

@@ -63,7 +63,7 @@ final class GetFollowersViewController: UIViewController {
             let rect = notification.keyboardFrame(for: self.view)
             self.getFollowersView.scrollUpGetFollowersButton(at: rect.height)
         }
-        keyboardObserver.onKeyboardDisappeared = { [unowned self] notification in
+        keyboardObserver.onKeyboardDisappeared = { [unowned self] _ in
             self.getFollowersView.scrollUpGetFollowersButton(at: .zero)
         }
     }

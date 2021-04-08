@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Commons
+import UIComponents
+
 @testable import GetFollowers
 
 final class GetFollowersAlertPresenterMock: GetFollowersAlertPresenterProtocol {

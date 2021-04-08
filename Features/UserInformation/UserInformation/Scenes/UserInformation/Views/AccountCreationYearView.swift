@@ -20,8 +20,8 @@ final class AccountCreationYearView: UIView {
     }()
 
     var year: String? {
-        set { yearLabel.text = newValue }
         get { yearLabel.text }
+        set { yearLabel.text = newValue }
     }
 
     override init(frame: CGRect) {

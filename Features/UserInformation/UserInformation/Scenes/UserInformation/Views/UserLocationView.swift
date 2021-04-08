@@ -36,8 +36,8 @@ final class UserLocationView: UIView {
     }()
 
     var location: String? {
-        set { locationLabel.text = newValue }
         get { locationLabel.text }
+        set { locationLabel.text = newValue }
     }
 
     override init(frame: CGRect) {

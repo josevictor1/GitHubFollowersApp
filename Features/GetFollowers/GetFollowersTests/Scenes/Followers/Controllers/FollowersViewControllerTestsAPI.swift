@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Commons
+
 @testable import GetFollowers
 
 final class FollowersViewControllerTestsAPI {

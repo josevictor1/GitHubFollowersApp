@@ -13,7 +13,7 @@ import Networking
 @testable import GetFollowers
 
 final class UserInformationServiceMock: UserInformationService {
-    var error: NetworkingError?
+    var error: GetFollowersError?
     private let fileReader: FileReader = {
         let bundle = Bundle(for: UserInformationServiceMock.self)
         let fileReader = FileReader(bundle: bundle)
@@ -33,8 +33,7 @@ final class UserInformationServiceMock: UserInformationService {
             let userInformation = try loadUserInformationFromJSON()
             completion(.success(userInformation))
         } catch {
-            let error = NSError()
-            completion(.failure(.client(error, nil)))
+            completion(.failure(.invalidUsername))
         }
     }
 

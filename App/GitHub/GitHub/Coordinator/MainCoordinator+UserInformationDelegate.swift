@@ -15,5 +15,6 @@ extension MainCoordinator: UserInformationCoordintorDelegate {
     func navigateToFollowers(withLogin login: String) {
         let coordinator = children.first(where: { $0 is GetFollowersCoordinator })
         guard let getFollowersCoordinator = coordinator as? GetFollowersCoordinator else { return }
+        getFollowersCoordinator.reloadFollowers(withLogin: login)
     }
 }
