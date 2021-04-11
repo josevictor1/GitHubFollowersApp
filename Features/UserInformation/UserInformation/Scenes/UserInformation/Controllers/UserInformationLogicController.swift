@@ -10,7 +10,7 @@ import Commons
 
 protocol UserInformationLogicControllerProtocol: AnyObject {
     var profileInformation: ProfileInformation? { get }
-    var login: String { get }
+    var selectedUserInformation: SelectedUserInformation? { get }
     var email: String? { get }
     var blogURL: URL? { get }
     var githubProfileURL: URL? { get }
@@ -24,12 +24,18 @@ protocol UserInformationLogicOutput: AnyObject {
 }
 
 final class UserInformationLogicController: UserInformationLogicControllerProtocol {
-    private(set) var login: String
+    private let login: String
     private let provider: UserInformationProviderProtocol
     private unowned let viewController: UserInformationLogicOutput
     private var userInformationResponse: UserInformationResponse?
     
     var profileInformation: ProfileInformation?
+    
+    var selectedUserInformation: SelectedUserInformation? {
+        guard let login = userInformationResponse?.login,
+              let numberOfFollowers = userInformationResponse?.followers else { return nil }
+        return SelectedUserInformation(login: login, numberOfFollowers: numberOfFollowers)
+    }
     
     var email: String? { userInformationResponse?.email }
     

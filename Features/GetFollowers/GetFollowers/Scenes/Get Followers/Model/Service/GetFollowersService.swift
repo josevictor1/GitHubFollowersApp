@@ -10,7 +10,7 @@ import Commons
 import GitHubServices
 import Networking
 
-typealias GetFollowersResponseCompletion = (Result<UserInformation, GetFollowersError>) -> Void
+typealias GetFollowersResponseCompletion = (Result<SelectedUserInformation, GetFollowersError>) -> Void
 
 protocol GetFollowersServiceProvider {
     func fetchUserInformation(for user: String, completion: @escaping GetFollowersResponseCompletion)
@@ -37,7 +37,7 @@ final class GetFollowersProvider: GetFollowersServiceProvider {
     
     private func handleSuccess(with response: UserInformationNetworkingResponse,
                                completion: GetFollowersResponseCompletion) {
-        guard let userInformation = UserInformation(userNetworkingResponse: response) else {
+        guard let userInformation = SelectedUserInformation(userNetworkingResponse: response) else {
             return completion(.failure(.invalidUsername))
         }
         completion(.success(userInformation))

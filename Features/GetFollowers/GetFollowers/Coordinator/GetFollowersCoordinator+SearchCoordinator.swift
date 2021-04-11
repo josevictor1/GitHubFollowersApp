@@ -6,11 +6,11 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import Commons
 
 extension GetFollowersCoordinator: SearchCoordinator {
 
-    func showUserInformation(_ userFollowers: UserInformation) {
+    func showUserInformation(_ userFollowers: SelectedUserInformation) {
         navigateToFollowers(with: userFollowers)
     }
 }

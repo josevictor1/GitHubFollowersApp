@@ -29,6 +29,7 @@ final class CollectionViewLayoutBuilder {
             guard let group = self.groupLayout else { return nil }
             let section = NSCollectionLayoutSection(group: group)
             self.configureSupplementaryItems(on: section)
+            group.interItemSpacing = .fixed(self.interItemSpacing)
             section.interGroupSpacing = self.interGroupSpacing
             section.contentInsets = self.contentInsets
             return section
@@ -66,16 +67,16 @@ final class CollectionViewLayoutBuilder {
         return self
     }
 
-    func setItemSize(withHeight height: NSCollectionLayoutDimension,
-                     andWidth width: NSCollectionLayoutDimension) -> Self {
+    func setItemSize(withWidth width: NSCollectionLayoutDimension,
+                     andHeight height: NSCollectionLayoutDimension) -> Self {
         let layoutSize = NSCollectionLayoutSize(widthDimension: width,
                                                 heightDimension: height)
         itemLayout = NSCollectionLayoutItem(layoutSize: layoutSize)
         return self
     }
 
-    func setGroupSize(withHeight height: NSCollectionLayoutDimension,
-                      andWidth width: NSCollectionLayoutDimension) -> Self {
+    func setGroupSize(withWidth width: NSCollectionLayoutDimension,
+                      andHeight height: NSCollectionLayoutDimension) -> Self {
         groupSize = NSCollectionLayoutSize(widthDimension: width,
                                            heightDimension: height)
         return self

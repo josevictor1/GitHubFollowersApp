@@ -61,8 +61,7 @@ final class FollowerCollectionViewCell: UICollectionViewCell {
     private func setUpAvatarImageViewConstraints() {
         avatarImageView.translatesAutoresizingMaskIntoConstraints = true
         let constraints = [
-            avatarImageView.heightAnchor.constraint(equalToConstant: 90),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 90)
+            avatarImageView.widthAnchor.constraint(equalTo: avatarImageView.heightAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }

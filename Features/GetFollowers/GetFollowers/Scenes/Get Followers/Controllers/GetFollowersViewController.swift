@@ -11,7 +11,7 @@ import Commons
 import UIComponents
 
 protocol SearchCoordinator: AnyObject {
-    func showUserInformation(_ userInformation: UserInformation)
+    func showUserInformation(_ userInformation: SelectedUserInformation)
 }
 
 protocol GetFollowersViewControllerInput {

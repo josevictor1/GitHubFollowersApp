@@ -10,9 +10,9 @@ import UIKit
 import UIComponents
 import Commons
 
-typealias FollowersCollectionViewDataSource = UICollectionViewDiffableDataSource<FollowersSections, Follower>
-typealias FollowersCollectionViewDataSourceSnapshot = NSDiffableDataSourceSnapshot<FollowersSections, Follower>
-typealias FollowersCollectionViewCellProvider = FollowersCollectionViewDataSource.CellProvider
+typealias FollowersDataSource = UICollectionViewDiffableDataSource<FollowersSections, Follower>
+typealias FollowersDataSourceSnapshot = NSDiffableDataSourceSnapshot<FollowersSections, Follower>
+typealias FollowersCollectionViewCellProvider = FollowersDataSource.CellProvider
 
 final class FollowersCollectionViewController: UICollectionViewController {
     var logicController: FollowersLogicControllerProtocol?
@@ -20,8 +20,8 @@ final class FollowersCollectionViewController: UICollectionViewController {
     var presenter: GetFollowersAlertPresenterProtocol?
     var coordinator: FollowersCoordinator?
 
-    private lazy var dataSource: FollowersCollectionViewDataSource = {
-        FollowersCollectionViewDataSource(collectionView: collectionView,
+    private lazy var dataSource: FollowersDataSource = {
+        FollowersDataSource(collectionView: collectionView,
                                           cellProvider: cellProvider)
     }()
 
@@ -150,7 +150,7 @@ extension FollowersCollectionViewController: FollowersLogicControllerOutput {
     }
     
     private func reloadDataSource(with followers: [Follower]) {
-        var snapshot = FollowersCollectionViewDataSourceSnapshot()
+        var snapshot = FollowersDataSourceSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         dataSource.apply(snapshot)
@@ -163,7 +163,7 @@ extension FollowersCollectionViewController: FollowersLogicControllerOutput {
 
 extension FollowersCollectionViewController {
 
-    static func makeFollowers(with userFollowers: UserInformation,
+    static func makeFollowers(with userFollowers: SelectedUserInformation,
                               coordinator: FollowersCoordinator) -> FollowersCollectionViewController {
         let viewController = FollowersCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         let presenter = GetFollowersErrorAlertPresenter()

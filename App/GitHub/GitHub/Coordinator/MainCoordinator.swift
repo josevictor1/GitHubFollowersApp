@@ -44,6 +44,7 @@ final class MainCoordinator: Coordinator {
 
     func navigateToUserInformation(withLogin login: String) {
         let coordinator: UserInformationCoordinator = .instantiate()
+        coordinator.delegate = self
         addChildCoordinator(coordinator)
         coordinator.navigateToUserInformation(withLogin: login)
         guard let navigationController = coordinator.navigationController else { return }
@@ -51,7 +52,7 @@ final class MainCoordinator: Coordinator {
     }
 
     private func addChildCoordinator(_ coordinator: Coordinator) {
-        coordinator.children.append(coordinator)
+        children.append(coordinator)
         coordinator.parent = self
         coordinator.start()
     }

@@ -20,7 +20,6 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
     public var children: [Coordinator] = []
     public var navigationController: UINavigationController?
     public weak var delegate: GetFollowersCoordinatorDelegate?
-    private var getFollowersController: GetFollowersViewController?
 
     public required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -29,6 +28,17 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
     public func start() {
         navigateToGetFollowers()
         setUpNavigationLayout()
+    }
+    
+    public func reloadFollowers(with selectedUserInformation: SelectedUserInformation) {
+        let viewController: FollowersCollectionViewController = .makeFollowers(with: selectedUserInformation,
+                                                                               coordinator: self)
+        reloadNavigationControllerStack(with: viewController)
+    }
+    
+    private func reloadNavigationControllerStack(with viewController: UIViewController) {
+        guard let getFollowerViewController = navigationController?.viewControllers.first else { return }
+        navigationController?.setViewControllers([getFollowerViewController, viewController], animated: true)
     }
 
     private func setUpNavigationLayout() {
@@ -42,16 +52,13 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
         navigationController?.pushViewController(viewController, animated: false)
     }
 
-    func navigateToFollowers(with userFollowers: UserInformation) {
-        let viewController: FollowersCollectionViewController = .makeFollowers(with: userFollowers, coordinator: self)
+    func navigateToFollowers(with selectedUserInformation: SelectedUserInformation) {
+        let viewController: FollowersCollectionViewController = .makeFollowers(with: selectedUserInformation,
+                                                                               coordinator: self)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
     func navigateToUserInformation(with follower: String) {
         delegate?.getFollowersDidOpenUserInformation(withLogin: follower)
-    }
-    
-    public func reloadFollowers(withLogin login: String) {
-        
     }
 }

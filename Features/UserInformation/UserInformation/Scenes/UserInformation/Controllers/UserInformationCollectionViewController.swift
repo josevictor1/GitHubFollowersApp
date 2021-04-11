@@ -137,7 +137,7 @@ extension UserInformationCollectionViewController: UserInformationConfiguratorDe
     }
     
     func didTapGetFollowersButton(_ repositoryView: RepositoryView) {
-        guard let login = logicController?.login else { return }
-        coordinator?.navigateToFollowers(withLogin: login)
+        guard let selectedUserInformation = logicController?.selectedUserInformation else { return }
+        coordinator?.navigateToFollowers(with: selectedUserInformation)
     }
 }

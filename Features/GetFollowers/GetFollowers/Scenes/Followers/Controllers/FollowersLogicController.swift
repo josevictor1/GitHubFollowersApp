@@ -27,7 +27,7 @@ protocol FollowersLogicControllerOutput: AnyObject {
 }
 
 final class FollowersLogicController: FollowersLogicControllerProtocol {
-    private let userInformation: UserInformation
+    private let userInformation: SelectedUserInformation
     private let service: FollowersProvider
     private let paginationController: PaginationControllerProtocol
     private unowned let viewController: FollowersLogicControllerOutput
@@ -37,7 +37,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     var userLogin: String { userInformation.login }
 
     init(viewController: FollowersLogicControllerOutput,
-         userFollowers: UserInformation,
+         userFollowers: SelectedUserInformation,
          paginationController: PaginationControllerProtocol,
          service: FollowersProvider = FollowersService()) {
         self.viewController = viewController

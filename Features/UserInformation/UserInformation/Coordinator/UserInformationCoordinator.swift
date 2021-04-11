@@ -6,6 +6,7 @@
 //
 
 import Core
+import Commons
 import UIKit
 import SafariServices
 import MessageUI
@@ -13,11 +14,11 @@ import MessageUI
 protocol UserInformationCoordinatorProtocol {
     func navigateToPage(withURL url: URL)
     func navigateToEmail(withAddress emailAddress: String)
-    func navigateToFollowers(withLogin login: String)
+    func navigateToFollowers(with selectedUserInformation: SelectedUserInformation)
 }
 
 public protocol UserInformationCoordintorDelegate: AnyObject {
-    func navigateToFollowers(withLogin login: String)
+    func navigateToFollowers(with selectedUserInformation: SelectedUserInformation)
 }
 
 public final class UserInformationCoordinator: NavigationCoordinator {
@@ -60,10 +61,9 @@ extension UserInformationCoordinator: UserInformationCoordinatorProtocol {
         navigationController?.pushViewController(emailController, animated: true)
     }
     
-    func navigateToFollowers(withLogin login: String) {
-        guard !login.isEmpty else { return }
+    func navigateToFollowers(with selectedUserInformation: SelectedUserInformation) {
         navigationController?.dismiss(animated: true) { [unowned self] in
-            self.delegate?.navigateToFollowers(withLogin: login)
+            self.delegate?.navigateToFollowers(with: selectedUserInformation)
         }
     }
     

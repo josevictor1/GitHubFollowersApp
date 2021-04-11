@@ -16,10 +16,10 @@ public extension UICollectionViewLayout {
             .set(numberOfItems: 3)
             .set(interItemSpacing: 10)
             .set(interGroupSpacing: 10)
-            .setItemSize(withHeight: .estimated(90),
-                         andWidth: .estimated(120))
-            .setGroupSize(withHeight: .estimated(100),
-                          andWidth: .fractionalWidth(1))
+            .setItemSize(withWidth: .absolute(90),
+                         andHeight: .estimated(90))
+            .setGroupSize(withWidth: .fractionalWidth(1),
+                          andHeight: .estimated(90))
             .setOrientation(.horizontal)
             .setContentInsets(top: 10,
                               leading: 10,
@@ -34,10 +34,10 @@ public extension UICollectionViewLayout {
             .set(numberOfItems: 1)
             .set(interItemSpacing: 10)
             .set(interGroupSpacing: 10)
-            .setItemSize(withHeight: .fractionalHeight(1),
-                         andWidth: .fractionalWidth(1))
-            .setGroupSize(withHeight: .estimated(161),
-                          andWidth: .fractionalWidth(1))
+            .setItemSize(withWidth: .fractionalWidth(1),
+                         andHeight: .fractionalHeight(1))
+            .setGroupSize(withWidth: .fractionalWidth(1),
+                          andHeight: .estimated(161))
             .setHeaderSize(withHeight: .estimated(110),
                            andWidth: .fractionalWidth(1))
             .setFooterSize(withHeight: .estimated(17),

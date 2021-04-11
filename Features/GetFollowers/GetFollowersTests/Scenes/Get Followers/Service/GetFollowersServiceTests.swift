@@ -9,11 +9,11 @@
 import XCTest
 @testable import GetFollowers
 
-//final class GetFollowersServiceTests: XCTestCase {
+// final class GetFollowersServiceTests: XCTestCase {
 //
 //    private let service: GetFollowersService
 //
 //    func testRequestUserInformation() {
 //
 //    }
-//}
+// }
