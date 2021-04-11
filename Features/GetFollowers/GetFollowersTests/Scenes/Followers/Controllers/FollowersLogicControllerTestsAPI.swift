@@ -6,21 +6,21 @@
 //  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import Commons
 import XCTest
 @testable import GetFollowers
 
 final class FollowersLogicControllerTestsAPI {
     private let logicControllerOutputMock = FollowersLogicControllerOutputMock()
     private let serviceMock = FollowersServiceMock()
-    private let userInformationMock = UserInformation(login: "test",
+    private let userInformationMock = SelectedUserInformation(login: "test",
                                                       numberOfFollowers: 1)
-    private let alternativeUserInformation = UserInformation(login: "test",
+    private let alternativeUserInformation = SelectedUserInformation(login: "test",
                                                              numberOfFollowers: 0)
     private var filteredFollowers = [Follower]()
     private var sut: FollowersLogicController?
 
-    private func makeFollowersLogicController(with userInformation: UserInformation) -> FollowersLogicController {
+    private func makeFollowersLogicController(with userInformation: SelectedUserInformation) -> FollowersLogicController {
         let paginationController = PaginationController(numberOfItems: userInformation.numberOfFollowers)
         return FollowersLogicController(viewController: logicControllerOutputMock,
                                         userFollowers: userInformation,

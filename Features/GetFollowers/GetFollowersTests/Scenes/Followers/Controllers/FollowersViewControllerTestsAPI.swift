@@ -8,14 +8,13 @@
 
 import XCTest
 import Commons
-
 @testable import GetFollowers
 
 final class FollowersViewControllerTestsAPI {
     private let logicControllerMock = FollowersLogicControllerMock()
     private let coordinatorMock = FollowersCoordinatorMock()
     private let presenterMock = GetFollowersAlertPresenterMock()
-    private let userInformationMock = UserInformation(login: "test",
+    private let userInformationMock = SelectedUserInformation(login: "test",
                                                       numberOfFollowers: 1)
     private lazy var sut: FollowersCollectionViewController = {
         let viewController = FollowersCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())

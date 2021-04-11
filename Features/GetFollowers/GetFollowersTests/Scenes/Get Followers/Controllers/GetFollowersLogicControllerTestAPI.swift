@@ -5,13 +5,14 @@
 //  Created by José Victor Pereira Costa on 21/02/21.
 //  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
+
 import XCTest
 import Commons
 @testable import GetFollowers
 
 final class GetFollowersLogicControllerTestAPI {
     private let userInformationServiceMock = UserInformationServiceMock()
-    private var receivedUserInformation: UserInformation?
+    private var receivedUserInformation: SelectedUserInformation?
     private var receivedError: GetFollowersError?
     private lazy var sut: GetFollowersLogicController = {
         let provider = GetFollowersProvider(userInformationService: userInformationServiceMock)
