@@ -9,6 +9,6 @@
 import XCTest
 @testable import UIComponents
 
-class UIComponentsTests: XCTestCase {
+final class UIComponentsTests: XCTestCase {
 
 }

@@ -78,6 +78,20 @@
         "identifier" : "1AB7CBB525E1F53800A4780D",
         "name" : "UserInformationTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/Services\/DataStore\/DataStore.xcodeproj",
+        "identifier" : "1A915BEC2622B6A0004E9D79",
+        "name" : "DataStoreTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/Services\/GitHubServices\/GitHubServices.xcodeproj",
+        "identifier" : "1AE116562604105200B464E7",
+        "name" : "GitHubServicesTests"
+      }
     }
   ],
   "version" : 1

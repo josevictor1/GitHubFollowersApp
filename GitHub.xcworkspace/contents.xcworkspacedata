@@ -44,6 +44,9 @@
       location = "group:Services"
       name = "Services">
       <FileRef
+         location = "group:DataStore/DataStore.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:GitHubServices/GitHubServices.xcodeproj">
       </FileRef>
    </Group>
