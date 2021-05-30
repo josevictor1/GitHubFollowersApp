@@ -92,6 +92,13 @@
         "identifier" : "1AE116562604105200B464E7",
         "name" : "GitHubServicesTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/Features\/FavoriteProfiles\/FavoriteProfiles.xcodeproj",
+        "identifier" : "1ABF23932664073A00FB7529",
+        "name" : "FavoriteProfilesTests"
+      }
     }
   ],
   "version" : 1
