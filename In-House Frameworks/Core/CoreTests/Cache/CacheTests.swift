@@ -10,6 +10,7 @@ import XCTest
 @testable import Core
 
 final class CacheTests: XCTestCase {
+    
     private let sut = Cache<String, String>()
 
     func testStoreDataOnTemporaryCache() {

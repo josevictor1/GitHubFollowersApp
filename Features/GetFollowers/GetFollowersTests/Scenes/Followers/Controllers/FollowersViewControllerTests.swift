@@ -9,6 +9,7 @@
 import XCTest
 
 final class FollowersViewControllerTests: XCTestCase {
+    
     private let test = FollowersViewControllerTestsAPI()
 
     func testLoadFollowers() {

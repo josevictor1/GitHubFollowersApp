@@ -16,7 +16,7 @@ final class RequestBuilderTests: XCTestCase {
 
     func testCreateURLRequestFromRequest() throws {
         let urlRequest = try sut.createURLRequest(from: requestMock)
-
+        
         XCTAssertNotNil(urlRequest)
     }
 

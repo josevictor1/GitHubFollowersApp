@@ -8,10 +8,12 @@
 
 import Foundation
 
-public final class Cache<Key: Hashable, Value> {
-    private let cache: NSCache<WrappedKey<Key>, Entry<Value>>
+public typealias NSCacheWrapped<Key: Hashable, Value> = NSCache<WrappedKey<Key>, Entry<Value>>
 
-    public init(cache: NSCache<WrappedKey<Key>, Entry<Value>> = NSCache<WrappedKey<Key>, Entry<Value>>()) {
+public final class Cache<Key: Hashable, Value> {
+    private let cache: NSCacheWrapped<Key, Value>
+
+    public init(cache: NSCacheWrapped<Key, Value> = NSCacheWrapped<Key, Value>()) {
         self.cache = cache
     }
 

@@ -16,16 +16,17 @@ public typealias ManagedData = [String: Any]
 
 public final class DataStore {
     
+    public static var shared = DataStore()
     private let persistenceContainer: NSPersistentContainer
     
     public init(persistenceContainer: NSPersistentContainer = DataStorePersistenceContainer(),
-                storageType: StorageType = .persistent) {
+                storageType: StorageType = .inMemory) {
         self.persistenceContainer = persistenceContainer
         set(storageType: storageType)
         loadPersistenceContainer()
     }
     
-    private func set(storageType: StorageType) {
+    public func set(storageType: StorageType) {
         guard storageType == .inMemory else { return }
         persistenceContainer.persistentStoreDescriptions = [inMemoryPersistenStoreDescription]
     }
@@ -54,10 +55,22 @@ public final class DataStore {
         try context.save()
     }
     
-    public func fetch<ManagedObject: NSManagedObject>(_ managedObject: ManagedObject.Type) throws -> [ManagedObject] {
+    public func fetch<ManagedObject: NSManagedObject>() throws -> [ManagedObject] {
         let context = persistenceContainer.viewContext
-        let entityName = String(describing: managedObject)
+        let entityName = ManagedObject.entity().name ?? String()
         let request = NSFetchRequest<ManagedObject>(entityName: entityName)
         return try context.fetch(request)
     }
+    
+    public func delete<ManagedObject: NSManagedObject>(_ data: ManagedData) -> ManagedObject {
+        let context = persistenceContainer.viewContext
+        let managedObject = ManagedObject(context: context)
+        data.forEach { managedObject.setValue($0.value, forKey: $0.key) }
+        context.delete(managedObject)
+        return managedObject
+    }
+}
+
+enum DataStoreError: Error {
+    case deletionFailed
 }

@@ -10,6 +10,7 @@ import XCTest
 @testable import GetFollowers
 
 final class PaginationControllerTests: XCTestCase {
+    
     private var sut: PaginationController {
         PaginationController(maximumPageSize: 30,
                              numberOfItems: 40,

@@ -10,6 +10,7 @@ import XCTest
 @testable import Commons
 
 final class FileReaderTests: XCTestCase {
+    
     private let sut: FileReader = {
         let bundle = Bundle(for: FileReaderTests.self)
         let fileHeader = FileReader(bundle: bundle)

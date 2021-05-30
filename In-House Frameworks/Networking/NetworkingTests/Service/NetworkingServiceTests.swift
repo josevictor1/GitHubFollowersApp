@@ -10,20 +10,16 @@ import XCTest
 @testable import Networking
 
 final class NetworkingServiceTests: XCTestCase {
-
-    // MARK: - Mocks
-
+    
     private let urlMock = URL(string: "api.github.com")!
     private lazy var requestMock: URLRequest = {
         URLRequest(url: urlMock)
     }()
-
-    // MARK: - Factories
-
+    
     private func makeSUT(session: URLSession = .shared) -> NetworkingService {
         NetworkingService(requestProvider: URLRequestCreator(), session: session)
     }
-
+    
     enum ResponseStatusCode: Int {
         case success = 200
         case redirection = 300
@@ -31,7 +27,7 @@ final class NetworkingServiceTests: XCTestCase {
         case serverError = 500
         case unknownError = 1000
     }
-
+    
     let dataMock = """
     [
         {
@@ -56,33 +52,33 @@ final class NetworkingServiceTests: XCTestCase {
         }
     ]
     """.data(using: .utf8)!
-
-    func makeHTTPURLResponse(with statusCode: ResponseStatusCode) -> HTTPURLResponse {
+    
+    private func makeHTTPURLResponse(with statusCode: ResponseStatusCode) -> HTTPURLResponse {
         HTTPURLResponse(url: urlMock, statusCode: statusCode.rawValue, httpVersion: nil, headerFields: nil)!
     }
-
-    func makeNSError(with statusCode: ResponseStatusCode) -> NSError {
+    
+    private func makeNSError(with statusCode: ResponseStatusCode) -> NSError {
         NSError(domain: "", code: statusCode.rawValue, userInfo: nil)
     }
-
-    func makeSession(with configuration: URLSessionConfiguration = .ephemeral,
-                     _ completion: SessionMockCompletion? = nil) -> URLSession {
+    
+    private func makeSession(with configuration: URLSessionConfiguration = .ephemeral,
+                             _ completion: SessionMockCompletion? = nil) -> URLSession {
         configuration.protocolClasses = [SessionMock.self]
         SessionMock.requestHandler = completion
         return URLSession(configuration: configuration)
     }
-
+    
     // MARK: - Tests
-
+    
     func testSendRequestWithSuccess() {
         let session = makeSession { [unowned self] _ in
             return (self.makeHTTPURLResponse(with: .success), self.dataMock)
         }
-
+        
         let sut = makeSUT(session: session)
         let request = RequestMock()
         let expectation = XCTestExpectation(description: "response")
-
+        
         _ = sut.send(request) { result in
             switch result {
             case .success(let response):
@@ -92,16 +88,16 @@ final class NetworkingServiceTests: XCTestCase {
             }
             expectation.fulfill()
         }
-
+        
         wait(for: [expectation], timeout: 1)
     }
-
+    
     func testSendRequestWithError() {
         let session = makeSession { _ in throw NetworkingError.unknown }
         let sut = makeSUT(session: session)
         let request = RequestMock()
         let expectation = XCTestExpectation(description: "response")
-
+        
         _ = sut.send(request) { result in
             switch result {
             case .success:
@@ -111,7 +107,7 @@ final class NetworkingServiceTests: XCTestCase {
             }
             expectation.fulfill()
         }
-
+        
         wait(for: [expectation], timeout: 1)
     }
 }

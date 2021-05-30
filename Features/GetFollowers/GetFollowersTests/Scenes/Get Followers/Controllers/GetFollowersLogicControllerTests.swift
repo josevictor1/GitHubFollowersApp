@@ -10,6 +10,7 @@ import XCTest
 @testable import GetFollowers
 
 final class GetFollowersLogicControllerTests: XCTestCase {
+    
     private let test = GetFollowersLogicControllerTestAPI()
 
     func testGetFollowersWithSuccess() {
