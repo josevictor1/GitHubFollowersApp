@@ -10,10 +10,12 @@ import Networking
 import Core
 
 public typealias RequestImageCompletion = (Result<UIImage, Error>) -> Void
+typealias ImageCache = Cache<String, UIImage>
 
 public final class ImageDownloader {
+    
     private let networkingService: NetworkingServiceProtocol
-    private let cache = Cache<String, UIImage>()
+    private let cache = ImageCache()
 
     init(networkingService: NetworkingServiceProtocol = NetworkingService()) {
         self.networkingService = networkingService

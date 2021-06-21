@@ -13,9 +13,7 @@ import GetFollowers
 
 extension MainCoordinator: UserInformationCoordintorDelegate {
     
-    func navigateToFollowers(with selectedUserInformation: SelectedUserInformation) {
-        let coordinator = children.first(where: { $0 is GetFollowersCoordinator })
-        guard let getFollowersCoordinator = coordinator as? GetFollowersCoordinator else { return }
-        getFollowersCoordinator.reloadFollowers(with: selectedUserInformation)
+    func userInformationDidSelectUser(_ selectedUserInformation: SelectedUserInformation) {
+        navigateToFollowers(with: selectedUserInformation)
     }
 }

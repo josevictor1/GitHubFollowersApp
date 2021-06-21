@@ -11,7 +11,7 @@ import Commons
 typealias SearchFollowersCompletion = (Result<[Follower], GetFollowersError>) -> Void
 
 protocol FollowersLogicControllerProtocol {
-    var userLogin: String { get }
+    var userInformation: SelectedUserInformation { get }
     func loadFollowers()
     func loadNextPage()
     func searchFollower(withLogin login: String)
@@ -27,14 +27,14 @@ protocol FollowersLogicControllerOutput: AnyObject {
 }
 
 final class FollowersLogicController: FollowersLogicControllerProtocol {
-    private let userInformation: SelectedUserInformation
+    
+    private unowned let viewController: FollowersLogicControllerOutput
+    private(set) var userInformation: SelectedUserInformation
     private let service: FollowersProvider
     private let paginationController: PaginationControllerProtocol
-    private unowned let viewController: FollowersLogicControllerOutput
     private var followers = [Follower]()
     private var filteredFollowers = [Follower]()
     private var isLoadingData = false
-    var userLogin: String { userInformation.login }
 
     init(viewController: FollowersLogicControllerOutput,
          userFollowers: SelectedUserInformation,
@@ -62,7 +62,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
 
     private func fetchFollowers() {
-        let request = FollowersRequest(username: userLogin,
+        let request = FollowersRequest(username: userInformation.login,
                                        pageNumber: paginationController.currentPage,
                                        resultsPerPage: paginationController.currentPageSize)
         fetchFollowers(with: request)

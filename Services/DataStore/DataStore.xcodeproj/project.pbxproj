@@ -10,11 +10,12 @@
 		1A3204D92649F7CD001A645B /* Strings+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3204D82649F7CD001A645B /* Strings+.swift */; };
 		1A4A5869263F46C1007D6AAA /* DataSotrePersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A5868263F46C1007D6AAA /* DataSotrePersistenceContainer.swift */; };
 		1A4A586C26402131007D6AAA /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A586B26402131007D6AAA /* Favorite.swift */; };
+		1A74E1D7267D8F2D0047B0BF /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A74E1D6267D8F2D0047B0BF /* Commons.framework */; };
 		1A915BEE2622B6A0004E9D79 /* DataStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A915BE42622B69F004E9D79 /* DataStore.framework */; };
 		1A915BF32622B6A0004E9D79 /* DataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A915BF22622B6A0004E9D79 /* DataStoreTests.swift */; };
 		1A915BF52622B6A0004E9D79 /* DataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A915BE72622B69F004E9D79 /* DataStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AA0C7122622B89300E8E8CD /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0C7112622B89300E8E8CD /* DataStore.swift */; };
-		1AA0C7162622B94400E8E8CD /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0C7152622B94400E8E8CD /* Test.swift */; };
+		1AA0C7162622B94400E8E8CD /* FavoriteMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0C7152622B94400E8E8CD /* FavoriteMock.swift */; };
 		1AA0C7262622BCF000E8E8CD /* GitHubFollowers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1AA0C7242622BCF000E8E8CD /* GitHubFollowers.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		1A3204D82649F7CD001A645B /* Strings+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+.swift"; sourceTree = "<group>"; };
 		1A4A5868263F46C1007D6AAA /* DataSotrePersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSotrePersistenceContainer.swift; sourceTree = "<group>"; };
 		1A4A586B26402131007D6AAA /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		1A74E1D6267D8F2D0047B0BF /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A915BE42622B69F004E9D79 /* DataStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A915BE72622B69F004E9D79 /* DataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
 		1A915BE82622B69F004E9D79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,7 +41,7 @@
 		1A915BF22622B6A0004E9D79 /* DataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreTests.swift; sourceTree = "<group>"; };
 		1A915BF42622B6A0004E9D79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA0C7112622B89300E8E8CD /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		1AA0C7152622B94400E8E8CD /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		1AA0C7152622B94400E8E8CD /* FavoriteMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMock.swift; sourceTree = "<group>"; };
 		1AA0C7252622BCF000E8E8CD /* Favorites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Favorites.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A74E1D7267D8F2D0047B0BF /* Commons.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +89,21 @@
 			path = PersistenceContainer;
 			sourceTree = "<group>";
 		};
+		1A74E1D5267D8F2D0047B0BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A74E1D6267D8F2D0047B0BF /* Commons.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1A915BDA2622B69F004E9D79 = {
 			isa = PBXGroup;
 			children = (
 				1A915BE62622B69F004E9D79 /* DataStore */,
 				1A915BF12622B6A0004E9D79 /* DataStoreTests */,
 				1A915BE52622B69F004E9D79 /* Products */,
+				1A74E1D5267D8F2D0047B0BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,7 +142,7 @@
 		1AA0C7192622B94900E8E8CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1AA0C7152622B94400E8E8CD /* Test.swift */,
+				1AA0C7152622B94400E8E8CD /* FavoriteMock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A915BF32622B6A0004E9D79 /* DataStoreTests.swift in Sources */,
-				1AA0C7162622B94400E8E8CD /* Test.swift in Sources */,
+				1AA0C7162622B94400E8E8CD /* FavoriteMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

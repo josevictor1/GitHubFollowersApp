@@ -12,8 +12,11 @@ import GitHubServices
 extension SelectedUserInformation {
     
     init?(userNetworkingResponse: UserInformationNetworkingResponse) {
-        guard let login = userNetworkingResponse.login else { return nil }
+        guard let login = userNetworkingResponse.login,
+              let name = userNetworkingResponse.name else { return nil }
         self.init(login: login,
+                  name: name,
+                  avatarURL: userNetworkingResponse.avatarURL ?? String(),
                   numberOfFollowers: userNetworkingResponse.followers)
     }
 }

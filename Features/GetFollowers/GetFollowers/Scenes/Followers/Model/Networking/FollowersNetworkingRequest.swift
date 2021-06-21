@@ -6,7 +6,6 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
 import Networking
 
 struct FollowersNetworkingRequest: Request {

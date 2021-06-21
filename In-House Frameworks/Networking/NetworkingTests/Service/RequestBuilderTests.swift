@@ -10,6 +10,7 @@ import XCTest
 @testable import Networking
 
 final class RequestBuilderTests: XCTestCase {
+    
     private var requestMock = RequestMock()
     private var bodyMock = EncodableMock()
     private let sut = URLRequestCreator()

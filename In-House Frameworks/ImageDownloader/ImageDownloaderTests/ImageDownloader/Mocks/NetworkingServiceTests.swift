@@ -10,6 +10,7 @@ import UIKit
 @testable import ImageDownloader
 
 final class NetworkingServiceMock: NetworkingServiceProtocol {
+    
     var error: Error?
 
     func downloadImage(fromURL url: String, completion: @escaping DownloadImageCompletion) -> URLSessionDataTask? {

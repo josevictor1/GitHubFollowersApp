@@ -8,6 +8,7 @@
 import UIKit
 
 public extension UIImageView {
+    
     private static let imageLoader = ImageLoader()
 
     func loadImage(forULR url: String, placeHolder: UIImage, withAnimation animation: Bool = true) {

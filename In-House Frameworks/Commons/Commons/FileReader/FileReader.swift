@@ -24,6 +24,7 @@ public enum ResourceType: String {
 }
 
 public final class FileReader {
+    
     private let bundle: Bundle
 
     public init(bundle: Bundle = .main) {

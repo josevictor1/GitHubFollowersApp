@@ -7,41 +7,51 @@
 //
 
 import UIKit
-import Core
 import Commons
-import UserInformation
+import Core
 import GetFollowers
+import FavoriteProfiles
+import UserInformation
 
 final class MainCoordinator: Coordinator {
+    
     var parent: Coordinator?
     var children: [Coordinator] = []
     private let tabBarController: UITabBarController
-
+    
     private var getFollowersNavigationController: UINavigationController {
         let coordinator: GetFollowersCoordinator = .instantiate()
-        coordinator.navigationController?.tabBarItem = tabBarItem()
+        coordinator.navigationController?.tabBarItem = .tabBarItem(for: .getFollowers)
         coordinator.delegate = self
         addChildCoordinator(coordinator)
         return coordinator.navigationController!
     }
-
+    
+    private var favoriteProfillesNavigationController: UINavigationController {
+        let coordinator: FavoriteProfilesCoordinator = .instantiate()
+        coordinator.navigationController?.tabBarItem = .tabBarItem(for: .favoriteProfiles)
+        addChildCoordinator(coordinator)
+        return coordinator.navigationController!
+    }
+    
+    private var tabBarChildViewControllers: [UIViewController] {
+        [
+            getFollowersNavigationController,
+            favoriteProfillesNavigationController
+        ]
+    }
+    
     init(window: UIWindow, tabBarController: UITabBarController = UITabBarController()) {
         self.tabBarController = tabBarController
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
     }
-
+    
     func start() {
-        tabBarController.viewControllers = [getFollowersNavigationController]
+        tabBarController.viewControllers = tabBarChildViewControllers
         tabBarController.tabBar.tintColor = .chateauGreen
     }
-
-    private func tabBarItem() -> UITabBarItem {
-        UITabBarItem(title: "Search",
-                     image: ImageAssets.magnifyingglass.image,
-                     tag: .zero)
-    }
-
+    
     func navigateToUserInformation(withLogin login: String) {
         let coordinator: UserInformationCoordinator = .instantiate()
         coordinator.delegate = self
@@ -50,7 +60,22 @@ final class MainCoordinator: Coordinator {
         guard let navigationController = coordinator.navigationController else { return }
         tabBarController.present(navigationController, animated: true)
     }
-
+    
+    func navigateToFavorites(with selectedUser: SelectedUserInformation) {
+        guard let coordinator: FavoriteProfilesCoordinator = childCoordinator() else { return }
+        coordinator.navigateToFavoriteProfiles(with: selectedUser)
+    }
+    
+    func navigateToFollowers(with selectedUserInformation: SelectedUserInformation) {
+        guard let coordinator: GetFollowersCoordinator = childCoordinator() else { return }
+        coordinator.reloadFollowers(with: selectedUserInformation)
+    }
+    
+    private func childCoordinator<T: Coordinator>() -> T? {
+        let coordinator = children.first(where: { $0 is T })
+        return coordinator as? T
+    }
+    
     private func addChildCoordinator(_ coordinator: Coordinator) {
         children.append(coordinator)
         coordinator.parent = self

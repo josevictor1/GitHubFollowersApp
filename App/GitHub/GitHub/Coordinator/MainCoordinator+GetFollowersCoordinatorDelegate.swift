@@ -6,12 +6,16 @@
 //  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import Commons
 import GetFollowers
 
 extension MainCoordinator: GetFollowersCoordinatorDelegate {
-
+    
     func getFollowersDidOpenUserInformation(withLogin login: String) {
         navigateToUserInformation(withLogin: login)
+    }
+    
+    func getFollowersFavoritedSelectedUser(_ selectedUser: SelectedUserInformation) {
+        navigateToFavorites(with: selectedUser)
     }
 }

@@ -9,8 +9,7 @@
 import CoreData
 
 public final class Favorite: NSManagedObject {
-    @NSManaged var avatarURL: String?
-    @NSManaged var login: String?
-    @NSManaged var name: String?
-    @NSManaged var numberOfFollowers: NSNumber?
+    @NSManaged public var avatarURL: String?
+    @NSManaged public var login: String?
+    @NSManaged public var name: String?
 }

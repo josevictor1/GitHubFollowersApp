@@ -33,8 +33,13 @@ final class UserInformationLogicController: UserInformationLogicControllerProtoc
     
     var selectedUserInformation: SelectedUserInformation? {
         guard let login = userInformationResponse?.login,
+              let name = userInformationResponse?.name,
+              let avatarURL = userInformationResponse?.avatarURL,
               let numberOfFollowers = userInformationResponse?.followers else { return nil }
-        return SelectedUserInformation(login: login, numberOfFollowers: numberOfFollowers)
+        return SelectedUserInformation(login: login,
+                                       name: name,
+                                       avatarURL: avatarURL,
+                                       numberOfFollowers: numberOfFollowers)
     }
     
     var email: String? { userInformationResponse?.email }

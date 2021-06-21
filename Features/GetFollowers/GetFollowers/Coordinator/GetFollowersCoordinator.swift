@@ -6,16 +6,17 @@
 //  Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
 import Commons
 import Core
 import UIKit
 
 public protocol GetFollowersCoordinatorDelegate: AnyObject {
     func getFollowersDidOpenUserInformation(withLogin login: String)
+    func getFollowersFavoritedSelectedUser(_ selectedUser: SelectedUserInformation)
 }
 
 public final class GetFollowersCoordinator: NavigationCoordinator {
+    
     public var parent: Coordinator?
     public var children: [Coordinator] = []
     public var navigationController: UINavigationController?
@@ -60,5 +61,9 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
 
     func navigateToUserInformation(with follower: String) {
         delegate?.getFollowersDidOpenUserInformation(withLogin: follower)
+    }
+    
+    func navigateToFavories(with selectedUser: SelectedUserInformation) {
+        delegate?.getFollowersFavoritedSelectedUser(selectedUser)
     }
 }

@@ -18,10 +18,11 @@ protocol UserInformationCoordinatorProtocol {
 }
 
 public protocol UserInformationCoordintorDelegate: AnyObject {
-    func navigateToFollowers(with selectedUserInformation: SelectedUserInformation)
+    func userInformationDidSelectUser(_ selectedUserInformation: SelectedUserInformation)
 }
 
 public final class UserInformationCoordinator: NavigationCoordinator {
+    
     public var parent: Coordinator?
     public var children: [Coordinator] = []
     public var navigationController: UINavigationController?
@@ -63,7 +64,7 @@ extension UserInformationCoordinator: UserInformationCoordinatorProtocol {
     
     func navigateToFollowers(with selectedUserInformation: SelectedUserInformation) {
         navigationController?.dismiss(animated: true) { [unowned self] in
-            self.delegate?.navigateToFollowers(with: selectedUserInformation)
+            self.delegate?.userInformationDidSelectUser(selectedUserInformation)
         }
     }
     

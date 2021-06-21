@@ -8,6 +8,7 @@
 import UIKit
 
 final class ImageLoader {
+    
     private let imageDownloader: ImageDownloader
     private var imageViewMapping = [UIImageView: URLSessionDataTask]()
 

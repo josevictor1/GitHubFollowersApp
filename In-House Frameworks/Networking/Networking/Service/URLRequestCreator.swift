@@ -14,6 +14,7 @@ protocol URLRequestProvider {
 }
 
 final class URLRequestCreator: URLRequestProvider {
+    
     private let encoder: JSONEncoder
 
     init(encoder: JSONEncoder = JSONEncoder()) {

@@ -6,38 +6,58 @@
 //
 
 import XCTest
+import CoreData
 @testable import DataStore
 
 final class DataStoreTests: XCTestCase {
     
-    private let dataStore: DataStore = .shared
+    private lazy var dataStore: DataStore = .shared
+    private let favoriteMock = FavoriteMock(avatarURL: "test",
+                                            login: "test",
+                                            name: "test")
     
     func testSaveData() throws {
         try saveFavoriteMockData(in: dataStore)
     }
     
     func testFetchData() throws {
-        try saveFavoriteMockData(in: dataStore)
+        try testObject()
         
         let result: [Favorite] = try dataStore.fetch()
         XCTAssertTrue(!result.isEmpty)
     }
     
     func testDeleteData() throws {
-        try saveFavoriteMockData(in: dataStore)
+        let storedObject = try testObject()
         
-        let favorite: Favorite = dataStore.delete(["name": "Test",
-                                                   "login" : "test",
-                                                   "avatarURL": "test",
-                                                   "numberOfFollowers": 1])
+        let deleteObject: Favorite = dataStore.delete(storedObject)
         
-        XCTAssertTrue(favorite.isDeleted)
+        XCTAssertTrue(deleteObject.isDeleted)
+        XCTAssertEqual(storedObject, deleteObject)
+    }
+    
+    func testUpdateData() throws {
+        let managedObject = try testObject()
+        
+        managedObject.name = "Test_update"
+        managedObject.login = "test_update"
+        managedObject.avatarURL = "test"
+        
+        try dataStore.update()
+    }
+    
+    @discardableResult
+    private func testObject() throws -> Favorite  {
+        let context = dataStore.persistenceContainer.viewContext
+        let managedObject = Favorite(context: context)
+        managedObject.avatarURL = "test"
+        managedObject.login = "test"
+        managedObject.name = "test"
+        try context.save()
+        return managedObject
     }
     
     private func saveFavoriteMockData(in dataStore: DataStore) throws {
-        try dataStore.save(Favorite.self, withData: ["name": "Test",
-                                                     "login" : "test",
-                                                     "avatarURL": "test",
-                                                     "numberOfFollowers": 1])
+        try dataStore.save(Favorite.self, withData: favoriteMock)
     }
 }

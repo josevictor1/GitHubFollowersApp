@@ -7,17 +7,18 @@
 //
 
 import CoreData
+import Commons
 
 public enum StorageType {
     case persistent, inMemory
 }
 
-public typealias ManagedData = [String: Any]
+public typealias ManagedData = DictionaryConvertible
 
 public final class DataStore {
     
     public static var shared = DataStore()
-    private let persistenceContainer: NSPersistentContainer
+    public let persistenceContainer: NSPersistentContainer
     
     public init(persistenceContainer: NSPersistentContainer = DataStorePersistenceContainer(),
                 storageType: StorageType = .inMemory) {
@@ -51,9 +52,10 @@ public final class DataStore {
                                                      withData data: ManagedData) throws {
         let context = persistenceContainer.viewContext
         let managedObject = ManagedObject(context: context)
-        data.forEach { managedObject.setValue($0.value, forKey: $0.key) }
+        data.dictionary.forEach { managedObject.setValue($0.value, forKey: $0.key) }
         try context.save()
     }
+    
     
     public func fetch<ManagedObject: NSManagedObject>() throws -> [ManagedObject] {
         let context = persistenceContainer.viewContext
@@ -62,10 +64,14 @@ public final class DataStore {
         return try context.fetch(request)
     }
     
-    public func delete<ManagedObject: NSManagedObject>(_ data: ManagedData) -> ManagedObject {
+    public func update() throws {
         let context = persistenceContainer.viewContext
-        let managedObject = ManagedObject(context: context)
-        data.forEach { managedObject.setValue($0.value, forKey: $0.key) }
+        guard context.hasChanges else { return }
+        try context.save()
+    }
+    
+    public func delete<ManagedObject: NSManagedObject>(_ managedObject: ManagedObject) -> ManagedObject {
+        let context = persistenceContainer.viewContext
         context.delete(managedObject)
         return managedObject
     }
