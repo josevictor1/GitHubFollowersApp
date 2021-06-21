@@ -10,10 +10,17 @@ import Foundation
 
 public struct SelectedUserInformation {
     public let login: String
+    public let name: String
+    public let avatarURL: String
     public let numberOfFollowers: Int
     
-    public init(login: String, numberOfFollowers: Int) {
+    public init(login: String,
+                name: String,
+                avatarURL: String,
+                numberOfFollowers: Int) {
         self.login = login
+        self.name = name
+        self.avatarURL = avatarURL
         self.numberOfFollowers = numberOfFollowers
     }
 }

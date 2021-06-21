@@ -6,15 +6,20 @@
 //  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import Commons
 
 protocol FollowersCoordinator {
     func showInformation(for login: String)
+    func showFavorites(with selectedUser: SelectedUserInformation)
 }
 
 extension GetFollowersCoordinator: FollowersCoordinator {
 
     func showInformation(for login: String) {
         navigateToUserInformation(with: login)
+    }
+    
+    func showFavorites(with selectedUser: SelectedUserInformation) {
+        
     }
 }

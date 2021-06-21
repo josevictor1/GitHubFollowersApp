@@ -275,12 +275,12 @@
 			isa = PBXGroup;
 			children = (
 				1AB7CBFA25E2131100A4780D /* Followers */,
-				1A94FD0B243169330095932A /* Get Followers */,
+				1A94FD0B243169330095932A /* GetFollowers */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		1A94FD0B243169330095932A /* Get Followers */ = {
+		1A94FD0B243169330095932A /* GetFollowers */ = {
 			isa = PBXGroup;
 			children = (
 				1AE116C62609383700B464E7 /* Service */,
@@ -288,7 +288,7 @@
 				1A94FD0F24326FC40095932A /* Mocks */,
 				1A94FD1A24329E630095932A /* Controllers */,
 			);
-			path = "Get Followers";
+			path = GetFollowers;
 			sourceTree = "<group>";
 		};
 		1A94FD0F24326FC40095932A /* Mocks */ = {

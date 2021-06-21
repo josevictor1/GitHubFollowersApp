@@ -7,7 +7,10 @@
 //
 
 import CoreData
+@testable import DataStore
 
-final class Test: NSManagedObject {
-    
+struct FavoriteMock: ManagedData {
+    let avatarURL: String
+    let login: String
+    let name: String
 }

@@ -9,6 +9,7 @@ import XCTest
 @testable import ImageDownloader
 
 final class UIImageViewExtensionTests: XCTestCase {
+    
     private let sut = UIImageView()
 
     private func setUpImageViewWithPlaceHolder() {

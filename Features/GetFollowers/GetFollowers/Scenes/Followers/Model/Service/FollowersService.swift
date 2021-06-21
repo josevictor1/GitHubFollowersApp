@@ -17,6 +17,7 @@ protocol FollowersProvider {
 }
 
 final class FollowersService: FollowersProvider {
+    
     private let networkingProvider: NetworkingProvider
     private var dataTask: URLSessionDataTask?
 

@@ -16,6 +16,7 @@
 		1A6A674625BA7E47004F1FC1 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A674525BA7E47004F1FC1 /* FileReader.swift */; };
 		1A6A674D25BA8068004F1FC1 /* FileReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A674C25BA8068004F1FC1 /* FileReaderTests.swift */; };
 		1A6A675425BA81F6004F1FC1 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6A675325BA81F6004F1FC1 /* Test.json */; };
+		1A74E1DC267D909C0047B0BF /* DictionaryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A74E1DB267D909C0047B0BF /* DictionaryConvertible.swift */; };
 		1A8F829F241865F600D25A68 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F829E241865F600D25A68 /* UIViewController+.swift */; };
 		1A915BCF26215BED004E9D79 /* SelectedUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A915BCE26215BED004E9D79 /* SelectedUserInformation.swift */; };
 		1AA1C3502470D40100A6D3C1 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA1C34F2470D40100A6D3C1 /* Core.framework */; };
@@ -49,6 +50,7 @@
 		1A6A674525BA7E47004F1FC1 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		1A6A674C25BA8068004F1FC1 /* FileReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderTests.swift; sourceTree = "<group>"; };
 		1A6A675325BA81F6004F1FC1 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
+		1A74E1DB267D909C0047B0BF /* DictionaryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvertible.swift; sourceTree = "<group>"; };
 		1A8F829E241865F600D25A68 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		1A915BCE26215BED004E9D79 /* SelectedUserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedUserInformation.swift; sourceTree = "<group>"; };
 		1AA1C34F2470D40100A6D3C1 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,14 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		1A74E1DA267D90680047B0BF /* DictionaryConvertible */ = {
+			isa = PBXGroup;
+			children = (
+				1A74E1DB267D909C0047B0BF /* DictionaryConvertible.swift */,
+			);
+			path = DictionaryConvertible;
+			sourceTree = "<group>";
+		};
 		1A915BCD262157A6004E9D79 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +213,7 @@
 		1AE20BEC2407361C00867692 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1A74E1DA267D90680047B0BF /* DictionaryConvertible */,
 				1A915BCD262157A6004E9D79 /* Models */,
 				1AE56701261523AF0022EC7A /* GetFollowersError */,
 				1ABABBE525E74AD70071BC61 /* Assets */,
@@ -372,6 +383,7 @@
 				1A02EDDD25489E7100C86CCD /* UIView+Identifier.swift in Sources */,
 				1AFCE03D254E2D8E00CCC878 /* UICollectionView+.swift in Sources */,
 				1A6A674625BA7E47004F1FC1 /* FileReader.swift in Sources */,
+				1A74E1DC267D909C0047B0BF /* DictionaryConvertible.swift in Sources */,
 				1A6A3948246A02810097C195 /* Notification+.swift in Sources */,
 				1A65D7F8248323DF001772EC /* UIView+Bundle.swift in Sources */,
 				1AA6175924808128005752CD /* String+Localizable.swift in Sources */,

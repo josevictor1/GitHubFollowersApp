@@ -10,6 +10,7 @@ import Foundation
 @testable import Networking
 
 extension NetworkingError: Equatable {
+    
     public static func == (lhs: NetworkingError, rhs: NetworkingError) -> Bool {
         switch (lhs, rhs) {
         case (.invalidURL, .invalidURL):

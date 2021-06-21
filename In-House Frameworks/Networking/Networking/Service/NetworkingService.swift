@@ -14,6 +14,7 @@ protocol NetworkingServiceProtocol {
 }
 
 final class NetworkingService: NetworkingServiceProtocol {
+    
     private let session: URLSession
     private let requestProvider: URLRequestProvider
 

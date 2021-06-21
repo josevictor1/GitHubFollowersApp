@@ -13,6 +13,7 @@ public typealias ResponseCompletion = (_ result: Result<NetworkingResponse, Netw
 
 /// Networking interface that provides.
 public final class NetworkingProvider {
+    
     private let service: NetworkingServiceProtocol = NetworkingService()
 
     /// Creates an object of the type `NetworkigProvider`.

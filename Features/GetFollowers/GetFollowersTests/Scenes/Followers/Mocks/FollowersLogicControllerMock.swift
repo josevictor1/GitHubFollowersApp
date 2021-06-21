@@ -6,16 +6,21 @@
 //  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
+import Commons
 @testable import GetFollowers
 
 final class FollowersLogicControllerMock: FollowersLogicControllerProtocol {
+    
     var userLogin = String()
     var searchedLogin = String()
     var selectedIndex = Int()
     var wereFollowersLoaded = false
     var wasNextPagedLoaded = false
     var wasSearchCanceled = false
+    var userInformation = SelectedUserInformation(login: "",
+                                                  name: "",
+                                                  avatarURL: "",
+                                                  numberOfFollowers: 0)
 
     func loadFollowers() {
         wereFollowersLoaded = true
@@ -30,7 +35,7 @@ final class FollowersLogicControllerMock: FollowersLogicControllerProtocol {
     }
 
     func selectFollower(atIndex index: Int) {
-        self.selectedIndex = index
+        selectedIndex = index
     }
 
     func cancelSearch() {

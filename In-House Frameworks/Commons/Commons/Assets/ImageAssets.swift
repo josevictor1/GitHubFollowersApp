@@ -9,12 +9,13 @@
 import UIKit
 
 public enum ImageAssets: String {
-    case getFollowersLogo
-    case emptyStateLogo
     case companySateLogo
     case companyIcon
+    case emptyStateLogo
+    case favoriteIcon
     case folderIcon
     case followersIcon
+    case getFollowersLogo
     case gistsIcon
     case locationIcon
     case magnifyingglass
@@ -22,6 +23,6 @@ public enum ImageAssets: String {
     case placeholder
 
     public var image: UIImage {
-        UIImage(named: self.rawValue) ?? UIImage()
+        UIImage(named: rawValue) ?? UIImage()
     }
 }
