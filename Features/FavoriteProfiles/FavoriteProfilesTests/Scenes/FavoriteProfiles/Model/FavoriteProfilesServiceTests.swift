@@ -50,6 +50,27 @@ final class FavoriteProfilesServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
+    
+    func testDeleteNonExistantProfile() throws {
+        let expectation = XCTestExpectation(description: "Should failed when try to delete.")
+        let sut = FavoriteProfilesService()
+        let profilesMock = FavoriteProfilesMocks().favoriteProfilesMock
+        let profileMock = profilesMock.first!
+        
+        sut.loadProfiles { _ in }
+        
+        sut.delete(profileMock) { result in
+            switch result {
+            case .success:
+                XCTFail()
+            case .failure:
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
     private func setUpDataStoreWithMockData() throws {
         let dataStore: DataStore = .shared
         let data = FavoriteProfilesMocks().favoriteProfilesMock.first!
