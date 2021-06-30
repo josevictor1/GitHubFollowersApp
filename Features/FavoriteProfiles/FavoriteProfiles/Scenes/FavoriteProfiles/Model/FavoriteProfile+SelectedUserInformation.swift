@@ -12,7 +12,6 @@ extension FavoriteProfile {
     
     init(selectedUser: SelectedUserInformation) {
         self.init(login: selectedUser.login,
-                  name: selectedUser.name,
                   avatarURL: selectedUser.avatarURL)
     }
 }

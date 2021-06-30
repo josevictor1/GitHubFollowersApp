@@ -9,9 +9,11 @@
 import Foundation
 
 struct FavoriteProfile {
+    let uuid = UUID()
     let login: String
-    let name: String
     let avatarURL: String
 }
 
 extension FavoriteProfile: Equatable { }
+
+extension FavoriteProfile: Hashable { }

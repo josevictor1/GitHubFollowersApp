@@ -12,10 +12,8 @@ extension FavoriteProfile {
     
     init?(favorite: Favorite) {
         guard let login = favorite.login,
-              let name = favorite.name,
               let avatarURL = favorite.avatarURL else { return nil }
         self.init(login: login,
-                  name: name,
                   avatarURL: avatarURL)
     }
 }

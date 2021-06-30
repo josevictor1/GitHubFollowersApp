@@ -12,6 +12,25 @@ import DataStore
 
 final class FavoriteProfilesServiceTests: XCTestCase {
     
+    private let mock = FavoriteProfilesMocks()
+    
+    func testSaveProfile() {
+        let expectation = XCTestExpectation(description: "Should save profile with success.")
+        let sut = FavoriteProfilesService()
+        let profileMock = mock.favoriteProfileMock
+        
+        sut.saveProfile(profileMock) { result in
+            switch result {
+            case .success:
+                expectation.fulfill()
+            case .failure:
+                XCTFail()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
     func testLoadProfiles() {
         let expectation = XCTestExpectation(description: "Should load profiles.")
         let sut = FavoriteProfilesService()
@@ -32,7 +51,7 @@ final class FavoriteProfilesServiceTests: XCTestCase {
     func testDeleteProfile() throws {
         let expectation = XCTestExpectation(description: "Shoud update profiles.")
         let sut = FavoriteProfilesService()
-        let profilesMock = FavoriteProfilesMocks().favoriteProfilesMock
+        let profilesMock = mock.favoriteProfilesMock
         let profileMock = profilesMock.first!
         try setUpDataStoreWithMockData()
         
@@ -54,7 +73,7 @@ final class FavoriteProfilesServiceTests: XCTestCase {
     func testDeleteNonExistantProfile() throws {
         let expectation = XCTestExpectation(description: "Should failed when try to delete.")
         let sut = FavoriteProfilesService()
-        let profilesMock = FavoriteProfilesMocks().favoriteProfilesMock
+        let profilesMock = mock.favoriteProfilesMock
         let profileMock = profilesMock.first!
         
         sut.loadProfiles { _ in }

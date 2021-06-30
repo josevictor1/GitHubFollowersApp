@@ -20,7 +20,8 @@ public final class FavoriteProfilesCoordinator: NavigationCoordinator {
     }
     
     public func start() {
-        
+        let favoriteProfilesViewController = FavoriteProfilesTableViewController()
+        navigationController?.pushViewController(favoriteProfilesViewController, animated: true)
     }
     
     public func navigateToFavoriteProfiles(with selectedUserInformation: SelectedUserInformation) {

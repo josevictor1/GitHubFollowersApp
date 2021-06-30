@@ -52,12 +52,12 @@ final class FollowersCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -115,8 +115,6 @@ final class FollowersCollectionViewController: UICollectionViewController {
     }
     
     private func setUpCollectionViewLayout() {
-        collectionView = UICollectionView(frame: view.frame,
-                                          collectionViewLayout: .threeColumnLayout)
         collectionView.setContentOffset(.zero, animated: true)
     }
     
@@ -188,7 +186,7 @@ extension FollowersCollectionViewController {
     
     static func makeFollowers(with userFollowers: SelectedUserInformation,
                               coordinator: FollowersCoordinator) -> FollowersCollectionViewController {
-        let viewController = FollowersCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        let viewController = FollowersCollectionViewController(collectionViewLayout: .threeColumnLayout)
         let presenter = GetFollowersErrorAlertPresenter()
         let paginationController = PaginationController(numberOfItems: userFollowers.numberOfFollowers)
         viewController.logicController = FollowersLogicController(viewController: viewController,

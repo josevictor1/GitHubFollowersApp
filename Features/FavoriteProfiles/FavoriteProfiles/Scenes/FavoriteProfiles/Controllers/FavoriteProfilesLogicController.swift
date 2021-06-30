@@ -18,6 +18,7 @@ protocol FavoriteProfilesLogicControllerProtocol {
 protocol FavoriteProfilesLogicControllerOutput {
     func didUpdateFavoriteProfiles(_ favoriteUserProfiles: [FavoriteProfile])
     func didFailOnUpdateFavoriteProfiles()
+    func didFailOnAddFavoriteProfile()
 }
 
 final class FavoriteProfilesLogicController: FavoriteProfilesLogicControllerProtocol {
@@ -52,6 +53,21 @@ final class FavoriteProfilesLogicController: FavoriteProfilesLogicControllerProt
     
     func add(selectedUser: SelectedUserInformation) {
         let favoriteProfile = FavoriteProfile(selectedUser: selectedUser)
+        saveProfile(favoriteProfile)
+    }
+    
+    private func saveProfile(_ favoriteProfile: FavoriteProfile) {
+        provider.saveProfile(favoriteProfile) { [weak self] result in
+            switch result {
+            case .success:
+                self?.updateFavoriteProfiles(favoriteProfiles)
+            case .failure:
+                self?.viewController?.didFailOnUpdateFavoriteProfiles()
+            }
+        }
+    }
+    
+    private func updateFavoriteProfiles(with favoriteProfile: FavoriteProfile) {
         favoriteProfiles.append(favoriteProfile)
         viewController?.didUpdateFavoriteProfiles(favoriteProfiles)
     }
@@ -69,9 +85,7 @@ final class FavoriteProfilesLogicController: FavoriteProfilesLogicControllerProt
     }
     
     private func filterProfiles(byFilter filter: String) -> [FavoriteProfile] {
-        favoriteProfiles.filter {
-            $0.name.contains(filter) || $0.login.contains(filter)
-        }
+        favoriteProfiles.filter { $0.login.contains(filter) }
     }
 }
 

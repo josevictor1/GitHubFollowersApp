@@ -8,25 +8,36 @@
 
 import DataStore
 
-typealias FavoriteProfilesProviderCompletion = (Result<[FavoriteProfile], Error>) -> Void
+typealias LoadFavoriteProfilesCompletion = (Result<[FavoriteProfile], Error>) -> Void
 typealias DeleteFavoriteProfileCompletion = (Result<FavoriteProfile, Error>) -> Void
+typealias SaveProfileCompletion = (Result<Void, Error>) -> Void
 
 protocol FavoriteProfilesProvider {
-    func loadProfiles(completion: FavoriteProfilesProviderCompletion)
-    func delete(_ profile: FavoriteProfile,
-                completion: DeleteFavoriteProfileCompletion)
+    func saveProfile(_ favoriteProfile: FavoriteProfile, completion: SaveProfileCompletion)
+    func loadProfiles(completion: LoadFavoriteProfilesCompletion)
+    func delete(_ profile: FavoriteProfile, completion: DeleteFavoriteProfileCompletion)
 }
 
 final class FavoriteProfilesService: FavoriteProfilesProvider {
-    
+
     private let dataStore: DataStore
     private var favorites = [Favorite]()
     
     init(dataStore: DataStore = .shared) {
         self.dataStore = dataStore
+        dataStore.set(storageType: .persistent)
     }
     
-    func loadProfiles(completion: FavoriteProfilesProviderCompletion) {
+    func saveProfile(_ favoriteProfile: FavoriteProfile, completion: SaveProfileCompletion) {
+        do {
+            try dataStore.save(Favorite.self, withData: favoriteProfile)
+            completion(.success(Void()))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func loadProfiles(completion: LoadFavoriteProfilesCompletion) {
         do {
             let favorites: [Favorite] = try dataStore.fetch()
             self.favorites = favorites

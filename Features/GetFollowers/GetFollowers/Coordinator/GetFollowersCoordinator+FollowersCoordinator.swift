@@ -20,6 +20,6 @@ extension GetFollowersCoordinator: FollowersCoordinator {
     }
     
     func showFavorites(with selectedUser: SelectedUserInformation) {
-        
+        navigateToFavories(with: selectedUser)
     }
 }

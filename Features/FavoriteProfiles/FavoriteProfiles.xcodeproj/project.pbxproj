@@ -17,6 +17,9 @@
 		1A8A4D96266721760093E2A8 /* FavoriteProfilesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A4D95266721760093E2A8 /* FavoriteProfilesCoordinator.swift */; };
 		1A8A4D98266721A30093E2A8 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8A4D97266721A30093E2A8 /* Core.framework */; };
 		1A8A4DA2266724DB0093E2A8 /* FavoriteProfilesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A4DA1266724DB0093E2A8 /* FavoriteProfilesTableViewController.swift */; };
+		1A9DCE0A2686C699004A37F6 /* FavoriteProfilesTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9DCE092686C699004A37F6 /* FavoriteProfilesTableViewControllerTests.swift */; };
+		1A9DCE0C2686DBA1004A37F6 /* FavoriteProfilesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9DCE0B2686DBA1004A37F6 /* FavoriteProfilesSection.swift */; };
+		1A9DCE1026880F40004A37F6 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9DCE0F26880F40004A37F6 /* ProfileTableViewCell.swift */; };
 		1AA6678A26695F4E00DF2DAD /* FavoriteProfilesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6678926695F4E00DF2DAD /* FavoriteProfilesServiceTests.swift */; };
 		1AA6678C2669648200DF2DAD /* FavoriteProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6678B2669648200DF2DAD /* FavoriteProfileService.swift */; };
 		1AA6678E2669666E00DF2DAD /* FavoriteProfilesServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6678D2669666E00DF2DAD /* FavoriteProfilesServiceMock.swift */; };
@@ -49,6 +52,9 @@
 		1A8A4D95266721760093E2A8 /* FavoriteProfilesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProfilesCoordinator.swift; sourceTree = "<group>"; };
 		1A8A4D97266721A30093E2A8 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8A4DA1266724DB0093E2A8 /* FavoriteProfilesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProfilesTableViewController.swift; sourceTree = "<group>"; };
+		1A9DCE092686C699004A37F6 /* FavoriteProfilesTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProfilesTableViewControllerTests.swift; sourceTree = "<group>"; };
+		1A9DCE0B2686DBA1004A37F6 /* FavoriteProfilesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProfilesSection.swift; sourceTree = "<group>"; };
+		1A9DCE0F26880F40004A37F6 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		1AA6678926695F4E00DF2DAD /* FavoriteProfilesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProfilesServiceTests.swift; sourceTree = "<group>"; };
 		1AA6678B2669648200DF2DAD /* FavoriteProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProfileService.swift; sourceTree = "<group>"; };
 		1AA6678D2669666E00DF2DAD /* FavoriteProfilesServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProfilesServiceMock.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1A61D349266891FC0061C63D /* FavoriteProfilesLogicControllerTests.swift */,
+				1A9DCE092686C699004A37F6 /* FavoriteProfilesTableViewControllerTests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 			children = (
 				1A8A4DA1266724DB0093E2A8 /* FavoriteProfilesTableViewController.swift */,
 				1A61D34B266895D70061C63D /* FavoriteProfilesLogicController.swift */,
+				1A9DCE0B2686DBA1004A37F6 /* FavoriteProfilesSection.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 		1A8A4DA3266725750093E2A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1A9DCE0F26880F40004A37F6 /* ProfileTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,7 +376,9 @@
 				1A61D34C266895D70061C63D /* FavoriteProfilesLogicController.swift in Sources */,
 				1AA66793266969C000DF2DAD /* FavoriteProfile+Favorite.swift in Sources */,
 				1A8A4D96266721760093E2A8 /* FavoriteProfilesCoordinator.swift in Sources */,
+				1A9DCE0C2686DBA1004A37F6 /* FavoriteProfilesSection.swift in Sources */,
 				1A8230F3267EE47500E7E050 /* FavoriteProfile+ManagedData.swift in Sources */,
+				1A9DCE1026880F40004A37F6 /* ProfileTableViewCell.swift in Sources */,
 				1A61D34E26691F6B0061C63D /* FavoriteProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +391,7 @@
 				1A61D34A266891FC0061C63D /* FavoriteProfilesLogicControllerTests.swift in Sources */,
 				1AA6678E2669666E00DF2DAD /* FavoriteProfilesServiceMock.swift in Sources */,
 				1AA6678A26695F4E00DF2DAD /* FavoriteProfilesServiceTests.swift in Sources */,
+				1A9DCE0A2686C699004A37F6 /* FavoriteProfilesTableViewControllerTests.swift in Sources */,
 				1A61D353266928940061C63D /* FavoriteProfilesTableViewControllerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

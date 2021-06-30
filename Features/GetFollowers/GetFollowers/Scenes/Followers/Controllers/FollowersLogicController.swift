@@ -49,7 +49,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     func loadNextPage() {
         guard paginationController.areThereLeftPages,
               !isLoadingData else { return }
-        loadFollowers()
+        fetchFollowers()
         isLoadingData = true
     }
 
@@ -86,7 +86,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
 
     private func convertIntoFollowerList(_ followerResponse: [FollowerResponse]) -> [Follower] {
-        followerResponse.map { Follower(response: $0) }
+        followerResponse.map(Follower.init)
     }
 
     private func updateFollowers(with response: [Follower]) {

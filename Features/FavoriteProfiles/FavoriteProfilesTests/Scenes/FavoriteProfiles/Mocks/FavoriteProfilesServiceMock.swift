@@ -10,11 +10,21 @@ import Foundation
 @testable import FavoriteProfiles
 
 final class FavoriteProfilesServiceMock: FavoriteProfilesProvider {
-   
-    var profiles = [FavoriteProfile]()
-    var error: Error?
     
-    func loadProfiles(completion: FavoriteProfilesProviderCompletion) {
+    var profiles = (0...5).map {
+        FavoriteProfile(login: "\($0)",
+                        name: "\($0)",
+                        avatarURL: "\($0)")
+        
+    }
+    
+    var error: Error?
+
+    func saveProfile(_ favoriteProfile: FavoriteProfile, completion: SaveProfileCompletion) {
+        
+    }
+    
+    func loadProfiles(completion: LoadFavoriteProfilesCompletion) {
         if let error = error {
             completion(.failure(error))
         } else {
