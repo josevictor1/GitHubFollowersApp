@@ -29,10 +29,10 @@ public final class DataStore {
     
     public func set(storageType: StorageType) {
         guard storageType == .inMemory else { return }
-        persistenceContainer.persistentStoreDescriptions = [inMemoryPersistenStoreDescription]
+        persistenceContainer.persistentStoreDescriptions = [inMemoryPersistentStoreDescription]
     }
     
-    private var inMemoryPersistenStoreDescription: NSPersistentStoreDescription {
+    private var inMemoryPersistentStoreDescription: NSPersistentStoreDescription {
         let description = NSPersistentStoreDescription()
         description.url = URL(fileURLWithPath: "/dev/null")
         return description

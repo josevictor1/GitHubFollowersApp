@@ -13,12 +13,13 @@ public enum ImageAssets: String {
     case companyIcon
     case emptyStateLogo
     case favoriteIcon
+    case favoriteFilledIcon
     case folderIcon
     case followersIcon
     case getFollowersLogo
     case gistsIcon
     case locationIcon
-    case magnifyingglass
+    case magnifyingGlassIcon
     case navigationIcon
     case placeholder
 

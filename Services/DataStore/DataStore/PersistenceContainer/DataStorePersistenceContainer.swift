@@ -1,5 +1,5 @@
 //
-//  DataSotrePersistenceContainer.swift
+//  DataStorePersistenceContainer.swift
 //  DataStore
 //
 //  Created by José Victor Pereira Costa on 02/05/21.

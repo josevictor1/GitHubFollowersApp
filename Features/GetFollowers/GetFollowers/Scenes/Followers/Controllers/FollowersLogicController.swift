@@ -13,34 +13,39 @@ typealias SearchFollowersCompletion = (Result<[Follower], GetFollowersError>) ->
 protocol FollowersLogicControllerProtocol {
     var userInformation: SelectedUserInformation { get }
     func loadFollowers()
+    func loadFavoriteState()
     func loadNextPage()
+    func addSelectedUsersToFavorite()
     func searchFollower(withLogin login: String)
     func selectFollower(atIndex index: Int)
     func cancelSearch()
 }
 
 protocol FollowersLogicControllerOutput: AnyObject {
-    func showFollowersNotFound()
-    func showFailureOnFetchFollowers(_ error: GetFollowersError)
-    func showFollowers(_ followers: [Follower])
-    func showUserInformation(for login: String)
+    func failedAddUser()
+    func didAddUser()
+    func followersNotFound()
+    func failedOnFetchFollowers(_ error: GetFollowersError)
+    func didFetchFollowers(_ followers: [Follower])
+    func showUserInformation(forLogin login: String)
+    func didFetchSelectedUserOnFavorites()
+    func selectedUserNotFound()
 }
 
 final class FollowersLogicController: FollowersLogicControllerProtocol {
     
-    private unowned let viewController: FollowersLogicControllerOutput
+    weak var viewController: FollowersLogicControllerOutput?
     private(set) var userInformation: SelectedUserInformation
     private let service: FollowersProvider
     private let paginationController: PaginationControllerProtocol
     private var followers = [Follower]()
     private var filteredFollowers = [Follower]()
     private var isLoadingData = false
+    private var isSelectedUserFavorited = false
 
-    init(viewController: FollowersLogicControllerOutput,
-         userFollowers: SelectedUserInformation,
+    init(userFollowers: SelectedUserInformation,
          paginationController: PaginationControllerProtocol,
          service: FollowersProvider = FollowersService()) {
-        self.viewController = viewController
         self.userInformation = userFollowers
         self.paginationController = paginationController
         self.service = service
@@ -57,7 +62,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
         if paginationController.areThereLeftPages {
             fetchFollowers()
         } else {
-            viewController.showFollowersNotFound()
+            viewController?.followersNotFound()
         }
     }
 
@@ -69,14 +74,14 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
 
     private func fetchFollowers(with request: FollowersRequest) {
-        service.fetchFollowes(for: request) { [unowned self] result in
+        service.fetchFollowers(for: request) { [weak self] result in
             switch result {
             case .success(let response):
-                self.handleSuccess(with: response)
+                self?.handleSuccess(with: response)
             case .failure(let error):
-                self.viewController.showFailureOnFetchFollowers(error)
+                self?.viewController?.failedOnFetchFollowers(error)
             }
-            self.isLoadingData = false
+            self?.isLoadingData = false
         }
     }
 
@@ -92,7 +97,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     private func updateFollowers(with response: [Follower]) {
         followers += response
         paginationController.turnPage()
-        viewController.showFollowers(followers)
+        viewController?.didFetchFollowers(followers)
     }
 
     func searchFollower(withLogin login: String) {
@@ -104,11 +109,8 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
 
     func selectFollower(atIndex index: Int) {
-        if filteredFollowers.isEmpty {
-            viewController.showUserInformation(for: followers[index].login)
-        } else {
-            viewController.showUserInformation(for: filteredFollowers[index].login)
-        }
+        let login = filteredFollowers.isEmpty ? followers[index].login : filteredFollowers[index].login
+        viewController?.showUserInformation(forLogin: login)
     }
 
     private func cleanFilteredFollowers() {
@@ -117,7 +119,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
 
     private func searchFollowerLocally(withLogin login: String) {
         filteredFollowers = filterPlayers(withLogin: login)
-        viewController.showFollowers(filteredFollowers)
+        viewController?.didFetchFollowers(filteredFollowers)
     }
 
     private func filterPlayers(withLogin login: String) -> [Follower] {
@@ -129,7 +131,38 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
 
     private func showUnfilteredFollowers() {
-        viewController.showFollowers(followers)
+        viewController?.didFetchFollowers(followers)
         cleanFilteredFollowers()
+    }
+    
+    func loadFavoriteState() {
+        service.fetchFavorites { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.checkLoginOn(favorites: response)
+            case .failure:
+                self?.viewController?.didFetchSelectedUserOnFavorites()
+            }
+        }
+    }
+    
+    private func checkLoginOn(favorites: [String]) {
+        isSelectedUserFavorited = favorites.contains(userInformation.login)
+        if isSelectedUserFavorited {
+            viewController?.didFetchSelectedUserOnFavorites()
+        } else {
+            viewController?.selectedUserNotFound()
+        }
+    }
+    
+    func addSelectedUsersToFavorite() {
+        service.addSelectedUserToFavorites(userInformation) { result in
+            switch result {
+            case .success:
+                viewController?.didAddUser()
+            case .failure:
+                viewController?.failedAddUser()
+            }
+        }
     }
 }

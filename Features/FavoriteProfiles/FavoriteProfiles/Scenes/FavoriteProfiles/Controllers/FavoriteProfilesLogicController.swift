@@ -8,14 +8,14 @@
 
 import Commons
 
-protocol FavoriteProfilesLogicControllerProtocol {
+protocol FavoriteProfilesLogicControllerProtocol: AnyObject {
     func loadProfiles()
     func add(selectedUser: SelectedUserInformation)
     func deleteProfile(atIndex index: Int)
     func searchProfile(byFilter filter: String)
 }
 
-protocol FavoriteProfilesLogicControllerOutput {
+protocol FavoriteProfilesLogicControllerOutput: AnyObject {
     func didUpdateFavoriteProfiles(_ favoriteUserProfiles: [FavoriteProfile])
     func didFailOnUpdateFavoriteProfiles()
     func didFailOnAddFavoriteProfile()
@@ -23,11 +23,11 @@ protocol FavoriteProfilesLogicControllerOutput {
 
 final class FavoriteProfilesLogicController: FavoriteProfilesLogicControllerProtocol {
     
-    var viewController: FavoriteProfilesLogicControllerOutput?
+    weak var viewController: FavoriteProfilesLogicControllerOutput?
     private var favoriteProfiles = [FavoriteProfile]()
     private let provider: FavoriteProfilesProvider
     
-    init(provider: FavoriteProfilesProvider) {
+    init(provider: FavoriteProfilesProvider = FavoriteProfilesService()) {
         self.provider = provider
     }
     

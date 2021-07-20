@@ -1,5 +1,5 @@
 //
-//  Follower+Hashble.swift
+//  Follower+Hashable.swift
 //  GetFollowers
 //
 //  Created by José Victor Pereira Costa on 27/10/20.

@@ -1,5 +1,5 @@
 //
-//  GetFollowersCoordintaor+SearchCoordinator.swift
+//  GetFollowersCoordinator+SearchCoordinator.swift
 //  GetFollowers
 //
 //  Created by José Victor Pereira Costa on 23/05/20.

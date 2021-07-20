@@ -17,7 +17,16 @@ final class FavoriteProfilesTableViewController: UITableViewController {
     
     private lazy var dataSource = FavoriteProfilesDataSource(tableView: tableView,
                                                              cellProvider: cellProvider)
-    var logicController: FavoriteProfilesLogicControllerProtocol?
+    private let logicController: FavoriteProfilesLogicControllerProtocol
+    
+    init(logicController: FavoriteProfilesLogicControllerProtocol) {
+        self.logicController = logicController
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private var cellProvider: FavoriteProfilesCellProvider = { tableView, indexPath, item in
         let cell = tableView.dequeueReusableCell(withClass: ProfileTableViewCell.self, for: indexPath)
@@ -33,15 +42,11 @@ final class FavoriteProfilesTableViewController: UITableViewController {
     
     private func setUp() {
         setUpNavigationBarTitle()
-        setUpTableView()
     }
     
     private func setUpNavigationBarTitle() {
         title = "Favorite"
         navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    private func setUpTableView() {
-        tableView.estimatedRowHeight = 80
     }
     
     private func registerCells() {
@@ -50,8 +55,7 @@ final class FavoriteProfilesTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        logicController?.loadProfiles()
-        reloadDataSource(with: [])
+        logicController.loadProfiles()
     }
 }
 
@@ -62,8 +66,6 @@ extension FavoriteProfilesTableViewController: FavoriteProfilesLogicControllerOu
     }
     
     private func reloadDataSource(with profiles: [FavoriteProfile]) {
-        let profiles = [FavoriteProfile(login: "josevictor1", avatarURL: "josevictor1"),
-                        FavoriteProfile(login: "josevictor1", avatarURL: "josevictor1")]
         var snapshot = FavoriteProfilesDataSourceSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(profiles)

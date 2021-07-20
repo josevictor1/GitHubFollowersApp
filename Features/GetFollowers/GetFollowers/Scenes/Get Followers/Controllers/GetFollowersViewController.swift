@@ -19,14 +19,22 @@ protocol GetFollowersViewControllerInput {
 }
 
 final class GetFollowersViewController: UIViewController {
-    private(set) var logicController: GetFollowersLogicControllerProtocol?
-    private(set) var presenter: GetFollowersAlertPresenterProtocol?
-    private(set) weak var delegate: SearchCoordinator?
-    private let keyboardObserver: KeyboardObserverProtocol
-    private let getFollowersView: GetFollowersViewProtocol
     
-    init(view: GetFollowersViewProtocol, keyboardObserver: KeyboardObserverProtocol) {
+    private unowned let coordinator: SearchCoordinator
+    private let getFollowersView: GetFollowersViewProtocol
+    private let logicController: GetFollowersLogicControllerProtocol
+    private let presenter: GetFollowersAlertPresenterProtocol
+    private let keyboardObserver: KeyboardObserverProtocol
+    
+    init(view: GetFollowersViewProtocol,
+         logicController: GetFollowersLogicControllerProtocol,
+         presenter: GetFollowersAlertPresenterProtocol,
+         delegate: SearchCoordinator,
+         keyboardObserver: KeyboardObserverProtocol) {
         getFollowersView = view
+        self.logicController = logicController
+        self.presenter = presenter
+        self.coordinator = delegate
         self.keyboardObserver = keyboardObserver
         super.init(nibName: nil, bundle: nil)
     }
@@ -47,12 +55,12 @@ final class GetFollowersViewController: UIViewController {
     private func fetchUser(with username: String?) {
         guard let username = username, !username.isEmpty else { return }
         startLoading()
-        logicController?.fetchUserInformation(for: username) { [unowned self] result in
+        logicController.fetchUserInformation(for: username) { [unowned self] result in
             switch result {
             case .success(let user):
-                self.delegate?.showUserInformation(user)
+                self.coordinator.showUserInformation(user)
             case .failure(let error):
-                self.presenter?.present(error)
+                self.presenter.present(error)
             }
             self.stopLoading()
         }
@@ -80,23 +88,5 @@ extension GetFollowersViewController: GetFollowersViewControllerInput {
     
     func viewController(didSelectFollower selectedFollower: String) {
         fetchUser(with: selectedFollower)
-    }
-}
-
-extension GetFollowersViewController {
-    
-    static func makeGetFollowers(view: GetFollowersViewProtocol = GetFollowersView(),
-                                 delegate: SearchCoordinator,
-                                 presenter: GetFollowersAlertPresenterProtocol = GetFollowersErrorAlertPresenter(),
-                                 logicController: GetFollowersLogicControllerProtocol = GetFollowersLogicController(),
-                                 keyboardObserver: KeyboardObserverProtocol = KeyboardObserver()) -> GetFollowersViewController {
-        
-        let viewController = GetFollowersViewController(view: view, keyboardObserver: keyboardObserver)
-        view.delegate = viewController
-        viewController.presenter = presenter
-        viewController.logicController = logicController
-        viewController.delegate = delegate
-        presenter.configureAlert(to: viewController)
-        return viewController
     }
 }

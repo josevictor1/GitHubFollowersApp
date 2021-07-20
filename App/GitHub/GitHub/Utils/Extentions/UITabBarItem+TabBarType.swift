@@ -27,7 +27,7 @@ extension UITabBarItem {
         var image: UIImage {
             switch self {
             case .getFollowers:
-                return ImageAssets.magnifyingglass.image
+                return ImageAssets.magnifyingGlassIcon.image
             case .favoriteProfiles:
                 return ImageAssets.favoriteIcon.image
             }

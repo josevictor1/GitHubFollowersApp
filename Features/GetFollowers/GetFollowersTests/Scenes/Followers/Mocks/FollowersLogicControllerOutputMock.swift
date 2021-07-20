@@ -18,7 +18,7 @@ final class FollowersLogicControllerOutputMock: FollowersLogicControllerOutput {
 
     init() {}
 
-    func showFollowersNotFound() {
+    func followersNotFound() {
         expection?.fulfill()
     }
 

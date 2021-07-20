@@ -17,8 +17,9 @@ public protocol GetFollowersCoordinatorDelegate: AnyObject {
 
 public final class GetFollowersCoordinator: NavigationCoordinator {
     
+    private let flowBuilder = GetFollowersFlowBuilder()
     public var parent: Coordinator?
-    public var children: [Coordinator] = []
+    public var children = [Coordinator]()
     public var navigationController: UINavigationController?
     public weak var delegate: GetFollowersCoordinatorDelegate?
 
@@ -32,8 +33,8 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
     }
     
     public func reloadFollowers(with selectedUserInformation: SelectedUserInformation) {
-        let viewController: FollowersCollectionViewController = .makeFollowers(with: selectedUserInformation,
-                                                                               coordinator: self)
+        let viewController = flowBuilder.followers(selectedUserInformation: selectedUserInformation,
+                                                   followersCoordinator: self)
         reloadNavigationControllerStack(with: viewController)
     }
     
@@ -49,13 +50,13 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
     }
 
     func navigateToGetFollowers() {
-        let viewController: GetFollowersViewController = .makeGetFollowers(delegate: self)
+        let viewController = flowBuilder.getFollowers(delegate: self)
         navigationController?.pushViewController(viewController, animated: false)
     }
 
     func navigateToFollowers(with selectedUserInformation: SelectedUserInformation) {
-        let viewController: FollowersCollectionViewController = .makeFollowers(with: selectedUserInformation,
-                                                                               coordinator: self)
+        let viewController = flowBuilder.followers(selectedUserInformation: selectedUserInformation,
+                                                   followersCoordinator: self)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
@@ -63,7 +64,7 @@ public final class GetFollowersCoordinator: NavigationCoordinator {
         delegate?.getFollowersDidOpenUserInformation(withLogin: follower)
     }
     
-    func navigateToFavories(with selectedUser: SelectedUserInformation) {
+    func navigateToFavorites(with selectedUser: SelectedUserInformation) {
         delegate?.getFollowersFavoritedSelectedUser(selectedUser)
     }
 }

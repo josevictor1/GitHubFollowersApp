@@ -13,3 +13,4 @@ public final class Favorite: NSManagedObject {
     @NSManaged public var login: String?
     @NSManaged public var name: String?
 }
+

@@ -20,6 +20,10 @@
 		1A6A673925BA2F06004F1FC1 /* SelectedUserInformation+UserInformationNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A673825BA2F06004F1FC1 /* SelectedUserInformation+UserInformationNetworking.swift */; };
 		1A6A675D25BA84EA004F1FC1 /* UserInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A6A675C25BA84EA004F1FC1 /* UserInformation.json */; };
 		1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6A67B825BBB9EB004F1FC1 /* FollowersRequest.swift */; };
+		1A7DED93269BB4F70084D0B1 /* GetFollowersFlowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7DED92269BB4F70084D0B1 /* GetFollowersFlowBuilder.swift */; };
+		1A7DED95269BBAF60084D0B1 /* FollowersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7DED94269BBAF60084D0B1 /* FollowersBuilder.swift */; };
+		1A7DED9C269CFFD30084D0B1 /* GetFollowersBuilderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7DED9B269CFFD30084D0B1 /* GetFollowersBuilderMock.swift */; };
+		1A7DED9E269D00D10084D0B1 /* FollowersBuilderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7DED9D269D00D10084D0B1 /* FollowersBuilderMock.swift */; };
 		1A94FD0D2431695E0095932A /* GetFollowersViewContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */; };
 		1A94FD132432719B0095932A /* GetFollowersAlertPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */; };
 		1A94FD19243297E10095932A /* GetFollowersViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */; };
@@ -43,8 +47,9 @@
 		1ABAA93325E45C4400981313 /* FollowersLogicControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAA93225E45C4400981313 /* FollowersLogicControllerMock.swift */; };
 		1ABAA93725E45F2C00981313 /* FollowersCoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAA93625E45F2C00981313 /* FollowersCoordinatorMock.swift */; };
 		1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */; };
+		1ABCEF72268D228E00D865CE /* GetFollowersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABCEF71268D228E00D865CE /* GetFollowersBuilder.swift */; };
 		1ABEB91A2548696E00B04478 /* FollowersSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB9192548696E00B04478 /* FollowersSections.swift */; };
-		1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB91F254869E000B04478 /* Follower+Hashble.swift */; };
+		1ABEB920254869E000B04478 /* Follower+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB91F254869E000B04478 /* Follower+Hashable.swift */; };
 		1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */; };
 		1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */; };
 		1AD82C282460DE00000CCD95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD82C272460DE00000CCD95 /* Localizable.strings */; };
@@ -88,6 +93,10 @@
 		1A6A673825BA2F06004F1FC1 /* SelectedUserInformation+UserInformationNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectedUserInformation+UserInformationNetworking.swift"; sourceTree = "<group>"; };
 		1A6A675C25BA84EA004F1FC1 /* UserInformation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserInformation.json; sourceTree = "<group>"; };
 		1A6A67B825BBB9EB004F1FC1 /* FollowersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersRequest.swift; sourceTree = "<group>"; };
+		1A7DED92269BB4F70084D0B1 /* GetFollowersFlowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersFlowBuilder.swift; sourceTree = "<group>"; };
+		1A7DED94269BBAF60084D0B1 /* FollowersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersBuilder.swift; sourceTree = "<group>"; };
+		1A7DED9B269CFFD30084D0B1 /* GetFollowersBuilderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersBuilderMock.swift; sourceTree = "<group>"; };
+		1A7DED9D269D00D10084D0B1 /* FollowersBuilderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersBuilderMock.swift; sourceTree = "<group>"; };
 		1A94FD0C2431695E0095932A /* GetFollowersViewContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewContollerTests.swift; sourceTree = "<group>"; };
 		1A94FD122432719B0095932A /* GetFollowersAlertPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersAlertPresenterMock.swift; sourceTree = "<group>"; };
 		1A94FD18243297E10095932A /* GetFollowersViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerDelegateMock.swift; sourceTree = "<group>"; };
@@ -110,8 +119,9 @@
 		1ABAA93225E45C4400981313 /* FollowersLogicControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicControllerMock.swift; sourceTree = "<group>"; };
 		1ABAA93625E45F2C00981313 /* FollowersCoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCoordinatorMock.swift; sourceTree = "<group>"; };
 		1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersEmptyBackgroundView.swift; sourceTree = "<group>"; };
+		1ABCEF71268D228E00D865CE /* GetFollowersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersBuilder.swift; sourceTree = "<group>"; };
 		1ABEB9192548696E00B04478 /* FollowersSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersSections.swift; sourceTree = "<group>"; };
-		1ABEB91F254869E000B04478 /* Follower+Hashble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follower+Hashble.swift"; sourceTree = "<group>"; };
+		1ABEB91F254869E000B04478 /* Follower+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follower+Hashable.swift"; sourceTree = "<group>"; };
 		1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersLogicController.swift; sourceTree = "<group>"; };
 		1AD82C272460DE00000CCD95 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -173,6 +183,7 @@
 		1A1C2F21242E859100096731 /* GetFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				1A3EC4B2269B964100D3F5EF /* FlowBuilder */,
 				1A65D7F92483DDD4001772EC /* Models */,
 				1AD82C262460DD91000CCD95 /* Supporting Files */,
 				1AEFAEB7245F7B6800F64C17 /* Assets */,
@@ -213,6 +224,7 @@
 		1A1C2F3C242E85F200096731 /* Get Followers */ = {
 			isa = PBXGroup;
 			children = (
+				1ABCEF70268D227000D865CE /* Builder */,
 				1A1C2F3D242E85F200096731 /* Model */,
 				1A1C2F41242E85F200096731 /* Controllers */,
 				1A1C2F44242E85F200096731 /* Views */,
@@ -244,6 +256,14 @@
 				1A1C2F45242E85F200096731 /* GetFollowersView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1A3EC4B2269B964100D3F5EF /* FlowBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				1A7DED92269BB4F70084D0B1 /* GetFollowersFlowBuilder.swift */,
+			);
+			path = FlowBuilder;
 			sourceTree = "<group>";
 		};
 		1A4247CE2550B0D2007E42C5 /* Networking */ = {
@@ -375,6 +395,24 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		1ABCEF6F268D225A00D865CE /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				1A7DED94269BBAF60084D0B1 /* FollowersBuilder.swift */,
+				1A7DED9D269D00D10084D0B1 /* FollowersBuilderMock.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		1ABCEF70268D227000D865CE /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				1ABCEF71268D228E00D865CE /* GetFollowersBuilder.swift */,
+				1A7DED9B269CFFD30084D0B1 /* GetFollowersBuilderMock.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		1ABEB92325486EF600B04478 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +442,7 @@
 		1AED2CF52479FD67000BC13A /* Followers */ = {
 			isa = PBXGroup;
 			children = (
+				1ABCEF6F268D225A00D865CE /* Builder */,
 				1ABEB92325486EF600B04478 /* View */,
 				1AED2CF82479FDEB000BC13A /* Model */,
 				1AED2CF62479FD83000BC13A /* Controllers */,
@@ -453,7 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				1ABEB9192548696E00B04478 /* FollowersSections.swift */,
-				1ABEB91F254869E000B04478 /* Follower+Hashble.swift */,
+				1ABEB91F254869E000B04478 /* Follower+Hashable.swift */,
 				1A6A67B825BBB9EB004F1FC1 /* FollowersRequest.swift */,
 			);
 			path = Domain;
@@ -601,11 +640,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AEFAEBB245F7BC600F64C17 /* LocalizedStrings.swift in Sources */,
-				1ABEB920254869E000B04478 /* Follower+Hashble.swift in Sources */,
+				1ABEB920254869E000B04478 /* Follower+Hashable.swift in Sources */,
 				1A4247D02550B104007E42C5 /* FollowersNetworkingRequest.swift in Sources */,
 				1A1C2F50242E863400096731 /* GetFollowersCoordinator.swift in Sources */,
+				1A7DED93269BB4F70084D0B1 /* GetFollowersFlowBuilder.swift in Sources */,
 				1AE116C326090DC800B464E7 /* GetFollowersService.swift in Sources */,
 				1ABBDD5625E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift in Sources */,
+				1ABCEF72268D228E00D865CE /* GetFollowersBuilder.swift in Sources */,
+				1A7DED95269BBAF60084D0B1 /* FollowersBuilder.swift in Sources */,
 				1AFCE0472550A49F00CCC878 /* FollowersService.swift in Sources */,
 				1ABEB91A2548696E00B04478 /* FollowersSections.swift in Sources */,
 				1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */,
@@ -616,7 +658,9 @@
 				1ABEB92525486F1600B04478 /* FollowerCollectionViewCell.swift in Sources */,
 				1A1C2F49242E85F200096731 /* Follower.swift in Sources */,
 				1AE42A0E25E5E74D00BB1505 /* PaginationController.swift in Sources */,
+				1A7DED9E269D00D10084D0B1 /* FollowersBuilderMock.swift in Sources */,
 				1A1C2F4B242E85F200096731 /* GetFollowersLogicController.swift in Sources */,
+				1A7DED9C269CFFD30084D0B1 /* GetFollowersBuilderMock.swift in Sources */,
 				1AC5569E24C475F700EE1E08 /* FollowersLogicController.swift in Sources */,
 				1AAD12B9247AAF4700C563F9 /* FollowersCollectionViewController.swift in Sources */,
 				1A6A673925BA2F06004F1FC1 /* SelectedUserInformation+UserInformationNetworking.swift in Sources */,

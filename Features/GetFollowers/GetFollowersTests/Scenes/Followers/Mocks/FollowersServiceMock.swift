@@ -24,7 +24,7 @@ final class FollowersServiceMock: FollowersProvider {
         return fileReader
     }()
 
-    func fetchFollowes(for request: FollowersRequest, completion: @escaping FetchFollowersRequestCompletion) {
+    func fetchFollowers(for request: FollowersRequest, completion: @escaping FetchFollowersRequestCompletion) {
         if let error = error {
             completion(.failure(error))
         } else if shouldReturnEmpty {

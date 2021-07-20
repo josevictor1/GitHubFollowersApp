@@ -16,10 +16,10 @@ typealias FollowersCollectionViewCellProvider = FollowersDataSource.CellProvider
 
 final class FollowersCollectionViewController: UICollectionViewController {
     
-    var logicController: FollowersLogicControllerProtocol?
-    var configurator: FollowersCollectionViewConfiguratorProtocol?
-    var presenter: GetFollowersAlertPresenterProtocol?
-    var coordinator: FollowersCoordinator?
+    private let logicController: FollowersLogicControllerProtocol
+    private let configurator: FollowersCollectionViewConfiguratorProtocol
+    private let presenter: GetFollowersAlertPresenterProtocol
+    private let coordinator: FollowersCoordinator
     
     private lazy var dataSource: FollowersDataSource = {
         FollowersDataSource(collectionView: collectionView,
@@ -29,7 +29,7 @@ final class FollowersCollectionViewController: UICollectionViewController {
     private lazy var cellProvider: FollowersCollectionViewCellProvider = { [unowned self] collectionView, indexPath, item in
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCollectionViewCell.identifier,
                                                       for: indexPath)
-        self.configurator?.configure(cell, with: item)
+        self.configurator.configure(cell, with: item)
         return cell
     }
     
@@ -48,6 +48,21 @@ final class FollowersCollectionViewController: UICollectionViewController {
         favoriteBarButtonItem.image = ImageAssets.favoriteIcon.image
         return favoriteBarButtonItem
     }()
+    
+    init(logicController: FollowersLogicControllerProtocol,
+         configurator: FollowersCollectionViewConfiguratorProtocol,
+         presenter: GetFollowersAlertPresenterProtocol,
+         coordinator: FollowersCoordinator) {
+        self.logicController = logicController
+        self.configurator = configurator
+        self.presenter = presenter
+        self.coordinator = coordinator
+        super.init(collectionViewLayout: .threeColumnLayout)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +93,7 @@ final class FollowersCollectionViewController: UICollectionViewController {
     }
     
     private func setUpTitle() {
-        title = logicController?.userInformation.login ?? String()
+        title = logicController.userInformation.login
     }
     
     private func setUpFavoriteNavigationBarButton() {
@@ -111,7 +126,7 @@ final class FollowersCollectionViewController: UICollectionViewController {
     
     private func loadData() {
         startLoading()
-        logicController?.loadFollowers()
+        logicController.loadFollowers()
     }
     
     private func setUpCollectionViewLayout() {
@@ -121,24 +136,23 @@ final class FollowersCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let numberOfItemsPerSection = 3
         let followerIndex = indexPath.row + (indexPath.section * numberOfItemsPerSection)
-        logicController?.selectFollower(atIndex: followerIndex)
+        logicController.selectFollower(atIndex: followerIndex)
     }
     
     @objc private func favoriteButtonTapped() {
-        guard let userInformation = logicController?.userInformation else { return }
-        coordinator?.showFavorites(with: userInformation)
+        logicController.addSelectedUsersToFavorite()
     }
 }
 
 extension FollowersCollectionViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        logicController?.searchFollower(withLogin: searchText)
+        logicController.searchFollower(withLogin: searchText)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard didScrollViewReachedTheBottom(scrollView) else { return }
-        logicController?.loadNextPage()
+        logicController.loadNextPage()
     }
     
     private func didScrollViewReachedTheBottom(_ scrollView: UIScrollView) -> Bool {
@@ -149,23 +163,23 @@ extension FollowersCollectionViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        logicController?.cancelSearch()
+        logicController.cancelSearch()
     }
 }
 
 extension FollowersCollectionViewController: FollowersLogicControllerOutput {
     
-    func showFailureOnFetchFollowers(_ error: GetFollowersError) {
+    func failedOnFetchFollowers(_ error: GetFollowersError) {
         stopLoading()
-        presenter?.present(error)
+        presenter.present(error)
     }
     
-    func showFollowersNotFound() {
+    func followersNotFound() {
         let emptyState = FollowersEmptyBackgroundView()
         view.embed(emptyState)
     }
     
-    func showFollowers(_ followers: [Follower]) {
+    func didFetchFollowers(_ followers: [Follower]) {
         stopLoading()
         reloadDataSource(with: followers)
     }
@@ -177,25 +191,23 @@ extension FollowersCollectionViewController: FollowersLogicControllerOutput {
         dataSource.apply(snapshot)
     }
     
-    func showUserInformation(for login: String) {
-        coordinator?.showInformation(for: login)
+    func showUserInformation(forLogin login: String) {
+        coordinator.showInformation(for: login)
     }
-}
-
-extension FollowersCollectionViewController {
     
-    static func makeFollowers(with userFollowers: SelectedUserInformation,
-                              coordinator: FollowersCoordinator) -> FollowersCollectionViewController {
-        let viewController = FollowersCollectionViewController(collectionViewLayout: .threeColumnLayout)
-        let presenter = GetFollowersErrorAlertPresenter()
-        let paginationController = PaginationController(numberOfItems: userFollowers.numberOfFollowers)
-        viewController.logicController = FollowersLogicController(viewController: viewController,
-                                                                  userFollowers: userFollowers,
-                                                                  paginationController: paginationController)
-        viewController.configurator = FollowersCollectionViewConfigurator()
-        viewController.coordinator = coordinator
-        presenter.configureAlert(to: viewController)
-        viewController.presenter = presenter
-        return viewController
+    func didFetchSelectedUserOnFavorites() {
+        
+    }
+    
+    func selectedUserNotFound() {
+        
+    }
+    
+    func didAddUser() {
+        
+    }
+    
+    func failedAddUser() {
+        
     }
 }

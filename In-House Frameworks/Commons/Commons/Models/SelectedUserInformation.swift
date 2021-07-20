@@ -6,8 +6,6 @@
 //  Copyright © 2021 José Victor Pereira Costa. All rights reserved.
 //
 
-import Foundation
-
 public struct SelectedUserInformation {
     public let login: String
     public let name: String

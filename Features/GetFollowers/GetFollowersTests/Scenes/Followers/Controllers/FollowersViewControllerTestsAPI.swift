@@ -42,15 +42,15 @@ final class FollowersViewControllerTestsAPI {
     }
     
     func loadMockFollowers() {
-        sut.showFollowers((.zero...40).map { Follower(imageURL: "\($0)", login: "\($0)") })
+        sut.didFetchFollowers((.zero...40).map { Follower(imageURL: "\($0)", login: "\($0)") })
     }
     
     func setUpLoadFollowersWithError() {
-        sut.showFailureOnFetchFollowers(.requestFail)
+        sut.failedOnFetchFollowers(.requestFail)
     }
     
     func setUpFollowersNotFound() {
-        sut.showFollowersNotFound()
+        sut.followersNotFound()
     }
     
     // MARK: - Actions

@@ -15,6 +15,9 @@ protocol FavoriteProfilesBuilderProtocol {
 struct FavoriteProfileBuilder: FavoriteProfilesBuilderProtocol {
     
     func makeFavoriteProfilesViewController() -> FavoriteProfilesTableViewController {
-        FavoriteProfilesTableViewController()
+        let favoriteProfilesLogicController = FavoriteProfilesLogicController()
+        let tableViewController = FavoriteProfilesTableViewController(logicController: favoriteProfilesLogicController)
+        favoriteProfilesLogicController.viewController = tableViewController
+        return tableViewController
     }
 }

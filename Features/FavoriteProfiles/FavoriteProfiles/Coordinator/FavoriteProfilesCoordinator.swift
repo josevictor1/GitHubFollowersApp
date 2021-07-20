@@ -20,7 +20,8 @@ public final class FavoriteProfilesCoordinator: NavigationCoordinator {
     }
     
     public func start() {
-        let favoriteProfilesViewController = FavoriteProfilesTableViewController()
+        let builder = FavoriteProfileBuilder()
+        let favoriteProfilesViewController = builder.makeFavoriteProfilesViewController()
         navigationController?.pushViewController(favoriteProfilesViewController, animated: true)
     }
     
