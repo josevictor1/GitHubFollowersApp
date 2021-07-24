@@ -11,6 +11,7 @@ import Commons
 @testable import GetFollowers
 
 final class FollowersLogicControllerOutputMock: FollowersLogicControllerOutput {
+    
     var error: GetFollowersError?
     var followers = [Follower]()
     var login = String()
@@ -32,7 +33,31 @@ final class FollowersLogicControllerOutputMock: FollowersLogicControllerOutput {
         expection?.fulfill()
     }
 
-    func showUserInformation(for login: String) {
+    func showUserInformation(forLogin login: String) {
         self.login = login
+    }
+    
+    func failedAddUser() {
+        
+    }
+    
+    func didAddUser() {
+        
+    }
+    
+    func failedOnFetchFollowers(_ error: GetFollowersError) {
+        
+    }
+    
+    func didFetchFollowers(_ followers: [Follower]) {
+        
+    }
+    
+    func didFetchSelectedUserOnFavorites() {
+        
+    }
+    
+    func selectedUserNotFound() {
+        
     }
 }

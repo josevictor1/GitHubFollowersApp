@@ -37,7 +37,7 @@ final class GetFollowersViewControllerTests: XCTestCase {
 
     func testGetFollowersWithSuccess() {
         let expectation = XCTestExpectation(description: "The viewControllerDidGetFollowers should be called")
-        test.prepareGetFollowersControllerDalegate(with: expectation)
+        test.prepareGetFollowersControllerDelegate(with: expectation)
 
         test.callGetFollowersButtonTappedMethod()
 

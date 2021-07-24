@@ -10,6 +10,7 @@ import Commons
 @testable import GetFollowers
 
 final class FollowersServiceMock: FollowersProvider {
+    
     var error: GetFollowersError?
     var shouldReturnEmpty = false
 
@@ -48,5 +49,13 @@ final class FollowersServiceMock: FollowersProvider {
         decoder.dateDecodingStrategy = .iso8601
         let fileData = try fileReader.readDataForFile(withName: "Followers", type: .JSON)
         return try decoder.decode([FollowerResponse].self, from: fileData)
+    }
+    
+    func fetchFavorites(completion: (FetchFavoritesResult) -> Void) {
+        
+    }
+    
+    func addSelectedUserToFavorites(_ selectedUserInformation: SelectedUserInformation, completion: (Result<Void, Error>) -> Void) {
+        
     }
 }

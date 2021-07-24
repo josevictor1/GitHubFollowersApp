@@ -14,7 +14,7 @@ final class GetFollowersViewControllerTestAPI {
     private let serviceMock = UserInformationServiceMock()
     private let alertPresenterMock = GetFollowersAlertPresenterMock()
     private let delegateMock = GetFollowersViewControllerDelegateMock()
-    private let keyboardObseverMock = KeyboardObserverMock()
+    private let keyboardObserverMock = KeyboardObserverMock()
     private lazy var logicControllerMock: GetFollowersLogicController = {
         let provider = GetFollowersProvider(userInformationService: serviceMock)
         return GetFollowersLogicController(provider: provider)
@@ -22,58 +22,58 @@ final class GetFollowersViewControllerTestAPI {
     }()
     private let viewMock = GetFollowersViewMock()
     private var presentedError: GetFollowersError?
-
+    
     private lazy var sut: GetFollowersViewController = {
-        .makeGetFollowers(view: viewMock,
-                          delegate: delegateMock,
-                          presenter: alertPresenterMock,
-                          logicController: logicControllerMock,
-                          keyboardObserver: keyboardObseverMock)
+        GetFollowersViewController(view: viewMock,
+                                   logicController: logicControllerMock,
+                                   presenter: alertPresenterMock,
+                                   delegate: delegateMock,
+                                   keyboardObserver: keyboardObserverMock)
     }()
-
+    
     func prepareLogicController(with error: GetFollowersError) {
         serviceMock.error = error
     }
-
+    
     func prepareAlertPresenterMock(with expectation: XCTestExpectation) {
         alertPresenterMock.onAlertPresented = { [weak expectation, weak self] error in
             self?.presentedError = error
             expectation?.fulfill()
         }
     }
-
-    func prepareGetFollowersControllerDalegate(with expectation: XCTestExpectation) {
+    
+    func prepareGetFollowersControllerDelegate(with expectation: XCTestExpectation) {
         delegateMock.expectationCompletion = { [weak expectation] in
             expectation?.fulfill()
         }
     }
-
+    
     func callGetFollowersButtonTappedMethod() {
         setUpViewDelegate()
-        viewMock.getFllowersButtonTapped()
+        viewMock.getFollowersButtonTapped()
     }
-
+    
     func checkPresentedError(error: GetFollowersError) {
         XCTAssertEqual(presentedError, error, "The alert should be presented with \(error) error")
     }
-
+    
     func checkViewControllerFetchDataWithSuccess() {
-        XCTAssertTrue(delegateMock.didViewControllerGotFollowers, "The delegate shold be called")
+        XCTAssertTrue(delegateMock.didViewControllerGotFollowers, "The delegate should be called")
     }
-
+    
     func prepareViewController() {
         setUpViewDelegate()
         sut.viewDidLoad()
     }
-
+    
     private func setUpViewDelegate() {
         viewMock.delegate = sut
     }
-
+    
     func setUpKeyboardAsTouched() {
-        keyboardObseverMock.callKeyboardAppeard()
+        keyboardObserverMock.callKeyboardAppeared()
     }
-
+    
     func checkViewDidScroll() {
         XCTAssertTrue(viewMock.scrollUpCalled)
     }

@@ -21,10 +21,10 @@ final class FollowersViewControllerTestsAPI {
                                                               numberOfFollowers: 1)
     
     private lazy var sut: FollowersCollectionViewController = {
-        let viewController = FollowersCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        viewController.logicController = logicControllerMock
-        viewController.coordinator = coordinatorMock
-        viewController.presenter = presenterMock
+        let viewController = FollowersCollectionViewController(logicController: logicControllerMock,
+                                                               configurator: FollowersCollectionViewConfigurator(),
+                                                               presenter: presenterMock,
+                                                               coordinator: coordinatorMock)
         return viewController
     }()
     

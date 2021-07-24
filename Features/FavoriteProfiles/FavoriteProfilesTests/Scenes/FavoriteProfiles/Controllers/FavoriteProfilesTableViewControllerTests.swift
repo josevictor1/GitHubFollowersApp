@@ -13,9 +13,8 @@ final class FavoriteProfilesTableViewControllerTests: XCTestCase {
     
     private func makeSUT(provider: FavoriteProfilesProvider) -> FavoriteProfilesTableViewController {
         let logicController = FavoriteProfilesLogicController(provider: provider)
-        let sut = FavoriteProfilesTableViewController()
+        let sut = FavoriteProfilesTableViewController(logicController: logicController)
         logicController.viewController = sut
-        sut.logicController = logicController
         return sut
     }
 

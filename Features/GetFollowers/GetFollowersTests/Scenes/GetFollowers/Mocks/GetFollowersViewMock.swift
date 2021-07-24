@@ -16,7 +16,7 @@ final class GetFollowersViewMock: UIView, GetFollowersViewProtocol {
         scrollUpCalled = true
     }
 
-    func getFllowersButtonTapped() {
+    func getFollowersButtonTapped() {
         delegate?.viewController(didSelectFollower: "test")
     }
 }

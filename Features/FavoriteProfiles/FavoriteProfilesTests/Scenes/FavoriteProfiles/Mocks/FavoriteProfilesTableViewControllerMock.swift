@@ -9,7 +9,7 @@
 @testable import FavoriteProfiles
 
 final class FavoriteProfilesTableViewControllerMock: FavoriteProfilesLogicControllerOutput {
-
+    
     var favoriteProfiles = [FavoriteProfile]()
     var favoriteProfilesUpdated = false
     var failedOnUpdateFavoriteProfiles = false
@@ -21,5 +21,9 @@ final class FavoriteProfilesTableViewControllerMock: FavoriteProfilesLogicContro
     
     func didFailOnUpdateFavoriteProfiles() {
         failedOnUpdateFavoriteProfiles = true
+    }
+    
+    func didFailOnAddFavoriteProfile() {
+        
     }
 }

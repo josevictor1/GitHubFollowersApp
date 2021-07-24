@@ -10,7 +10,7 @@ import Commons
 @testable import GetFollowers
 
 final class FollowersLogicControllerMock: FollowersLogicControllerProtocol {
-    
+
     var userLogin = String()
     var searchedLogin = String()
     var selectedIndex = Int()
@@ -40,5 +40,13 @@ final class FollowersLogicControllerMock: FollowersLogicControllerProtocol {
 
     func cancelSearch() {
         wasSearchCanceled = true
+    }
+    
+    func loadFavoriteState() {
+        
+    }
+    
+    func addSelectedUsersToFavorite() {
+        
     }
 }

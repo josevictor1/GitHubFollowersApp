@@ -17,7 +17,6 @@ struct FavoriteProfilesMocks {
         (.zero..<numberOfFavoriteMockProfiles).map {
             let mockValue = "test\($0)"
             return FavoriteProfile(login: mockValue,
-                                   name: mockValue,
                                    avatarURL: mockValue)
         }
     }

@@ -12,8 +12,7 @@ import Foundation
 final class FavoriteProfilesServiceMock: FavoriteProfilesProvider {
     
     var profiles = (0...5).map {
-        FavoriteProfile(login: "\($0)",
-                        name: "\($0)",
+        FavoriteProfile(login: "\($0)", 
                         avatarURL: "\($0)")
         
     }

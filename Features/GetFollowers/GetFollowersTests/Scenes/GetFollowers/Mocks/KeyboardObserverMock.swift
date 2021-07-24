@@ -13,7 +13,7 @@ final class KeyboardObserverMock: KeyboardObserverProtocol {
     var onKeyboardAppeared: ((Notification) -> Void)?
     var onKeyboardDisappeared: ((Notification) -> Void)?
 
-    func callKeyboardAppeard() {
+    func callKeyboardAppeared() {
         let notification = Notification(name: UIApplication.keyboardDidShowNotification)
         onKeyboardAppeared?(notification)
     }
