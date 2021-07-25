@@ -11,6 +11,5 @@ import CoreData
 public final class Favorite: NSManagedObject {
     @NSManaged public var avatarURL: String?
     @NSManaged public var login: String?
-    @NSManaged public var name: String?
 }
 

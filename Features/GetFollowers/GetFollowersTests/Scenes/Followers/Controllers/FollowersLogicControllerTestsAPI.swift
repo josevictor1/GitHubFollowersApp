@@ -12,7 +12,7 @@ import XCTest
 
 final class FollowersLogicControllerTestsAPI {
     
-    private let logicControllerOutputMock = FollowersLogicControllerOutputMock()
+    private var logicControllerOutputMock = FollowersLogicControllerOutputMock()
     private let serviceMock = FollowersServiceMock()
     private let userInformationMock = SelectedUserInformation(login: "test",
                                                               name: "test",
@@ -30,6 +30,8 @@ final class FollowersLogicControllerTestsAPI {
         let followers = FollowersLogicController(userFollowers: userInformation,
                                                  paginationController: paginationController,
                                                  service: serviceMock)
+        logicControllerOutputMock = FollowersLogicControllerOutputMock()
+        followers.viewController = logicControllerOutputMock
         return followers
     }
     
@@ -56,7 +58,7 @@ final class FollowersLogicControllerTestsAPI {
     }
     
     func setUpLogicControllerOutput(with expectation: XCTestExpectation) {
-        logicControllerOutputMock.expection = expectation
+        logicControllerOutputMock.expectation = expectation
     }
     
     func setUpLogicControllerWithFollowers() {

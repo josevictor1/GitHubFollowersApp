@@ -38,7 +38,7 @@ final class FollowersViewControllerTestsAPI {
     // MARK: - SUT Setup
     
     func loadViewController() {
-        sut.viewDidAppear(false)
+        sut.viewDidLoad()
     }
     
     func loadMockFollowers() {

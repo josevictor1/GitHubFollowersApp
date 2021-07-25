@@ -30,7 +30,7 @@ final class FavoriteProfilesLogicControllerTests: XCTestCase {
         XCTAssertTrue(viewControllerMock.favoriteProfilesUpdated)
     }
     
-    func testHandleFaiureOnLoadFavoriteProfile() {
+    func testHandleFailureOnLoadFavoriteProfile() {
         let viewControllerMock = FavoriteProfilesTableViewControllerMock()
         let providerMock = FavoriteProfilesServiceMock()
         providerMock.error = NSError(domain: String(), code: NSNotFound, userInfo: nil)
@@ -77,6 +77,6 @@ final class FavoriteProfilesLogicControllerTests: XCTestCase {
         sut.loadProfiles()
         sut.searchProfile(byFilter: "test0")
         
-        XCTAssertEqual(viewControllerMock.favoriteProfiles.first, mocks.favoriteProfilesMock.first)
+        XCTAssertEqual(viewControllerMock.favoriteProfiles.first?.login, mocks.favoriteProfilesMock.first?.login)
     }
 }

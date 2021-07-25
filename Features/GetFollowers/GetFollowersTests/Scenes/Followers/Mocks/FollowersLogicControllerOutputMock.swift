@@ -15,22 +15,22 @@ final class FollowersLogicControllerOutputMock: FollowersLogicControllerOutput {
     var error: GetFollowersError?
     var followers = [Follower]()
     var login = String()
-    var expection: XCTestExpectation?
+    var expectation: XCTestExpectation?
 
     init() {}
 
     func followersNotFound() {
-        expection?.fulfill()
+        expectation?.fulfill()
     }
 
     func showFailureOnFetchFollowers(_ error: GetFollowersError) {
         self.error = error
-        expection?.fulfill()
+        expectation?.fulfill()
     }
 
     func showFollowers(_ followers: [Follower]) {
         self.followers = followers
-        expection?.fulfill()
+        expectation?.fulfill()
     }
 
     func showUserInformation(forLogin login: String) {

@@ -25,7 +25,6 @@ final class FavoriteProfilesService: FavoriteProfilesProvider {
     
     init(dataStore: DataStore = .shared) {
         self.dataStore = dataStore
-        dataStore.set(storageType: .persistent)
     }
     
     func saveProfile(_ favoriteProfile: FavoriteProfile, completion: SaveProfileCompletion) {

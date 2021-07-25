@@ -39,7 +39,6 @@ final class DataStoreTests: XCTestCase {
     func testUpdateData() throws {
         let managedObject = try testObject()
         
-        managedObject.name = "Test_update"
         managedObject.login = "test_update"
         managedObject.avatarURL = "test"
         
@@ -52,7 +51,6 @@ final class DataStoreTests: XCTestCase {
         let managedObject = Favorite(context: context)
         managedObject.avatarURL = "test"
         managedObject.login = "test"
-        managedObject.name = "test"
         try context.save()
         return managedObject
     }

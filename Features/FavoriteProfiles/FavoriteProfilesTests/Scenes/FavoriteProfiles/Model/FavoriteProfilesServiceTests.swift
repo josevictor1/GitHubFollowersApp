@@ -70,7 +70,7 @@ final class FavoriteProfilesServiceTests: XCTestCase {
     }
     
     
-    func testDeleteNonExistantProfile() throws {
+    func testDeleteNonExistentProfile() throws {
         let expectation = XCTestExpectation(description: "Should failed when try to delete.")
         let sut = FavoriteProfilesService()
         let profilesMock = mock.favoriteProfilesMock
