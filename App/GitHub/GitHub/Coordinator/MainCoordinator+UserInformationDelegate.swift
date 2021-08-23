@@ -11,7 +11,7 @@ import Commons
 import UserInformation
 import GetFollowers
 
-extension MainCoordinator: UserInformationCoordintorDelegate {
+extension MainCoordinator: UserInformationCoordinatorDelegate {
     
     func userInformationDidSelectUser(_ selectedUserInformation: SelectedUserInformation) {
         navigateToFollowers(with: selectedUserInformation)

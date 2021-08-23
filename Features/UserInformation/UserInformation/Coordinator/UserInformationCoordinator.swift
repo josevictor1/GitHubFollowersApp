@@ -17,7 +17,7 @@ protocol UserInformationCoordinatorProtocol {
     func navigateToFollowers(with selectedUserInformation: SelectedUserInformation)
 }
 
-public protocol UserInformationCoordintorDelegate: AnyObject {
+public protocol UserInformationCoordinatorDelegate: AnyObject {
     func userInformationDidSelectUser(_ selectedUserInformation: SelectedUserInformation)
 }
 
@@ -26,7 +26,7 @@ public final class UserInformationCoordinator: NavigationCoordinator {
     public var parent: Coordinator?
     public var children: [Coordinator] = []
     public var navigationController: UINavigationController?
-    public weak var delegate: UserInformationCoordintorDelegate?
+    public weak var delegate: UserInformationCoordinatorDelegate?
 
     public init(navigationController: UINavigationController) {
         self.navigationController = navigationController

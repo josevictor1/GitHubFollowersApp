@@ -60,7 +60,7 @@ public final class CustomAlertController: UIViewController {
     }
     
     private func setUpBackgroundColor() {
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        view.backgroundColor = .black.withAlphaComponent(0.75)
     }
 
     private func setUpCustomAlertViewAction() {

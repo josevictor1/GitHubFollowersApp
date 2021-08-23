@@ -141,7 +141,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
             case .success(let response):
                 self?.checkLoginOn(favorites: response)
             case .failure:
-                self?.viewController?.didFetchSelectedUserOnFavorites()
+                self?.viewController?.failedOnFetchFollowers(.persistenceFail)
             }
         }
     }

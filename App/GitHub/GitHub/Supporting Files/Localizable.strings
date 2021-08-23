@@ -6,9 +6,9 @@
   Copyright © 2020 José Victor Pereira Costa. All rights reserved.
 */
 
-"REQUEST_FAIL" = "Unable to complete your request. Please check your internet connection.";
-"INVALID_USERNAME" = "This username created an invalid request. Please check your internet connection, and try again.";
-"INVALID_RESPONSE" = "Invalid response from the server. Possibly unknown user. Please try again.";
-"INVALID_DATA" = "The data received from the server was invalid. Please try again.";
-"FAVORITES_PERSISTENCE_FAIL" = "Internal favourites error. Please try again.";
-"USER_ALREADY_REGISTERED" = "You have already favourited this user. You must really like them.";
+"requestFailed" = "Unable to complete your request. Please check your internet connection.";
+"invalidUserName" = "This username created an invalid request. Please check your internet connection, and try again.";
+"invalidResponse" = "Invalid response from the server. Possibly unknown user. Please try again.";
+"invalidData" = "The data received from the server was invalid. Please try again.";
+"persistenceFailed" = "Failed on add user to favorites. Please try again.";
+"userAlreadyRegistered" = "You have already favorited this user. You must really like them.";

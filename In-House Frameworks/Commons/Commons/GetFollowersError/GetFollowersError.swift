@@ -13,6 +13,9 @@ public enum GetFollowersError: Error {
     case invalidUsername
     case invalidResponse
     case requestFail
+    case invalidData
+    case persistenceFail
+    case userAlreadyRegistered
     
     public var message: ErrorMessage {
         switch self {
@@ -22,6 +25,12 @@ public enum GetFollowersError: Error {
             return .requestFail
         case .invalidResponse:
             return .invalidResponse
+        case .invalidData:
+            return .invalidData
+        case .persistenceFail:
+            return .persistenceFail
+        case .userAlreadyRegistered:
+            return .userAlreadyRegistered
         }
     }
 }

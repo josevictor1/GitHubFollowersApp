@@ -14,6 +14,7 @@ enum LocalizedStrings: String {
     case getFollowers
     case ok
     case followersNotFound
+    case failedOnAddNewUser
 
     var localized: String {
         rawValue.localized(bundle: Bundle(for: GetFollowersCoordinator.self))
