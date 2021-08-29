@@ -93,8 +93,9 @@ final class FavoriteProfilesServiceTests: XCTestCase {
     private func setUpDataStoreWithMockData() throws {
         let dataStore: DataStore = .shared
         let data = FavoriteProfilesMocks().favoriteProfilesMock.first!
+        let dictionaryData = ["login": data.login, "avatarURL": data.avatarURL]
         try dataStore.save(Favorite.self,
-                           withData: data)
+                           withData: dictionaryData)
     }
 }
 

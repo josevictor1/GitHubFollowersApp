@@ -56,6 +56,7 @@ final class DataStoreTests: XCTestCase {
     }
     
     private func saveFavoriteMockData(in dataStore: DataStore) throws {
-        try dataStore.save(Favorite.self, withData: favoriteMock)
+        let data = ["login": favoriteMock.login, "avatarURL": favoriteMock.avatarURL]
+        try dataStore.save(Favorite.self, withData: data)
     }
 }

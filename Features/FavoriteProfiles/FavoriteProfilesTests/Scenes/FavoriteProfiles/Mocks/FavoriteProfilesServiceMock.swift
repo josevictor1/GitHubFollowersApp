@@ -20,7 +20,7 @@ final class FavoriteProfilesServiceMock: FavoriteProfilesProvider {
     var error: Error?
 
     func saveProfile(_ favoriteProfile: FavoriteProfile, completion: SaveProfileCompletion) {
-        
+        completion(.success(Void()))
     }
     
     func loadProfiles(completion: LoadFavoriteProfilesCompletion) {

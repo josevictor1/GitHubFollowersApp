@@ -48,7 +48,9 @@ final class FavoriteProfilesLogicControllerTests: XCTestCase {
         sut.loadProfiles()
         sut.add(selectedUser: mocks.selectedUserMock)
         
-        XCTAssertTrue(viewControllerMock.favoriteProfiles.contains(mocks.favoriteProfileMock))
+        XCTAssertTrue(viewControllerMock.favoriteProfiles.contains(where: { favoriteProfile in
+            mocks.favoriteProfileMock.login == favoriteProfile.login
+        }))
     }
     
     func testDeleteFavoriteProfile() {

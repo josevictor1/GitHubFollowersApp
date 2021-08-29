@@ -9,7 +9,7 @@
 import CoreData
 @testable import DataStore
 
-struct FavoriteMock: ManagedData {
+struct FavoriteMock {
     let avatarURL: String
     let login: String
     let name: String

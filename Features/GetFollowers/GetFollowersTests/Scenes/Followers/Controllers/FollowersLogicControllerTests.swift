@@ -71,8 +71,8 @@ final class FollowersLogicControllerTests: XCTestCase {
 
     func testFollowersNotFound() {
         let expectation = XCTestExpectation(description: "The output controller should be called when followers load.")
-        test.setUpLogicControllerOutput(with: expectation)
         test.setUpLogicControllerWithoutFollowers()
+        test.setUpLogicControllerOutput(with: expectation)
 
         test.loadTestFollowers()
 

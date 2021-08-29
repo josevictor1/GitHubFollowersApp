@@ -29,7 +29,8 @@ final class FavoriteProfilesService: FavoriteProfilesProvider {
     
     func saveProfile(_ favoriteProfile: FavoriteProfile, completion: SaveProfileCompletion) {
         do {
-            try dataStore.save(Favorite.self, withData: favoriteProfile)
+            let data = ["login": favoriteProfile.login, "avatarURL": favoriteProfile.avatarURL]
+            try dataStore.save(Favorite.self, withData: data)
             completion(.success(Void()))
         } catch {
             completion(.failure(error))
@@ -57,12 +58,12 @@ final class FavoriteProfilesService: FavoriteProfilesProvider {
     }
     
     private func deleteFavoriteProfile(_ profile: FavoriteProfile) -> Favorite? {
-        guard let index = findManagedObjecFavoriteIndex(for: profile) else { return nil }
+        guard let index = findManagedObjectFavoriteIndex(for: profile) else { return nil }
         let selectedProfile = favorites[index]
         return dataStore.delete(selectedProfile)
     }
     
-    private func findManagedObjecFavoriteIndex(for profile: FavoriteProfile) -> Int? {
+    private func findManagedObjectFavoriteIndex(for profile: FavoriteProfile) -> Int? {
         favorites.firstIndex { favorite in
             favorite.login == profile.login
         }

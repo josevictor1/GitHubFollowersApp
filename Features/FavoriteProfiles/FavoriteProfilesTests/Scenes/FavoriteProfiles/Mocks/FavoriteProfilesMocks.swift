@@ -7,6 +7,7 @@
 //
 
 import Commons
+import DataStore
 @testable import FavoriteProfiles
 
 struct FavoriteProfilesMocks {
@@ -22,9 +23,9 @@ struct FavoriteProfilesMocks {
     }
     
     var selectedUserMock: SelectedUserInformation {
-        SelectedUserInformation(login: "",
-                                name: "",
-                                avatarURL: "",
+        SelectedUserInformation(login: "0",
+                                name: "0",
+                                avatarURL: "0",
                                 numberOfFollowers: 0)
     }
     

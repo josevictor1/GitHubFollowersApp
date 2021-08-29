@@ -23,16 +23,6 @@ final class FollowersLogicControllerOutputMock: FollowersLogicControllerOutput {
         expectation?.fulfill()
     }
 
-    func showFailureOnFetchFollowers(_ error: GetFollowersError) {
-        self.error = error
-        expectation?.fulfill()
-    }
-
-    func showFollowers(_ followers: [Follower]) {
-        self.followers = followers
-        expectation?.fulfill()
-    }
-
     func showUserInformation(forLogin login: String) {
         self.login = login
     }
@@ -46,11 +36,13 @@ final class FollowersLogicControllerOutputMock: FollowersLogicControllerOutput {
     }
     
     func failedOnFetchFollowers(_ error: GetFollowersError) {
-        
+        self.error = error
+        expectation?.fulfill()
     }
     
     func didFetchFollowers(_ followers: [Follower]) {
-        
+        self.followers = followers
+        expectation?.fulfill()
     }
     
     func didFetchSelectedUserOnFavorites() {

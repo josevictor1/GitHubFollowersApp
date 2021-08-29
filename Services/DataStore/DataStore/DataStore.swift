@@ -13,7 +13,7 @@ public enum StorageType {
     case persistent, inMemory
 }
 
-public typealias ManagedData = DictionaryConvertible
+public typealias ManagedData = [String: Any]
 
 public final class DataStore {
     
@@ -52,7 +52,7 @@ public final class DataStore {
                                                      withData data: ManagedData) throws {
         let context = persistenceContainer.viewContext
         let managedObject = ManagedObject(context: context)
-        data.dictionary.forEach { managedObject.setValue($0.value, forKey: $0.key) }
+        data.forEach { managedObject.setValue($0.value, forKey: $0.key) }
         try context.save()
     }
     

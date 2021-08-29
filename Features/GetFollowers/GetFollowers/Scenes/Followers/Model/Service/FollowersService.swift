@@ -71,9 +71,8 @@ final class FollowersService: FollowersProvider {
         }
     }
     
-    private func makeFavoriteDataManager(for selectedUserInformation: SelectedUserInformation) -> FavoriteManagedData {
-        FavoriteManagedData(avatarURL: selectedUserInformation.avatarURL,
-                            login: selectedUserInformation.login,
-                            name: selectedUserInformation.name)
+    private func makeFavoriteDataManager(for selectedUserInformation: SelectedUserInformation) -> [String: Any] {
+        ["avatarURL": selectedUserInformation.avatarURL,
+                            "login": selectedUserInformation.login]
     }
 }

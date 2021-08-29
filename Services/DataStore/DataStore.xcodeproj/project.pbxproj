@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A4A5869263F46C1007D6AAA /* DataStorePersistenceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A5868263F46C1007D6AAA /* DataStorePersistenceContainer.swift */; };
 		1A4A586C26402131007D6AAA /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A586B26402131007D6AAA /* Favorite.swift */; };
-		1A4A6E1D26A669CB002B4068 /* FavoriteManagedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A6E1C26A669CB002B4068 /* FavoriteManagedData.swift */; };
 		1A74E1D7267D8F2D0047B0BF /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A74E1D6267D8F2D0047B0BF /* Commons.framework */; };
 		1A915BEE2622B6A0004E9D79 /* DataStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A915BE42622B69F004E9D79 /* DataStore.framework */; };
 		1A915BF32622B6A0004E9D79 /* DataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A915BF22622B6A0004E9D79 /* DataStoreTests.swift */; };
@@ -32,7 +31,6 @@
 /* Begin PBXFileReference section */
 		1A4A5868263F46C1007D6AAA /* DataStorePersistenceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorePersistenceContainer.swift; sourceTree = "<group>"; };
 		1A4A586B26402131007D6AAA /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
-		1A4A6E1C26A669CB002B4068 /* FavoriteManagedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManagedData.swift; sourceTree = "<group>"; };
 		1A74E1D6267D8F2D0047B0BF /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A915BE42622B69F004E9D79 /* DataStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A915BE72622B69F004E9D79 /* DataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
@@ -81,14 +79,6 @@
 			path = PersistenceContainer;
 			sourceTree = "<group>";
 		};
-		1A4A6E1B26A6696A002B4068 /* ManagedData */ = {
-			isa = PBXGroup;
-			children = (
-				1A4A6E1C26A669CB002B4068 /* FavoriteManagedData.swift */,
-			);
-			path = ManagedData;
-			sourceTree = "<group>";
-		};
 		1A74E1D5267D8F2D0047B0BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +109,6 @@
 		1A915BE62622B69F004E9D79 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
-				1A4A6E1B26A6696A002B4068 /* ManagedData */,
 				1A4A586D264038E9007D6AAA /* PersistenceContainer */,
 				1A4A586A26402109007D6AAA /* ManagedObjects */,
 				1AA0C7232622BCCE00E8E8CD /* DataModel */,
@@ -275,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AA0C7122622B89300E8E8CD /* DataStore.swift in Sources */,
-				1A4A6E1D26A669CB002B4068 /* FavoriteManagedData.swift in Sources */,
 				1AA0C7262622BCF000E8E8CD /* GitHubFollowers.xcdatamodeld in Sources */,
 				1A4A586C26402131007D6AAA /* Favorite.swift in Sources */,
 				1A4A5869263F46C1007D6AAA /* DataStorePersistenceContainer.swift in Sources */,
