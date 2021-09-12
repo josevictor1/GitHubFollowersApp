@@ -16,7 +16,7 @@ typealias UserInformationDataSourceSnapshot = NSDiffableDataSourceSnapshot<UserI
 final class UserInformationCollectionViewController: UICollectionViewController {
     var coordinator: UserInformationCoordinatorProtocol?
     var logicController: UserInformationLogicControllerProtocol?
-    var presenter: GetFollowersAlertPresenterProtocol?
+    var presenter: GetFollowersErrorAlertPresenterProtocol?
     var cellProvider: UserInformationCellProviderProtocol?
     
     private lazy var dataSource: UserInformationDataSource = {

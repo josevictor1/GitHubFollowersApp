@@ -12,7 +12,7 @@ import UIComponents
 
 @testable import GetFollowers
 
-final class GetFollowersAlertPresenterMock: GetFollowersAlertPresenterProtocol {
+final class GetFollowersAlertPresenterMock: GetFollowersErrorAlertPresenterProtocol {
     var viewController: UIViewController?
     var onAlertPresented: ((GetFollowersError) -> Void)?
     var presentedError: GetFollowersError?

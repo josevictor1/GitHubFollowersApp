@@ -9,12 +9,12 @@
 import UIKit
 import Commons
 
-public protocol GetFollowersAlertPresenterProtocol {
+public protocol GetFollowersErrorAlertPresenterProtocol {
     func present(_ error: GetFollowersError)
     func configureAlert(to presentingViewController: UIViewController)
 }
 
-public final class GetFollowersErrorAlertPresenter: GetFollowersAlertPresenterProtocol {
+public final class GetFollowersErrorAlertPresenter: GetFollowersErrorAlertPresenterProtocol {
     private weak var presentingViewController: UIViewController?
     private weak var alertViewController: UIViewController?
     

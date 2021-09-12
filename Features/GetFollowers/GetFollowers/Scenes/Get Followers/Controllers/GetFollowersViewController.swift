@@ -23,12 +23,12 @@ final class GetFollowersViewController: UIViewController {
     private unowned let coordinator: SearchCoordinator
     private let getFollowersView: GetFollowersViewProtocol
     private let logicController: GetFollowersLogicControllerProtocol
-    private let presenter: GetFollowersAlertPresenterProtocol
+    private let presenter: GetFollowersErrorAlertPresenterProtocol
     private let keyboardObserver: KeyboardObserverProtocol
     
     init(view: GetFollowersViewProtocol,
          logicController: GetFollowersLogicControllerProtocol,
-         presenter: GetFollowersAlertPresenterProtocol,
+         presenter: GetFollowersErrorAlertPresenterProtocol,
          delegate: SearchCoordinator,
          keyboardObserver: KeyboardObserverProtocol) {
         getFollowersView = view

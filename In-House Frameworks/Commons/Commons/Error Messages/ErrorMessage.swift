@@ -15,6 +15,7 @@ public enum ErrorMessage: String {
     case invalidData
     case persistenceFail
     case userAlreadyRegistered
+    case failedAddUserToFavorites
 
     public var localizedMessage: String {
         self.rawValue.localized()

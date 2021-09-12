@@ -27,7 +27,7 @@ final class FollowersLogicControllerOutputMock: FollowersLogicControllerOutput {
         self.login = login
     }
     
-    func failedAddUser() {
+    func failedAddUserToFavorites() {
         
     }
     

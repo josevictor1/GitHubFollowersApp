@@ -22,7 +22,7 @@ protocol FollowersLogicControllerProtocol {
 }
 
 protocol FollowersLogicControllerOutput: AnyObject {
-    func failedAddUser()
+    func failedAddUserToFavorites()
     func didAddUser()
     func followersNotFound()
     func failedOnFetchFollowers(_ error: GetFollowersError)
@@ -161,7 +161,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
             case .success:
                 viewController?.didAddUser()
             case .failure:
-                viewController?.failedAddUser()
+                viewController?.failedAddUserToFavorites()
             }
         }
     }

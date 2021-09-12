@@ -18,7 +18,7 @@ final class FollowersCollectionViewController: UICollectionViewController {
     
     private let logicController: FollowersLogicControllerProtocol
     private let configurator: FollowersCollectionViewConfiguratorProtocol
-    private let presenter: GetFollowersAlertPresenterProtocol
+    private let presenter: GetFollowersErrorAlertPresenterProtocol
     private let coordinator: FollowersCoordinator
     
     private lazy var dataSource: FollowersDataSource = {
@@ -51,7 +51,7 @@ final class FollowersCollectionViewController: UICollectionViewController {
     
     init(logicController: FollowersLogicControllerProtocol,
          configurator: FollowersCollectionViewConfiguratorProtocol,
-         presenter: GetFollowersAlertPresenterProtocol,
+         presenter: GetFollowersErrorAlertPresenterProtocol,
          coordinator: FollowersCoordinator) {
         self.logicController = logicController
         self.configurator = configurator
@@ -90,6 +90,7 @@ final class FollowersCollectionViewController: UICollectionViewController {
         setUpFavoriteNavigationBarButton()
         setUpBackgroundColor()
         setUpCollectionView()
+        setUpFavoriteButtonState()
     }
     
     private func setUpTitle() {
@@ -110,6 +111,10 @@ final class FollowersCollectionViewController: UICollectionViewController {
         registerCell()
     }
     
+    private func setUpFavoriteButtonState() {
+        logicController.loadFavoriteState()
+    }
+    
     private func setUpCollectionViewBackgroundColor() {
         collectionView.backgroundColor = .systemBackground
     }
@@ -124,13 +129,13 @@ final class FollowersCollectionViewController: UICollectionViewController {
         collectionView.registerCell(FollowerCollectionViewCell.self)
     }
     
+    private func setUpCollectionViewLayout() {
+        collectionView.setContentOffset(.zero, animated: true)
+    }
+    
     private func loadData() {
         startLoading()
         logicController.loadFollowers()
-    }
-    
-    private func setUpCollectionViewLayout() {
-        collectionView.setContentOffset(.zero, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -195,19 +200,19 @@ extension FollowersCollectionViewController: FollowersLogicControllerOutput {
         coordinator.showInformation(for: login)
     }
     
-    func didFetchSelectedUserOnFavorites() {
-        
-    }
-    
-    func selectedUserNotFound() {
-        
+    func failedAddUserToFavorites() {
+        presenter.present(.persistenceFail)
     }
     
     func didAddUser() {
-        
+        favoriteBarButtonItem.image = ImageAssets.favoriteFilledIcon.image
     }
     
-    func failedAddUser() {
-        
+    func didFetchSelectedUserOnFavorites() {
+        favoriteBarButtonItem.image = ImageAssets.favoriteFilledIcon.image
+    }
+    
+    func selectedUserNotFound() {
+        favoriteBarButtonItem.image = ImageAssets.favoriteIcon.image
     }
 }
