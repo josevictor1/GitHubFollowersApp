@@ -10,3 +10,6 @@
 "getFollowers" = "Get Followers";
 "followersNotFound" = "This user doesn’t have any followers.";
 "failedOnAddNewUser" = "Failed on add a new user";
+"userFavorited" = "User Favorited!";
+"userFavoritedMessage" = "A user was added to you favorite list ⭐️";
+"close" = "Close";

@@ -18,7 +18,7 @@ final class FollowersCollectionViewController: UICollectionViewController {
     
     private let logicController: FollowersLogicControllerProtocol
     private let configurator: FollowersCollectionViewConfiguratorProtocol
-    private let presenter: GetFollowersErrorAlertPresenterProtocol
+    private let errorPresenter: GetFollowersErrorAlertPresenterProtocol
     private let coordinator: FollowersCoordinator
     
     private lazy var dataSource: FollowersDataSource = {
@@ -55,7 +55,7 @@ final class FollowersCollectionViewController: UICollectionViewController {
          coordinator: FollowersCoordinator) {
         self.logicController = logicController
         self.configurator = configurator
-        self.presenter = presenter
+        self.errorPresenter = presenter
         self.coordinator = coordinator
         super.init(collectionViewLayout: .threeColumnLayout)
     }
@@ -176,7 +176,7 @@ extension FollowersCollectionViewController: FollowersLogicControllerOutput {
     
     func failedOnFetchFollowers(_ error: GetFollowersError) {
         stopLoading()
-        presenter.present(error)
+        errorPresenter.present(error)
     }
     
     func followersNotFound() {
@@ -201,11 +201,15 @@ extension FollowersCollectionViewController: FollowersLogicControllerOutput {
     }
     
     func failedAddUserToFavorites() {
-        presenter.present(.persistenceFail)
+        errorPresenter.present(.persistenceFail)
     }
     
     func didAddUser() {
         favoriteBarButtonItem.image = ImageAssets.favoriteFilledIcon.image
+        let customAlert = CustomAlertController(alert: .userAddedToFavorites) { [weak self] in
+            self?.dismiss(animated: true)
+        }
+        present(customAlert, animated: true)
     }
     
     func didFetchSelectedUserOnFavorites() {

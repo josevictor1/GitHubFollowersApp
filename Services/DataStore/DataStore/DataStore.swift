@@ -21,7 +21,7 @@ public final class DataStore {
     public let persistenceContainer: NSPersistentContainer
     
     public init(persistenceContainer: NSPersistentContainer = DataStorePersistenceContainer(),
-                storageType: StorageType = .inMemory) {
+                storageType: StorageType = .persistent) {
         self.persistenceContainer = persistenceContainer
         set(storageType: storageType)
         loadPersistenceContainer()

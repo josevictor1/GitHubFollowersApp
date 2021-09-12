@@ -28,21 +28,21 @@ final class FollowersService: FollowersProvider {
     
     private let networkingProvider: NetworkingProvider
     private let dataStore: DataStore
-
+    
     init(networkingProvider: NetworkingProvider = NetworkingProvider(),
          dataStore: DataStore = .shared) {
         self.networkingProvider = networkingProvider
         self.dataStore = dataStore
         dataStore.set(storageType: .persistent)
     }
-
+    
     func fetchFollowers(for request: FollowersRequest, completion: @escaping FetchFollowersRequestCompletion) {
         let request = FollowersNetworkingRequest(username: request.username,
                                                  pageNumber: request.pageNumber,
                                                  resultsPerPage: request.resultsPerPage)
         fetchFollowers(for: request, completion: completion)
     }
-
+    
     private func fetchFollowers(for request: FollowersNetworkingRequest,
                                 completion: @escaping FetchFollowersRequestCompletion) {
         networkingProvider.performRequestWithDecodable(request) { (result: FetchFollowersResult) in
@@ -73,6 +73,6 @@ final class FollowersService: FollowersProvider {
     
     private func makeFavoriteDataManager(for selectedUserInformation: SelectedUserInformation) -> [String: Any] {
         ["avatarURL": selectedUserInformation.avatarURL,
-                            "login": selectedUserInformation.login]
+         "login": selectedUserInformation.login]
     }
 }

@@ -11,7 +11,12 @@ import CoreData
 
 final class DataStoreTests: XCTestCase {
     
-    private lazy var dataStore: DataStore = .shared
+    private lazy var dataStore: DataStore = {
+        let dataStore = DataStore.shared
+        dataStore.set(storageType: .inMemory)
+        return dataStore
+    }()
+    
     private let favoriteMock = FavoriteMock(avatarURL: "test",
                                             login: "test",
                                             name: "test")
