@@ -34,6 +34,7 @@
 		1AA35DB525DC67630034DD84 /* ImageDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */; };
 		1AAD12B9247AAF4700C563F9 /* FollowersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD12B8247AAF4700C563F9 /* FollowersCollectionViewController.swift */; };
 		1AB18E1726EEAF1900FCA05B /* Alert+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB18E1626EEAF1900FCA05B /* Alert+.swift */; };
+		1AB18E1B26EEC98800FCA05B /* DataStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB18E1A26EEC98800FCA05B /* DataStore.framework */; };
 		1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB702562443CDFF006F4CDD /* UIComponents.framework */; };
 		1AB7CBE325E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBE225E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift */; };
 		1AB7CBF525E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */; };
@@ -107,6 +108,7 @@
 		1A95290A244D122B00A5ED5D /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAD12B8247AAF4700C563F9 /* FollowersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCollectionViewController.swift; sourceTree = "<group>"; };
 		1AB18E1626EEAF1900FCA05B /* Alert+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+.swift"; sourceTree = "<group>"; };
+		1AB18E1A26EEC98800FCA05B /* DataStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB702562443CDFF006F4CDD /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB7CBE225E2003B00A4780D /* GetFollowersViewControllerTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersViewControllerTestAPI.swift; sourceTree = "<group>"; };
 		1AB7CBF425E2119900A4780D /* GetFollowersLogicControllerTestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFollowersLogicControllerTestAPI.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			files = (
 				1A95290B244D122B00A5ED5D /* Networking.framework in Frameworks */,
 				1AB702572443CDFF006F4CDD /* UIComponents.framework in Frameworks */,
+				1AB18E1B26EEC98800FCA05B /* DataStore.framework in Frameworks */,
 				1AE116B62606858E00B464E7 /* GitHubServices.framework in Frameworks */,
 				1A6A3955246A0EFE0097C195 /* Commons.framework in Frameworks */,
 				1AA35DB525DC67630034DD84 /* ImageDownloader.framework in Frameworks */,
@@ -356,6 +359,7 @@
 		1AB702552443CDFF006F4CDD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AB18E1A26EEC98800FCA05B /* DataStore.framework */,
 				1AE116B52606858E00B464E7 /* GitHubServices.framework */,
 				1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */,
 				1A6A3954246A0EFE0097C195 /* Commons.framework */,
