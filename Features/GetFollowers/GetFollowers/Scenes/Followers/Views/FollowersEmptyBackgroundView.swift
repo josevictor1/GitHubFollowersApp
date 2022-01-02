@@ -10,6 +10,7 @@ import UIKit
 import Commons
 
 final class FollowersEmptyBackgroundView: UIView {
+    
     private let messageLabel: UILabel = {
         let messageLabel = UILabel()
         messageLabel.numberOfLines = .zero

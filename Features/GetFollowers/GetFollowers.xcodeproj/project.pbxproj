@@ -428,13 +428,13 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
-		1ABEB92325486EF600B04478 /* View */ = {
+		1ABEB92325486EF600B04478 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1ABEB92425486F1600B04478 /* FollowerCollectionViewCell.swift */,
 				1ABBDD5525E0B93900CCAA35 /* FollowersEmptyBackgroundView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1AD82C262460DD91000CCD95 /* Supporting Files */ = {
@@ -458,7 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				1ABCEF6F268D225A00D865CE /* Builder */,
-				1ABEB92325486EF600B04478 /* View */,
+				1ABEB92325486EF600B04478 /* Views */,
 				1AED2CF82479FDEB000BC13A /* Model */,
 				1AED2CF62479FD83000BC13A /* Controllers */,
 			);
