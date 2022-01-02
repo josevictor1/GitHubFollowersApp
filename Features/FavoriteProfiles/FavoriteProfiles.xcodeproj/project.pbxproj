@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				1A8A4DA42667258B0093E2A8 /* Model */,
-				1A8A4DA3266725750093E2A8 /* View */,
+				1A8A4DA3266725750093E2A8 /* Views */,
 				1A8A4DA0266724BC0093E2A8 /* Controllers */,
 			);
 			path = FavoriteProfiles;
@@ -162,12 +162,12 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		1A8A4DA3266725750093E2A8 /* View */ = {
+		1A8A4DA3266725750093E2A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1A9DCE0F26880F40004A37F6 /* ProfileTableViewCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1A8A4DA42667258B0093E2A8 /* Model */ = {

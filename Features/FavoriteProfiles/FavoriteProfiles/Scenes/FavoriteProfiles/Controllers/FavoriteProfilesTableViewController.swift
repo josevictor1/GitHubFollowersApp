@@ -75,8 +75,4 @@ extension FavoriteProfilesTableViewController: FavoriteProfilesLogicControllerOu
     func didFailOnUpdateFavoriteProfiles() {
         
     }
-    
-    func didFailOnAddFavoriteProfile() {
-        
-    }
 }

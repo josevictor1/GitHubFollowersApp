@@ -18,7 +18,6 @@ protocol FavoriteProfilesLogicControllerProtocol: AnyObject {
 protocol FavoriteProfilesLogicControllerOutput: AnyObject {
     func didUpdateFavoriteProfiles(_ favoriteUserProfiles: [FavoriteProfile])
     func didFailOnUpdateFavoriteProfiles()
-    func didFailOnAddFavoriteProfile()
 }
 
 final class FavoriteProfilesLogicController: FavoriteProfilesLogicControllerProtocol {

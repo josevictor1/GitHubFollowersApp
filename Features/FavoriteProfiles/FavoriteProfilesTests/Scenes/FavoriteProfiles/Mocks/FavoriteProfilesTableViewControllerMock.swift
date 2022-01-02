@@ -22,6 +22,4 @@ final class FavoriteProfilesTableViewControllerMock: FavoriteProfilesLogicContro
     func didFailOnUpdateFavoriteProfiles() {
         failedOnUpdateFavoriteProfiles = true
     }
-    
-    func didFailOnAddFavoriteProfile() { }
 }
