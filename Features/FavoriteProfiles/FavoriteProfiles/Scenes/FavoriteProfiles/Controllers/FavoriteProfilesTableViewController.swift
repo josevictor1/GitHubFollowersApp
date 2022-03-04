@@ -15,8 +15,13 @@ typealias FavoriteProfilesCellProvider = FavoriteProfilesDataSource.CellProvider
 
 final class FavoriteProfilesTableViewController: UITableViewController {
     
-    private lazy var dataSource = FavoriteProfilesDataSource(tableView: tableView,
-                                                             cellProvider: cellProvider)
+    private lazy var dataSource: FavoriteProfilesCustomDataSource =  {
+        let dataSource = FavoriteProfilesCustomDataSource(tableView: tableView,
+                                                          cellProvider: cellProvider)
+        dataSource.delegate = self
+        return dataSource
+    }()
+    
     private let logicController: FavoriteProfilesLogicControllerProtocol
     
     init(logicController: FavoriteProfilesLogicControllerProtocol) {
@@ -74,5 +79,12 @@ extension FavoriteProfilesTableViewController: FavoriteProfilesLogicControllerOu
     
     func didFailOnUpdateFavoriteProfiles() {
         
+    }
+}
+
+extension FavoriteProfilesTableViewController: FavoriteProfilesCustomDataSourceDelegate {
+    
+    func tableViewDeletedCell(atIndexPath indexPath: IndexPath) {
+        logicController.deleteProfile(atIndex: indexPath.row)
     }
 }

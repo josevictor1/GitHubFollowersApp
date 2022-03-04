@@ -13,6 +13,10 @@ public enum StorageType {
     case persistent, inMemory
 }
 
+enum DataStoreError: Error {
+    case deletionFailed
+}
+
 public typealias ManagedData = [String: Any]
 
 public final class DataStore {
@@ -70,13 +74,10 @@ public final class DataStore {
         try context.save()
     }
     
-    public func delete<ManagedObject: NSManagedObject>(_ managedObject: ManagedObject) -> ManagedObject {
+    public func delete<ManagedObject: NSManagedObject>(_ managedObject: ManagedObject) throws -> ManagedObject {
         let context = persistenceContainer.viewContext
         context.delete(managedObject)
+        try update()
         return managedObject
     }
-}
-
-enum DataStoreError: Error {
-    case deletionFailed
 }

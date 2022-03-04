@@ -28,6 +28,7 @@
 		1ABF239C2664073A00FB7529 /* FavoriteProfiles.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABF238E2664073A00FB7529 /* FavoriteProfiles.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1ABF23A826640A3B00FB7529 /* DataStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF23A726640A3B00FB7529 /* DataStore.framework */; };
 		1ABF23AC26640A7D00FB7529 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABF23AB26640A7D00FB7529 /* Commons.framework */; };
+		FF1D920827827B9F0022CD79 /* FavoriteProfilesCustomDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1D920727827B9F0022CD79 /* FavoriteProfilesCustomDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		1ABF239B2664073A00FB7529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ABF23A726640A3B00FB7529 /* DataStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABF23AB26640A7D00FB7529 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1D920727827B9F0022CD79 /* FavoriteProfilesCustomDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProfilesCustomDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				1A8A4DA1266724DB0093E2A8 /* FavoriteProfilesTableViewController.swift */,
 				1A61D34B266895D70061C63D /* FavoriteProfilesLogicController.swift */,
 				1A9DCE0B2686DBA1004A37F6 /* FavoriteProfilesSection.swift */,
+				FF1D920727827B9F0022CD79 /* FavoriteProfilesCustomDataSource.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				1A8A4D96266721760093E2A8 /* FavoriteProfilesCoordinator.swift in Sources */,
 				1A9DCE0C2686DBA1004A37F6 /* FavoriteProfilesSection.swift in Sources */,
 				1A9DCE1026880F40004A37F6 /* ProfileTableViewCell.swift in Sources */,
+				FF1D920827827B9F0022CD79 /* FavoriteProfilesCustomDataSource.swift in Sources */,
 				1A61D34E26691F6B0061C63D /* FavoriteProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

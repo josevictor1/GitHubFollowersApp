@@ -60,7 +60,7 @@ final class FavoriteProfilesService: FavoriteProfilesProvider {
     private func deleteFavoriteProfile(_ profile: FavoriteProfile) -> Favorite? {
         guard let index = findManagedObjectFavoriteIndex(for: profile) else { return nil }
         let selectedProfile = favorites[index]
-        return dataStore.delete(selectedProfile)
+        return try? dataStore.delete(selectedProfile)
     }
     
     private func findManagedObjectFavoriteIndex(for profile: FavoriteProfile) -> Int? {

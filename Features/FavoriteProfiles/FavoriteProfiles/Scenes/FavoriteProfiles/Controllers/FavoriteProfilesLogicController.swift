@@ -73,9 +73,21 @@ final class FavoriteProfilesLogicController: FavoriteProfilesLogicControllerProt
     
     func deleteProfile(atIndex index: Int) {
         guard !favoriteProfiles.isEmpty,
-              favoriteProfiles.count > index else { return }
-        favoriteProfiles.remove(at: index)
+              favoriteProfiles.endIndex > index else { return }
+        removeProfile(atIndex: index)
         viewController?.didUpdateFavoriteProfiles(favoriteProfiles)
+    }
+    
+    private func removeProfile(atIndex index: Int) {
+        let profileToBeRemoved = favoriteProfiles.remove(at: index)
+        provider.delete(profileToBeRemoved) { [weak self] result in
+            switch result {
+            case .success:
+                self?.viewController?.didUpdateFavoriteProfiles(favoriteProfiles)
+            case .failure:
+                self?.viewController?.didFailOnUpdateFavoriteProfiles()
+            }
+        }
     }
     
     func searchProfile(byFilter filter: String) {
