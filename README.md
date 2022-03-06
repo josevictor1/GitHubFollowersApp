@@ -4,10 +4,9 @@
 [![codecov](https://codecov.io/gh/josevictor1/GitHubFollowersApp/branch/master/graph/badge.svg?token=1YWBT2WND9)](https://codecov.io/gh/josevictor1/GitHubFollowersApp)
 
 ## Demo 
-![Simulator Screen Shot - iPhone 13 - 2022-03-05 at 23 14 14](https://user-images.githubusercontent.com/10730536/156906898-2292ad79-4787-4339-b792-16eda5fade15.png)
 
 <img src="https://user-images.githubusercontent.com/10730536/156906358-476c5abb-95c9-4e65-bd8d-6615c2e1b10e.png" height= "300"> | <img src="https://user-images.githubusercontent.com/10730536/156906370-af79217c-25ec-41e4-86bb-4e98a53a788d.png" height= "300"> | <img src="https://user-images.githubusercontent.com/10730536/156906898-2292ad79-4787-4339-b792-16eda5fade15.png" height= "300"> | <img src="https://user-images.githubusercontent.com/10730536/156906641-84afdc7f-7e04-4bbc-a2f4-295bbe012bd5.gif" height= "300">
- --- | --- | ---
+ --- | --- | --- | ---
 
 ## Description 🗒
 
