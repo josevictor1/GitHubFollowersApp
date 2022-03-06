@@ -51,8 +51,18 @@ final class FavoriteProfilesService: FavoriteProfilesProvider {
     func delete(_ profile: FavoriteProfile, completion: DeleteFavoriteProfileCompletion) {
         if let deletedProfile = deleteFavoriteProfile(profile),
            deletedProfile.isDeleted {
-            completion(.success(profile))
+            persistDeletionOnDataStore(profile, completion: completion)
         } else {
+            completion(.failure(FavoriteProfilesServiceError.deleteFailed))
+        }
+    }
+    
+    private func persistDeletionOnDataStore(_ deletedProfile: FavoriteProfile,
+                                            completion: DeleteFavoriteProfileCompletion) {
+        do {
+            try dataStore.update()
+            completion(.success(deletedProfile))
+        } catch {
             completion(.failure(FavoriteProfilesServiceError.deleteFailed))
         }
     }

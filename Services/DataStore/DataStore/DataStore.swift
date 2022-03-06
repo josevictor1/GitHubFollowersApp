@@ -77,7 +77,6 @@ public final class DataStore {
     public func delete<ManagedObject: NSManagedObject>(_ managedObject: ManagedObject) throws -> ManagedObject {
         let context = persistenceContainer.viewContext
         context.delete(managedObject)
-        try update()
         return managedObject
     }
 }
