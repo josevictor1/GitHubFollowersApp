@@ -53,7 +53,7 @@ The app is composed of 10 modules (Frameworks) grouped by folders accordingly to
 
 The image bellow illustrates it:
 
-<img src="https://user-images.githubusercontent.com/10730536/156908856-cfd9af2a-eec8-4149-9afa-072e5aacef6b.png" height= "600">
+<img src="https://user-images.githubusercontent.com/10730536/156928569-103a1f72-baa7-4bc7-9ed7-b14c718208de.png" height= "600">
 
 ## Stack 📚
 
