@@ -3,25 +3,32 @@
 ![CI](https://github.com/josevictor1/GitHubFollowersApp/workflows/CI/badge.svg?branch=master)
 [![codecov](https://codecov.io/gh/josevictor1/GitHubFollowersApp/branch/master/graph/badge.svg?token=1YWBT2WND9)](https://codecov.io/gh/josevictor1/GitHubFollowersApp)
 
-The GitHubFollowersApp is a protifolio based on the [GitHub APIs]().
-
 ## Demo 
 
-<img src="https://user-images.githubusercontent.com/10730536/143901675-b9480ceb-a005-4736-b87c-f3f8747540a9.png" height= "300"> | <img src="https://user-images.githubusercontent.com/10730536/143901731-8a2caf97-28e5-4051-af5d-0b9f2e32a85f.png" height= "300"> | <img src="https://user-images.githubusercontent.com/10730536/143902390-e5089eb9-f937-4f44-909f-0874d8908e1b.gif" height= "300">
+<img src="https://user-images.githubusercontent.com/10730536/156906358-476c5abb-95c9-4e65-bd8d-6615c2e1b10e.png" height= "300"> | <img src="https://user-images.githubusercontent.com/10730536/156906370-af79217c-25ec-41e4-86bb-4e98a53a788d.png" height= "300"> | <img src="https://user-images.githubusercontent.com/10730536/156906641-84afdc7f-7e04-4bbc-a2f4-295bbe012bd5.gif" height= "300">
  --- | --- | ---
 
 ## Description 🗒
 
-This is a sample project built up over the [DocuMenu API](https://documenu.com/docs) with an interpretation of **MVVM(Model-View-ViewModel)** architectural design pattern. The project is composed of three modules:
-- RestaurantMenu: Module that contains the app with its respective scenes.
-- Core: Module that centralizes useful extensions and classes.
-- Networking: Module the abstracts the networking layer over URL session.
+The GitHubFollowersApp is a protifolio based on the [GitHub API](https://docs.github.com/en/rest/reference/users).
 
-## Used technologies  📱
+## Architecture 📐
+
+The architecture was based on [MVC(Model-View-Controller)](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html) that provides an separation of concerns between the existant layers. This particular implamentation adds more elments on the Controller layer, creating an aditional element LogicController, that is risponsible to control all the business logic and the comunication with the Model layer.
+
+## Modules
+
+## Stack 📚
 
 - Swift 5
-- iOS Version 15.0
 - UIKit
+- Core Data
+- Modularization
+- NSCache
+- Diffable DataSource
+- Dynamic Type
+- Sytem Theme
+- Unit Tests
 
 ## Minimum Requirements 💻
 
@@ -29,7 +36,7 @@ This is a sample project built up over the [DocuMenu API](https://documenu.com/d
 
 ## How to run it 📲
 
-- This project doesn’t contain any particularity. You can open the **RestaurantMenu.xcworkspace**, tap on play or type **command+R**. 
+- This project doesn’t contain any particularity. You can open the **GitHub.xcworkspace**, tap on play or type **command+R**. 
 
 ## How to use it 🧐
 
