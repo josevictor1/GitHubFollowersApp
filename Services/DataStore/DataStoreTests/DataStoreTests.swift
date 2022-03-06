@@ -35,7 +35,7 @@ final class DataStoreTests: XCTestCase {
     func testDeleteData() throws {
         let storedObject = try testObject()
         
-        let deleteObject: Favorite = dataStore.delete(storedObject)
+        let deleteObject: Favorite = try dataStore.delete(storedObject)
         
         XCTAssertTrue(deleteObject.isDeleted)
         XCTAssertEqual(storedObject, deleteObject)
