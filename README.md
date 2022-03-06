@@ -10,15 +10,15 @@
 
 ## Description 🗒
 
-The GitHubFollowersApp is a protifolio based on the [GitHub API](https://docs.github.com/en/rest/reference/users).
+The GitHubFollowersApp is a portfolio based on the [GitHub API](https://docs.github.com/en/rest/reference/users).
 
 ## Architecture 📐
 
-The architecture was based on [MVC(Model-View-Controller)](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html) that provides an separation of concerns between the existant layers. This particular implamentation adds more elments on the **Controller** layer, creating an aditional element **LogicController**, that is risponsible to control all the business logic and the comunication with the **Model** layer.
+The architecture was based on [MVC(Model-View-Controller)](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html) that provides a separation of concerns between the existing layers. This particular implementation adds more elements on the **Controller** layer, creating an additional element **LogicController**, that is responsible to control all the business logic and the communication with the **Model** layer.
 
-To manage the routing a **Coordinator** was added to each module where every scene access the corrdinator to navigate in the flow. This way the navigation logic was moved from **ViewController** to the **Coodinator**.
+To manage the routing a **Coordinator** was added to each module where every scene accessed the coordinator to navigate in the flow. This way the navigation logic was moved from **ViewController** to the **Coordinator**.
 
-This all this changes resulted in a more consie **ViewController** implementation, reducing it's responsibility on control the controller and format data to implementation.
+These changes resulted in a more concise **ViewController** implementation, reducing its responsibility to control the controller and format data to implementation.
 
 The image bellow ilustrates tbe implementation:
 
@@ -29,27 +29,27 @@ This architectural changes on MVC were based on two articles:
  - [Logic controllers in Swift](https://www.swiftbysundell.com/articles/logic-controllers-in-swift/)
  - [MVC: Many View Controllers](https://www.rambo.codes/posts/2020-02-20-mvc-with-sugar)
 
-## Modules
+## Modules 📦
 
-The modules were created to separate reusable aiming to be used as libraries in another projects and also to improve the isolation of each feature allowing new features to be built and add as libraries and handling this features as small apps.
+The modules were created to separate reusable aiming to be used as libraries in another project and also to improve the isolation of each feature allowing new features to be built and added as libraries and handling these features as small apps.
 
-The app is composed by 10 module(Frameworks) grouped by folders accondingly to the usage:
+The app is composed of 10 modules (Frameworks) grouped by folders accordingly to the usage:
 
-- App: The folter that contains only the main module.
-    - GitHub: The main project module thate group the usage of all othe modules.
+- App: The folder that contains only the main module.
+    - GitHub: The main project module that groups the usage of all other modules.
 - Features: The folder that contains all feature modules in the app.
-    - FavoriteProfiles: The feature that show up the favorited profiles.
-    - GetFollowers: The App first screen, where the user enters with the GitHub username and show up all it's followers.
-    - UserInformation: The feature that show up the GitHub information for a specific user.
+    - FavoriteProfiles: The feature that shows up the favorited profiles.
+    - GetFollowers: The App first screen, where the user enters with the GitHub username and show up all its followers.
+    - UserInformation: The feature that shows up the GitHub information for a specific user.
 - In-House Frameworks: Contains frameworks that are used as tools in the app.
-    - ImageDownloader: Responsible to download and cache images.
-    - Networking: As the name sads is that module that provides interface with the URL session.
+    - ImageDownloader: Responsible to download and caching images.
+    - Networking: As the name says is that module that provides an interface with the URL session.
     - UIComponents: Centralize all custom reusable components.
-    - Core: Containts the central and the common code used by all the modules.
+    - Core: This contains the central and the common code used by all the modules.
     - Commons: Centralize common code tools used in the app.
-- Services: Layer that holds that comunication inteface between app and service.
-    - Data Store: Responsible to cache long term data.
-    - GitHub services: Centralize the service interfaces used in the app by one or mores screens.  
+- Services: Layer that holds that communication interface between app and service.
+    - Data Store: Responsible to cache long-term data.
+    - GitHub services: Centralize the service interfaces used in the app by one or more screens.  
 
 The image bellow illustrates it:
 
@@ -73,7 +73,7 @@ The image bellow illustrates it:
 
 ## How to run it 📲
 
-- This project doesn’t contain any particularity. You can open the **GitHub.xcworkspace**, tap on play or type **command+R**. 
+- This project doesn’t contain any particularity. You can open the **GitHub.xcworkspace**, tap on the play button, or type **command+R**. 
 
 ## How to use it 🧐
 
