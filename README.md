@@ -27,7 +27,7 @@ The architecture was based on [MVC(Model-View-Controller)](https://developer.app
 - NSCache
 - Diffable DataSource
 - Dynamic Type
-- Sytem Theme
+- System Theme
 - Unit Tests
 
 ## Minimum Requirements 💻
