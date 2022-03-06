@@ -70,6 +70,11 @@ final class FollowersCollectionViewController: UICollectionViewController {
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpFavoriteButtonState()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -90,7 +95,6 @@ final class FollowersCollectionViewController: UICollectionViewController {
         setUpFavoriteNavigationBarButton()
         setUpBackgroundColor()
         setUpCollectionView()
-        setUpFavoriteButtonState()
     }
     
     private func setUpTitle() {
