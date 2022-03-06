@@ -14,7 +14,7 @@ The GitHubFollowersApp is a protifolio based on the [GitHub API](https://docs.gi
 
 ## Architecture 📐
 
-The architecture was based on [MVC(Model-View-Controller)](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html) that provides an separation of concerns between the existant layers. This particular implamentation adds more elments on the Controller layer, creating an aditional element LogicController, that is risponsible to control all the business logic and the comunication with the Model layer.
+The architecture was based on [MVC(Model-View-Controller)](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html) that provides an separation of concerns between the existant layers. This particular implamentation adds more elments on the **Controller** layer, creating an aditional element **LogicController**, that is risponsible to control all the business logic and the comunication with the **Model** layer.
 
 ## Modules
 
