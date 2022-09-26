@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A02EDE22548B05400C86CCD /* FollowersCollectionViewConfigurator.swift */; };
 		1A1C2F29242E859100096731 /* GetFollowers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1C2F1F242E859100096731 /* GetFollowers.framework */; };
 		1A1C2F30242E859100096731 /* GetFollowers.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1C2F22242E859100096731 /* GetFollowers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A1C2F49242E85F200096731 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C2F3F242E85F200096731 /* Follower.swift */; };
@@ -78,7 +77,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A02EDE22548B05400C86CCD /* FollowersCollectionViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCollectionViewConfigurator.swift; sourceTree = "<group>"; };
 		1A1BD93025C64BDC008E9088 /* ImageDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImageDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1C2F1F242E859100096731 /* GetFollowers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GetFollowers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1C2F22242E859100096731 /* GetFollowers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetFollowers.h; sourceTree = "<group>"; };
@@ -470,7 +468,6 @@
 			children = (
 				1AAD12B8247AAF4700C563F9 /* FollowersCollectionViewController.swift */,
 				1AC5569D24C475F700EE1E08 /* FollowersLogicController.swift */,
-				1A02EDE22548B05400C86CCD /* FollowersCollectionViewConfigurator.swift */,
 				1AE42A0D25E5E74D00BB1505 /* PaginationController.swift */,
 			);
 			path = Controllers;
@@ -667,7 +664,6 @@
 				1AFCE0472550A49F00CCC878 /* FollowersService.swift in Sources */,
 				1ABEB91A2548696E00B04478 /* FollowersSections.swift in Sources */,
 				1A6A67B925BBB9EB004F1FC1 /* FollowersRequest.swift in Sources */,
-				1A02EDE32548B05400C86CCD /* FollowersCollectionViewConfigurator.swift in Sources */,
 				1AB7CC0A25E2280900A4780D /* GetFollowersCoordinator+FollowersCoordinator.swift in Sources */,
 				1AED2CFA247A19FE000BC13A /* GetFollowersCoordinator+SearchCoordinator.swift in Sources */,
 				1A94FD262433936C0095932A /* FollowerResponse.swift in Sources */,

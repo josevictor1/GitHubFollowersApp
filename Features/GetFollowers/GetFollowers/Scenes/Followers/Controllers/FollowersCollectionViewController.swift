@@ -17,7 +17,6 @@ typealias FollowersCollectionViewCellProvider = FollowersDataSource.CellProvider
 final class FollowersCollectionViewController: UICollectionViewController {
     
     private let logicController: FollowersLogicControllerProtocol
-    private let configurator: FollowersCollectionViewConfiguratorProtocol
     private let errorPresenter: GetFollowersErrorAlertPresenterProtocol
     private let coordinator: FollowersCoordinator
     
@@ -27,9 +26,8 @@ final class FollowersCollectionViewController: UICollectionViewController {
     }()
     
     private lazy var cellProvider: FollowersCollectionViewCellProvider = { [unowned self] collectionView, indexPath, item in
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCollectionViewCell.identifier,
-                                                      for: indexPath)
-        self.configurator.configure(cell, with: item)
+        let cell = collectionView.dequeueReusableCell(withClass: FollowerCollectionViewCell.self, for: indexPath)
+        cell?.configure(with: item)
         return cell
     }
     
@@ -50,11 +48,9 @@ final class FollowersCollectionViewController: UICollectionViewController {
     }()
     
     init(logicController: FollowersLogicControllerProtocol,
-         configurator: FollowersCollectionViewConfiguratorProtocol,
          presenter: GetFollowersErrorAlertPresenterProtocol,
          coordinator: FollowersCoordinator) {
         self.logicController = logicController
-        self.configurator = configurator
         self.errorPresenter = presenter
         self.coordinator = coordinator
         super.init(collectionViewLayout: .threeColumnLayout)

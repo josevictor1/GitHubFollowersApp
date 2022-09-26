@@ -19,12 +19,10 @@ struct FollowersBuilder: FollowersBuilderProtocol {
     func followers(selectedUserInformation: SelectedUserInformation,
                    coordinator: FollowersCoordinator) -> FollowersCollectionViewController {
         let presenter = GetFollowersErrorAlertPresenter()
-        let configurator = FollowersCollectionViewConfigurator()
         let paginationController = PaginationController(numberOfItems: selectedUserInformation.numberOfFollowers)
         let logicController = FollowersLogicController(userFollowers: selectedUserInformation,
                                                        paginationController: paginationController)
         let viewController = FollowersCollectionViewController(logicController: logicController,
-                                                               configurator: configurator,
                                                                presenter: presenter,
                                                                coordinator: coordinator)
         logicController.viewController = viewController
