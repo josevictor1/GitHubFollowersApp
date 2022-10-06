@@ -13,18 +13,20 @@ public extension UIImageView {
 
     func loadImage(forULR url: String, placeHolder: UIImage, withAnimation animation: Bool = true) {
         image = placeHolder
+        DispatchQueue.main.async { self.layoutSubviews() }
         loadImage(forURL: url, withAnimation: animation)
-
     }
 
     private func loadImage(forURL url: String, withAnimation animation: Bool) {
-        UIImageView.imageLoader.loadImage(forURL: url, imageView: self) { result in
-            DispatchQueue.main.async { [unowned self] in
-                switch result {
-                case .success(let image):
-                    self.setImage(image, withAnimation: animation)
-                case .failure:
-                    break
+        DispatchQueue.global(qos: .userInitiated).async {
+            UIImageView.imageLoader.loadImage(forURL: url, imageView: self) { result in
+                DispatchQueue.main.async { [unowned self] in
+                    switch result {
+                    case .success(let image):
+                        self.setImage(image, withAnimation: animation)
+                    case .failure:
+                        break
+                    }
                 }
             }
         }

@@ -16,7 +16,9 @@ final class ImageLoader {
         self.imageDownloader = imageDownloader
     }
 
-    func loadImage(forURL url: String, imageView: UIImageView, completion: @escaping RequestImageCompletion) {
+    func loadImage(forURL url: String,
+                   imageView: UIImageView,
+                   completion: @escaping RequestImageCompletion) {
         cancelImageRequestIfNecessary(for: imageView)
         let dataTask = imageDownloader.loadImage(fromURL: url, completion: completion)
         imageViewMapping[imageView] = dataTask

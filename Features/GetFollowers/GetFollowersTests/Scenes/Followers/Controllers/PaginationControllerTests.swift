@@ -17,11 +17,6 @@ final class PaginationControllerTests: XCTestCase {
                              startPage: 1)
     }
 
-    func testCurrentPageSize() {
-        let sut = self.sut
-        XCTAssertEqual(sut.currentPageSize, 30)
-    }
-
     func testThereAreLeftPages() {
         let sut = self.sut
         XCTAssertTrue(sut.areThereLeftPages)
@@ -39,14 +34,6 @@ final class PaginationControllerTests: XCTestCase {
         (0...1).forEach { _ in sut.turnPage() }
 
         XCTAssertEqual(sut.currentPage, 3)
-    }
-
-    func testCurrentPageSizeAfterTurnMoreThanOnePage() {
-        let sut = self.sut
-
-        (.zero...1).forEach { _ in sut.turnPage() }
-
-        XCTAssertEqual(sut.currentPageSize, .zero)
     }
 
     func testTurnPagesWithNoPagesLeft() {

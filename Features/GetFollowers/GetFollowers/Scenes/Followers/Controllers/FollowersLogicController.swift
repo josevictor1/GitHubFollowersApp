@@ -69,7 +69,7 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     private func fetchFollowers() {
         let request = FollowersRequest(username: userInformation.login,
                                        pageNumber: paginationController.currentPage,
-                                       resultsPerPage: paginationController.currentPageSize)
+                                       resultsPerPage: paginationController.maximumPageSize)
         fetchFollowers(with: request)
     }
 

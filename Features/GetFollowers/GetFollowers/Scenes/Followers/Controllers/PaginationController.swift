@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PaginationControllerProtocol {
-    var currentPageSize: Int { get }
+    var maximumPageSize: Int { get }
     var currentPage: Int { get }
     var areThereLeftPages: Bool { get }
     func turnPage()
@@ -17,15 +17,13 @@ protocol PaginationControllerProtocol {
 
 final class PaginationController: PaginationControllerProtocol {
     private var numberOfItems: Int
-    private let maximumPageSize: Int
+    private(set) var maximumPageSize: Int
     private(set) var currentPage: Int
-    private(set) var currentPageSize: Int
     var areThereLeftPages: Bool { numberOfItems > .zero }
 
     init(maximumPageSize: Int = 20, numberOfItems: Int, startPage: Int = 1) {
         self.maximumPageSize = maximumPageSize
         self.numberOfItems = numberOfItems
-        currentPageSize = maximumPageSize
         currentPage = startPage
     }
 
@@ -33,16 +31,10 @@ final class PaginationController: PaginationControllerProtocol {
         guard areThereLeftPages else { return }
         updateNumberOfItems()
         updateCurrentPage()
-        updateCurrentPageSize()
     }
 
     private func updateCurrentPage() {
         currentPage += 1
-    }
-
-    private func updateCurrentPageSize() {
-        guard numberOfItems < maximumPageSize else { return }
-        currentPageSize = numberOfItems
     }
 
     private func updateNumberOfItems() {
