@@ -10,7 +10,7 @@ import Commons
 @testable import GetFollowers
 
 final class FollowersServiceMock: FollowersProvider {
-    
+   
     var error: GetFollowersError?
     var shouldReturnEmpty = false
 
@@ -56,6 +56,10 @@ final class FollowersServiceMock: FollowersProvider {
     }
     
     func addSelectedUserToFavorites(_ selectedUserInformation: SelectedUserInformation, completion: (Result<Void, Error>) -> Void) {
+        
+    }
+    
+    func removeSelectedUserFromFavorites(_ selectedUserLogin: String) {
         
     }
 }

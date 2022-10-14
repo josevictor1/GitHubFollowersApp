@@ -94,6 +94,9 @@
       }
     },
     {
+      "skippedTests" : [
+        "FavoriteProfilesTableViewControllerTests\/testLoadFavoriteProfiles()"
+      ],
       "target" : {
         "containerPath" : "container:..\/..\/Features\/FavoriteProfiles\/FavoriteProfiles.xcodeproj",
         "identifier" : "1ABF23932664073A00FB7529",
