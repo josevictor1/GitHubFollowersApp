@@ -19,13 +19,14 @@ final class ImageLoader {
     func loadImage(forURL url: String,
                    imageView: UIImageView,
                    completion: @escaping RequestImageCompletion) {
-        cancelImageRequestIfNecessary(for: imageView)
+        cancelRequest(for: imageView)
         let dataTask = imageDownloader.loadImage(fromURL: url, completion: completion)
         imageViewMapping[imageView] = dataTask
     }
 
-    private func cancelImageRequestIfNecessary(for imageView: UIImageView) {
+    func cancelRequest(for imageView: UIImageView) {
         guard let dataRequest = imageViewMapping[imageView] else { return }
+        imageViewMapping[imageView] = nil
         dataRequest.cancel()
     }
 }

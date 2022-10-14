@@ -15,7 +15,12 @@ typealias ImageCache = Cache<String, UIImage>
 public final class ImageDownloader {
     
     private let networkingService: NetworkingServiceProtocol
-    private let cache = ImageCache()
+    private let cache: ImageCache = {
+        let imageCache = NSCacheWrapped<String, UIImage>()
+        imageCache.countLimit = 100
+        imageCache.totalCostLimit = 1024 * 100 * 5
+        return ImageCache(cache: imageCache)
+    }()
 
     init(networkingService: NetworkingServiceProtocol = NetworkingService()) {
         self.networkingService = networkingService
