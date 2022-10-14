@@ -89,9 +89,14 @@ final class ProfileTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate(constraints)
     }
     
+    override func prepareForReuse() {
+        avatarImageView.image = nil
+        avatarImageView.cancelImageLoad()
+    }
+    
     func configure(with favoriteProfile: FavoriteProfile) {
-        loginLabel.text = favoriteProfile.login
         avatarImageView.loadImage(forULR: favoriteProfile.avatarURL,
                                   placeHolder: ImageAssets.placeholder.image)
+        loginLabel.text = favoriteProfile.login
     }
 }

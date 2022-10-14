@@ -15,7 +15,7 @@ typealias FavoriteProfilesCellProvider = FavoriteProfilesDataSource.CellProvider
 
 final class FavoriteProfilesTableViewController: UITableViewController {
     
-    private lazy var dataSource: FavoriteProfilesCustomDataSource =  {
+    private lazy var dataSource: FavoriteProfilesCustomDataSource = {
         let dataSource = FavoriteProfilesCustomDataSource(tableView: tableView,
                                                           cellProvider: cellProvider)
         dataSource.delegate = self
