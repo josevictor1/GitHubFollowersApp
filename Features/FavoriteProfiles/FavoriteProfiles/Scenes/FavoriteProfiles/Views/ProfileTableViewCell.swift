@@ -53,6 +53,7 @@ final class ProfileTableViewCell: UITableViewCell {
     private func setUp() {
         setUpConstraints()
         setUpViews()
+        selectionStyle = .none
     }
     
     private func setUpViews() {
