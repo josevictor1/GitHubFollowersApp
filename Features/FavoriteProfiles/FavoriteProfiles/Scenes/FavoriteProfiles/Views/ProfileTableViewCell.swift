@@ -92,12 +92,10 @@ final class ProfileTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         avatarImageView.image = nil
-        avatarImageView.cancelImageLoad()
     }
     
     func configure(with favoriteProfile: FavoriteProfile) {
         loginLabel.text = favoriteProfile.login
-        avatarImageView.image = nil
         avatarImageView.loadImage(forULR: favoriteProfile.avatarURL,
                                   placeHolder: ImageAssets.placeholder.image)
     }

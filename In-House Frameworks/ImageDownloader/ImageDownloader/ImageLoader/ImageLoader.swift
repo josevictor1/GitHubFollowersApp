@@ -24,7 +24,7 @@ final class ImageLoader {
         imageViewMapping[imageView] = dataTask
     }
 
-    func cancelRequest(for imageView: UIImageView) {
+    private func cancelRequest(for imageView: UIImageView) {
         imageViewMapping[imageView]?.cancel()
         imageViewMapping[imageView] = nil
     }

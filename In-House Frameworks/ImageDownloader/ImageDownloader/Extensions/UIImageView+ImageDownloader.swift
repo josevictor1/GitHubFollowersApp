@@ -39,11 +39,6 @@ public extension UIImageView {
             setImageWithoutAnimation(image)
         }
     }
-    
-    func cancelImageLoad() {
-        UIImageView.imageLoader.cancelRequest(for: self)
-        image = nil
-    }
 
     private func setImageWithAnimation(_ image: UIImage) {
         UIView.transition(with: self,
