@@ -22,6 +22,7 @@ protocol FollowersProvider {
     func fetchFavorites(completion: FetchFavoritesCompletion)
     func addSelectedUserToFavorites(_ selectedUserInformation: SelectedUserInformation,
                                     completion: AddSelectedUserCompletion)
+    func removeSelectedUserFromFavorites(_ selectedUserLogin: String)
 }
 
 final class FollowersService: FollowersProvider {
@@ -74,5 +75,16 @@ final class FollowersService: FollowersProvider {
     private func makeFavoriteDataManager(for selectedUserInformation: SelectedUserInformation) -> [String: Any] {
         ["avatarURL": selectedUserInformation.avatarURL,
          "login": selectedUserInformation.login]
+    }
+    
+    func removeSelectedUserFromFavorites(_ selectedUserLogin: String) {
+        do {
+            let favorites: [Favorite] = try dataStore.fetch()
+            guard let favoriteToBeRemoved = favorites.first(where: { $0.login == selectedUserLogin }) else { return }
+            try dataStore.delete(favoriteToBeRemoved)
+            try dataStore.update()
+        } catch {
+            debugPrint(error)
+        }
     }
 }

@@ -156,13 +156,21 @@ final class FollowersLogicController: FollowersLogicControllerProtocol {
     }
     
     func addSelectedUsersToFavorite() {
-        service.addSelectedUserToFavorites(userInformation) { result in
+        guard !isSelectedUserFavorited else { return removeSelectedUserFromFavorites() }
+        service.addSelectedUserToFavorites(userInformation) { [weak self] result in
             switch result {
             case .success:
-                viewController?.didAddUser()
+                self?.viewController?.didAddUser()
+                DispatchQueue.main.async { self?.loadFavoriteState() }
             case .failure:
-                viewController?.failedAddUserToFavorites()
+                self?.viewController?.failedAddUserToFavorites()
             }
         }
+    }
+    
+    private func removeSelectedUserFromFavorites() {
+        service.removeSelectedUserFromFavorites(userInformation.login)
+        isSelectedUserFavorited = false
+        DispatchQueue.main.async { [weak self] in self?.viewController?.selectedUserNotFound() }
     }
 }
