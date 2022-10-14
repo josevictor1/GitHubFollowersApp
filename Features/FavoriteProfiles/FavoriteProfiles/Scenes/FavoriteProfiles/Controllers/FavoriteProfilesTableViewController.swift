@@ -58,9 +58,14 @@ final class FavoriteProfilesTableViewController: UITableViewController {
         tableView.registerCell(ProfileTableViewCell.self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        logicController.loadProfiles()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        logicController.loadProfiles()
+        logicController.syncProfiles()
     }
 }
 
@@ -71,6 +76,7 @@ extension FavoriteProfilesTableViewController: FavoriteProfilesLogicControllerOu
     }
     
     private func reloadDataSource(with profiles: [FavoriteProfile]) {
+        
         var snapshot = FavoriteProfilesDataSourceSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(profiles)

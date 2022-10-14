@@ -96,8 +96,9 @@ final class ProfileTableViewCell: UITableViewCell {
     }
     
     func configure(with favoriteProfile: FavoriteProfile) {
+        loginLabel.text = favoriteProfile.login
+        avatarImageView.image = nil
         avatarImageView.loadImage(forULR: favoriteProfile.avatarURL,
                                   placeHolder: ImageAssets.placeholder.image)
-        loginLabel.text = favoriteProfile.login
     }
 }

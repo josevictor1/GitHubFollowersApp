@@ -10,6 +10,7 @@ import Commons
 
 protocol FavoriteProfilesLogicControllerProtocol: AnyObject {
     func loadProfiles()
+    func syncProfiles()
     func add(selectedUser: SelectedUserInformation)
     func deleteProfile(atIndex index: Int)
     func searchProfile(byFilter filter: String)
@@ -48,6 +49,10 @@ final class FavoriteProfilesLogicController: FavoriteProfilesLogicControllerProt
     
     private func handleLoadProfileFailure() {
         viewController?.didFailOnUpdateFavoriteProfiles()
+    }
+    
+    func syncProfiles() {
+        viewController?.didUpdateFavoriteProfiles(favoriteProfiles)
     }
     
     func add(selectedUser: SelectedUserInformation) {

@@ -25,8 +25,7 @@ final class ImageLoader {
     }
 
     func cancelRequest(for imageView: UIImageView) {
-        guard let dataRequest = imageViewMapping[imageView] else { return }
+        imageViewMapping[imageView]?.cancel()
         imageViewMapping[imageView] = nil
-        dataRequest.cancel()
     }
 }
