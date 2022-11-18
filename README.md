@@ -24,7 +24,7 @@ The image bellow ilustrates tbe implementation:
 
 <img src="https://user-images.githubusercontent.com/10730536/156907694-043bb733-beb7-4095-9770-7fd5bbe400ed.png" height= "300">
 
-This architectural changes on MVC were based on two articles:
+This architectural changes on MVC were based on three articles:
  - [Controllers in Swift](https://swiftbysundell.com/clips/5/)
  - [Logic controllers in Swift](https://www.swiftbysundell.com/articles/logic-controllers-in-swift/)
  - [MVC: Many View Controllers](https://www.rambo.codes/posts/2020-02-20-mvc-with-sugar)
