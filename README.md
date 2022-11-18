@@ -77,4 +77,4 @@ The image bellow illustrates it:
 
 ## How to use it 🧐
 
-The app is really simple to use once it works as a menu. To see the items in the menu you can tap over the sections.
+The app is really simple to use once it works as a gallery. To see the items in the galley you can select a github profile.
