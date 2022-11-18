@@ -69,7 +69,7 @@ The image bellow illustrates it:
 
 ## Minimum Requirements 💻
 
-- Xcode 15
+- Xcode 14
 
 ## How to run it 📲
 
